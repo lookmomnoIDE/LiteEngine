@@ -1,6 +1,6 @@
 @echo off
 REM Define the target directory name relative to the batch file's location
-SET "TARGET_DIR=C:\projects\LiteEngine\build"
+SET "TARGET_DIR=C:\projects\LiteEngineV001\build"
 
 REM Change the current directory to the location of the batch file
 CD /D "%~dp0"

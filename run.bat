@@ -1,3 +1,3 @@
-cd C:\projects\LiteEngine\build
+cd C:\projects\LiteEngineV001\build
 PlanetGenerator.exe
-cd C:\projects\LiteEngine
+cd C:\projects\LiteEngineV001

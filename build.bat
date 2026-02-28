@@ -1,3 +1,3 @@
-cd C:\projects\LiteEngine\build
+cd C:\projects\LiteEngineV001\build
 cmake --build .
-cd C:\projects\LiteEngine
+cd C:\projects\LiteEngineV001
