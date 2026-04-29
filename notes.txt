@@ -1,0 +1,126 @@
+To Do: (Falling Sand)
+--------------------------------------
+[] Assets
+	[] Font
+	[] material textures?
+	[] 
+[] Particle system
+	[] Components
+		[] Particle struct{ velocity, lifespan }
+		[] Size
+		[] Vertex Array
+		[] Vector of particles
+		[] Window size
+		[] Particle count
+		[] Initializer
+		[] Update
+		[] Reset
+	[] Fire
+	[] Steam
+	[]
+[] ECS
+	[] Entities
+		[] Sand (beige)
+		[] Water (blue)
+		[] Plants (green)
+		[] Wood (brown)
+		[] Torch/ Start fire/ heat source (red/orange)
+	[] EntityManager
+		[] Memory pool
+			[] Initiailizer
+			[] Update
+			[] Create (update initialized lists)
+			[] Reset
+		[] 
+	[] Components
+		[] Lifespan
+		[] Position
+		[] Gravity
+		[] Component Vectors(ensure components are contiguous in memory)
+	[] Systems
+		[] Physics
+			[] Collisions
+		[] Input
+[] Game Loop
+	[] Scenes
+		[] Main Menu
+		[] Play
+		[] Quit
+		[] Credits
+[] Camera (2D)
+[] Renderer(s)
+	[] Enitities
+	[] Particles
+[] Shaders
+	[] Basic
+	[] Fun
+[] ImGui (UI)
+	[] Entitiy picker
+	[] Environment settings
+	[] Reset scene
+	[] 
+[] Tools
+	[] Editor? 
+	[] Drag n' Drop
+[] Config files
+	[] Initial state
+	[] Save state
+	[] Load state
+
+[] Textures and Animations (coming soon/ DO much later if applicable)
+[] Profiler (if necessary)
+
+
+float lastTime = getCurrentTime();
+int main()
+{
+	while(true)
+	{
+		float current = getCurrentTime();
+		float elapsed = current-lastTime;
+		processInput();
+		update();
+		render();
+		lastTime=current;
+	}
+	
+}
+
+
+//To get Entity component T
+EntityComponentVectorTuple data;
+std::get<std::vector<T>>(data)[entityID];
+
+
+
+float vertices[] = {
+        // positions         // colors					//Texture Coordinates
+         0.5f, -0.5f, 0.0f,  1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 0.0f,// bottom right
+        -0.5f, -0.5f, 0.0f,  0.0f, 1.0f, 0.0f, 1.0f, 0.0f, 0.0f,// bottom left
+         0.0f,  0.5f, 0.0f,  0.0f, 0.0f, 1.0f, 1.0f, 0.5f, 1.0f // top 
+
+    };
+
+
+    /*VertexBuffer vb(vertices, sizeof(vertices));
+
+	VertexBufferLayout layout;
+	layout.Push<float>(3);
+	layout.Push<float>(4);
+	layout.Push<float>(2);
+	va.addBuffer(vb, layout);*/
+
+
+
+void doStuff(std::vector<Entity> & entities)
+{
+	for(auto& e : entities)
+	{
+		e.cTransform.pos += e.cTransform.vel;
+		e.cShape.setPosition(e.cTransform.pos);
+		draw(e.Cgrain.grain);
+	}
+}
+
+store vectors of entities by their tag for quick retreival.
+std::map <std::string, EntityVec>

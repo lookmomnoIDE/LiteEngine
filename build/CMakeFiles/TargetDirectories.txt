@@ -1,0 +1,3 @@
+C:/projects/LiteEngineV003/build/CMakeFiles/LiteEngine.dir
+C:/projects/LiteEngineV003/build/CMakeFiles/edit_cache.dir
+C:/projects/LiteEngineV003/build/CMakeFiles/rebuild_cache.dir
