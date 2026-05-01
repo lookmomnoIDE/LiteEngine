@@ -39,7 +39,8 @@ add_executable(${PROJECT_NAME}
     src/CTransform.cpp
     src/EntityManager.cpp
     src/EntityMemoryPool.cpp
-    src/Csand.cpp)
+    src/Csand.cpp
+    src/Cgravity.cpp)
 
 target_include_directories(${PROJECT_NAME} PRIVATE include)
 target_include_directories(${PROJECT_NAME} PRIVATE include/GLFW)

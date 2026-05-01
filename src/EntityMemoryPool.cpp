@@ -9,6 +9,7 @@ EntityMemoryPool::EntityMemoryPool(size_t MAX_ENTITIES)
     std::get<std::vector<CTransform>>(m_pool).resize(MAX_ENTITIES);
     std::get<std::vector<Cgrain>>(m_pool).resize(MAX_ENTITIES);
     std::get<std::vector<Csand>>(m_pool).resize(MAX_ENTITIES);
+    std::get<std::vector<Cgravity>>(m_pool).resize(MAX_ENTITIES);
 }
 
 
@@ -24,20 +25,16 @@ T& EntityMemoryPool::getComponent(size_t entityID)
 	return std::get<std::vector<T>>(m_pool)[entityID];
 }*/
 
-template <typename T>
-bool EntityMemoryPool::hasComponent(size_t entityID)
-{
-	return std::get<std::vector<T>>(m_pool)[entityID].getActive();
-}
 
-template <typename T>
+
+/*template <typename T>
 void EntityMemoryPool::remComponent(size_t entityID)
 {
 	std::get<std::vector<T>>(m_pool)[entityID] = T();
 }
+*/
 
-
-std::vector<bool> EntityMemoryPool::getActive()
+std::vector<bool>& EntityMemoryPool::getActive()
 {
 	return m_active;
 }

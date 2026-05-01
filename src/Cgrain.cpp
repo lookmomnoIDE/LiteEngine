@@ -1,12 +1,15 @@
 #include <Cgrain.h>
 
 Cgrain::Cgrain()
-	:m_exists(true)
-{}
+{
+	active = true;
+}
 
 Cgrain::Cgrain(float size)
-	:m_size(size), m_exists(true)
-{}
+	:m_size(size)
+{
+	active = true;
+}
 
 float Cgrain::getSize()
 {

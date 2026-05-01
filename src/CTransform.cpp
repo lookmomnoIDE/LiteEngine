@@ -2,12 +2,16 @@
 
 
 CTransform::CTransform()
-{}
+{
+	active = true;
+}
 CTransform::CTransform(const std::vector<float> & p, std::vector<float> & v)
-		:m_pos(p), m_vel(v), m_exists(true)
-{}
+		:m_pos(p), m_vel(v)
+{
+	active = true;
+}
 
-std::vector<float> CTransform::getPos()
+std::vector<float>& CTransform::getPos()
 {
 	return m_pos;
 }
@@ -17,7 +21,7 @@ void CTransform::setPos(std::vector<float> & p)
 	m_pos = p;
 }
 
-std::vector<float> CTransform::getVel()
+std::vector<float>& CTransform::getVel()
 {
 	return m_vel;
 }

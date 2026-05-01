@@ -71,6 +71,10 @@ CMakeFiles/LiteEngine.dir/src/Cgrain.cpp.obj: C:/projects/LiteEngineV003/src/Cgr
   C:/projects/LiteEngineV003/include/Cgrain.h \
   C:/projects/LiteEngineV003/include/Components.h
 
+CMakeFiles/LiteEngine.dir/src/Cgravity.cpp.obj: C:/projects/LiteEngineV003/src/Cgravity.cpp \
+  C:/projects/LiteEngineV003/include/Cgravity.h \
+  C:/projects/LiteEngineV003/include/Components.h
+
 CMakeFiles/LiteEngine.dir/src/Components.cpp.obj: C:/projects/LiteEngineV003/src/Components.cpp
 
 CMakeFiles/LiteEngine.dir/src/Csand.cpp.obj: C:/projects/LiteEngineV003/src/Csand.cpp \
@@ -254,6 +258,7 @@ CMakeFiles/LiteEngine.dir/src/Entity.cpp.obj: C:/projects/LiteEngineV003/src/Ent
   C:/mingw64/x86_64-w64-mingw32/include/wchar.h \
   C:/projects/LiteEngineV003/include/CTransform.h \
   C:/projects/LiteEngineV003/include/Cgrain.h \
+  C:/projects/LiteEngineV003/include/Cgravity.h \
   C:/projects/LiteEngineV003/include/Components.h \
   C:/projects/LiteEngineV003/include/Csand.h \
   C:/projects/LiteEngineV003/include/Entity.h \
@@ -375,6 +380,7 @@ CMakeFiles/LiteEngine.dir/src/EntityManager.cpp.obj: C:/projects/LiteEngineV003/
   C:/mingw64/x86_64-w64-mingw32/include/wchar.h \
   C:/projects/LiteEngineV003/include/CTransform.h \
   C:/projects/LiteEngineV003/include/Cgrain.h \
+  C:/projects/LiteEngineV003/include/Cgravity.h \
   C:/projects/LiteEngineV003/include/Components.h \
   C:/projects/LiteEngineV003/include/Csand.h \
   C:/projects/LiteEngineV003/include/Entity.h \
@@ -496,6 +502,7 @@ CMakeFiles/LiteEngine.dir/src/EntityMemoryPool.cpp.obj: C:/projects/LiteEngineV0
   C:/mingw64/x86_64-w64-mingw32/include/wchar.h \
   C:/projects/LiteEngineV003/include/CTransform.h \
   C:/projects/LiteEngineV003/include/Cgrain.h \
+  C:/projects/LiteEngineV003/include/Cgravity.h \
   C:/projects/LiteEngineV003/include/Components.h \
   C:/projects/LiteEngineV003/include/Csand.h \
   C:/projects/LiteEngineV003/include/Entity.h \
@@ -847,6 +854,7 @@ CMakeFiles/LiteEngine.dir/src/Renderer.cpp.obj: C:/projects/LiteEngineV003/src/R
   C:/mingw64/x86_64-w64-mingw32/include/wctype.h \
   C:/projects/LiteEngineV003/include/CTransform.h \
   C:/projects/LiteEngineV003/include/Cgrain.h \
+  C:/projects/LiteEngineV003/include/Cgravity.h \
   C:/projects/LiteEngineV003/include/Components.h \
   C:/projects/LiteEngineV003/include/Csand.h \
   C:/projects/LiteEngineV003/include/Entity.h \
@@ -1222,6 +1230,7 @@ CMakeFiles/LiteEngine.dir/src/Texture.cpp.obj: C:/projects/LiteEngineV003/src/Te
   C:/mingw64/x86_64-w64-mingw32/include/wctype.h \
   C:/projects/LiteEngineV003/include/CTransform.h \
   C:/projects/LiteEngineV003/include/Cgrain.h \
+  C:/projects/LiteEngineV003/include/Cgravity.h \
   C:/projects/LiteEngineV003/include/Components.h \
   C:/projects/LiteEngineV003/include/Csand.h \
   C:/projects/LiteEngineV003/include/Entity.h \
@@ -3495,6 +3504,7 @@ CMakeFiles/LiteEngine.dir/src/main.cpp.obj: C:/projects/LiteEngineV003/src/main.
   C:/mingw64/x86_64-w64-mingw32/include/wctype.h \
   C:/projects/LiteEngineV003/include/CTransform.h \
   C:/projects/LiteEngineV003/include/Cgrain.h \
+  C:/projects/LiteEngineV003/include/Cgravity.h \
   C:/projects/LiteEngineV003/include/Components.h \
   C:/projects/LiteEngineV003/include/Csand.h \
   C:/projects/LiteEngineV003/include/Entity.h \
@@ -3882,11 +3892,11 @@ C:/projects/LiteEngineV003/include/imgui_impl_glfw.h:
 
 C:/mingw64/include/c++/15.2.0/pstl/pstl_config.h:
 
+C:/mingw64/include/c++/15.2.0/bits/hashtable_policy.h:
+
 C:/mingw64/include/c++/15.2.0/type_traits:
 
 C:/mingw64/x86_64-w64-mingw32/include/memoryapi.h:
-
-C:/mingw64/include/c++/15.2.0/bits/hashtable_policy.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/crtdefs.h:
 
@@ -3927,6 +3937,16 @@ C:/mingw64/x86_64-w64-mingw32/include/winver.h:
 C:/projects/LiteEngineV003/src/Cgrain.cpp:
 
 C:/projects/LiteEngineV003/include/Cgrain.h:
+
+C:/projects/LiteEngineV003/src/Cgravity.cpp:
+
+C:/mingw64/x86_64-w64-mingw32/include/threadpoolapiset.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/wincrypt.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/threadpoollegacyapiset.h:
+
+C:/projects/LiteEngineV003/include/Cgravity.h:
 
 C:/mingw64/include/c++/15.2.0/math.h:
 
@@ -4189,8 +4209,6 @@ C:/mingw64/include/c++/15.2.0/bits/streambuf.tcc:
 C:/mingw64/include/c++/15.2.0/bits/streambuf_iterator.h:
 
 C:/mingw64/include/c++/15.2.0/cwctype:
-
-C:/mingw64/include/c++/15.2.0/bits/std_function.h:
 
 C:/mingw64/include/c++/15.2.0/exception:
 
@@ -4734,12 +4752,6 @@ C:/mingw64/x86_64-w64-mingw32/include/servprov.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/shellapi.h:
 
-C:/mingw64/x86_64-w64-mingw32/include/threadpoolapiset.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/wincrypt.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/threadpoollegacyapiset.h:
-
 C:/mingw64/x86_64-w64-mingw32/include/urlmon.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/wincontypes.h:
@@ -4789,6 +4801,8 @@ C:/projects/LiteEngineV003/src/imgui_tables.cpp:
 C:/mingw64/include/c++/15.2.0/bits/enable_special_members.h:
 
 C:/mingw64/include/c++/15.2.0/bits/hashtable.h:
+
+C:/mingw64/include/c++/15.2.0/bits/std_function.h:
 
 C:/mingw64/include/c++/15.2.0/unordered_map:
 

@@ -2,13 +2,16 @@
 
 
 Csand::Csand()
-		:m_exists(true)
-{}
+{
+	active = true;
+}
 
 
 Csand::Csand(const std::vector<float> & color)
-		:m_color(color), m_exists(true)
-{}
+		:m_color(color)
+{
+	active = true;
+}
 
 
 std::vector<float> Csand::getColor()

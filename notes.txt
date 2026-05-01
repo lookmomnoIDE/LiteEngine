@@ -132,3 +132,19 @@ std::map <std::string, EntityVec>
 									pool.getComponent<CTransform>(id).getPos(pos[0]) + size, 	pool.getComponent<CTransform>(id).getPos(pos[1]),
 									pool.getComponent<CTransform>(id).getPos(pos[0]), 			pool.getComponent<CTransform>(id).getPos(pos[1]) + size,
 									pool.getComponent<CTransform>(id).getPos(pos[0]) + size, 	pool.getComponent<CTransform>(id).getPos(pos[1]) + size};*/
+
+
+
+float grain[] = {
+		// positions	//Texture Coordinates
+
+		 0.5f,  0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f,  1.0f,  1.0f,   //1
+		 0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f,  0.0f,  1.0f,   //2
+		-0.5f, -0.5f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f,  0.0f,  0.0f,   //3
+		-0.5f,  0.5f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f,  1.0f,  0.0f    //4
+};
+
+unsigned int indices[] = {
+	0, 1, 3, 
+	1, 2, 3
+};

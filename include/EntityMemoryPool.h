@@ -1,9 +1,12 @@
-#pragma once
+#ifndef ENTITYMEMORYPOOL_H
+#define ENTITYMEMORYPOOL_H
+#include "Components.h"
 #include "EntityManager.h"
 #include "Entity.h"
 #include "CTransform.h"
 #include "Cgrain.h"
 #include "Csand.h"
+#include "Cgravity.h"
 #include <vector>
 #include <string>
 
@@ -16,7 +19,8 @@ public:
 	typedef std::tuple<
 	std::vector<CTransform>,
 	std::vector<Cgrain>,
-	std::vector<Csand>
+	std::vector<Csand>,
+	std::vector<Cgravity>
 	> EntityComponentVectorTuple;
 private:
 	size_t m_numEntities;
@@ -29,6 +33,8 @@ private:
 public:
 	static EntityMemoryPool & Instance();
 
+	std::vector<bool>& getActive();
+
 	template <typename T>
 	T& getComponent(size_t entityID)
 	{
@@ -36,12 +42,26 @@ public:
 	}
 
 	template <typename T>
-	bool hasComponent(size_t entityID);
+	bool hasComponent(size_t entityID)
+	{
+
+		auto& componentVec = std::get<std::vector<T>>(m_pool);
+	    return componentVec[entityID].isActive();
+		/*bool active = std::get<std::vector<T>>(m_pool)[entityID].isActive();
+		return active;*/
+	}
+	template <typename T>
+	void remComponent(size_t entityID)
+	{
+		std::get<std::vector<T>>(m_pool)[entityID].setActive(false);
+	}
 
 	template <typename T>
-	void remComponent(size_t entityID);
+	void addComponent(size_t entityID)
+	{
+		std::get<std::vector<T>>(m_pool)[entityID].setActive(true);
+	}
 
-	std::vector<bool> getActive();
 
 	const std::string & getTag(size_t entityID) const;
 	std::string & getTag(size_t entityID);
@@ -50,3 +70,7 @@ public:
 
 	size_t getNextEntityIndex();
 };
+
+
+
+#endif

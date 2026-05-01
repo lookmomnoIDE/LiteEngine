@@ -2,35 +2,20 @@
 
 
 //------------------------//   GLOBAL VARIABLES   //------------------------//
-float width = 1920.0f;
-float height = 1050.0f;
+int width = 1920;
+int height = 1050; 
 float aspectRatio = width/height;
-double xpos = width/2, ypos = height/2;
-
-
-float grain[] = {
-		// positions	//Texture Coordinates
-
-		 0.5f,  0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f,  1.0f,  1.0f,   //1
-		 0.5f, -0.5f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f,  0.0f,  1.0f,   //2
-		-0.5f, -0.5f, 0.0f, 0.0f, 0.0f, 1.0f, 1.0f,  0.0f,  0.0f,   //3
-		-0.5f,  0.5f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f,  1.0f,  0.0f    //4
-};
-
-unsigned int indices[] = {
-	0, 1, 3, 
-	1, 2, 3
-};
-
+//double xpos = width/2, ypos = height/2;
+double xpos, ypos;
 
 //------------------------//FORWARD DECLARATIONS//------------------------//
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow *window);
 void mouse_button_callback(GLFWwindow* window, int button, int action, int mods);
 
-
+//------------------------//INIT MEMORY MANAGEMENT//------------------------//
 EntityMemoryPool& pool = EntityMemoryPool::Instance();
-// EntityMemoryPool::EntityMemoryPool(1000);
+EntityMan& entityMan = EntityMan::Instance();
 
 
 int main(int argc, char* argv[])
@@ -54,24 +39,18 @@ int main(int argc, char* argv[])
 		return -1;
 	}
 
+	//INIT SCREEN DIMENSIONS
+	int winWidth, winHeight;
+	glfwGetWindowSize(window, &winWidth, &winHeight);
+	width = winWidth;
+	height = winHeight;
+
 	glViewport(0, 0, width, height);
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 	glfwSetMouseButtonCallback(window, mouse_button_callback);
 
 	Shader ourShader("../src/cool.vert", "../src/beans.frag");
 
-	/*VertexArray va;
-	VertexBuffer vb(grain, sizeof(grain));
-
-	IndexBuffer ib(indices, 6);
-
-	ib.Bind();
-
-	VertexBufferLayout layout;
-	layout.Push<float>(3);
-	layout.Push<float>(4);
-	layout.Push<float>(2);
-	va.addBuffer(vb, layout);*/
 	
 	ourShader.use();
 	Renderer renderer;
@@ -84,59 +63,67 @@ int main(int argc, char* argv[])
 	//Texture texture("../res/fabric.jpg");
 	//texture.Bind();
 	//ourShader.setInt("u_Texture", texture.GetSlot());
-	EntityMan& entityMan = EntityMan::Instance();
-	Entity sand = entityMan.addEntity("sand");
-	size_t id = sand.getID(); // however your Entity exposes its index
-
-	// Add/set a component
-	pool.getComponent<CTransform>(id) = CTransform();
-	pool.getComponent<Cgrain>(id)     = Cgrain();
+	
+	
 
 
 	unsigned int framecount = 0;
-	Cgrain& s = pool.getComponent<Cgrain>(id);
-	float size = s.getSize();
-
-	int winWidth, winHeight, fbWidth, fbHeight;
-	glfwGetWindowSize(window, &winWidth, &winHeight);
-	glfwGetFramebufferSize(window, &fbWidth, &fbHeight);
-	std::cout << "window: " << winWidth << "x" << winHeight << std::endl;
-	std::cout << "framebuffer: " << fbWidth << "x" << fbHeight << std::endl;
+	Entity e = entityMan.addEntity("sand");
+	size_t id = e.getID(); // however your Entity exposes its index
+	// Add/set a component
+	pool.getComponent<CTransform>(id) = CTransform();
+	pool.getComponent<Cgrain>(id)     = Cgrain();
+	pool.getComponent<Csand>(id)	  =	Csand();
+	pool.getComponent<Cgravity>(id)	  = Cgravity();
 
 	while(!glfwWindowShouldClose(window))
 	{
-
+		entityMan.update();
 		processInput(window);
-		std::vector<float> position = pool.getComponent<CTransform>(id).getPos();
+		//std::vector<float> position = pool.getComponent<CTransform>(id).getPos();
 
 		renderer.Clear();
 
 		//float timeValue = glfwGetTime();
 		//ourShader.setFloat("uTime", timeValue);
 
-		//renderer.Draw(va, vb, ourShader);
-		//renderer.DrawElements(va, vb, ib, ourShader);
-		//std::vector<float> pos = {(xpos / width) * 2.0 - 1.0, 1.0 - (ypos / height)* 2.0f};
-		/*std::vector<float> pos = {
-		    (xpos / 1920.0f) * 2.0f - 1.0f - (size / aspectRatio) / 2.0f,  // center X
-		    1.0f - (ypos / 1080.0f) * 2.0f + size / 2.0f                    // center Y
-		};*/
-		//glfwGetCursorPos(window, &xpos, &ypos);
-		std::cout << "x: " << xpos << ", " << "y: " << ypos << std::endl;
-		/*std::vector<float> pos = {
-		    (xpos / 1920.0f) * 2.0f - 1.0f,
-		    1.0f - (ypos / 1080.0f) * 2.0f
-		};*/
+		EntityVec& currentEntities = entityMan.getEntities();
 
-		std::vector<float> pos = {(2.0f*xpos)/width - 1.0f, 1.0f - (2.0f*ypos)/height};
-		std::cout << "x':  " << pos[0] << " " << "y': " << pos[1] << std::endl;
-		//std::vector<float> center = { (xpos + width/2) / width, (ypos + height/2) / height};
-		//std::cout << "centerX: " << center[0] << " " << "centerY: " << center[1] << std::endl;
-		pool.getComponent<CTransform>(id).setPos(pos);
-		renderer.Square(sand, pos, ourShader);
-		if (framecount%240 == 0)
+		for ( Entity e : currentEntities )
 		{
-			std::cout << position[0] << ", " << position[1] << std::endl;
+			std::cout << e.getID() << std::endl;
+			if(pool.hasComponent<Cgravity>(e.getID()))
+			{
+				CTransform& transform = pool.getComponent<CTransform>(e.getID());
+				Cgravity& gravity = pool.getComponent<Cgravity>(e.getID());
+				std::vector<float>& vel = transform.getVel();
+				vel[1] += gravity.getGravity();
+				std::vector<float>& pos = transform.getPos();
+				pos[1] += vel[1];
+				std::cout << "x: " << pos[0] << "y: " << pos[1] << std::endl;
+				if (pos[1] <= -1)
+				{
+					pos[1] = -.9;
+					vel[0] = 0;
+					vel[1] = 0;
+					pool.remComponent<Cgravity>(e.getID());
+					std::cout << "removed gravity from entity: " << e.getID() << std::endl;
+					if ( pool.hasComponent<Cgravity>(e.getID()))
+					{
+						std::cout << "why do I still have gravity: " << e.getID() << std::endl;
+					}
+				}
+				transform.setPos(pos);
+				transform.setVel(vel);				
+			}
+			
+		}
+
+		//draw entities at position
+		for ( Entity e : currentEntities )
+		{
+			std::vector<float> pos = pool.getComponent<CTransform>(e.getID()).getPos();
+			renderer.Square(e, pos, ourShader);
 		}
 
 		glfwSwapBuffers(window);
@@ -167,7 +154,15 @@ void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 	if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS)
 		{
 			glfwGetCursorPos(window, &xpos, &ypos);
-			//std::cout << xpos << ", "<< ypos << std::endl;
-
+			std::vector<float> pos = {(2.0f*xpos)/width - 1.0f, 1.0f - (2.0f*ypos)/height};
+			std::vector<float> vel = {0.0f, 0.0f};
+			Entity e = entityMan.addEntity("sand");
+			size_t id = e.getID(); // however your Entity exposes its index
+			// Add/set a component
+			pool.getComponent<CTransform>(id) = CTransform(pos, vel);
+			pool.getComponent<Cgrain>(id)     = Cgrain();
+			pool.getComponent<Csand>(id)	  =	Csand();
+			pool.getComponent<Cgravity>(id)   = Cgravity();
 		}
 }
+

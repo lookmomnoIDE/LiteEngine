@@ -73,6 +73,11 @@ CMakeFiles/LiteEngine.dir/src/Cgrain.cpp.obj
  C:/projects/LiteEngineV003/include/Cgrain.h
  C:/projects/LiteEngineV003/include/Components.h
 
+CMakeFiles/LiteEngine.dir/src/Cgravity.cpp.obj
+ C:/projects/LiteEngineV003/src/Cgravity.cpp
+ C:/projects/LiteEngineV003/include/Cgravity.h
+ C:/projects/LiteEngineV003/include/Components.h
+
 CMakeFiles/LiteEngine.dir/src/Components.cpp.obj
  C:/projects/LiteEngineV003/src/Components.cpp
 
@@ -259,6 +264,7 @@ CMakeFiles/LiteEngine.dir/src/Entity.cpp.obj
  C:/mingw64/x86_64-w64-mingw32/include/wchar.h
  C:/projects/LiteEngineV003/include/CTransform.h
  C:/projects/LiteEngineV003/include/Cgrain.h
+ C:/projects/LiteEngineV003/include/Cgravity.h
  C:/projects/LiteEngineV003/include/Components.h
  C:/projects/LiteEngineV003/include/Csand.h
  C:/projects/LiteEngineV003/include/Entity.h
@@ -381,6 +387,7 @@ CMakeFiles/LiteEngine.dir/src/EntityManager.cpp.obj
  C:/mingw64/x86_64-w64-mingw32/include/wchar.h
  C:/projects/LiteEngineV003/include/CTransform.h
  C:/projects/LiteEngineV003/include/Cgrain.h
+ C:/projects/LiteEngineV003/include/Cgravity.h
  C:/projects/LiteEngineV003/include/Components.h
  C:/projects/LiteEngineV003/include/Csand.h
  C:/projects/LiteEngineV003/include/Entity.h
@@ -503,6 +510,7 @@ CMakeFiles/LiteEngine.dir/src/EntityMemoryPool.cpp.obj
  C:/mingw64/x86_64-w64-mingw32/include/wchar.h
  C:/projects/LiteEngineV003/include/CTransform.h
  C:/projects/LiteEngineV003/include/Cgrain.h
+ C:/projects/LiteEngineV003/include/Cgravity.h
  C:/projects/LiteEngineV003/include/Components.h
  C:/projects/LiteEngineV003/include/Csand.h
  C:/projects/LiteEngineV003/include/Entity.h
@@ -857,6 +865,7 @@ CMakeFiles/LiteEngine.dir/src/Renderer.cpp.obj
  C:/mingw64/x86_64-w64-mingw32/include/wctype.h
  C:/projects/LiteEngineV003/include/CTransform.h
  C:/projects/LiteEngineV003/include/Cgrain.h
+ C:/projects/LiteEngineV003/include/Cgravity.h
  C:/projects/LiteEngineV003/include/Components.h
  C:/projects/LiteEngineV003/include/Csand.h
  C:/projects/LiteEngineV003/include/Entity.h
@@ -1234,6 +1243,7 @@ CMakeFiles/LiteEngine.dir/src/Texture.cpp.obj
  C:/mingw64/x86_64-w64-mingw32/include/wctype.h
  C:/projects/LiteEngineV003/include/CTransform.h
  C:/projects/LiteEngineV003/include/Cgrain.h
+ C:/projects/LiteEngineV003/include/Cgravity.h
  C:/projects/LiteEngineV003/include/Components.h
  C:/projects/LiteEngineV003/include/Csand.h
  C:/projects/LiteEngineV003/include/Entity.h
@@ -3519,6 +3529,7 @@ CMakeFiles/LiteEngine.dir/src/main.cpp.obj
  C:/mingw64/x86_64-w64-mingw32/include/wctype.h
  C:/projects/LiteEngineV003/include/CTransform.h
  C:/projects/LiteEngineV003/include/Cgrain.h
+ C:/projects/LiteEngineV003/include/Cgravity.h
  C:/projects/LiteEngineV003/include/Components.h
  C:/projects/LiteEngineV003/include/Csand.h
  C:/projects/LiteEngineV003/include/Entity.h

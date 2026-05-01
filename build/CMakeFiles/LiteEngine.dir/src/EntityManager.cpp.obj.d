@@ -2,6 +2,7 @@ CMakeFiles/LiteEngine.dir/src/EntityManager.cpp.obj: \
  C:\projects\LiteEngineV003\src\EntityManager.cpp \
  C:/projects/LiteEngineV003/include/Entity.h \
  C:/projects/LiteEngineV003/include/EntityMemoryPool.h \
+ C:/projects/LiteEngineV003/include/Components.h \
  C:/projects/LiteEngineV003/include/EntityManager.h \
  C:/mingw64/include/c++/15.2.0/map \
  C:/mingw64/include/c++/15.2.0/bits/requires_hosted.h \
@@ -116,7 +117,8 @@ CMakeFiles/LiteEngine.dir/src/EntityManager.cpp.obj: \
  C:/mingw64/include/c++/15.2.0/bits/basic_string.tcc \
  C:/projects/LiteEngineV003/include/Entity.h \
  C:/projects/LiteEngineV003/include/CTransform.h \
- C:/projects/LiteEngineV003/include/Components.h \
  C:/projects/LiteEngineV003/include/Cgrain.h \
  C:/projects/LiteEngineV003/include/Csand.h \
- C:/projects/LiteEngineV003/include/EntityManager.h
+ C:/projects/LiteEngineV003/include/Cgravity.h \
+ C:/projects/LiteEngineV003/include/EntityManager.h \
+ C:/projects/LiteEngineV003/include/EntityMemoryPool.h
