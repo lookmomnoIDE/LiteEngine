@@ -124,3 +124,11 @@ void doStuff(std::vector<Entity> & entities)
 
 store vectors of entities by their tag for quick retreival.
 std::map <std::string, EntityVec>
+
+
+
+
+/*	std::vector<float> verts[] = {	pool.getComponent<CTransform>(id).getPos(pos[0]), 			pool.getComponent<CTransform>(id).getPos(pos[1]),
+									pool.getComponent<CTransform>(id).getPos(pos[0]) + size, 	pool.getComponent<CTransform>(id).getPos(pos[1]),
+									pool.getComponent<CTransform>(id).getPos(pos[0]), 			pool.getComponent<CTransform>(id).getPos(pos[1]) + size,
+									pool.getComponent<CTransform>(id).getPos(pos[0]) + size, 	pool.getComponent<CTransform>(id).getPos(pos[1]) + size};*/

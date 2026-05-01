@@ -1,5 +1,8 @@
 #include "GameEngine.h"
 
+GameEngine::GameEngine(){}
+
+
 void GameEngine::MainLoop()
 {
 	EntityManager.update()
@@ -14,3 +17,4 @@ void GameEngine::spawnEnemy()
 {
 	auto e = EntityManager.addEntity("enemy");
 }
+

@@ -1,6 +1,7 @@
 #include <Cgrain.h>
 
 Cgrain::Cgrain()
+	:m_exists(true)
 {}
 
 Cgrain::Cgrain(float size)

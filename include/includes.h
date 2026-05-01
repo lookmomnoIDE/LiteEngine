@@ -23,4 +23,5 @@
 #include "Texture.h"
 #include "IndexBuffer.h"
 #include "Entity.h"
+#include "EntityMemoryPool.h"
 

@@ -5,7 +5,7 @@
 class Cgrain : public Component
 {
 	bool 				m_exists 	= false;
-	float 				m_size 		= 0;
+	float 				m_size 		= 0.01f;
 	
 public:
 

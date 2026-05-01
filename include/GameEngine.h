@@ -13,7 +13,6 @@ class GameEngine
 
 public:
 	GameEngine();
-	~GameEngine();
 	void MainLoop();
 	void spawnEnemy();
 

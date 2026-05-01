@@ -171,6 +171,20 @@ CMakeFiles/LiteEngine.dir/src/Texture.cpp.obj: \
  C:/mingw64/include/c++/15.2.0/bits/sstream.tcc \
  C:/projects/LiteEngineV003/include/Parser.h \
  C:/projects/LiteEngineV003/include/IndexBuffer.h \
+ C:/projects/LiteEngineV003/include/Entity.h \
+ C:/projects/LiteEngineV003/include/EntityMemoryPool.h \
+ C:/projects/LiteEngineV003/include/EntityManager.h \
+ C:/mingw64/include/c++/15.2.0/map \
+ C:/mingw64/include/c++/15.2.0/bits/stl_tree.h \
+ C:/mingw64/include/c++/15.2.0/ext/aligned_buffer.h \
+ C:/mingw64/include/c++/15.2.0/bits/node_handle.h \
+ C:/mingw64/include/c++/15.2.0/bits/stl_map.h \
+ C:/mingw64/include/c++/15.2.0/bits/stl_multimap.h \
+ C:/mingw64/include/c++/15.2.0/bits/erase_if.h \
+ C:/projects/LiteEngineV003/include/CTransform.h \
+ C:/projects/LiteEngineV003/include/Components.h \
+ C:/projects/LiteEngineV003/include/Cgrain.h \
+ C:/projects/LiteEngineV003/include/Csand.h \
  C:/projects/LiteEngineV003/include/stb_image.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdarg.h \
  C:/mingw64/x86_64-w64-mingw32/include/stdarg.h \

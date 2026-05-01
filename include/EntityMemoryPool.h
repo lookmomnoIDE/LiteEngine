@@ -3,6 +3,7 @@
 #include "Entity.h"
 #include "CTransform.h"
 #include "Cgrain.h"
+#include "Csand.h"
 #include <vector>
 #include <string>
 
@@ -14,7 +15,8 @@ class EntityMemoryPool
 public:
 	typedef std::tuple<
 	std::vector<CTransform>,
-	std::vector<Cgrain>
+	std::vector<Cgrain>,
+	std::vector<Csand>
 	> EntityComponentVectorTuple;
 private:
 	size_t m_numEntities;
@@ -28,7 +30,10 @@ public:
 	static EntityMemoryPool & Instance();
 
 	template <typename T>
-	T& getComponent(size_t entityID);
+	T& getComponent(size_t entityID)
+	{
+		return std::get<std::vector<T>>(m_pool)[entityID];
+	}
 
 	template <typename T>
 	bool hasComponent(size_t entityID);
