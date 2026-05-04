@@ -4,9 +4,8 @@
 //------------------------//   GLOBAL VARIABLES   //------------------------//
 int width = 1920;
 int height = 1050; 
-float aspectRatio = width/height;
-//double xpos = width/2, ypos = height/2;
 double xpos, ypos;
+unsigned int framecount = 0;
 
 //------------------------//FORWARD DECLARATIONS//------------------------//
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
@@ -17,45 +16,26 @@ void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 EntityMemoryPool& pool = EntityMemoryPool::Instance();
 EntityMan& entityMan = EntityMan::Instance();
 
+void addSand(double xpos, double ypos)
+{
+	std::vector<float> pos = {(2.0f*xpos)/width - 1.0f, 1.0f - (2.0f*ypos)/height};
+	std::vector<float> vel = {0.0f, 0.0f};
+	Entity e = entityMan.addEntity("sand");
+	size_t id = e.getID();
+	// Add/set components
+	pool.getComponent<CTransform>(id) = CTransform(pos, vel);
+	pool.getComponent<Cgrain>(id)     = Cgrain();
+	pool.getComponent<Csand>(id)	  =	Csand();
+	pool.getComponent<Cgravity>(id)   = Cgravity();
+}
+
 
 int main(int argc, char* argv[])
 {
-	glfwInit();
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-	GLFWwindow* window = glfwCreateWindow(width, height, "LiteEngine", NULL, NULL);
-	if (window == NULL)
-	{
-		std::cout << "ERROR: Failed to create GLFW window!" << std::endl;
-		glfwTerminate();
-		return -1;
-	}
-	glfwMakeContextCurrent(window);
-
-	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-	{
-		std::cout << "ERROR: Failed to initialize GLAD!" << std::endl;
-		return -1;
-	}
-
-	//INIT SCREEN DIMENSIONS
-	int winWidth, winHeight;
-	glfwGetWindowSize(window, &winWidth, &winHeight);
-	width = winWidth;
-	height = winHeight;
-
-	glViewport(0, 0, width, height);
+	Renderer renderer;
+	GLFWwindow* window = renderer.getWindow();
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 	glfwSetMouseButtonCallback(window, mouse_button_callback);
-
-	Shader ourShader("../src/cool.vert", "../src/beans.frag");
-
-	
-	ourShader.use();
-	Renderer renderer;
-	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-
 
 	//glm::mat4 proj = glm::mat4();
 
@@ -67,21 +47,12 @@ int main(int argc, char* argv[])
 	
 
 
-	unsigned int framecount = 0;
-	Entity e = entityMan.addEntity("sand");
-	size_t id = e.getID(); // however your Entity exposes its index
-	// Add/set a component
-	pool.getComponent<CTransform>(id) = CTransform();
-	pool.getComponent<Cgrain>(id)     = Cgrain();
-	pool.getComponent<Csand>(id)	  =	Csand();
-	pool.getComponent<Cgravity>(id)	  = Cgravity();
 
+	
 	while(!glfwWindowShouldClose(window))
 	{
 		entityMan.update();
 		processInput(window);
-		//std::vector<float> position = pool.getComponent<CTransform>(id).getPos();
-
 		renderer.Clear();
 
 		//float timeValue = glfwGetTime();
@@ -91,7 +62,6 @@ int main(int argc, char* argv[])
 
 		for ( Entity e : currentEntities )
 		{
-			std::cout << e.getID() << std::endl;
 			if(pool.hasComponent<Cgravity>(e.getID()))
 			{
 				CTransform& transform = pool.getComponent<CTransform>(e.getID());
@@ -107,11 +77,6 @@ int main(int argc, char* argv[])
 					vel[0] = 0;
 					vel[1] = 0;
 					pool.remComponent<Cgravity>(e.getID());
-					std::cout << "removed gravity from entity: " << e.getID() << std::endl;
-					if ( pool.hasComponent<Cgravity>(e.getID()))
-					{
-						std::cout << "why do I still have gravity: " << e.getID() << std::endl;
-					}
 				}
 				transform.setPos(pos);
 				transform.setVel(vel);				
@@ -123,7 +88,7 @@ int main(int argc, char* argv[])
 		for ( Entity e : currentEntities )
 		{
 			std::vector<float> pos = pool.getComponent<CTransform>(e.getID()).getPos();
-			renderer.Square(e, pos, ourShader);
+			renderer.Square(e, pos);
 		}
 
 		glfwSwapBuffers(window);
@@ -131,7 +96,7 @@ int main(int argc, char* argv[])
 		framecount++;
 	}
 
-	glfwTerminate();
+	renderer.~Renderer();
 	return 0;
 }
 
@@ -153,16 +118,9 @@ void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 {
 	if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS)
 		{
+			//LMB_->execute();
 			glfwGetCursorPos(window, &xpos, &ypos);
-			std::vector<float> pos = {(2.0f*xpos)/width - 1.0f, 1.0f - (2.0f*ypos)/height};
-			std::vector<float> vel = {0.0f, 0.0f};
-			Entity e = entityMan.addEntity("sand");
-			size_t id = e.getID(); // however your Entity exposes its index
-			// Add/set a component
-			pool.getComponent<CTransform>(id) = CTransform(pos, vel);
-			pool.getComponent<Cgrain>(id)     = Cgrain();
-			pool.getComponent<Csand>(id)	  =	Csand();
-			pool.getComponent<Cgravity>(id)   = Cgravity();
+			addSand(xpos, ypos);
 		}
 }
 

@@ -1,26 +1,75 @@
 #include "Renderer.h"
 
 
-void Renderer::Draw(const VertexArray& va, const VertexBuffer& vb, const Shader& shader) const
+Renderer::Renderer()
 {
-	shader.use();
+	glfwInit();
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+	m_window = glfwCreateWindow(m_width, m_height, "LiteEngine", NULL, NULL);
+	if (m_window == NULL)
+	{
+		std::cout << "ERROR: " << "GLFW window failed!" << std::endl;
+		glfwTerminate();
+		throw std::runtime_error("Failed to create GLFW window!");
+	}
+	glfwMakeContextCurrent(m_window);
+
+	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+	{
+		std::cout << "ERROR: " << "Glad failed!" << std::endl;
+		throw std::runtime_error("ERROR: Failed to initialize GLAD!");
+	}
+
+	//INIT SCREEN DIMENSIONS
+	int winWidth, winHeight;
+	glfwGetWindowSize(m_window, &winWidth, &winHeight);
+	m_width = winWidth;
+	m_height = winHeight;
+
+	glViewport(0, 0, m_width, m_height);
+	m_shader = new Shader("../src/cool.vert", "../src/beans.frag");
+	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+}
+
+Renderer::~Renderer()
+{
+	delete m_shader;
+	glfwTerminate();
+}
+
+Shader* Renderer::loadShader(std::string vertex, std::string fragment)
+{
+	m_shader = new Shader(vertex.c_str(), fragment.c_str());
+    m_shader->use();
+    return m_shader; 
+}
+
+GLFWwindow* Renderer::getWindow()
+{
+	return m_window;
+}
+
+void Renderer::Draw(const VertexArray& va, const VertexBuffer& vb) const
+{
+	m_shader->use();
 	va.Bind();
 	vb.Bind();
 	glDrawArrays(GL_TRIANGLES, 0, sizeof(vb));
 }
 
 
-void Renderer::DrawElements(const VertexArray& va, const VertexBuffer& vb, const IndexBuffer& ib, const Shader& shader) const
+void Renderer::DrawElements(const VertexArray& va, const VertexBuffer& vb, const IndexBuffer& ib) const
 {
-	shader.use();
+	m_shader->use();
 	va.Bind();
 	vb.Bind();
 	ib.Bind();
 	glDrawElements(GL_TRIANGLES, ib.GetCount(), GL_UNSIGNED_INT, 0);
-	//glDrawArrays(GL_TRIANGLES, 0, sizeof(vb));
 }
 
-void Renderer::Square(const Entity e, std::vector<float> pos, Shader& shader)
+void Renderer::Square(const Entity e, std::vector<float> pos)
 {
 	EntityMemoryPool& pool = EntityMemoryPool::Instance();
 	//Entity player = pool.addEntity("player");
@@ -55,13 +104,11 @@ void Renderer::Square(const Entity e, std::vector<float> pos, Shader& shader)
 
 	IndexBuffer ib(indices, 6);
 
-	ib.Bind();
-
 	VertexBufferLayout layout;
 	layout.Push<float>(3);
 	layout.Push<float>(4);
 	va.addBuffer(vb, layout);
-	Renderer::DrawElements(va, vb, ib, shader);
+	Renderer::DrawElements(va, vb, ib);
 }
 
 void Renderer::Clear()

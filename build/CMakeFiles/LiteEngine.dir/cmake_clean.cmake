@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/LiteEngine.dir/src/Cgrain.cpp.obj.d"
   "CMakeFiles/LiteEngine.dir/src/Cgravity.cpp.obj"
   "CMakeFiles/LiteEngine.dir/src/Cgravity.cpp.obj.d"
+  "CMakeFiles/LiteEngine.dir/src/Command.cpp.obj"
+  "CMakeFiles/LiteEngine.dir/src/Command.cpp.obj.d"
   "CMakeFiles/LiteEngine.dir/src/Components.cpp.obj"
   "CMakeFiles/LiteEngine.dir/src/Components.cpp.obj.d"
   "CMakeFiles/LiteEngine.dir/src/Csand.cpp.obj"

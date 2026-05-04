@@ -14,13 +14,23 @@
 
 class Renderer
 {
+	int m_width = 1920;
+	int m_height = 1050; 
+	float aspectRatio = m_width/m_height;
+	double m_xpos, m_ypos;
+	Shader* m_shader;
+	GLFWwindow* m_window;
 
 public:
-
-	void Draw(const VertexArray& va, const VertexBuffer& vb, const Shader& shader) const;
-	void DrawElements(const VertexArray& va, const VertexBuffer& vb, const IndexBuffer& ib, const Shader& shader) const;
-	void Square(const Entity e, std::vector<float> pos, Shader& shader);
+	Renderer();
+	~Renderer();
+	Shader* loadShader(std::string vertex, std::string fragment);
+	GLFWwindow* getWindow();
+	void Draw(const VertexArray& va, const VertexBuffer& vb) const;
+	void DrawElements(const VertexArray& va, const VertexBuffer& vb, const IndexBuffer& ib) const;
+	void Square(const Entity e, std::vector<float> pos);
 	void Clear();
+
 
 
 };

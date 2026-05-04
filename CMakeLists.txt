@@ -40,7 +40,8 @@ add_executable(${PROJECT_NAME}
     src/EntityManager.cpp
     src/EntityMemoryPool.cpp
     src/Csand.cpp
-    src/Cgravity.cpp)
+    src/Cgravity.cpp
+    src/Command.cpp)
 
 target_include_directories(${PROJECT_NAME} PRIVATE include)
 target_include_directories(${PROJECT_NAME} PRIVATE include/GLFW)

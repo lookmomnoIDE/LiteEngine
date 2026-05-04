@@ -200,6 +200,30 @@ src/Cgravity.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Cgravity.cpp.s
 .PHONY : src/Cgravity.cpp.s
 
+src/Command.obj: src/Command.cpp.obj
+.PHONY : src/Command.obj
+
+# target to build an object file
+src/Command.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Command.cpp.obj
+.PHONY : src/Command.cpp.obj
+
+src/Command.i: src/Command.cpp.i
+.PHONY : src/Command.i
+
+# target to preprocess a source file
+src/Command.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Command.cpp.i
+.PHONY : src/Command.cpp.i
+
+src/Command.s: src/Command.cpp.s
+.PHONY : src/Command.s
+
+# target to generate assembly for a file
+src/Command.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Command.cpp.s
+.PHONY : src/Command.cpp.s
+
 src/Components.obj: src/Components.cpp.obj
 .PHONY : src/Components.obj
 
@@ -746,6 +770,9 @@ help:
 	@echo ... src/Cgravity.obj
 	@echo ... src/Cgravity.i
 	@echo ... src/Cgravity.s
+	@echo ... src/Command.obj
+	@echo ... src/Command.i
+	@echo ... src/Command.s
 	@echo ... src/Components.obj
 	@echo ... src/Components.i
 	@echo ... src/Components.s

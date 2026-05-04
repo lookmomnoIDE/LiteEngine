@@ -12,6 +12,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/projects/LiteEngineV003/src/CTransform.cpp" "CMakeFiles/LiteEngine.dir/src/CTransform.cpp.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/CTransform.cpp.obj.d"
   "C:/projects/LiteEngineV003/src/Cgrain.cpp" "CMakeFiles/LiteEngine.dir/src/Cgrain.cpp.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/Cgrain.cpp.obj.d"
   "C:/projects/LiteEngineV003/src/Cgravity.cpp" "CMakeFiles/LiteEngine.dir/src/Cgravity.cpp.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/Cgravity.cpp.obj.d"
+  "C:/projects/LiteEngineV003/src/Command.cpp" "CMakeFiles/LiteEngine.dir/src/Command.cpp.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/Command.cpp.obj.d"
   "C:/projects/LiteEngineV003/src/Components.cpp" "CMakeFiles/LiteEngine.dir/src/Components.cpp.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/Components.cpp.obj.d"
   "C:/projects/LiteEngineV003/src/Csand.cpp" "CMakeFiles/LiteEngine.dir/src/Csand.cpp.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/Csand.cpp.obj.d"
   "C:/projects/LiteEngineV003/src/Entity.cpp" "CMakeFiles/LiteEngine.dir/src/Entity.cpp.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/Entity.cpp.obj.d"

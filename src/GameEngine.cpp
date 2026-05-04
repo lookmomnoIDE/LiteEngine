@@ -5,7 +5,7 @@ GameEngine::GameEngine(){}
 
 void GameEngine::MainLoop()
 {
-	EntityManager.update()
+	//EntityManager.update()
 	sUserInput();
 	sMovement();
 	sCollision();
