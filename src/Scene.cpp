@@ -1,32 +1,37 @@
 #include "Scene.h"
 
 
-void Scene::update()
+virtual void Scene::init()
 {
 
 }
 
-void Scene::sDoAction(Command c)
+virtual void Scene::update()
+{
+	//EntityVec& currentEntities = entityMan.getEntities();
+}
+
+virtual void Scene::sDoAction(Command c)
 {
 
 }
 
-void Scene::sRender()
+virtual void Scene::sRender()
 {
 
 }
 
-void Scene::simulate(int i)
+virtual void Scene::simulate(int i)
 {
 
 }
 
-void Scene::doAction(Command c)
+virtual void Scene::doAction(Command c)
 {
 
 }
 
-void Scene::registerAction(Command c)
+virtual void Scene::registerAction(Command c)
 {
 
 }

@@ -29,6 +29,7 @@ public:
 	void Draw(const VertexArray& va, const VertexBuffer& vb) const;
 	void DrawElements(const VertexArray& va, const VertexBuffer& vb, const IndexBuffer& ib) const;
 	void Square(const Entity e, std::vector<float> pos);
+	void SwapBuffers();
 	void Clear();
 
 

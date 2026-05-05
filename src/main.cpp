@@ -2,8 +2,6 @@
 
 
 //------------------------//   GLOBAL VARIABLES   //------------------------//
-int width = 1920;
-int height = 1050; 
 double xpos, ypos;
 unsigned int framecount = 0;
 
@@ -90,9 +88,9 @@ int main(int argc, char* argv[])
 			std::vector<float> pos = pool.getComponent<CTransform>(e.getID()).getPos();
 			renderer.Square(e, pos);
 		}
-
-		glfwSwapBuffers(window);
-		glfwPollEvents();
+		renderer.SwapBuffers(); //Remove when scene(s) complete
+		//glfwSwapBuffers(window);
+		glfwPollEvents();	//Remove when game engine works
 		framecount++;
 	}
 

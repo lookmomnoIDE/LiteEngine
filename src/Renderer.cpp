@@ -111,6 +111,13 @@ void Renderer::Square(const Entity e, std::vector<float> pos)
 	Renderer::DrawElements(va, vb, ib);
 }
 
+
+void Renderer::SwapBuffers()
+{
+	glfwSwapBuffers(m_window);
+}
+
+
 void Renderer::Clear()
 {
 	glClear(GL_COLOR_BUFFER_BIT);

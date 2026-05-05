@@ -10,20 +10,21 @@
 
 class Scene 
 {
-	GameEngine* m_game;
-	EntityMan* m_entities;
+	GameEngine* m_game = nullptr;
 	int m_frame;
-	map<int, std::string> m_actionMap;
+	//std::map<int i, std::string> m_actionMap;
 	bool m_paused;
 public:
+	virtual ~Scene() = default;
+	virtual void init() = 0;
 
-	void update();
-	void sDoAction(Command c);
-	void sRender();
-
-	void simulate(int i);
-	void doAction(Command c);
-	void registerAction(Command c);
+	virtual void update() = 0;
+	virtual void sDoAction(Command& c);
+	virtual void sRender();
+	
+	virtual void simulate(int i);
+	virtual void doAction(Command& c);
+	virtual void registerAction(Command& c);
 };
 #endif
 
