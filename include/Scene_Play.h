@@ -2,7 +2,8 @@
 #define SCENE_PLAY_H
 
 #include "Scene.h"
-
+#include "EntityManager.h"
+#include <iostream>
 
 class Scene_Play : public Scene
 {

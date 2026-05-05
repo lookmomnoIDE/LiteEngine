@@ -51,7 +51,7 @@ void Scene_Play::sRender()
 	EntityVec entities = m_game->getEntityMan().getEntities();
 	for ( Entity e : entities )
 	{
-		std::vector<float> pos = pool.getComponent<CTransform>(e.getID()).getPos();
+		std::vector<float> pos = getPool().getComponent<CTransform>(e.getID()).getPos();
 		renderer.Square(e, pos);
 	}
 	m_game->getRenderer().swapBuffers();

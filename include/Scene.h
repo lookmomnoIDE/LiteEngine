@@ -10,11 +10,12 @@ class GameEngine;
 
 class Scene 
 {
-	GameEngine* m_game = nullptr;
+	
 	int m_frame;
 	//std::map<int i, std::string> m_actionMap;
 	bool m_paused = false;
 public:
+	GameEngine* m_game = nullptr;
 	virtual ~Scene() = default;
 	virtual void init() = 0;
 	virtual void update() = 0;
