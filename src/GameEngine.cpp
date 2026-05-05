@@ -3,8 +3,7 @@
 GameEngine::GameEngine()
 	:m_running(true)
 {
-	
-	//GLFWwindow* window = renderer.getWindow();
+	GLFWwindow* m_window = g.getRenderer().getWindow();
 }
 
 
@@ -14,17 +13,17 @@ void GameEngine::update()
 }
 
 
-GameEngine::run()
+void GameEngine::run()
 {
 	while(m_running)
 	{
 		m_entityMan.update();
-		processInput(m_window);
-		GameEngine::sUserInput();
+		processInput(m_window); 	//put in UI system
 		currentScene()->update();
         currentScene()->sRender();
+        GameEngine::sUserInput();
 		glfwSwapBuffers(m_window);
-		glfwPollEvents();
+		glfwPollEvents();			//put in UI system
 		m_currentFrame++;
 	}
 }
@@ -32,29 +31,20 @@ GameEngine::run()
 
 void GameEngine::quit()
 {
-
+	m_running = false;
 }
 
-/*void GameEngine::MainLoop()
-{
-	//EntityManager.update()
-	Scene_Play::sUserInput();
-	Scene_Play::sMovement();
-	Scene_Play::sCollision();
-	Scene_Play::sRender();
-	m_currentFrame++;
-}*/
 
 void GameEngine::spawnEnemy()
 {
-	auto e = EntityManager.addEntity("enemy");
+	auto e = m_entityMan.addEntity("enemy");
 }
 
 template <typename T, typename... Args>
 void GameEngine::changeScene(const std::string name, Args&&... args)
 {
-	m_scenes[name] = std::unique_ptr<T>(this, std::forward<Args>(args)...);
-	m_currentScene = name;
+    m_scenes[name] = std::make_unique<T>(this, std::forward<Args>(args)...);
+    m_currentScene = name;
 }
 
 Scene* GameEngine::currentScene() {
@@ -82,5 +72,17 @@ EntityMan& GameEngine::getEntityMan()
 
 void GameEngine::sUserInput()
 {
+	std::cout << "Hello Monkeys!!!" << std::endl;
+}
+
+
+void GameEngine::processInput(GLFWwindow* window)
+{
+	if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+	{
+		glfwSetWindowShouldClose(window, true);
+		g.quit();
+	}
 	
 }
+

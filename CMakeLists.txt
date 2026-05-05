@@ -17,7 +17,9 @@ set_target_properties(glfw PROPERTIES
 
 add_executable(${PROJECT_NAME}
 	src/glad.c
+
 	src/main.cpp
+    #src/Scene.cpp
 	src/imgui.cpp 
     src/imgui_draw.cpp 
     src/imgui_impl_glfw.cpp 
@@ -41,7 +43,12 @@ add_executable(${PROJECT_NAME}
     src/EntityMemoryPool.cpp
     src/Csand.cpp
     src/Cgravity.cpp
-    src/Command.cpp)
+    src/EntityFactory.cpp
+    src/Scene_Play.cpp
+    src/GameEngine.cpp
+    
+    #src/Command.cpp
+    )
 
 target_include_directories(${PROJECT_NAME} PRIVATE include)
 target_include_directories(${PROJECT_NAME} PRIVATE include/GLFW)

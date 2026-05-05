@@ -446,20 +446,50 @@ CMakeFiles/LiteEngine.dir/src/Cgravity.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/LiteEngine.dir/src/Cgravity.cpp.s"
 	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\projects\LiteEngineV003\src\Cgravity.cpp -o CMakeFiles\LiteEngine.dir\src\Cgravity.cpp.s
 
-CMakeFiles/LiteEngine.dir/src/Command.cpp.obj: CMakeFiles/LiteEngine.dir/flags.make
-CMakeFiles/LiteEngine.dir/src/Command.cpp.obj: CMakeFiles/LiteEngine.dir/includes_CXX.rsp
-CMakeFiles/LiteEngine.dir/src/Command.cpp.obj: C:/projects/LiteEngineV003/src/Command.cpp
-CMakeFiles/LiteEngine.dir/src/Command.cpp.obj: CMakeFiles/LiteEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\projects\LiteEngineV003\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/LiteEngine.dir/src/Command.cpp.obj"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/LiteEngine.dir/src/Command.cpp.obj -MF CMakeFiles\LiteEngine.dir\src\Command.cpp.obj.d -o CMakeFiles\LiteEngine.dir\src\Command.cpp.obj -c C:\projects\LiteEngineV003\src\Command.cpp
+CMakeFiles/LiteEngine.dir/src/EntityFactory.cpp.obj: CMakeFiles/LiteEngine.dir/flags.make
+CMakeFiles/LiteEngine.dir/src/EntityFactory.cpp.obj: CMakeFiles/LiteEngine.dir/includes_CXX.rsp
+CMakeFiles/LiteEngine.dir/src/EntityFactory.cpp.obj: C:/projects/LiteEngineV003/src/EntityFactory.cpp
+CMakeFiles/LiteEngine.dir/src/EntityFactory.cpp.obj: CMakeFiles/LiteEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\projects\LiteEngineV003\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/LiteEngine.dir/src/EntityFactory.cpp.obj"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/LiteEngine.dir/src/EntityFactory.cpp.obj -MF CMakeFiles\LiteEngine.dir\src\EntityFactory.cpp.obj.d -o CMakeFiles\LiteEngine.dir\src\EntityFactory.cpp.obj -c C:\projects\LiteEngineV003\src\EntityFactory.cpp
 
-CMakeFiles/LiteEngine.dir/src/Command.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/LiteEngine.dir/src/Command.cpp.i"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\projects\LiteEngineV003\src\Command.cpp > CMakeFiles\LiteEngine.dir\src\Command.cpp.i
+CMakeFiles/LiteEngine.dir/src/EntityFactory.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/LiteEngine.dir/src/EntityFactory.cpp.i"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\projects\LiteEngineV003\src\EntityFactory.cpp > CMakeFiles\LiteEngine.dir\src\EntityFactory.cpp.i
 
-CMakeFiles/LiteEngine.dir/src/Command.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/LiteEngine.dir/src/Command.cpp.s"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\projects\LiteEngineV003\src\Command.cpp -o CMakeFiles\LiteEngine.dir\src\Command.cpp.s
+CMakeFiles/LiteEngine.dir/src/EntityFactory.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/LiteEngine.dir/src/EntityFactory.cpp.s"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\projects\LiteEngineV003\src\EntityFactory.cpp -o CMakeFiles\LiteEngine.dir\src\EntityFactory.cpp.s
+
+CMakeFiles/LiteEngine.dir/src/Scene_Play.cpp.obj: CMakeFiles/LiteEngine.dir/flags.make
+CMakeFiles/LiteEngine.dir/src/Scene_Play.cpp.obj: CMakeFiles/LiteEngine.dir/includes_CXX.rsp
+CMakeFiles/LiteEngine.dir/src/Scene_Play.cpp.obj: C:/projects/LiteEngineV003/src/Scene_Play.cpp
+CMakeFiles/LiteEngine.dir/src/Scene_Play.cpp.obj: CMakeFiles/LiteEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\projects\LiteEngineV003\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/LiteEngine.dir/src/Scene_Play.cpp.obj"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/LiteEngine.dir/src/Scene_Play.cpp.obj -MF CMakeFiles\LiteEngine.dir\src\Scene_Play.cpp.obj.d -o CMakeFiles\LiteEngine.dir\src\Scene_Play.cpp.obj -c C:\projects\LiteEngineV003\src\Scene_Play.cpp
+
+CMakeFiles/LiteEngine.dir/src/Scene_Play.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/LiteEngine.dir/src/Scene_Play.cpp.i"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\projects\LiteEngineV003\src\Scene_Play.cpp > CMakeFiles\LiteEngine.dir\src\Scene_Play.cpp.i
+
+CMakeFiles/LiteEngine.dir/src/Scene_Play.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/LiteEngine.dir/src/Scene_Play.cpp.s"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\projects\LiteEngineV003\src\Scene_Play.cpp -o CMakeFiles\LiteEngine.dir\src\Scene_Play.cpp.s
+
+CMakeFiles/LiteEngine.dir/src/GameEngine.cpp.obj: CMakeFiles/LiteEngine.dir/flags.make
+CMakeFiles/LiteEngine.dir/src/GameEngine.cpp.obj: CMakeFiles/LiteEngine.dir/includes_CXX.rsp
+CMakeFiles/LiteEngine.dir/src/GameEngine.cpp.obj: C:/projects/LiteEngineV003/src/GameEngine.cpp
+CMakeFiles/LiteEngine.dir/src/GameEngine.cpp.obj: CMakeFiles/LiteEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\projects\LiteEngineV003\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/LiteEngine.dir/src/GameEngine.cpp.obj"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/LiteEngine.dir/src/GameEngine.cpp.obj -MF CMakeFiles\LiteEngine.dir\src\GameEngine.cpp.obj.d -o CMakeFiles\LiteEngine.dir\src\GameEngine.cpp.obj -c C:\projects\LiteEngineV003\src\GameEngine.cpp
+
+CMakeFiles/LiteEngine.dir/src/GameEngine.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/LiteEngine.dir/src/GameEngine.cpp.i"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\projects\LiteEngineV003\src\GameEngine.cpp > CMakeFiles\LiteEngine.dir\src\GameEngine.cpp.i
+
+CMakeFiles/LiteEngine.dir/src/GameEngine.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/LiteEngine.dir/src/GameEngine.cpp.s"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\projects\LiteEngineV003\src\GameEngine.cpp -o CMakeFiles\LiteEngine.dir\src\GameEngine.cpp.s
 
 # Object files for target LiteEngine
 LiteEngine_OBJECTS = \
@@ -488,7 +518,9 @@ LiteEngine_OBJECTS = \
 "CMakeFiles/LiteEngine.dir/src/EntityMemoryPool.cpp.obj" \
 "CMakeFiles/LiteEngine.dir/src/Csand.cpp.obj" \
 "CMakeFiles/LiteEngine.dir/src/Cgravity.cpp.obj" \
-"CMakeFiles/LiteEngine.dir/src/Command.cpp.obj"
+"CMakeFiles/LiteEngine.dir/src/EntityFactory.cpp.obj" \
+"CMakeFiles/LiteEngine.dir/src/Scene_Play.cpp.obj" \
+"CMakeFiles/LiteEngine.dir/src/GameEngine.cpp.obj"
 
 # External object files for target LiteEngine
 LiteEngine_EXTERNAL_OBJECTS =
@@ -518,13 +550,15 @@ LiteEngine.exe: CMakeFiles/LiteEngine.dir/src/EntityManager.cpp.obj
 LiteEngine.exe: CMakeFiles/LiteEngine.dir/src/EntityMemoryPool.cpp.obj
 LiteEngine.exe: CMakeFiles/LiteEngine.dir/src/Csand.cpp.obj
 LiteEngine.exe: CMakeFiles/LiteEngine.dir/src/Cgravity.cpp.obj
-LiteEngine.exe: CMakeFiles/LiteEngine.dir/src/Command.cpp.obj
+LiteEngine.exe: CMakeFiles/LiteEngine.dir/src/EntityFactory.cpp.obj
+LiteEngine.exe: CMakeFiles/LiteEngine.dir/src/Scene_Play.cpp.obj
+LiteEngine.exe: CMakeFiles/LiteEngine.dir/src/GameEngine.cpp.obj
 LiteEngine.exe: CMakeFiles/LiteEngine.dir/build.make
 LiteEngine.exe: C:/projects/LiteEngineV003/lib/libglfw3.a
 LiteEngine.exe: CMakeFiles/LiteEngine.dir/linkLibs.rsp
 LiteEngine.exe: CMakeFiles/LiteEngine.dir/objects1.rsp
 LiteEngine.exe: CMakeFiles/LiteEngine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\projects\LiteEngineV003\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Linking CXX executable LiteEngine.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\projects\LiteEngineV003\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Linking CXX executable LiteEngine.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\LiteEngine.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

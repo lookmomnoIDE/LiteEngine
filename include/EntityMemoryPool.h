@@ -7,8 +7,11 @@
 #include "Cgrain.h"
 #include "Csand.h"
 #include "Cgravity.h"
+#include "Tags.h"
 #include <vector>
 #include <string>
+#include <cstdint>
+#include <unordered_map>
 
 class Entity;
 static const size_t MAX_ENTITIES = 1000;
@@ -22,10 +25,11 @@ public:
 	std::vector<Csand>,
 	std::vector<Cgravity>
 	> EntityComponentVectorTuple;
+
 private:
 	size_t m_numEntities;
 	EntityComponentVectorTuple m_pool;
-	std::vector<std::string> m_tags;
+	std::vector<Tag> m_tags;
 	std::vector<bool> m_active;
 	size_t m_MAX_ENTITIES;
 	EntityMemoryPool(size_t MAX_ENTITIES);
@@ -63,12 +67,15 @@ public:
 	}
 
 
-	const std::string & getTag(size_t entityID) const;
-	std::string & getTag(size_t entityID);
+	const Tag& getTag(size_t entityID) const;
+	Tag& getTag(size_t entityID);
+	bool hasTag(size_t entityID, Tag tag) const;
 
-	Entity addEntity(const std::string& tag);
+	Entity addEntity(const Tag tag);
 
 	size_t getNextEntityIndex();
+
+	int getEnum(std::string s);
 };
 
 

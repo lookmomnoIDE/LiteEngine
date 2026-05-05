@@ -1,6 +1,11 @@
+#ifndef GAMEENGINE_H
+#define GAMEENGINE_H
+
+#include "Scene.h"
 #include "EntityManager.h"
 #include "Renderer.h"
-#include "Scene.h"
+
+#include "Scene_Play.h"
 #include <string>
 #include <map>
 #include <memory>
@@ -18,6 +23,7 @@ class GameEngine
 	EntityMemoryPool& m_pool = EntityMemoryPool::Instance();
 	EntityMan& m_entityMan = EntityMan::Instance();
 	Renderer& m_renderer;
+	GLFWwindow* m_window;
 
 public:
 	GameEngine();
@@ -26,7 +32,12 @@ public:
 	void run();
 	void quit();
 
-	void chaneScene(const std::string name, Args&&... args);
+	template <typename T, typename... Args>
+	void changeScene(const std::string name, Args&&... args)
+	{
+	    m_scenes[name] = std::make_unique<T>(this, std::forward<Args>(args)...);
+	    m_currentScene = name;
+	}
 	Scene* currentScene();
 	//Todo
 	//Assets& getAssets();
@@ -36,3 +47,5 @@ public:
 	void sUserInput();
 
 };
+
+#endif

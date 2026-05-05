@@ -38,7 +38,7 @@ public:
 			&LMB_->execute();
 		}
 	}
-}
+};
 
 
 #endif

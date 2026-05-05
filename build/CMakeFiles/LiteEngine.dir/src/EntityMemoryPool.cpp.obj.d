@@ -114,10 +114,19 @@ CMakeFiles/LiteEngine.dir/src/EntityMemoryPool.cpp.obj: \
  C:/mingw64/include/c++/15.2.0/cerrno \
  C:/mingw64/include/c++/15.2.0/bits/charconv.h \
  C:/mingw64/include/c++/15.2.0/bits/basic_string.tcc \
+ C:/mingw64/include/c++/15.2.0/cstdint \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdint.h \
+ C:/mingw64/x86_64-w64-mingw32/include/stdint.h \
  C:/projects/LiteEngineV003/include/EntityMemoryPool.h \
+ C:/projects/LiteEngineV003/include/Tags.h \
  C:/projects/LiteEngineV003/include/Entity.h \
  C:/projects/LiteEngineV003/include/CTransform.h \
  C:/projects/LiteEngineV003/include/Cgrain.h \
  C:/projects/LiteEngineV003/include/Csand.h \
  C:/projects/LiteEngineV003/include/Cgravity.h \
+ C:/mingw64/include/c++/15.2.0/unordered_map \
+ C:/mingw64/include/c++/15.2.0/bits/unordered_map.h \
+ C:/mingw64/include/c++/15.2.0/bits/hashtable.h \
+ C:/mingw64/include/c++/15.2.0/bits/hashtable_policy.h \
+ C:/mingw64/include/c++/15.2.0/bits/enable_special_members.h \
  C:/projects/LiteEngineV003/include/Entity.h

@@ -353,3 +353,65 @@ void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 		}
 }
 
+
+
+
+
+	//glm::mat4 proj = glm::mat4();
+
+
+	//Texture texture("../res/fabric.jpg");
+	//texture.Bind();
+	//ourShader.setInt("u_Texture", texture.GetSlot());
+	
+	
+
+
+
+	
+	/*while(!glfwWindowShouldClose(window))
+	{
+		entityMan.update();
+		processInput(window);
+		renderer.Clear();
+
+		//float timeValue = glfwGetTime();
+		//ourShader.setFloat("uTime", timeValue);
+
+		EntityVec& currentEntities = entityMan.getEntities();
+
+		for ( Entity e : currentEntities )
+		{
+			if(pool.hasComponent<Cgravity>(e.getID()))
+			{
+				CTransform& transform = pool.getComponent<CTransform>(e.getID());
+				Cgravity& gravity = pool.getComponent<Cgravity>(e.getID());
+				std::vector<float>& vel = transform.getVel();
+				vel[1] += gravity.getGravity();
+				std::vector<float>& pos = transform.getPos();
+				pos[1] += vel[1];
+				std::cout << "x: " << pos[0] << "y: " << pos[1] << std::endl;
+				if (pos[1] <= -1)
+				{
+					pos[1] = -.9;
+					vel[0] = 0;
+					vel[1] = 0;
+					pool.remComponent<Cgravity>(e.getID());
+				}
+				transform.setPos(pos);
+				transform.setVel(vel);				
+			}
+			
+		}
+
+		//draw entities at position
+		for ( Entity e : currentEntities )
+		{
+			std::vector<float> pos = pool.getComponent<CTransform>(e.getID()).getPos();
+			renderer.Square(e, pos);
+		}
+		renderer.SwapBuffers(); //Remove when scene(s) complete
+		//glfwSwapBuffers(window);
+		glfwPollEvents();	//Remove when game engine works
+		framecount++;
+	}*/

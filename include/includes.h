@@ -13,7 +13,7 @@
 #include <glm/ext/scalar_constants.hpp> // glm::pi\
 
 
-
+#include "GameEngine.h"
 #include "shader.h"
 #include "VertexBuffer.h"
 #include "IndexBuffer.h"

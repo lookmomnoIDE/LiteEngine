@@ -3,9 +3,9 @@
 
 #include <string>
 #include <map>
-#include "Command.h"
-#include "GameEngine.h"
-#include "EntityManager.h"
+//#include "Command.h"
+
+class GameEngine;
 
 
 class Scene 
@@ -13,18 +13,16 @@ class Scene
 	GameEngine* m_game = nullptr;
 	int m_frame;
 	//std::map<int i, std::string> m_actionMap;
-	bool m_paused;
+	bool m_paused = false;
 public:
 	virtual ~Scene() = default;
 	virtual void init() = 0;
-
 	virtual void update() = 0;
-	virtual void sDoAction(Command& c);
-	virtual void sRender();
-	
-	virtual void simulate(int i);
-	virtual void doAction(Command& c);
-	virtual void registerAction(Command& c);
+	//virtual void sDoAction(Command& c) = 0;
+	virtual void sRender() = 0;
+	virtual void simulate(int i) = 0;
+	//virtual void doAction(Command& c) = 0;
+	//virtual void registerAction(Command& c) = 0;
 };
 #endif
 

@@ -200,30 +200,6 @@ src/Cgravity.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Cgravity.cpp.s
 .PHONY : src/Cgravity.cpp.s
 
-src/Command.obj: src/Command.cpp.obj
-.PHONY : src/Command.obj
-
-# target to build an object file
-src/Command.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Command.cpp.obj
-.PHONY : src/Command.cpp.obj
-
-src/Command.i: src/Command.cpp.i
-.PHONY : src/Command.i
-
-# target to preprocess a source file
-src/Command.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Command.cpp.i
-.PHONY : src/Command.cpp.i
-
-src/Command.s: src/Command.cpp.s
-.PHONY : src/Command.s
-
-# target to generate assembly for a file
-src/Command.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Command.cpp.s
-.PHONY : src/Command.cpp.s
-
 src/Components.obj: src/Components.cpp.obj
 .PHONY : src/Components.obj
 
@@ -296,6 +272,30 @@ src/Entity.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Entity.cpp.s
 .PHONY : src/Entity.cpp.s
 
+src/EntityFactory.obj: src/EntityFactory.cpp.obj
+.PHONY : src/EntityFactory.obj
+
+# target to build an object file
+src/EntityFactory.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/EntityFactory.cpp.obj
+.PHONY : src/EntityFactory.cpp.obj
+
+src/EntityFactory.i: src/EntityFactory.cpp.i
+.PHONY : src/EntityFactory.i
+
+# target to preprocess a source file
+src/EntityFactory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/EntityFactory.cpp.i
+.PHONY : src/EntityFactory.cpp.i
+
+src/EntityFactory.s: src/EntityFactory.cpp.s
+.PHONY : src/EntityFactory.s
+
+# target to generate assembly for a file
+src/EntityFactory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/EntityFactory.cpp.s
+.PHONY : src/EntityFactory.cpp.s
+
 src/EntityManager.obj: src/EntityManager.cpp.obj
 .PHONY : src/EntityManager.obj
 
@@ -343,6 +343,30 @@ src/EntityMemoryPool.s: src/EntityMemoryPool.cpp.s
 src/EntityMemoryPool.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/EntityMemoryPool.cpp.s
 .PHONY : src/EntityMemoryPool.cpp.s
+
+src/GameEngine.obj: src/GameEngine.cpp.obj
+.PHONY : src/GameEngine.obj
+
+# target to build an object file
+src/GameEngine.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/GameEngine.cpp.obj
+.PHONY : src/GameEngine.cpp.obj
+
+src/GameEngine.i: src/GameEngine.cpp.i
+.PHONY : src/GameEngine.i
+
+# target to preprocess a source file
+src/GameEngine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/GameEngine.cpp.i
+.PHONY : src/GameEngine.cpp.i
+
+src/GameEngine.s: src/GameEngine.cpp.s
+.PHONY : src/GameEngine.s
+
+# target to generate assembly for a file
+src/GameEngine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/GameEngine.cpp.s
+.PHONY : src/GameEngine.cpp.s
 
 src/IndexBuffer.obj: src/IndexBuffer.cpp.obj
 .PHONY : src/IndexBuffer.obj
@@ -415,6 +439,30 @@ src/Renderer.s: src/Renderer.cpp.s
 src/Renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Renderer.cpp.s
 .PHONY : src/Renderer.cpp.s
+
+src/Scene_Play.obj: src/Scene_Play.cpp.obj
+.PHONY : src/Scene_Play.obj
+
+# target to build an object file
+src/Scene_Play.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Scene_Play.cpp.obj
+.PHONY : src/Scene_Play.cpp.obj
+
+src/Scene_Play.i: src/Scene_Play.cpp.i
+.PHONY : src/Scene_Play.i
+
+# target to preprocess a source file
+src/Scene_Play.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Scene_Play.cpp.i
+.PHONY : src/Scene_Play.cpp.i
+
+src/Scene_Play.s: src/Scene_Play.cpp.s
+.PHONY : src/Scene_Play.s
+
+# target to generate assembly for a file
+src/Scene_Play.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Scene_Play.cpp.s
+.PHONY : src/Scene_Play.cpp.s
 
 src/Shader.obj: src/Shader.cpp.obj
 .PHONY : src/Shader.obj
@@ -770,9 +818,6 @@ help:
 	@echo ... src/Cgravity.obj
 	@echo ... src/Cgravity.i
 	@echo ... src/Cgravity.s
-	@echo ... src/Command.obj
-	@echo ... src/Command.i
-	@echo ... src/Command.s
 	@echo ... src/Components.obj
 	@echo ... src/Components.i
 	@echo ... src/Components.s
@@ -782,12 +827,18 @@ help:
 	@echo ... src/Entity.obj
 	@echo ... src/Entity.i
 	@echo ... src/Entity.s
+	@echo ... src/EntityFactory.obj
+	@echo ... src/EntityFactory.i
+	@echo ... src/EntityFactory.s
 	@echo ... src/EntityManager.obj
 	@echo ... src/EntityManager.i
 	@echo ... src/EntityManager.s
 	@echo ... src/EntityMemoryPool.obj
 	@echo ... src/EntityMemoryPool.i
 	@echo ... src/EntityMemoryPool.s
+	@echo ... src/GameEngine.obj
+	@echo ... src/GameEngine.i
+	@echo ... src/GameEngine.s
 	@echo ... src/IndexBuffer.obj
 	@echo ... src/IndexBuffer.i
 	@echo ... src/IndexBuffer.s
@@ -797,6 +848,9 @@ help:
 	@echo ... src/Renderer.obj
 	@echo ... src/Renderer.i
 	@echo ... src/Renderer.s
+	@echo ... src/Scene_Play.obj
+	@echo ... src/Scene_Play.i
+	@echo ... src/Scene_Play.s
 	@echo ... src/Shader.obj
 	@echo ... src/Shader.i
 	@echo ... src/Shader.s

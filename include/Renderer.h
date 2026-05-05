@@ -1,4 +1,5 @@
-#pragma once
+#ifndef RENDERER_H
+#define RENDERER_H
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -16,7 +17,7 @@ class Renderer
 {
 	int m_width = 1920;
 	int m_height = 1050; 
-	float aspectRatio = m_width/m_height;
+	float m_aspectRatioX = m_width/m_height;
 	double m_xpos, m_ypos;
 	Shader* m_shader;
 	GLFWwindow* m_window;
@@ -31,7 +32,11 @@ public:
 	void Square(const Entity e, std::vector<float> pos);
 	void SwapBuffers();
 	void Clear();
-
-
-
+	int getWidth() const;
+	int getHeight() const;
+	void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+	void mouse_button_callback(GLFWwindow* window, int button, int action, int mods);
+	std::vector<double> getMousePosition();
 };
+
+#endif

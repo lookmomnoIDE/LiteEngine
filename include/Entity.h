@@ -4,7 +4,8 @@
 
 
 
-class Entity{
+class Entity
+{
 
 	size_t m_ID;
 	Entity();

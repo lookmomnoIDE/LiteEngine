@@ -3,7 +3,7 @@
 
 virtual void Scene::init()
 {
-
+	
 }
 
 virtual void Scene::update()

@@ -31,6 +31,19 @@ Renderer::Renderer()
 	glViewport(0, 0, m_width, m_height);
 	m_shader = new Shader("../src/cool.vert", "../src/beans.frag");
 	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+	glfwSetWindowUserPointer(m_window, this);
+	glfwSetFramebufferSizeCallback(m_window, [](GLFWwindow* window, int width, int height) 
+	{
+	    // Retrieve the Renderer instance
+	    auto* renderer = static_cast<Renderer*>(glfwGetWindowUserPointer(window));
+	    renderer->framebuffer_size_callback(window, width, height);
+	});
+
+	glfwSetMouseButtonCallback(m_window, [](GLFWwindow* window, int button, int action, int mods)
+	{
+		auto* renderer = static_cast<Renderer*>(glfwGetWindowUserPointer(window));
+		renderer->mouse_button_callback(window, button, action, mods);
+	});
 }
 
 Renderer::~Renderer()
@@ -75,13 +88,12 @@ void Renderer::Square(const Entity e, std::vector<float> pos)
 	//Entity player = pool.addEntity("player");
 	size_t id = e.getID(); // however your Entity exposes its index
 	pool.getComponent<CTransform>(id).setPos(pos);
-	float xRatio = 1920.0f/1050.0f;
 	Cgrain& s = pool.getComponent<Cgrain>(id);
 	float size = s.getSize();
 	std::vector<float> color = {pool.getComponent<Csand>(id).getColor()};
 
 
-	float halfX = (size / xRatio) / 2.0f;
+	float halfX = (size / m_aspectRatioX) / 2.0f;
 	float halfY = size / 2.0f;
 	//std::cout <<"halfX: "<< halfX << ", " <<"halfY: " << halfY << std::endl;
 
@@ -123,4 +135,34 @@ void Renderer::Clear()
 	glClear(GL_COLOR_BUFFER_BIT);
 }
 
+
+int Renderer::getWidth() const
+{
+	return m_width;
+}
+
+int Renderer::getHeight() const 
+{
+	return m_height;
+}
+
+void Renderer::framebuffer_size_callback(GLFWwindow* window, int width, int height)
+{
+	glViewport(0, 0, width, height);
+}
+
+void Renderer::mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
+{
+	if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS)
+		{
+			//LMB_->execute();
+			glfwGetCursorPos(m_window, &m_xpos, &m_ypos);
+			//addSand(xpos, ypos);
+		}
+}
+
+std::vector<double> Renderer::getMousePosition()
+{
+	return {m_xpos, m_ypos};
+}
 

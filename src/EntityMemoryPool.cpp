@@ -4,12 +4,12 @@
 EntityMemoryPool::EntityMemoryPool(size_t MAX_ENTITIES)
     : m_MAX_ENTITIES(MAX_ENTITIES), m_numEntities(0)
 {
-    m_tags.resize(MAX_ENTITIES);
-    m_active.resize(MAX_ENTITIES, false);
-    std::get<std::vector<CTransform>>(m_pool).resize(MAX_ENTITIES);
-    std::get<std::vector<Cgrain>>(m_pool).resize(MAX_ENTITIES);
-    std::get<std::vector<Csand>>(m_pool).resize(MAX_ENTITIES);
-    std::get<std::vector<Cgravity>>(m_pool).resize(MAX_ENTITIES);
+    std::get<std::vector<CTransform>>(m_pool).resize(m_MAX_ENTITIES);
+    std::get<std::vector<Cgrain>>(m_pool).resize(m_MAX_ENTITIES);
+    std::get<std::vector<Csand>>(m_pool).resize(m_MAX_ENTITIES);
+    std::get<std::vector<Cgravity>>(m_pool).resize(m_MAX_ENTITIES);
+    m_tags.resize(m_MAX_ENTITIES);
+	m_active.resize(m_MAX_ENTITIES, false);
 }
 
 
@@ -40,17 +40,30 @@ std::vector<bool>& EntityMemoryPool::getActive()
 }
 
 
-const std::string & EntityMemoryPool::getTag(size_t entityID) const
+const Tag& EntityMemoryPool::getTag(size_t entityID) const
 {
 	return m_tags[entityID];
 }
 
-std::string & EntityMemoryPool::getTag(size_t entityID)
+Tag& EntityMemoryPool::getTag(size_t entityID)
 {
 	return m_tags[entityID];
 }
 
-Entity EntityMemoryPool::addEntity(const std::string& tag)
+bool EntityMemoryPool::hasTag(size_t entityID, Tag tag) const
+{
+	if (m_tags[entityID] == tag)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+	
+}
+
+Entity EntityMemoryPool::addEntity(const Tag tag)
 {
 	size_t index = getNextEntityIndex();
 
@@ -70,4 +83,13 @@ size_t EntityMemoryPool::getNextEntityIndex()
 		}
 	}
 
+}
+
+int EntityMemoryPool::getEnum(std::string s)
+{
+    static const std::unordered_map<std::string, uint8_t> tagMap = {
+        {"grain", 0}, {"sand", 1}, {"gravity", 2}  // your actual tags
+    };
+    auto it = tagMap.find(s);
+    return (it != tagMap.end()) ? it->second : 255; // 255 = not found
 }

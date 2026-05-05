@@ -1,14 +1,15 @@
 #include "Scene_Play.h"
 
 
-void init()
+void Scene_Play::init()
 {
 
 }
 
-void update()
+void Scene_Play::update()
 {
-	for ( Entity e : m_entities )
+	EntityVec entities = m_game->getEntityMan().getEntities();
+	for ( Entity e : entities )
 	{
 		if(m_game->getPool().hasComponent<Cgravity>(e.getID()))
 		{
@@ -32,33 +33,34 @@ void update()
 		
 	}
 }
-void sAnimation()
+void Scene_Play::sAnimation()
 {
 
 }
-void sEnemySpawner()
+void Scene_Play::sEnemySpawner()
 {
 
 }
-void sCollision()
+void Scene_Play::sCollision()
 {
 
 }
-void sRender()
+void Scene_Play::sRender()
 {
 	m_game->getRenderer().clear();
-	for ( Entity e : m_entities )
+	EntityVec entities = m_game->getEntityMan().getEntities();
+	for ( Entity e : entities )
 	{
 		std::vector<float> pos = pool.getComponent<CTransform>(e.getID()).getPos();
 		renderer.Square(e, pos);
 	}
 	m_game->getRenderer().swapBuffers();
 }
-void sDoAction()
+void Scene_Play::sDoAction()
 {
 
 }
-void sGUI()
+void Scene_Play::sGUI()
 {
 
 }

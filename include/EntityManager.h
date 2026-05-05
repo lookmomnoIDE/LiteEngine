@@ -4,7 +4,9 @@
 #include <map>
 #include <vector>
 #include <string>
+#include <cstdint>
 #include "EntityMemoryPool.h"
+#include "Tags.h"
 
 
 class Entity;
@@ -23,9 +25,9 @@ class EntityMan
 public:
 	static EntityMan & Instance();
 	void update();
-	Entity addEntity(const std::string& tag);
+	Entity addEntity(const Tag tag);
 	EntityVec& getEntities();
-	EntityVec& getEntities(const std::string& tag);
+	EntityVec& getEntities(const Tag tag);
 	void remEntity(size_t index);
 };
 
