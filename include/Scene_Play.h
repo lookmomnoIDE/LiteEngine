@@ -7,17 +7,19 @@
 
 class Scene_Play : public Scene
 {
-	std::string m_level;
+	std::string m_level = "play";
 
 public:
-	void init();
-	void update();
+	Scene_Play(GameEngine* game, Renderer* renderer);
+	//void init(GameEngine* game) override;
+	void update() override;
 	void sAnimation();
-	void sEnemySpawner();
+	void sEnemySpawner(); 
 	void sCollision();
-	void sRender();
+	void sRender() override;
 	void sDoAction();
 	void sGUI();
+	bool isPaused();
 
 };
 

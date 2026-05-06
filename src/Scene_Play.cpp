@@ -1,10 +1,18 @@
 #include "Scene_Play.h"
 
 
-void Scene_Play::init()
+Scene_Play::Scene_Play(GameEngine* game, Renderer* renderer) 
+	: Scene(game, renderer) 
 {
 
 }
+
+
+/*void Scene_Play::init(GameEngine* game)
+{
+	m_game = game;
+	m_renderer = &m_game->getRenderer();
+}*/
 
 void Scene_Play::update()
 {
@@ -20,7 +28,7 @@ void Scene_Play::update()
 			std::vector<float>& pos = transform.getPos();
 			pos[1] += vel[1];
 			std::cout << "x: " << pos[0] << "y: " << pos[1] << std::endl;
-			if (pos[1] <= -1)
+			if (pos[1] < -.0)
 			{
 				pos[1] = -.9;
 				vel[0] = 0;
@@ -47,14 +55,14 @@ void Scene_Play::sCollision()
 }
 void Scene_Play::sRender()
 {
-	m_game->getRenderer().clear();
+	m_renderer->Clear();
 	EntityVec entities = m_game->getEntityMan().getEntities();
 	for ( Entity e : entities )
 	{
-		std::vector<float> pos = getPool().getComponent<CTransform>(e.getID()).getPos();
-		renderer.Square(e, pos);
+		std::vector<float> pos = m_game->getPool().getComponent<CTransform>(e.getID()).getPos();
+		m_renderer->Square(e, pos);
 	}
-	m_game->getRenderer().swapBuffers();
+	m_renderer->SwapBuffers();
 }
 void Scene_Play::sDoAction()
 {
@@ -63,4 +71,9 @@ void Scene_Play::sDoAction()
 void Scene_Play::sGUI()
 {
 
+}
+
+bool Scene_Play::isPaused()
+{
+	return m_paused;
 }

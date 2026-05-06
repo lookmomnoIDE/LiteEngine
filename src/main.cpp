@@ -1,13 +1,13 @@
 #include "includes.h"
 
 
-GameEngine* g;
+
 
 
 int main(int argc, char* argv[])
 {
+	auto g = std::make_unique<GameEngine>();
 	g->run();
-	g->getRenderer().~Renderer();
 	return 0;
 }
 

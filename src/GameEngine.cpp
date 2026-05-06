@@ -3,7 +3,16 @@
 GameEngine::GameEngine()
 	:m_running(true)
 {
-	GLFWwindow* m_window = g.getRenderer().getWindow();
+	m_renderer = new Renderer();
+	//GLFWwindow* m_window = m_renderer->getWindow();
+	m_scenes["play"] = std::make_unique<Scene_Play>(this, m_renderer);
+}
+
+
+GameEngine::~GameEngine()
+{
+	delete m_renderer;
+	m_renderer = nullptr;
 }
 
 
@@ -15,16 +24,24 @@ void GameEngine::update()
 
 void GameEngine::run()
 {
+	changeScene<Scene_Play>("play", m_renderer);
 	while(m_running)
 	{
 		m_entityMan.update();
-		processInput(m_window); 	//put in UI system
+		std::cout << "entity Man update" << std::endl;
+		glfwPollEvents();
+		processInput(m_renderer->getWindow()); 	//put in UI system
+		std::cout << "processInput" << std::endl;
+		GameEngine::sUserInput();
+		std::cout << "User Input" << std::endl;
 		currentScene()->update();
+		std::cout << "current scene update" << std::endl;
         currentScene()->sRender();
-        GameEngine::sUserInput();
-		glfwSwapBuffers(m_window);
-		glfwPollEvents();			//put in UI system
-		m_currentFrame++;
+        std::cout << "current scene render" << std::endl;
+        
+		glfwSwapBuffers(m_renderer->getWindow());
+					//put in UI system
+		std::cout << m_currentFrame++ << std::endl;
 	}
 }
 
@@ -35,17 +52,17 @@ void GameEngine::quit()
 }
 
 
-void GameEngine::spawnEnemy()
+/*void GameEngine::spawnEnemy()
 {
-	auto e = m_entityMan.addEntity("enemy");
-}
+	auto e = m_entityMan.addEntity("sand");
+}*/
 
-template <typename T, typename... Args>
+/*template <typename T, typename... Args>
 void GameEngine::changeScene(const std::string name, Args&&... args)
 {
     m_scenes[name] = std::make_unique<T>(this, std::forward<Args>(args)...);
     m_currentScene = name;
-}
+}*/
 
 Scene* GameEngine::currentScene() {
     return m_scenes.count(m_currentScene) ? m_scenes[m_currentScene].get() : nullptr;
@@ -54,7 +71,7 @@ Scene* GameEngine::currentScene() {
 
 Renderer& GameEngine::getRenderer()
 {
-	return m_renderer;
+	return *m_renderer;
 }
 
 
@@ -81,7 +98,7 @@ void GameEngine::processInput(GLFWwindow* window)
 	if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
 	{
 		glfwSetWindowShouldClose(window, true);
-		g.quit();
+		GameEngine::quit();
 	}
 	
 }

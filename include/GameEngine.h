@@ -9,6 +9,10 @@
 #include <string>
 #include <map>
 #include <memory>
+#include <iostream>
+
+
+class Scene;
 
 
 class GameEngine
@@ -22,12 +26,13 @@ class GameEngine
 	std::string m_currentScene;
 	EntityMemoryPool& m_pool = EntityMemoryPool::Instance();
 	EntityMan& m_entityMan = EntityMan::Instance();
-	Renderer& m_renderer;
-	GLFWwindow* m_window;
+	Renderer* m_renderer;
+	//GLFWwindow* m_window;
 
 public:
 	GameEngine();
-	void spawnEnemy();
+	~GameEngine();
+	//void spawnEnemy();
 	void update();
 	void run();
 	void quit();
@@ -45,6 +50,7 @@ public:
 	EntityMemoryPool& getPool();
 	EntityMan& getEntityMan();
 	void sUserInput();
+	void processInput(GLFWwindow* window);
 
 };
 
