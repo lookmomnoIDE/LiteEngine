@@ -11,6 +11,8 @@
 #include "IndexBuffer.h"
 #include "Entity.h"
 #include "EntityMemoryPool.h"
+//#include "EntityFactory.h" // TEMPORARY REMOVE AFTER COMMANDS
+
 
 
 class Renderer

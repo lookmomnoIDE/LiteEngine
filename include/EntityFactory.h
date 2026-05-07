@@ -6,7 +6,7 @@ class EntityFactory
 {
 	GameEngine* m_game;
 public:
-	EntityFactory();
+	EntityFactory(GameEngine* game);
 	void addSand(double xpos, double ypos);
 
 };

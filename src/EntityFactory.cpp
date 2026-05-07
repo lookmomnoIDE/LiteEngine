@@ -1,5 +1,13 @@
 #include "EntityFactory.h"
 
+
+EntityFactory::EntityFactory(GameEngine* game)
+	:m_game(game)
+	{
+
+	}
+
+
 void EntityFactory::addSand(double xpos, double ypos)
 {
 	float width = m_game->getRenderer().getWidth();

@@ -4204,6 +4204,7 @@ CMakeFiles/LiteEngine.dir/src/main.cpp.obj: C:/projects/LiteEngineV003/src/main.
   C:/projects/LiteEngineV003/include/Components.h \
   C:/projects/LiteEngineV003/include/Csand.h \
   C:/projects/LiteEngineV003/include/Entity.h \
+  C:/projects/LiteEngineV003/include/EntityFactory.h \
   C:/projects/LiteEngineV003/include/EntityManager.h \
   C:/projects/LiteEngineV003/include/EntityMemoryPool.h \
   C:/projects/LiteEngineV003/include/GLFW/glfw3.h \

@@ -158,6 +158,7 @@ void Renderer::mouse_button_callback(GLFWwindow* window, int button, int action,
 			//LMB_->execute();
 			glfwGetCursorPos(m_window, &m_xpos, &m_ypos);
 			//addSand(xpos, ypos);
+			//EntityFactory::addSand(m_xpos, m_ypos); // TEMPOPRARY REMOVE AFTER COMMANDS
 		}
 }
 

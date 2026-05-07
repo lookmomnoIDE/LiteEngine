@@ -3,6 +3,7 @@
 
 #include "Scene.h"
 #include "EntityManager.h"
+#include "EntityFactory.h"
 #include <iostream>
 
 class Scene_Play : public Scene

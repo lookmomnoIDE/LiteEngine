@@ -352,6 +352,7 @@ CMakeFiles/LiteEngine.dir/src/main.cpp.obj: \
  C:/projects/LiteEngineV003/include/Cgrain.h \
  C:/projects/LiteEngineV003/include/Csand.h \
  C:/projects/LiteEngineV003/include/Cgravity.h \
+ C:/projects/LiteEngineV003/include/EntityFactory.h \
  C:/projects/LiteEngineV003/include/Scene_Play.h \
  C:/mingw64/include/c++/15.2.0/memory \
  C:/mingw64/include/c++/15.2.0/bits/stl_tempbuf.h \

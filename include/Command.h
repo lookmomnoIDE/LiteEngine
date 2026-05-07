@@ -42,3 +42,55 @@ public:
 
 
 #endif
+
+#include "EntityFactory.h"
+
+class InputHandler
+{
+public:
+	void doCommand(float x, float y)
+	{
+		EntityFactory::addSand(x, y);
+	}
+};
+
+class ICommand
+{
+public:
+	virtual ~ICommand(){}
+	virtual void execute() const = 0;
+};
+
+class SpawnSand : public ICommand
+{
+	InputHandler* m_handler;
+	float m_x, m_y;
+public:
+
+	SpawnSand(InputHandler* handler, float x, float y)
+		:m_handler(handler), m_x(x), m_y(y)
+	{
+		
+	}
+
+	void execute() const override 
+	{
+		m_handler->doCommand(m_x, m_y);
+		
+	}
+};
+
+
+//simple example
+SpawnSand s(m_xpos, m_ypos);
+s.execute();
+
+
+
+InputHandler handler;
+//this
+SpawnSand s(&handler, x, y)
+s.execute();
+
+//or this?
+SpawnSand(&handler, x, y).execute()
