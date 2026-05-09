@@ -35,7 +35,7 @@ private:
 	EntityMemoryPool(size_t MAX_ENTITIES);
 
 public:
-	static EntityMemoryPool & Instance();
+	static EntityMemoryPool* Instance();
 
 	std::vector<bool>& getActive();
 

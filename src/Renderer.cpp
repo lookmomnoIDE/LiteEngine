@@ -1,5 +1,6 @@
 #include "Renderer.h"
-
+#include "GameEngine.h"
+#include "InputHandler.h"
 
 Renderer::Renderer()
 {
@@ -28,6 +29,9 @@ Renderer::Renderer()
 	m_width = winWidth;
 	m_height = winHeight;
 
+	m_game = GameEngine::Instance();
+	m_handler = m_game->getHandler();
+
 	glViewport(0, 0, m_width, m_height);
 	m_shader = new Shader("../src/cool.vert", "../src/beans.frag");
 	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
@@ -35,16 +39,16 @@ Renderer::Renderer()
 	glfwSetFramebufferSizeCallback(m_window, [](GLFWwindow* window, int width, int height) 
 	{
 	    // Retrieve the Renderer instance
-	    auto* renderer = static_cast<Renderer*>(glfwGetWindowUserPointer(window));
-	    renderer->framebuffer_size_callback(window, width, height);
+	    auto* handler = static_cast<InputHandler*>(glfwGetWindowUserPointer(window));
+	    handler->framebuffer_size_callback(window, width, height);
 	});
 
 	glfwSetMouseButtonCallback(m_window, [](GLFWwindow* window, int button, int action, int mods)
 	{
-		auto* renderer = static_cast<Renderer*>(glfwGetWindowUserPointer(window));
-		renderer->mouse_button_callback(window, button, action, mods);
+		auto* handler = static_cast<InputHandler*>(glfwGetWindowUserPointer(window));
+		handler->mouse_button_callback(window, button, action, mods);
 	});
-}
+	}
 
 Renderer::~Renderer()
 {
@@ -84,13 +88,13 @@ void Renderer::DrawElements(const VertexArray& va, const VertexBuffer& vb, const
 
 void Renderer::Square(const Entity e, std::vector<float> pos)
 {
-	EntityMemoryPool& pool = EntityMemoryPool::Instance();
+	EntityMemoryPool* pool = EntityMemoryPool::Instance();
 	//Entity player = pool.addEntity("player");
 	size_t id = e.getID(); // however your Entity exposes its index
-	pool.getComponent<CTransform>(id).setPos(pos);
-	Cgrain& s = pool.getComponent<Cgrain>(id);
+	pool->getComponent<CTransform>(id).setPos(pos);
+	Cgrain& s = pool->getComponent<Cgrain>(id);
 	float size = s.getSize();
-	std::vector<float> color = {pool.getComponent<Csand>(id).getColor()};
+	std::vector<float> color = {pool->getComponent<Csand>(id).getColor()};
 
 
 	float halfX = (size / m_aspectRatioX) / 2.0f;
@@ -146,24 +150,5 @@ int Renderer::getHeight() const
 	return m_height;
 }
 
-void Renderer::framebuffer_size_callback(GLFWwindow* window, int width, int height)
-{
-	glViewport(0, 0, width, height);
-}
 
-void Renderer::mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
-{
-	if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS)
-		{
-			//LMB_->execute();
-			glfwGetCursorPos(m_window, &m_xpos, &m_ypos);
-			//addSand(xpos, ypos);
-			//EntityFactory::addSand(m_xpos, m_ypos); // TEMPOPRARY REMOVE AFTER COMMANDS
-		}
-}
-
-std::vector<double> Renderer::getMousePosition()
-{
-	return {m_xpos, m_ypos};
-}
 

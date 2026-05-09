@@ -1,18 +1,30 @@
 #include "GameEngine.h"
 
-GameEngine::GameEngine()
-	:m_running(true)
+GameEngine* GameEngine::Instance()
 {
-	m_renderer = new Renderer();
-	//GLFWwindow* m_window = m_renderer->getWindow();
-	m_scenes["play"] = std::make_unique<Scene_Play>(this, m_renderer);
+	static GameEngine instance{};
+	return &instance;
 }
 
 
 GameEngine::~GameEngine()
 {
 	delete m_renderer;
-	m_renderer = nullptr;
+	//m_renderer = nullptr;
+	delete m_handler;
+	delete m_factory;
+}
+
+
+void GameEngine::Init()
+{
+
+	m_running = true;
+	m_renderer = new Renderer();
+	//GLFWwindow* m_window = m_renderer->getWindow();
+	m_scenes["play"] = std::make_unique<Scene_Play>(this, m_renderer);
+	m_handler = new InputHandler();
+	m_factory = new EntityFactory();
 }
 
 
@@ -24,13 +36,13 @@ void GameEngine::update()
 
 void GameEngine::run()
 {
+
 	changeScene<Scene_Play>("play", m_renderer);
 	while(m_running)
 	{
-		m_entityMan.update();
+		m_entityMan->update();
 		std::cout << "entity Man update" << std::endl;
-		glfwPollEvents();
-		processInput(m_renderer->getWindow()); 	//put in UI system
+
 		std::cout << "processInput" << std::endl;
 		GameEngine::sUserInput();
 		std::cout << "User Input" << std::endl;
@@ -40,7 +52,6 @@ void GameEngine::run()
         std::cout << "current scene render" << std::endl;
         
 		glfwSwapBuffers(m_renderer->getWindow());
-					//put in UI system
 		std::cout << m_currentFrame++ << std::endl;
 	}
 }
@@ -49,6 +60,7 @@ void GameEngine::run()
 void GameEngine::quit()
 {
 	m_running = false;
+	m_currentFrame = 0;
 }
 
 
@@ -69,37 +81,40 @@ Scene* GameEngine::currentScene() {
 }
 
 
-Renderer& GameEngine::getRenderer()
+Renderer* GameEngine::getRenderer()
 {
-	return *m_renderer;
+	return m_renderer;
 }
 
 
-EntityMemoryPool& GameEngine::getPool()
+EntityMemoryPool* GameEngine::getPool()
 {
 	return m_pool;
 }
 
 
-EntityMan& GameEngine::getEntityMan()
+EntityMan* GameEngine::getEntityMan()
 {
 	return m_entityMan;
 }
 
 
-void GameEngine::sUserInput()
+InputHandler* GameEngine::getHandler()
 {
-	std::cout << "Hello Monkeys!!!" << std::endl;
+	return m_handler;
 }
 
 
-void GameEngine::processInput(GLFWwindow* window)
+EntityFactory* GameEngine::getFactory()
 {
-	if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-	{
-		glfwSetWindowShouldClose(window, true);
-		GameEngine::quit();
-	}
-	
+	return m_factory;
+}
+
+
+void GameEngine::sUserInput()
+{
+	glfwPollEvents();
+	m_handler->processInput(m_renderer->getWindow());
+	std::cout << "Processed Inputs!" << std::endl;
 }
 

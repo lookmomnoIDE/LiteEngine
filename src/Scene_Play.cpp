@@ -1,8 +1,8 @@
 #include "Scene_Play.h"
-
+#include "GameEngine.h"
 
 Scene_Play::Scene_Play(GameEngine* game, Renderer* renderer) 
-	: Scene(game, renderer) 
+	:m_game(game), m_renderer(renderer)
 {
 
 }
@@ -16,13 +16,13 @@ Scene_Play::Scene_Play(GameEngine* game, Renderer* renderer)
 
 void Scene_Play::update()
 {
-	EntityVec entities = m_game->getEntityMan().getEntities();
+	EntityVec entities = m_game->getEntityMan()->getEntities();
 	for ( Entity e : entities )
 	{
-		if(m_game->getPool().hasComponent<Cgravity>(e.getID()))
+		if(m_game->getPool()->hasComponent<Cgravity>(e.getID()))
 		{
-			CTransform& transform = m_game->getPool().getComponent<CTransform>(e.getID());
-			Cgravity& gravity = m_game->getPool().getComponent<Cgravity>(e.getID());
+			CTransform& transform = m_game->getPool()->getComponent<CTransform>(e.getID());
+			Cgravity& gravity = m_game->getPool()->getComponent<Cgravity>(e.getID());
 			std::vector<float>& vel = transform.getVel();
 			vel[1] += gravity.getGravity();
 			std::vector<float>& pos = transform.getPos();
@@ -33,7 +33,7 @@ void Scene_Play::update()
 				pos[1] = -.9;
 				vel[0] = 0;
 				vel[1] = 0;
-				m_game->getPool().remComponent<Cgravity>(e.getID());
+				m_game->getPool()->remComponent<Cgravity>(e.getID());
 			}
 			transform.setPos(pos);
 			transform.setVel(vel);				
@@ -56,13 +56,15 @@ void Scene_Play::sCollision()
 void Scene_Play::sRender()
 {
 	m_renderer->Clear();
-	EntityVec entities = m_game->getEntityMan().getEntities();
+	std::cout << "cleared the screen!" << std::endl;
+	EntityVec entities = m_game->getEntityMan()->getEntities();
 	for ( Entity e : entities )
 	{
-		std::vector<float> pos = m_game->getPool().getComponent<CTransform>(e.getID()).getPos();
+		std::vector<float> pos = m_game->getPool()->getComponent<CTransform>(e.getID()).getPos();
 		m_renderer->Square(e, pos);
 	}
 	m_renderer->SwapBuffers();
+	std::cout << "swapped window buffers!" << std::endl;
 }
 void Scene_Play::sDoAction()
 {

@@ -23,7 +23,7 @@ class EntityMan
 	size_t 		m_totalEntities = 0;
 	
 public:
-	static EntityMan & Instance();
+	static EntityMan* Instance();
 	void update();
 	Entity addEntity(const Tag tag);
 	EntityVec& getEntities();

@@ -46,8 +46,10 @@ add_executable(${PROJECT_NAME}
     src/EntityFactory.cpp
     src/Scene_Play.cpp
     src/GameEngine.cpp
-    
-    #src/Command.cpp
+    src/SpawnSand.cpp
+    src/PlayRec.cpp
+    src/Invoker.cpp
+    src/InputHandler.cpp
     )
 
 target_include_directories(${PROJECT_NAME} PRIVATE include)

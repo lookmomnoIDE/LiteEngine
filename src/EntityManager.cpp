@@ -3,10 +3,10 @@
 #include "EntityMemoryPool.h"
 
 
-EntityMan & EntityMan::Instance()
+EntityMan* EntityMan::Instance()
 {
-	static EntityMan man;
-	return man;
+	static EntityMan man{};
+	return &man;
 }
 
 void EntityMan::update()
@@ -21,7 +21,7 @@ void EntityMan::update()
 
 Entity EntityMan::addEntity(const Tag tag)
 {
-	Entity e = EntityMemoryPool::Instance().addEntity(tag);
+	Entity e = EntityMemoryPool::Instance()->addEntity(tag);
 	m_entitiesToAdd.push_back(e);
 	
 	return e;
@@ -29,7 +29,7 @@ Entity EntityMan::addEntity(const Tag tag)
 
 void EntityMan::remEntity(size_t index)
 {
-	std::vector<bool> active = EntityMemoryPool::Instance().getActive();
+	std::vector<bool> active = EntityMemoryPool::Instance()->getActive();
 	active[index] = false;
 }
 
@@ -44,7 +44,7 @@ EntityVec& EntityMan::getEntities(const Tag tag)
 	std::vector<Entity> entitiesByTag;
 	for(auto& e : m_entities)
 	{
-		if(EntityMemoryPool::Instance().getTag(e.getID()) == tag)
+		if(EntityMemoryPool::Instance()->getTag(e.getID()) == tag)
 		{
 			entitiesByTag.push_back(e);
 		}

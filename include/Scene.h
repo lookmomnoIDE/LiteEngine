@@ -3,11 +3,11 @@
 
 #include <string>
 #include <map>
-#include "GameEngine.h"
-#include "Renderer.h"
+
 //#include "Command.h"
 
 class GameEngine;
+class Renderer;
 
 
 class Scene 
@@ -16,9 +16,8 @@ public:
 	int m_frame;
 	//std::map<int i, std::string> m_actionMap;
 	bool m_paused = false;
-	GameEngine* m_game = nullptr;
-	Renderer* m_renderer = nullptr;
-	Scene(GameEngine* game, Renderer* renderer) : m_game(game), m_renderer(renderer) {}
+	
+	Scene(){}
     //virtual void init() = 0;
 	virtual ~Scene() = default;
 	//virtual void init(GameEngine* game) = 0;

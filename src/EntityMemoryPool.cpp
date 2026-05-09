@@ -13,10 +13,10 @@ EntityMemoryPool::EntityMemoryPool(size_t MAX_ENTITIES)
 }
 
 
-EntityMemoryPool & EntityMemoryPool::Instance()
+EntityMemoryPool* EntityMemoryPool::Instance()
 {
-	static EntityMemoryPool pool(MAX_ENTITIES);
-	return pool;
+	static EntityMemoryPool pool{MAX_ENTITIES};
+	return &pool;
 }
 
 /*template <typename T>

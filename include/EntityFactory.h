@@ -1,12 +1,14 @@
 #ifndef ENTITYFACTORY_H
 #define ENTITYFACTORY_H
-#include "GameEngine.h"
+
+
+class GameEngine;
 
 class EntityFactory
 {
-	GameEngine* m_game;
+	GameEngine* m_game = nullptr;
 public:
-	EntityFactory(GameEngine* game);
+	EntityFactory();
 	void addSand(double xpos, double ypos);
 
 };

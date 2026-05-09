@@ -11,8 +11,11 @@
 #include "IndexBuffer.h"
 #include "Entity.h"
 #include "EntityMemoryPool.h"
-//#include "EntityFactory.h" // TEMPORARY REMOVE AFTER COMMANDS
 
+
+//#include "EntityFactory.h" // TEMPORARY REMOVE AFTER COMMANDS
+class GameEngine;
+class InputHandler;
 
 
 class Renderer
@@ -20,9 +23,10 @@ class Renderer
 	int m_width = 1920;
 	int m_height = 1050; 
 	float m_aspectRatioX = m_width/m_height;
-	double m_xpos, m_ypos;
+	GameEngine* m_game;
 	Shader* m_shader;
 	GLFWwindow* m_window;
+	InputHandler* m_handler;
 
 public:
 	Renderer();

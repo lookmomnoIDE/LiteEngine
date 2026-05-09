@@ -9,6 +9,8 @@
 class Scene_Play : public Scene
 {
 	std::string m_level = "play";
+	GameEngine* m_game = nullptr;
+	Renderer* m_renderer = nullptr;
 
 public:
 	Scene_Play(GameEngine* game, Renderer* renderer);
