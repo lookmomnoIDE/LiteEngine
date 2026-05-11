@@ -13,13 +13,12 @@ class SpawnSand;
 
 class InputHandler
 {
-	Invoker* m_invoker;
-	PlayRec* m_receiver;
-	double m_xpos, m_ypos;
+	Invoker* m_invoker = nullptr;
+	PlayRec* m_receiver = nullptr;
 	GameEngine* m_game = nullptr;
-	GLFWwindow* m_window = nullptr;
 	SpawnSand* m_activeCommand = nullptr;
 public:
+	double m_xpos, m_ypos;
 	InputHandler();
 
 	~InputHandler();

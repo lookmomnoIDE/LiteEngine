@@ -2,14 +2,17 @@
 #define INVOKER_H
 
 #include "ICommand.h"
+#include <iostream>
+#include <cstddef>
 
 
 class Invoker
 {
 
-	ICommand* m_start = 0;
-	ICommand* m_stop = 0;
+	ICommand *m_start;
+	ICommand *m_stop;
 public:
+	Invoker();
 	~Invoker();
 	void setStart(ICommand *c);
 

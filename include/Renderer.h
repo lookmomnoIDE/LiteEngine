@@ -23,14 +23,15 @@ class Renderer
 	int m_width = 1920;
 	int m_height = 1050; 
 	float m_aspectRatioX = m_width/m_height;
-	GameEngine* m_game;
-	Shader* m_shader;
-	GLFWwindow* m_window;
-	InputHandler* m_handler;
+	GameEngine* m_game = nullptr;
+	Shader* m_shader = nullptr;
+	GLFWwindow* m_window = nullptr;
+	InputHandler* m_handler = nullptr;
 
 public:
 	Renderer();
 	~Renderer();
+	void Init();
 	Shader* loadShader(std::string vertex, std::string fragment);
 	GLFWwindow* getWindow();
 	void Draw(const VertexArray& va, const VertexBuffer& vb) const;

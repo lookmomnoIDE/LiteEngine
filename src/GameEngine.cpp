@@ -3,6 +3,7 @@
 GameEngine* GameEngine::Instance()
 {
 	static GameEngine instance{};
+	std::cout << &instance << std::endl;
 	return &instance;
 }
 
@@ -12,7 +13,6 @@ GameEngine::~GameEngine()
 	delete m_renderer;
 	//m_renderer = nullptr;
 	delete m_handler;
-	delete m_factory;
 }
 
 
@@ -20,11 +20,14 @@ void GameEngine::Init()
 {
 
 	m_running = true;
+	m_handler = new InputHandler();
 	m_renderer = new Renderer();
+	m_renderer->Init();
 	//GLFWwindow* m_window = m_renderer->getWindow();
 	m_scenes["play"] = std::make_unique<Scene_Play>(this, m_renderer);
-	m_handler = new InputHandler();
-	m_factory = new EntityFactory();
+	
+	//m_factory = EntityFactory::Instance();
+	m_factory->Init();
 }
 
 
@@ -50,8 +53,6 @@ void GameEngine::run()
 		std::cout << "current scene update" << std::endl;
         currentScene()->sRender();
         std::cout << "current scene render" << std::endl;
-        
-		glfwSwapBuffers(m_renderer->getWindow());
 		std::cout << m_currentFrame++ << std::endl;
 	}
 }
@@ -61,6 +62,7 @@ void GameEngine::quit()
 {
 	m_running = false;
 	m_currentFrame = 0;
+	std::cout << "Successful quit!" << std::endl;
 }
 
 
@@ -114,6 +116,7 @@ EntityFactory* GameEngine::getFactory()
 void GameEngine::sUserInput()
 {
 	glfwPollEvents();
+	std::cout << "Polled Events!" << std::endl;
 	m_handler->processInput(m_renderer->getWindow());
 	std::cout << "Processed Inputs!" << std::endl;
 }

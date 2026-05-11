@@ -30,25 +30,13 @@ Renderer::Renderer()
 	m_height = winHeight;
 
 	m_game = GameEngine::Instance();
-	m_handler = m_game->getHandler();
+	m_handler = GameEngine::Instance()->getHandler();
 
 	glViewport(0, 0, m_width, m_height);
 	m_shader = new Shader("../src/cool.vert", "../src/beans.frag");
 	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-	glfwSetWindowUserPointer(m_window, this);
-	glfwSetFramebufferSizeCallback(m_window, [](GLFWwindow* window, int width, int height) 
-	{
-	    // Retrieve the Renderer instance
-	    auto* handler = static_cast<InputHandler*>(glfwGetWindowUserPointer(window));
-	    handler->framebuffer_size_callback(window, width, height);
-	});
-
-	glfwSetMouseButtonCallback(m_window, [](GLFWwindow* window, int button, int action, int mods)
-	{
-		auto* handler = static_cast<InputHandler*>(glfwGetWindowUserPointer(window));
-		handler->mouse_button_callback(window, button, action, mods);
-	});
-	}
+	
+}
 
 Renderer::~Renderer()
 {
@@ -56,8 +44,41 @@ Renderer::~Renderer()
 	glfwTerminate();
 }
 
+void Renderer::Init()
+{
+
+	// When setting up the window (once):
+	glfwSetWindowUserPointer(m_window, this);  // store the Renderer*
+
+
+	glfwSetFramebufferSizeCallback(m_window, [](GLFWwindow* window, int width, int height)
+	{
+		auto* renderer = static_cast<Renderer*>(glfwGetWindowUserPointer(window));
+	    if (!renderer) return;
+
+	    InputHandler* handler = renderer->m_handler;  // or a getter
+	    if (handler)
+	        handler->framebuffer_size_callback(window, width, height);
+	});
+
+
+	// Then register the callback:
+	glfwSetMouseButtonCallback(m_window, [](GLFWwindow* window, int button, int action, int mods)
+	{
+	    auto* renderer = static_cast<Renderer*>(glfwGetWindowUserPointer(window));
+	    if (!renderer) return;
+
+	    InputHandler* handler = renderer->m_handler;  // or a getter
+	    if (handler)
+	        handler->mouse_button_callback(window, button, action, mods);
+	});
+	
+}
+
 Shader* Renderer::loadShader(std::string vertex, std::string fragment)
 {
+	delete m_shader;
+	m_shader = nullptr;
 	m_shader = new Shader(vertex.c_str(), fragment.c_str());
     m_shader->use();
     return m_shader; 

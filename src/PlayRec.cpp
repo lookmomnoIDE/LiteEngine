@@ -14,5 +14,7 @@ PlayRec::~PlayRec()
 }
 void PlayRec::placeSand(float x, float y)
 {
+	std::cout << "Reciver fn" << std::endl;
 	m_factory->addSand(x, y);
+	std::cout << "after addSand in rc fn" << std::endl;
 }	

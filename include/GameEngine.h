@@ -29,9 +29,8 @@ class GameEngine
 	EntityMemoryPool* m_pool = EntityMemoryPool::Instance();
 	EntityMan* m_entityMan = EntityMan::Instance();
 	Renderer* m_renderer;
-	InputHandler* m_handler;
-	EntityFactory* m_factory;
-	//GLFWwindow* m_window;
+	InputHandler* m_handler = nullptr;
+	EntityFactory* m_factory = EntityFactory::Instance();
 
 public:
 	static GameEngine* Instance();

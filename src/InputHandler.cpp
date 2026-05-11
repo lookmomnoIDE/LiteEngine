@@ -10,9 +10,8 @@
 InputHandler::InputHandler()
 {
 	m_game = GameEngine::Instance();
-	m_window = m_game->getRenderer()->getWindow();
-	Invoker *m_invoker = new Invoker;
-	PlayRec *m_receiver = new PlayRec(m_game);
+	m_invoker = new Invoker();
+	m_receiver = new PlayRec(m_game);
 
 }
 
@@ -31,13 +30,19 @@ void InputHandler::mouse_button_callback(GLFWwindow* window, int button, int act
 {
 	if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS)
 	{
-    	glfwGetCursorPos(m_window, &m_xpos, &m_ypos);
+		std::cout << "LMB pressed!" << std::endl;
+    	glfwGetCursorPos(window, &m_xpos, &m_ypos);
+    	std::cout << "set cursor position!" << std::endl;
     	m_activeCommand = new SpawnSand(m_xpos, m_ypos, m_receiver);
+    	std::cout << "Active command initialized!" << std::endl;
     	m_invoker->setStart(m_activeCommand);
+    	std::cout << "Active command set start!" << std::endl;
     	m_invoker->sendCommand();
+    	std::cout << "Invoker sent command!" << std::endl;
 	}
 	if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_RELEASE)
 	{
+		std::cout << "LMB released!" << std::endl;
     	m_invoker->setStop(m_activeCommand);
     	m_invoker->sendCommand();
     	delete m_activeCommand;

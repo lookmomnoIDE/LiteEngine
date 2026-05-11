@@ -4,7 +4,7 @@
 
 class Cgravity : public Component
 {
-	float m_gravity = -0.0001;
+	float m_gravity = -0.00001;
 public:
 	Cgravity();
 	Cgravity(float gravity);

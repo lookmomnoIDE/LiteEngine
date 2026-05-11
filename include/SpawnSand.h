@@ -3,6 +3,7 @@
 
 #include "ICommand.h"
 #include "PlayRec.h"
+#include <iostream>
 
 
 class SpawnSand : public ICommand
@@ -13,6 +14,7 @@ class SpawnSand : public ICommand
 public:
 	SpawnSand(float x, float y, PlayRec *rec);
 	void execute() const override;
+	void unexecute() const override;
 
 };
 

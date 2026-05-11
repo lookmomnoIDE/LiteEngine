@@ -1,5 +1,9 @@
 #include "Invoker.h"
 
+Invoker::Invoker()
+{
+
+}
 
 Invoker::~Invoker()
 {
@@ -9,7 +13,11 @@ Invoker::~Invoker()
 
 void Invoker::setStart(ICommand *c)
 {
-	m_start = c;
+	std::cout << "offset of m_start: " << offsetof(Invoker, m_start) << std::endl;
+	std::cout << "sizeof Invoker: "    << sizeof(Invoker) << std::endl;
+	std::cout << "Begin Start, this= " << this << std::endl;
+	this->m_start = c;
+	std::cout << "Start set" << std::endl;
 }
 
 void Invoker::setStop(ICommand *c)
@@ -18,14 +26,17 @@ void Invoker::setStop(ICommand *c)
 }
 
 void Invoker::sendCommand()
-{
+{	
+	std::cout << "Pre-send command" << std::endl;
 	if (m_start)
 	{
+		std::cout << "In start loop" << std::endl;
 		m_start->execute();
+		std::cout << "start sent" << std::endl;
 	}
 
-	/*else if (m_stop)
+	else if (m_stop)
 	{
-		m_stop->execute();
-	}*/
+		m_stop->unexecute();
+	}
 }

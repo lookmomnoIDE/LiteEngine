@@ -8,7 +8,8 @@ class EntityFactory
 {
 	GameEngine* m_game = nullptr;
 public:
-	EntityFactory();
+	static EntityFactory* Instance();
+	void Init();
 	void addSand(double xpos, double ypos);
 
 };

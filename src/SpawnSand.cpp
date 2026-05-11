@@ -8,5 +8,12 @@ SpawnSand::SpawnSand(float x, float y, PlayRec *rec)
 
 void SpawnSand::execute() const 
 {
+	std::cout << "SpawnSand execute fn" << std::endl;
 	m_rec->placeSand(m_x, m_y);
+}
+
+
+void SpawnSand::unexecute() const
+{
+	std::cout << "Stopping!" << std::endl;
 }
