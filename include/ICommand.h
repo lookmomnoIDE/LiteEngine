@@ -6,7 +6,7 @@ class ICommand
 {
 public:
 	virtual ~ICommand(){}
-	virtual void execute() const = 0;
+	virtual void execute() = 0;
 	virtual void unexecute() const = 0;
 };
 

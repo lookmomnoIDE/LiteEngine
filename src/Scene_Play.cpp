@@ -28,7 +28,7 @@ void Scene_Play::update()
 			std::vector<float>& pos = transform.getPos();
 			pos[1] += vel[1];
 			std::cout << "x: " << pos[0] << "y: " << pos[1] << std::endl;
-			if (pos[1] < -.0)
+			if (pos[1] < -.9)
 			{
 				pos[1] = -.9;
 				vel[0] = 0;
@@ -56,7 +56,6 @@ void Scene_Play::sCollision()
 void Scene_Play::sRender()
 {
 	m_renderer->Clear();
-	std::cout << "cleared the screen!" << std::endl;
 	EntityVec entities = m_game->getEntityMan()->getEntities();
 	for ( Entity e : entities )
 	{
@@ -64,7 +63,6 @@ void Scene_Play::sRender()
 		m_renderer->Square(e, pos);
 	}
 	m_renderer->SwapBuffers();
-	std::cout << "swapped window buffers!" << std::endl;
 }
 void Scene_Play::sDoAction()
 {

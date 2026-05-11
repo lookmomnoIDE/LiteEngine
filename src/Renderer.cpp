@@ -1,6 +1,7 @@
 #include "Renderer.h"
 #include "GameEngine.h"
 #include "InputHandler.h"
+#include <iostream>
 
 Renderer::Renderer()
 {
@@ -28,7 +29,8 @@ Renderer::Renderer()
 	glfwGetWindowSize(m_window, &winWidth, &winHeight);
 	m_width = winWidth;
 	m_height = winHeight;
-
+	m_aspectRatio = (float)m_height/(float)m_width;
+	std::cout << m_aspectRatio << std::endl;
 	m_game = GameEngine::Instance();
 	m_handler = GameEngine::Instance()->getHandler();
 
@@ -110,15 +112,14 @@ void Renderer::DrawElements(const VertexArray& va, const VertexBuffer& vb, const
 void Renderer::Square(const Entity e, std::vector<float> pos)
 {
 	EntityMemoryPool* pool = EntityMemoryPool::Instance();
-	//Entity player = pool.addEntity("player");
-	size_t id = e.getID(); // however your Entity exposes its index
+	size_t id = e.getID();
 	pool->getComponent<CTransform>(id).setPos(pos);
 	Cgrain& s = pool->getComponent<Cgrain>(id);
 	float size = s.getSize();
 	std::vector<float> color = {pool->getComponent<Csand>(id).getColor()};
 
 
-	float halfX = (size / m_aspectRatioX) / 2.0f;
+	float halfX = (size * m_aspectRatio) / 2.0f;
 	float halfY = size / 2.0f;
 	//std::cout <<"halfX: "<< halfX << ", " <<"halfY: " << halfY << std::endl;
 

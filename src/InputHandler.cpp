@@ -30,19 +30,13 @@ void InputHandler::mouse_button_callback(GLFWwindow* window, int button, int act
 {
 	if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS)
 	{
-		std::cout << "LMB pressed!" << std::endl;
-    	glfwGetCursorPos(window, &m_xpos, &m_ypos);
-    	std::cout << "set cursor position!" << std::endl;
-    	m_activeCommand = new SpawnSand(m_xpos, m_ypos, m_receiver);
-    	std::cout << "Active command initialized!" << std::endl;
+    	//glfwGetCursorPos(window, &m_xpos, &m_ypos);
+    	m_activeCommand = new SpawnSand(m_receiver, m_game);
     	m_invoker->setStart(m_activeCommand);
-    	std::cout << "Active command set start!" << std::endl;
     	m_invoker->sendCommand();
-    	std::cout << "Invoker sent command!" << std::endl;
 	}
 	if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_RELEASE)
 	{
-		std::cout << "LMB released!" << std::endl;
     	m_invoker->setStop(m_activeCommand);
     	m_invoker->sendCommand();
     	delete m_activeCommand;
@@ -52,7 +46,7 @@ void InputHandler::mouse_button_callback(GLFWwindow* window, int button, int act
 
 std::vector<double> InputHandler::getMousePosition()
 {
-	return {m_xpos, m_ypos};
+	return m_pos;
 }
 
 void InputHandler::processInput(GLFWwindow* window)

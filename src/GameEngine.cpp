@@ -44,15 +44,11 @@ void GameEngine::run()
 	while(m_running)
 	{
 		m_entityMan->update();
-		std::cout << "entity Man update" << std::endl;
-
-		std::cout << "processInput" << std::endl;
 		GameEngine::sUserInput();
-		std::cout << "User Input" << std::endl;
+		
 		currentScene()->update();
-		std::cout << "current scene update" << std::endl;
+
         currentScene()->sRender();
-        std::cout << "current scene render" << std::endl;
 		std::cout << m_currentFrame++ << std::endl;
 	}
 }
@@ -116,8 +112,6 @@ EntityFactory* GameEngine::getFactory()
 void GameEngine::sUserInput()
 {
 	glfwPollEvents();
-	std::cout << "Polled Events!" << std::endl;
 	m_handler->processInput(m_renderer->getWindow());
-	std::cout << "Processed Inputs!" << std::endl;
 }
 

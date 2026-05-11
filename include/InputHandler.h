@@ -19,6 +19,7 @@ class InputHandler
 	SpawnSand* m_activeCommand = nullptr;
 public:
 	double m_xpos, m_ypos;
+	std::vector<double> m_pos = {m_xpos, m_ypos};
 	InputHandler();
 
 	~InputHandler();

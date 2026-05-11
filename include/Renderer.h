@@ -22,7 +22,7 @@ class Renderer
 {
 	int m_width = 1920;
 	int m_height = 1050; 
-	float m_aspectRatioX = m_width/m_height;
+	float m_aspectRatio;
 	GameEngine* m_game = nullptr;
 	Shader* m_shader = nullptr;
 	GLFWwindow* m_window = nullptr;

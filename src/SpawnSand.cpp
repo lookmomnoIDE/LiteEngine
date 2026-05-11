@@ -1,15 +1,18 @@
 #include "SpawnSand.h"
+#include "GameEngine.h"
 
-SpawnSand::SpawnSand(float x, float y, PlayRec *rec)
-:m_x(x), m_y(y), m_rec(rec)
+SpawnSand::SpawnSand(PlayRec *rec, GameEngine* game)
+	:m_rec(rec), m_game(game)
 {
 
 }
 
-void SpawnSand::execute() const 
+void SpawnSand::execute()  
 {
 	std::cout << "SpawnSand execute fn" << std::endl;
-	m_rec->placeSand(m_x, m_y);
+	//std::vector<double> pos = m_game->getHandler()->getMousePosition();
+	glfwGetCursorPos(m_game->getRenderer()->getWindow(), &m_xpos, &m_ypos);
+	m_rec->placeSand(m_xpos, m_ypos);
 }
 
 

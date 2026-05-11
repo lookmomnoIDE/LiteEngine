@@ -9,11 +9,13 @@
 class SpawnSand : public ICommand
 {
 
-	float m_x, m_y;
-	PlayRec* m_rec;
+	//float m_x, m_y;
+	PlayRec* m_rec = nullptr;
+	GameEngine* m_game = nullptr;
+	double m_xpos, m_ypos;
 public:
-	SpawnSand(float x, float y, PlayRec *rec);
-	void execute() const override;
+	SpawnSand(PlayRec *rec, GameEngine* game);
+	void execute() override;
 	void unexecute() const override;
 
 };
