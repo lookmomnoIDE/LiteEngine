@@ -46,8 +46,8 @@ add_executable(${PROJECT_NAME}
     src/EntityFactory.cpp
     src/Scene_Play.cpp
     src/GameEngine.cpp
-    src/SpawnSand.cpp
-    src/PlayRec.cpp
+    #src/SpawnSand.cpp
+    #src/PlayRec.cpp
     src/Invoker.cpp
     src/InputHandler.cpp
     )

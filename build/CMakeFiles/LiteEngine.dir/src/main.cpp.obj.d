@@ -336,6 +336,7 @@ CMakeFiles/LiteEngine.dir/src/main.cpp.obj: \
  C:/mingw64/include/c++/15.2.0/bits/stl_tree.h \
  C:/mingw64/include/c++/15.2.0/bits/stl_map.h \
  C:/mingw64/include/c++/15.2.0/bits/stl_multimap.h \
+ C:/projects/LiteEngineV003/include/ICommand.h \
  C:/projects/LiteEngineV003/include/EntityManager.h \
  C:/projects/LiteEngineV003/include/EntityMemoryPool.h \
  C:/projects/LiteEngineV003/include/Components.h \

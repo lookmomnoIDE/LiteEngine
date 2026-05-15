@@ -26,7 +26,6 @@ class Renderer
 	GameEngine* m_game = nullptr;
 	Shader* m_shader = nullptr;
 	GLFWwindow* m_window = nullptr;
-	InputHandler* m_handler = nullptr;
 
 public:
 	Renderer();

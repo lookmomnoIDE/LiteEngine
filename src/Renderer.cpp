@@ -32,7 +32,6 @@ Renderer::Renderer()
 	m_aspectRatio = (float)m_height/(float)m_width;
 	std::cout << m_aspectRatio << std::endl;
 	m_game = GameEngine::Instance();
-	m_handler = GameEngine::Instance()->getHandler();
 
 	glViewport(0, 0, m_width, m_height);
 	m_shader = new Shader("../src/cool.vert", "../src/beans.frag");
@@ -50,7 +49,7 @@ void Renderer::Init()
 {
 
 	// When setting up the window (once):
-	glfwSetWindowUserPointer(m_window, this);  // store the Renderer*
+	/*glfwSetWindowUserPointer(m_window, this);  // store the Renderer*
 
 
 	glfwSetFramebufferSizeCallback(m_window, [](GLFWwindow* window, int width, int height)
@@ -73,7 +72,7 @@ void Renderer::Init()
 	    InputHandler* handler = renderer->m_handler;  // or a getter
 	    if (handler)
 	        handler->mouse_button_callback(window, button, action, mods);
-	});
+	});*/
 	
 }
 
@@ -113,7 +112,7 @@ void Renderer::Square(const Entity e, std::vector<float> pos)
 {
 	EntityMemoryPool* pool = EntityMemoryPool::Instance();
 	size_t id = e.getID();
-	pool->getComponent<CTransform>(id).setPos(pos);
+	//pool->getComponent<CTransform>(id).setPos(pos);
 	Cgrain& s = pool->getComponent<Cgrain>(id);
 	float size = s.getSize();
 	std::vector<float> color = {pool->getComponent<Csand>(id).getColor()};

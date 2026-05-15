@@ -193,6 +193,7 @@ CMakeFiles/LiteEngine.dir/src/Renderer.cpp.obj: \
  C:/mingw64/include/c++/15.2.0/bits/enable_special_members.h \
  C:/projects/LiteEngineV003/include/GameEngine.h \
  C:/projects/LiteEngineV003/include/Scene.h \
+ C:/projects/LiteEngineV003/include/ICommand.h \
  C:/projects/LiteEngineV003/include/Renderer.h \
  C:/projects/LiteEngineV003/include/InputHandler.h \
  C:/projects/LiteEngineV003/include/Scene_Play.h \

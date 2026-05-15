@@ -107,6 +107,7 @@ CMakeFiles/LiteEngine.dir/src/Scene_Play.cpp.obj: \
  C:/mingw64/include/c++/15.2.0/bits/stl_map.h \
  C:/mingw64/include/c++/15.2.0/bits/stl_multimap.h \
  C:/mingw64/include/c++/15.2.0/bits/erase_if.h \
+ C:/projects/LiteEngineV003/include/ICommand.h \
  C:/projects/LiteEngineV003/include/EntityManager.h \
  C:/mingw64/include/c++/15.2.0/vector \
  C:/mingw64/include/c++/15.2.0/bits/stl_uninitialized.h \

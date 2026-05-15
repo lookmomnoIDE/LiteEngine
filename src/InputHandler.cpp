@@ -1,24 +1,52 @@
 #include "InputHandler.h"
-#include "Invoker.h"
-#include "PlayRec.h"
+//#include "Invoker.h"
+//#include "PlayRec.h"
 #include "GameEngine.h"
 #include "Renderer.h"
-#include "SpawnSand.h"
+//#include "SpawnSand.h"
+//#include "GLFW/glfw3.h"
+
+InputHandler& InputHandler::Instance()
+{
+	static InputHandler Instance{};
+	return Instance;
+}
+
+void InputHandler::keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods)
+{
+    Instance().processInput(window, key, scancode, action, mods);
+}
+
+void InputHandler::framebufferSizeCallback(GLFWwindow* window, int width, int height)
+{
+    Instance().framebuffer_size_callback(window, width, height);
+}
+
+void InputHandler::mouseButtonCallback(GLFWwindow* window, int button, int action, int mods)
+{
+    Instance().mouse_button_callback(window, button, action, mods);
+}
 
 
-
-InputHandler::InputHandler()
+void InputHandler::Init()
 {
 	m_game = GameEngine::Instance();
-	m_invoker = new Invoker();
-	m_receiver = new PlayRec(m_game);
+	m_window = m_game->getRenderer()->getWindow();
+	glfwSetWindowUserPointer(m_window, m_game->getRenderer());
+
+
+
+	
+
+	glfwSetKeyCallback(m_window, keyCallback);
+	glfwSetFramebufferSizeCallback(m_window, framebufferSizeCallback);
+	glfwSetMouseButtonCallback(m_window, mouseButtonCallback);
 
 }
 
 InputHandler::~InputHandler()
 {
-	delete m_invoker;
-	delete m_receiver;	
+
 }
 
 void InputHandler::framebuffer_size_callback(GLFWwindow* window, int width, int height)
@@ -28,38 +56,57 @@ void InputHandler::framebuffer_size_callback(GLFWwindow* window, int width, int 
 
 void InputHandler::mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 {
+	const auto& am = m_game->currentScene()->getAM();
 	if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS)
 	{
-    	//glfwGetCursorPos(window, &m_xpos, &m_ypos);
-    	m_activeCommand = new SpawnSand(m_receiver, m_game);
-    	m_invoker->setStart(m_activeCommand);
-    	m_invoker->sendCommand();
+		//const auto& am = m_game->currentScene()->getAM();
+		//std::cout << m_game->currentScene() << std::endl;
+		if(am.find(button) == am.end())
+		{
+			std::cout << "Action Not found!" << std::endl;
+			return;
+		}
+
+		const std::string actionType = (action == GLFW_PRESS) ? "START" : "END";
+
+		Action a(am.at(button), actionType);
+		m_game->currentScene()->doAction(a);
 	}
 	if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_RELEASE)
 	{
-    	m_invoker->setStop(m_activeCommand);
-    	m_invoker->sendCommand();
-    	delete m_activeCommand;
-    	m_activeCommand = nullptr;
+		
+		//std::cout << m_game->currentScene() << std::endl;
+		if(am.find(button) == am.end())
+		{
+			std::cout << "Action Not found!" << std::endl;
+			return;
+		}
+
+		const std::string actionType = (action == GLFW_PRESS) ? "START" : "END";
+
+		Action a(am.at(button), actionType);
+		m_game->currentScene()->doAction(a);
 	}
 }
 
 std::vector<double> InputHandler::getMousePosition()
 {
-	return m_pos;
+	glfwGetCursorPos(m_window, &m_xpos, &m_ypos);
+	return m_pos = {m_xpos, m_ypos};
 }
 
-void InputHandler::processInput(GLFWwindow* window)
+void InputHandler::processInput(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
+	GameEngine* game = Instance().m_game;
 	if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
 	{
 		glfwSetWindowShouldClose(window, true);
-		m_game->quit();
+		game->quit();
 	}
 	
 }
 
-Invoker& InputHandler::getInvoker()
+/*Invoker& InputHandler::getInvoker()
 {
 	return *m_invoker;
 }
@@ -67,4 +114,4 @@ Invoker& InputHandler::getInvoker()
 PlayRec& InputHandler::getRec()
 {
 	return *m_receiver;
-}
+}*/

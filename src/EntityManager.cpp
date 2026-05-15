@@ -41,13 +41,19 @@ EntityVec& EntityMan::getEntities()
 
 EntityVec& EntityMan::getEntities(const Tag tag)
 {
-	std::vector<Entity> entitiesByTag;
+	
 	for(auto& e : m_entities)
 	{
 		if(EntityMemoryPool::Instance()->getTag(e.getID()) == tag)
 		{
-			entitiesByTag.push_back(e);
+			m_entitiesByTag.push_back(e);
 		}
 	}
-	return entitiesByTag;
+	return m_entitiesByTag;
+}
+
+
+size_t EntityMan::getTotalEntities()
+{
+	return m_totalEntities;
 }

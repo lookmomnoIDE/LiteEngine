@@ -1,5 +1,6 @@
 #include "GameEngine.h"
 
+
 GameEngine* GameEngine::Instance()
 {
 	static GameEngine instance{};
@@ -12,7 +13,8 @@ GameEngine::~GameEngine()
 {
 	delete m_renderer;
 	//m_renderer = nullptr;
-	delete m_handler;
+
+
 }
 
 
@@ -20,14 +22,18 @@ void GameEngine::Init()
 {
 
 	m_running = true;
-	m_handler = new InputHandler();
+
+
 	m_renderer = new Renderer();
 	m_renderer->Init();
 	//GLFWwindow* m_window = m_renderer->getWindow();
 	m_scenes["play"] = std::make_unique<Scene_Play>(this, m_renderer);
-	
+	//m_actionMap[0] = std::make_unique<SpawnSand>();
 	//m_factory = EntityFactory::Instance();
 	m_factory->Init();
+	InputHandler::Instance();
+	InputHandler::Instance().Init();
+	
 }
 
 
@@ -39,23 +45,35 @@ void GameEngine::update()
 
 void GameEngine::run()
 {
+	double currentTime, elapsedTime;
 
 	changeScene<Scene_Play>("play", m_renderer);
 	while(m_running)
 	{
+		double currentTime = glfwGetTime();
 		m_entityMan->update();
 		GameEngine::sUserInput();
 		
 		currentScene()->update();
 
         currentScene()->sRender();
-		std::cout << m_currentFrame++ << std::endl;
+
+        currentScene()->sDoAction();
+        m_currentFrame++;
+        double elapsedTime = glfwGetTime();
+        double dt = elapsedTime - currentTime;
+        double FPS_ = (double)m_currentFrame/dt;
+        m_currentFrame = 0;
+        std::cout << "FPS: " << FPS_ << std::endl;
+        //std::cout << "Total entities: " << EntityMemoryPool::Instance()->getNumEntities() << std::endl;
+		//std::cout << m_currentFrame << std::endl;
 	}
 }
 
 
 void GameEngine::quit()
 {
+
 	m_running = false;
 	m_currentFrame = 0;
 	std::cout << "Successful quit!" << std::endl;
@@ -97,12 +115,6 @@ EntityMan* GameEngine::getEntityMan()
 }
 
 
-InputHandler* GameEngine::getHandler()
-{
-	return m_handler;
-}
-
-
 EntityFactory* GameEngine::getFactory()
 {
 	return m_factory;
@@ -112,6 +124,11 @@ EntityFactory* GameEngine::getFactory()
 void GameEngine::sUserInput()
 {
 	glfwPollEvents();
-	m_handler->processInput(m_renderer->getWindow());
+	//m_handler->processInput(m_renderer->getWindow());
 }
 
+
+/*aMap* GameEngine::getAM()
+{
+	return m_actionMap;
+}*/

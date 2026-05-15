@@ -13,16 +13,22 @@ class SpawnSand;
 
 class InputHandler
 {
-	Invoker* m_invoker = nullptr;
-	PlayRec* m_receiver = nullptr;
 	GameEngine* m_game = nullptr;
-	SpawnSand* m_activeCommand = nullptr;
-public:
+	GLFWwindow* m_window = nullptr;
 	double m_xpos, m_ypos;
 	std::vector<double> m_pos = {m_xpos, m_ypos};
-	InputHandler();
+public:
+	
+	static InputHandler& Instance();
+
+	void Init();
 
 	~InputHandler();
+	
+	static void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods);
+	static void framebufferSizeCallback(GLFWwindow* window, int width, int height);
+	static void mouseButtonCallback(GLFWwindow* window, int button, int action, int mods);
+
 
 	void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 
@@ -30,12 +36,12 @@ public:
 
 	std::vector<double> getMousePosition();
 
-	void processInput(GLFWwindow* window);
+	void processInput(GLFWwindow* window, int key, int scancode, int action, int mods);
 
-	Invoker& getInvoker();
+/*	Invoker& getInvoker();
 
 	PlayRec& getRec();
-
+*/
 
 };
 

@@ -1,22 +1,27 @@
 #include "SpawnSand.h"
 #include "GameEngine.h"
 
-SpawnSand::SpawnSand(PlayRec *rec, GameEngine* game)
-	:m_rec(rec), m_game(game)
+LMB_::LMB_(GameEngine* game)
+	:m_game(game)
 {
 
 }
 
-void SpawnSand::execute()  
+void LMB_::execute()  
 {
-	std::cout << "SpawnSand execute fn" << std::endl;
-	//std::vector<double> pos = m_game->getHandler()->getMousePosition();
-	glfwGetCursorPos(m_game->getRenderer()->getWindow(), &m_xpos, &m_ypos);
-	m_rec->placeSand(m_xpos, m_ypos);
+	/*glfwGetCursorPos(m_game->getRenderer()->getWindow(), &m_xpos, &m_ypos);
+	m_rec->placeSand(m_xpos, m_ypos);*/	
+	//m_spawning = true;
+	
 }
 
 
-void SpawnSand::unexecute() const
+void LMB_::unexecute() 
 {
-	std::cout << "Stopping!" << std::endl;
+	//m_spawning = false;
+}
+
+bool isSpawning()
+{
+	return m_spawning;
 }

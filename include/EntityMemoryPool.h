@@ -76,6 +76,8 @@ public:
 	size_t getNextEntityIndex();
 
 	int getEnum(std::string s);
+
+	size_t getNumEntities();
 };
 
 

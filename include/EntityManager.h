@@ -20,6 +20,7 @@ class EntityMan
 	EntityVec 	m_entities;
 	EntityVec 	m_entitiesToAdd;
 	EntityMap 	m_entityMap;
+	std::vector<Entity> m_entitiesByTag;
 	size_t 		m_totalEntities = 0;
 	
 public:
@@ -29,6 +30,7 @@ public:
 	EntityVec& getEntities();
 	EntityVec& getEntities(const Tag tag);
 	void remEntity(size_t index);
+	size_t getTotalEntities();
 };
 
 #endif //ENtityMan

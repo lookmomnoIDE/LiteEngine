@@ -1,4 +1,4 @@
-#include "Invoker.h"
+/*#include "Invoker.h"
 
 Invoker::Invoker()
 {
@@ -18,7 +18,7 @@ void Invoker::setStart(ICommand *c)
 
 void Invoker::setStop(ICommand *c)
 {
-	m_stop = c;
+	this->m_stop = c;
 }
 
 void Invoker::sendCommand()
@@ -30,6 +30,8 @@ void Invoker::sendCommand()
 
 	else if(m_stop)
 	{
+
 		m_stop->unexecute();
+
 	}
-}
+}*/

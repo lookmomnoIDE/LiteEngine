@@ -93,3 +93,8 @@ int EntityMemoryPool::getEnum(std::string s)
     auto it = tagMap.find(s);
     return (it != tagMap.end()) ? it->second : 255; // 255 = not found
 }
+
+size_t EntityMemoryPool::getNumEntities()
+{
+	return m_numEntities;
+}

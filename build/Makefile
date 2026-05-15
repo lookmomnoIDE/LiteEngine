@@ -464,30 +464,6 @@ src/Parser.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Parser.cpp.s
 .PHONY : src/Parser.cpp.s
 
-src/PlayRec.obj: src/PlayRec.cpp.obj
-.PHONY : src/PlayRec.obj
-
-# target to build an object file
-src/PlayRec.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/PlayRec.cpp.obj
-.PHONY : src/PlayRec.cpp.obj
-
-src/PlayRec.i: src/PlayRec.cpp.i
-.PHONY : src/PlayRec.i
-
-# target to preprocess a source file
-src/PlayRec.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/PlayRec.cpp.i
-.PHONY : src/PlayRec.cpp.i
-
-src/PlayRec.s: src/PlayRec.cpp.s
-.PHONY : src/PlayRec.s
-
-# target to generate assembly for a file
-src/PlayRec.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/PlayRec.cpp.s
-.PHONY : src/PlayRec.cpp.s
-
 src/Renderer.obj: src/Renderer.cpp.obj
 .PHONY : src/Renderer.obj
 
@@ -559,30 +535,6 @@ src/Shader.s: src/Shader.cpp.s
 src/Shader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Shader.cpp.s
 .PHONY : src/Shader.cpp.s
-
-src/SpawnSand.obj: src/SpawnSand.cpp.obj
-.PHONY : src/SpawnSand.obj
-
-# target to build an object file
-src/SpawnSand.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/SpawnSand.cpp.obj
-.PHONY : src/SpawnSand.cpp.obj
-
-src/SpawnSand.i: src/SpawnSand.cpp.i
-.PHONY : src/SpawnSand.i
-
-# target to preprocess a source file
-src/SpawnSand.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/SpawnSand.cpp.i
-.PHONY : src/SpawnSand.cpp.i
-
-src/SpawnSand.s: src/SpawnSand.cpp.s
-.PHONY : src/SpawnSand.s
-
-# target to generate assembly for a file
-src/SpawnSand.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/SpawnSand.cpp.s
-.PHONY : src/SpawnSand.cpp.s
 
 src/Texture.obj: src/Texture.cpp.obj
 .PHONY : src/Texture.obj
@@ -947,9 +899,6 @@ help:
 	@echo ... src/Parser.obj
 	@echo ... src/Parser.i
 	@echo ... src/Parser.s
-	@echo ... src/PlayRec.obj
-	@echo ... src/PlayRec.i
-	@echo ... src/PlayRec.s
 	@echo ... src/Renderer.obj
 	@echo ... src/Renderer.i
 	@echo ... src/Renderer.s
@@ -959,9 +908,6 @@ help:
 	@echo ... src/Shader.obj
 	@echo ... src/Shader.i
 	@echo ... src/Shader.s
-	@echo ... src/SpawnSand.obj
-	@echo ... src/SpawnSand.i
-	@echo ... src/SpawnSand.s
 	@echo ... src/Texture.obj
 	@echo ... src/Texture.i
 	@echo ... src/Texture.s

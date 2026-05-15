@@ -1,18 +1,19 @@
 #include "Scene_Play.h"
 #include "GameEngine.h"
 
+
 Scene_Play::Scene_Play(GameEngine* game, Renderer* renderer) 
 	:m_game(game), m_renderer(renderer)
 {
-
+	Scene_Play::registerAction(GLFW_MOUSE_BUTTON_LEFT, "PLACE");
+	Scene_Play::registerAction(GLFW_KEY_ESCAPE, "ESC");
 }
 
 
-/*void Scene_Play::init(GameEngine* game)
+void Scene_Play::init()
 {
-	m_game = game;
-	m_renderer = &m_game->getRenderer();
-}*/
+	
+}
 
 void Scene_Play::update()
 {
@@ -27,7 +28,7 @@ void Scene_Play::update()
 			vel[1] += gravity.getGravity();
 			std::vector<float>& pos = transform.getPos();
 			pos[1] += vel[1];
-			std::cout << "x: " << pos[0] << "y: " << pos[1] << std::endl;
+			//std::cout << "x: " << pos[0] << "y: " << pos[1] << std::endl;
 			if (pos[1] < -.9)
 			{
 				pos[1] = -.9;
@@ -40,6 +41,7 @@ void Scene_Play::update()
 		}
 		
 	}
+	
 }
 void Scene_Play::sAnimation()
 {
@@ -64,10 +66,14 @@ void Scene_Play::sRender()
 	}
 	m_renderer->SwapBuffers();
 }
-void Scene_Play::sDoAction()
+
+
+/*void Scene_Play::sDoAction()
 {
 
-}
+}*/
+
+
 void Scene_Play::sGUI()
 {
 
@@ -76,4 +82,46 @@ void Scene_Play::sGUI()
 bool Scene_Play::isPaused()
 {
 	return m_paused;
+}
+
+void Scene_Play::doAction(const Action& a)
+{
+	if (a.type() == "START")
+	{
+		if (a.name() == "PLACE")
+		{
+			m_primaryActionActive = true;
+		}
+	}
+	if(a.type() == "END")
+	{
+		if(a.name() == "PLACE")
+		{
+			m_primaryActionActive = false;
+		}
+	}
+	if (a.name() == "ESC")
+	{
+		m_game->quit();
+	}
+}
+
+void Scene_Play::registerAction(int keycode, const std::string& aName)
+{
+	m_actionMap[keycode] = aName;
+}
+
+std::map<int, std::string>& Scene_Play::getAM()
+{
+	std::cout << "AM size: " << m_actionMap.size() << std::endl;
+	return m_actionMap;
+}
+
+void Scene_Play::sDoAction()
+{
+	if (m_primaryActionActive)
+	{
+		glfwGetCursorPos(m_renderer->getWindow(), &m_x, &m_y);
+		m_game->getFactory()->addSand(m_x, m_y);	
+	}
 }

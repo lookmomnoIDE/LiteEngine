@@ -6,17 +6,16 @@
 #include <iostream>
 
 
-class SpawnSand : public ICommand
+class LMB_ : public ICommand
 {
-
-	//float m_x, m_y;
-	PlayRec* m_rec = nullptr;
 	GameEngine* m_game = nullptr;
-	double m_xpos, m_ypos;
+	
+
 public:
-	SpawnSand(PlayRec *rec, GameEngine* game);
+	SpawnSand();
 	void execute() override;
-	void unexecute() const override;
+	void unexecute() override;
+	bool isSpawning() override;
 
 };
 

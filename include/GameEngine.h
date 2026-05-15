@@ -8,6 +8,7 @@
 #include "Scene_Play.h"
 #include "EntityFactory.h"
 #include "EntityMemoryPool.h"
+#include "ICommand.h"
 #include <string>
 #include <map>
 #include <memory>
@@ -19,6 +20,8 @@ class Scene;
 
 class GameEngine
 {
+	
+
 	std::map<std::string, std::unique_ptr<Scene>> m_scenes;
 	std::string m_scene;
 	//Assets m_assets;	//TODO
@@ -28,8 +31,7 @@ class GameEngine
 	std::string m_currentScene;
 	EntityMemoryPool* m_pool = EntityMemoryPool::Instance();
 	EntityMan* m_entityMan = EntityMan::Instance();
-	Renderer* m_renderer;
-	InputHandler* m_handler = nullptr;
+	Renderer* m_renderer = nullptr;
 	EntityFactory* m_factory = EntityFactory::Instance();
 
 public:
@@ -44,8 +46,8 @@ public:
 	template <typename T, typename... Args>
 	void changeScene(const std::string name, Args&&... args)
 	{
+		m_currentScene = name;
 	    m_scenes[name] = std::make_unique<T>(this, std::forward<Args>(args)...);
-	    m_currentScene = name;
 	}
 	Scene* currentScene();
 	//Todo
@@ -53,11 +55,9 @@ public:
 	Renderer* getRenderer();
 	EntityMemoryPool* getPool();
 	EntityMan* getEntityMan();
-	InputHandler* getHandler();
 	EntityFactory* getFactory();
 	void sUserInput();
-
-
+	//aMap* getAM();
 };
 
 #endif

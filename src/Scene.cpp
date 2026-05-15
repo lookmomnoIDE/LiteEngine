@@ -5,7 +5,7 @@
 
 virtual void Scene::init()
 {
-
+	//registerAction()
 }
 
 virtual void Scene::update()
@@ -33,7 +33,7 @@ virtual void Scene::doAction(Command c)
 
 }
 
-virtual void Scene::registerAction(Command c)
+virtual void Scene::registerAction()
 {
-
+	//m_actionMap[c] = name;
 }

@@ -1,4 +1,4 @@
-#ifndef INVOKER_H
+/*#ifndef INVOKER_H
 #define INVOKER_H
 
 #include "ICommand.h"
@@ -21,4 +21,4 @@ public:
 	void sendCommand();
 
 };
-#endif
+#endif*/

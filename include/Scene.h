@@ -4,7 +4,7 @@
 #include <string>
 #include <map>
 
-//#include "Command.h"
+#include "ICommand.h"
 
 class GameEngine;
 class Renderer;
@@ -14,19 +14,19 @@ class Scene
 {
 public:
 	int m_frame;
-	//std::map<int i, std::string> m_actionMap;
 	bool m_paused = false;
-	
+	std::map<int, std::string> m_actionMap;
 	Scene(){}
-    //virtual void init() = 0;
+    virtual void init() = 0;
 	virtual ~Scene() = default;
 	//virtual void init(GameEngine* game) = 0;
 	virtual void update() = 0;
-	//virtual void sDoAction(Command& c) = 0;
+	virtual void sDoAction() = 0;
 	virtual void sRender() = 0;
 	//virtual void simulate(int i) = 0;
-	//virtual void doAction(Command& c) = 0;
-	//virtual void registerAction(Command& c) = 0;
+	virtual void doAction(const Action& c) = 0;
+	virtual void registerAction(int keycode, const std::string& aName) = 0;
+	virtual std::map<int, std::string>& getAM() = 0;
 };
 #endif
 
