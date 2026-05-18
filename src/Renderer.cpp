@@ -33,6 +33,8 @@ Renderer::Renderer()
 	std::cout << m_aspectRatio << std::endl;
 	m_game = GameEngine::Instance();
 
+	//Set Renderer ID!
+	m_RendererID = m_game->getUniqueRID();
 	glViewport(0, 0, m_width, m_height);
 	m_shader = new Shader("../src/cool.vert", "../src/beans.frag");
 	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
@@ -112,15 +114,15 @@ void Renderer::Square(const Entity e, std::vector<float> pos)
 {
 	EntityMemoryPool* pool = EntityMemoryPool::Instance();
 	size_t id = e.getID();
-	//pool->getComponent<CTransform>(id).setPos(pos);
 	Cgrain& s = pool->getComponent<Cgrain>(id);
 	float size = s.getSize();
-	std::vector<float> color = {pool->getComponent<Csand>(id).getColor()};
+	const std::vector<float>& color = {pool->getComponent<Csand>(id).getColor()};
 
 
 	float halfX = (size * m_aspectRatio) / 2.0f;
 	float halfY = size / 2.0f;
-	//std::cout <<"halfX: "<< halfX << ", " <<"halfY: " << halfY << std::endl;
+
+	//Instance verticies as a part of Cgrain
 
 	float verts[] = {
     pos[0] - halfX,  pos[1] - halfY,  -1.0f,  color[0], color[1], color[2], color[3],
@@ -129,17 +131,21 @@ void Renderer::Square(const Entity e, std::vector<float> pos)
     pos[0] + halfX,  pos[1] + halfY,  -1.0f,  color[0], color[1], color[2], color[3]
 	};
 
+	//Create funtion to generate indicies
+	//0, 1, 2, 3 	-> 4, 5, 6, 7 	-> 8, 9, 10, 11 ...
+	//0 - 3 		->	4 - 7 		-> 8 - 11 		...
 
 	unsigned int indices[] = {
     0, 1, 3,   // top-left,  top-right,    bottom-right
     0, 3, 2    // top-left,  bottom-right, bottom-left
 	};
 
+	//Take everythiing below this comment and make it its own function
 
 	VertexArray va;
 	VertexBuffer vb(verts, sizeof(verts));
 
-	IndexBuffer ib(indices, 6);
+	IndexBuffer ib(indices, 6); // Indices ok, 6 -> #number of active entities * 6
 
 	VertexBufferLayout layout;
 	layout.Push<float>(3);
@@ -172,4 +178,9 @@ int Renderer::getHeight() const
 }
 
 
+//get Renderer ID!
+unsigned int Renderer::getRID()
+{
+	return m_RendererID;
+}
 

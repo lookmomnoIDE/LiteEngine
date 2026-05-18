@@ -23,6 +23,7 @@ class Renderer
 	int m_width = 1920;
 	int m_height = 1050; 
 	float m_aspectRatio;
+	unsigned int m_RendererID;
 	GameEngine* m_game = nullptr;
 	Shader* m_shader = nullptr;
 	GLFWwindow* m_window = nullptr;
@@ -43,6 +44,7 @@ public:
 	void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 	void mouse_button_callback(GLFWwindow* window, int button, int action, int mods);
 	std::vector<double> getMousePosition();
+	unsigned int getRID();
 };
 
 #endif

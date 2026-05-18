@@ -33,7 +33,7 @@ class GameEngine
 	EntityMan* m_entityMan = EntityMan::Instance();
 	Renderer* m_renderer = nullptr;
 	EntityFactory* m_factory = EntityFactory::Instance();
-
+	unsigned int m_numRenderers = 0;
 public:
 	static GameEngine* Instance();
 	~GameEngine();
@@ -57,6 +57,7 @@ public:
 	EntityMan* getEntityMan();
 	EntityFactory* getFactory();
 	void sUserInput();
+	unsigned int getUniqueRID();
 	//aMap* getAM();
 };
 

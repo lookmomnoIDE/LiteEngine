@@ -4,7 +4,7 @@
 GameEngine* GameEngine::Instance()
 {
 	static GameEngine instance{};
-	std::cout << &instance << std::endl;
+	//std::cout << &instance << std::endl;
 	return &instance;
 }
 
@@ -26,10 +26,7 @@ void GameEngine::Init()
 
 	m_renderer = new Renderer();
 	m_renderer->Init();
-	//GLFWwindow* m_window = m_renderer->getWindow();
 	m_scenes["play"] = std::make_unique<Scene_Play>(this, m_renderer);
-	//m_actionMap[0] = std::make_unique<SpawnSand>();
-	//m_factory = EntityFactory::Instance();
 	m_factory->Init();
 	InputHandler::Instance();
 	InputHandler::Instance().Init();
@@ -132,3 +129,8 @@ void GameEngine::sUserInput()
 {
 	return m_actionMap;
 }*/
+
+unsigned int GameEngine::getUniqueRID()
+{
+	return m_numRenderers++;
+}	

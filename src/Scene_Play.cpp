@@ -17,61 +17,85 @@ void Scene_Play::init()
 
 void Scene_Play::update()
 {
-	EntityVec entities = m_game->getEntityMan()->getEntities();
-	for ( Entity e : entities )
-	{
-		if(m_game->getPool()->hasComponent<Cgravity>(e.getID()))
+	const EntityVec& entities = m_game->getEntityMan()->getEntities();
+	const auto& pool = m_game->getPool();
+	std::vector<bool> activeGravity = {};
+	for ( const Entity& e : entities )
+	{	
+		const auto id = e.getID();
+		//variable = (condition) ? expressionTrue : expressionFalse;
+		if(!pool->hasComponent<Cgravity>(id)) continue;
+		//activeGravity[id] = (pool->hasComponent<Cgravity>(id)) ? true : false;
+		
+		CTransform& transform = pool->getComponent<CTransform>(id);
+		Cgravity& gravity = pool->getComponent<Cgravity>(id);
+		auto& vel = transform.getVel();
+		auto& pos = transform.getPos();
+		vel[1] += gravity.getGravity();
+		pos[1] += vel[1];
+		if (pos[1] < -.9f)
 		{
-			CTransform& transform = m_game->getPool()->getComponent<CTransform>(e.getID());
-			Cgravity& gravity = m_game->getPool()->getComponent<Cgravity>(e.getID());
-			std::vector<float>& vel = transform.getVel();
-			vel[1] += gravity.getGravity();
-			std::vector<float>& pos = transform.getPos();
-			pos[1] += vel[1];
-			//std::cout << "x: " << pos[0] << "y: " << pos[1] << std::endl;
-			if (pos[1] < -.9)
-			{
-				pos[1] = -.9;
-				vel[0] = 0;
-				vel[1] = 0;
-				m_game->getPool()->remComponent<Cgravity>(e.getID());
-			}
-			transform.setPos(pos);
-			transform.setVel(vel);				
-		}
+			pos[1] = -.9f;
+			vel[0] = 0.0f;
+			vel[1] = 0.0f;
+			pool->remComponent<Cgravity>(id);
+		}	
 		
 	}
-	
+
+/*	for ( const bool& b: activeGravity )
+	{
+		if(b)
+		{
+			CTransform& transform = pool->getComponent<CTransform>(id);
+			Cgravity& gravity = pool->getComponent<Cgravity>(id);
+			auto& vel = transform.getVel();
+			auto& pos = transform.getPos();
+			vel[1] += gravity.getGravity();
+			pos[1] += vel[1];
+			if (pos[1] < -.9f)
+			{
+				pos[1] = -.9f;
+				vel[0] = 0.0f;
+				vel[1] = 0.0f;
+				pool->remComponent<Cgravity>(id);
+			}
+		}
+		
+	}*/
+
 }
+
+
 void Scene_Play::sAnimation()
 {
 
 }
+
+
 void Scene_Play::sEnemySpawner()
 {
 
 }
+
+
 void Scene_Play::sCollision()
 {
 
 }
+
+
 void Scene_Play::sRender()
 {
 	m_renderer->Clear();
 	EntityVec entities = m_game->getEntityMan()->getEntities();
 	for ( Entity e : entities )
 	{
-		std::vector<float> pos = m_game->getPool()->getComponent<CTransform>(e.getID()).getPos();
+		std::vector<float>& pos = m_game->getPool()->getComponent<CTransform>(e.getID()).getPos();
 		m_renderer->Square(e, pos);
 	}
 	m_renderer->SwapBuffers();
 }
-
-
-/*void Scene_Play::sDoAction()
-{
-
-}*/
 
 
 void Scene_Play::sGUI()

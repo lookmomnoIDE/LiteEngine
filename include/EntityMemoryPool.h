@@ -14,7 +14,7 @@
 #include <unordered_map>
 
 class Entity;
-static const size_t MAX_ENTITIES = 1000;
+static const size_t MAX_ENTITIES = 10000;
 
 class EntityMemoryPool
 {
