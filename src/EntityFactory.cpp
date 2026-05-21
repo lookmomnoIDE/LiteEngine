@@ -24,9 +24,9 @@ void EntityFactory::addSand(double xpos, double ypos)
 
 	const auto& pool = m_game->getPool();
 	
-	std::vector<float> pos = {(2.0f*xpos)/width - 1.0f, 1.0f - (2.0f*ypos)/height};
+	Vec2<float> pos = {(2.0f*(float)xpos)/width - 1.0f, 1.0f - (2.0f*(float)ypos)/height};
 	
-	std::vector<float> vel = {0.0f, 0.0f};
+	Vec2<float> vel = {0.0f, 0.0f};
 	
 	Tag target = static_cast<Tag>(pool->getEnum("sand"));
 	//Tag target = m_game->getPool().getEnum("sand");

@@ -48,6 +48,7 @@ public:
 	{
 		m_currentScene = name;
 	    m_scenes[name] = std::make_unique<T>(this, std::forward<Args>(args)...);
+	    currentScene()->init();
 	}
 	Scene* currentScene();
 	//Todo

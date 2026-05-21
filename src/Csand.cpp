@@ -7,19 +7,19 @@ Csand::Csand()
 }
 
 
-Csand::Csand(const std::vector<float> & color)
+Csand::Csand(const Vec4<float> & color)
 		:m_color(color)
 {
 	active = true;
 }
 
 
-std::vector<float> Csand::getColor()
+const Vec4<float>& Csand::getColor()
 {
 	return m_color;
 }
 
-void Csand::setColor(std::vector<float> color)
+void Csand::setColor(Vec4<float> color)
 {
 	m_color = color;
 }

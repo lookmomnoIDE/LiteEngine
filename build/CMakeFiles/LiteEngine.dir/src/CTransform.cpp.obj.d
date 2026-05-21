@@ -62,4 +62,5 @@ CMakeFiles/LiteEngine.dir/src/CTransform.cpp.obj: \
  C:/mingw64/include/c++/15.2.0/bits/uses_allocator.h \
  C:/mingw64/include/c++/15.2.0/bits/uses_allocator_args.h \
  C:/mingw64/include/c++/15.2.0/tuple \
- C:/projects/LiteEngineV003/include/Components.h
+ C:/projects/LiteEngineV003/include/Components.h \
+ C:/projects/LiteEngineV003/include/Vec2.h

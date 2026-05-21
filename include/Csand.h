@@ -1,16 +1,17 @@
 #pragma once
 #include "Components.h"
+#include "Vec4.h"
 #include <vector>
 
 class Csand : public Component
 {
-	std::vector<float> 	m_color = {0.761f, 0.698f, 0.502f, 1.0f};
+	Vec4<float> 	m_color = {0.761f, 0.698f, 0.502f, 1.0f};
 
 public:
 
 	Csand();
-	Csand(const std::vector<float> & color);
+	Csand(const Vec4<float> & color);
 
-	std::vector<float> getColor();
-	void setColor(std::vector<float> color);
+	const Vec4<float>& getColor();
+	void setColor(Vec4<float> color);
 };

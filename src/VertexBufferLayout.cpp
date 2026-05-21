@@ -24,21 +24,21 @@ unsigned int VertexBufferLayout::GetStride() const
 template <>
 void VertexBufferLayout::Push<float>(unsigned int count)
 {
-    m_Elements.push_back({GLType<float>(), count, GL_FALSE});
+    m_Elements.push_back({GLType<float>(), count, GL_FALSE, sizeof(float)});
     m_Stride += count * sizeof(float);
 }
 
 template <>
 void VertexBufferLayout::Push<unsigned int>(unsigned int count)
 {
-    m_Elements.push_back({GLType<unsigned int>(), count, GL_FALSE});
+    m_Elements.push_back({GLType<unsigned int>(), count, GL_FALSE, sizeof(unsigned int)});
     m_Stride += count * sizeof(unsigned int);
 }
 
 template <>
 void VertexBufferLayout::Push<unsigned char>(unsigned int count)
 {
-    m_Elements.push_back({GLType<unsigned char>(), count, GL_FALSE});
+    m_Elements.push_back({GLType<unsigned char>(), count, GL_FALSE, sizeof(unsigned char)});
     m_Stride += count * sizeof(unsigned char);
 }
 

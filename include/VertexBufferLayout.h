@@ -14,6 +14,7 @@ public:
 		unsigned int type;
 		unsigned int count;
 		bool normalized = false;
+		unsigned int typeSize;
 	};
 
 private:

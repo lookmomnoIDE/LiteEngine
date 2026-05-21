@@ -1,32 +1,32 @@
 #include "CTransform.h"
-
+//#include "Vec2.h"
 
 CTransform::CTransform()
 {
 	active = true;
 }
-CTransform::CTransform(const std::vector<float> & p, std::vector<float> & v)
+CTransform::CTransform(const Vec2<float>& p, Vec2<float>& v)
 		:m_pos(p), m_vel(v)
 {
 	active = true;
 }
 
-std::vector<float>& CTransform::getPos()
+Vec2<float>& CTransform::getPos()
 {
 	return m_pos;
 }
 
-void CTransform::setPos(std::vector<float> & p)
+void CTransform::setPos(Vec2<float>& p)
 {
 	m_pos = p;
 }
 
-std::vector<float>& CTransform::getVel()
+Vec2<float>& CTransform::getVel()
 {
 	return m_vel;
 }
 
-void CTransform::setVel(std::vector<float> & v)
+void CTransform::setVel(Vec2<float>& v)
 {
 	m_vel = v;
 }

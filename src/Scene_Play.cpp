@@ -1,6 +1,8 @@
 #include "Scene_Play.h"
 #include "GameEngine.h"
 
+#include "Vec2.h"
+
 
 Scene_Play::Scene_Play(GameEngine* game, Renderer* renderer) 
 	:m_game(game), m_renderer(renderer)
@@ -12,14 +14,28 @@ Scene_Play::Scene_Play(GameEngine* game, Renderer* renderer)
 
 void Scene_Play::init()
 {
+	//Initialize quads in memory
+	const EntityVec& entities = m_game->getEntityMan()->getEntities();
+	const auto& pool = m_game->getPool();
+	m_quads.reserve(pool->getMaxEnts());
+	std::cout << "Pre scene init loop" << std::endl;
+	for (const Entity& e : entities)
+	{
+		std::cout << "Hello?" << std::endl;
+		auto id = e.getID();
+		pool->getComponent<Cgrain>(id).createQuad(pool->getComponent<CTransform>(id).getPos(), pool->getComponent<Csand>(id).getColor());
+	}
 	
-}
+}	
 
 void Scene_Play::update()
 {
+	//m_quads.clear();
 	const EntityVec& entities = m_game->getEntityMan()->getEntities();
 	const auto& pool = m_game->getPool();
-	std::vector<bool> activeGravity = {};
+	//std::vector<Quad> m_quads;
+	std::cout << "entering scene update fn" << std::endl;
+	//update transform positions. 
 	for ( const Entity& e : entities )
 	{	
 		const auto id = e.getID();
@@ -31,39 +47,39 @@ void Scene_Play::update()
 		Cgravity& gravity = pool->getComponent<Cgravity>(id);
 		auto& vel = transform.getVel();
 		auto& pos = transform.getPos();
-		vel[1] += gravity.getGravity();
-		pos[1] += vel[1];
-		if (pos[1] < -.9f)
+		vel.m_y += gravity.getGravity();
+		pos.m_y += vel.m_y;
+		if (pos.m_y < -.9f)
 		{
-			pos[1] = -.9f;
-			vel[0] = 0.0f;
-			vel[1] = 0.0f;
+			pos.m_y = -.9f;
+			vel.m_x = 0.0f;
+			vel.m_y = 0.0f;
 			pool->remComponent<Cgravity>(id);
 		}	
 		
 	}
-
-/*	for ( const bool& b: activeGravity )
+	std::cout << "transforms" << std::endl;
+	//update quad positions
+	for(const Entity& e: entities)
 	{
-		if(b)
-		{
-			CTransform& transform = pool->getComponent<CTransform>(id);
-			Cgravity& gravity = pool->getComponent<Cgravity>(id);
-			auto& vel = transform.getVel();
-			auto& pos = transform.getPos();
-			vel[1] += gravity.getGravity();
-			pos[1] += vel[1];
-			if (pos[1] < -.9f)
-			{
-				pos[1] = -.9f;
-				vel[0] = 0.0f;
-				vel[1] = 0.0f;
-				pool->remComponent<Cgravity>(id);
-			}
-		}
-		
-	}*/
+		//update quad positions. 
+		const auto 		id 			= e.getID();
+		CTransform& 	transform 	= pool->getComponent<CTransform>(id);
+		Cgrain& 		grain 		= pool->getComponent<Cgrain>(id);
+		auto& 			pos 		= transform.getPos();
+		grain.setQuadPos(pos);	
 
+	}
+	std::cout << "quad positions set" << std::endl;
+	//add quads to vector of quads
+	m_quads.clear();
+	for(const Entity& e :entities)
+	{
+		auto id = e.getID();
+		Cgrain& grain = pool->getComponent<Cgrain>(id);
+		m_quads.push_back(grain.getQuad());
+	}
+	std::cout << "Quad buffer set" << std::endl;
 }
 
 
@@ -87,13 +103,20 @@ void Scene_Play::sCollision()
 
 void Scene_Play::sRender()
 {
+
+	if (!m_quads.empty())
+    {
+        auto& q = m_quads[0];
+        std::cout << "v0: " << q.v0.Position.m_x << ", " << q.v0.Position.m_y << ", " << q.v0.Position.m_z << std::endl;
+        std::cout << "v1: " << q.v1.Position.m_x << ", " << q.v1.Position.m_y << ", " << q.v1.Position.m_z << std::endl;
+        std::cout << "v2: " << q.v2.Position.m_x << ", " << q.v2.Position.m_y << ", " << q.v2.Position.m_z << std::endl;
+        std::cout << "v3: " << q.v3.Position.m_x << ", " << q.v3.Position.m_y << ", " << q.v3.Position.m_z << std::endl;
+        std::cout << "color: " << q.v0.Color.m_x << ", " << q.v0.Color.m_y << ", " << q.v0.Color.m_z << ", " << q.v0.Color.m_w << std::endl;
+    }
 	m_renderer->Clear();
-	EntityVec entities = m_game->getEntityMan()->getEntities();
-	for ( Entity e : entities )
-	{
-		std::vector<float>& pos = m_game->getPool()->getComponent<CTransform>(e.getID()).getPos();
-		m_renderer->Square(e, pos);
-	}
+	m_renderer->getVB().Bind();
+	glBufferSubData(GL_ARRAY_BUFFER, 0, m_game->getPool()->getMaxEnts() * sizeof(Quad), m_quads.data());
+	m_renderer->DrawElements();
 	m_renderer->SwapBuffers();
 }
 
@@ -115,6 +138,8 @@ void Scene_Play::doAction(const Action& a)
 		if (a.name() == "PLACE")
 		{
 			m_primaryActionActive = true;
+			
+			std::cout << currentEntities++ << std::endl;
 		}
 	}
 	if(a.type() == "END")
@@ -145,7 +170,11 @@ void Scene_Play::sDoAction()
 {
 	if (m_primaryActionActive)
 	{
+
 		glfwGetCursorPos(m_renderer->getWindow(), &m_x, &m_y);
 		m_game->getFactory()->addSand(m_x, m_y);	
+		std::cout << "placed some sand!" << std::endl;
 	}
 }
+
+

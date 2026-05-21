@@ -11,6 +11,9 @@
 #include "IndexBuffer.h"
 #include "Entity.h"
 #include "EntityMemoryPool.h"
+#include "Vec2.h"
+#include "Vec3.h"
+#include "Vec4.h"
 
 
 //#include "EntityFactory.h" // TEMPORARY REMOVE AFTER COMMANDS
@@ -23,10 +26,14 @@ class Renderer
 	int m_width = 1920;
 	int m_height = 1050; 
 	float m_aspectRatio;
-	unsigned int m_RendererID;
+	//unsigned int m_RendererID;
 	GameEngine* m_game = nullptr;
 	Shader* m_shader = nullptr;
 	GLFWwindow* m_window = nullptr;
+	VertexBuffer* vb = nullptr;
+	IndexBuffer* ib = nullptr;
+	VertexArray* va = nullptr;
+	VertexBufferLayout* layout = nullptr;
 
 public:
 	Renderer();
@@ -35,16 +42,15 @@ public:
 	Shader* loadShader(std::string vertex, std::string fragment);
 	GLFWwindow* getWindow();
 	void Draw(const VertexArray& va, const VertexBuffer& vb) const;
-	void DrawElements(const VertexArray& va, const VertexBuffer& vb, const IndexBuffer& ib) const;
-	void Square(const Entity e, std::vector<float> pos);
+	void DrawElements() const;
+	void Square(const Entity e, Vec2<float> pos);
 	void SwapBuffers();
 	void Clear();
 	int getWidth() const;
 	int getHeight() const;
-	void framebuffer_size_callback(GLFWwindow* window, int width, int height);
-	void mouse_button_callback(GLFWwindow* window, int button, int action, int mods);
-	std::vector<double> getMousePosition();
-	unsigned int getRID();
+
+	std::vector<unsigned int> genIndicies(unsigned int maxEntities);
+	VertexBuffer& getVB();
 };
 
 #endif

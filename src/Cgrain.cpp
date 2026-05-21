@@ -1,4 +1,5 @@
-#include <Cgrain.h>
+#include "Cgrain.h"
+#include <iostream>
 
 Cgrain::Cgrain()
 {
@@ -19,4 +20,48 @@ float Cgrain::getSize()
 void Cgrain::setSize(float size)
 {
 	m_size = size;
+}
+
+
+
+Quad Cgrain::createQuad(const Vec2<float>& pos, const Vec4<float>& color)
+{
+	//EntityMemoryPool* pool = EntityMemoryPool::Instance();
+	//size_t id = e.getID();
+	//const Vec4<float>& color = {pool->getComponent<Csand>(id).getColor()};
+	//const auto& size = pool->getComponent<Cgrain>(id).getSize();
+	std::cout << color.m_x << " " << color.m_y << std::endl;
+	float halfX = (m_size * m_aspectRatio) / 2.0f;
+	float halfY = m_size / 2.0f;
+
+	m_quad.v0.Position 	= {pos.m_x - halfX, pos.m_y - halfY, -1.0f};
+	m_quad.v0.Color 	= {color.m_x, color.m_y, color.m_z, color.m_w};
+
+	m_quad.v1.Position = {pos.m_x + halfX, pos.m_y - halfY, -1.0f};
+	m_quad.v1.Color 	= {color.m_x, color.m_y, color.m_z, color.m_w};
+
+	m_quad.v2.Position = {pos.m_x - halfX, pos.m_y + halfY, -1.0f};
+	m_quad.v2.Color 	= {color.m_x, color.m_y, color.m_z, color.m_w};
+
+	m_quad.v3.Position = {pos.m_x + halfX, pos.m_y + halfY, -1.0f};
+	m_quad.v3.Color 	= {color.m_x, color.m_y, color.m_z, color.m_w};
+
+	return m_quad;
+
+}
+
+
+Quad& Cgrain::getQuad()
+{
+	return m_quad;
+}
+
+void Cgrain::setQuadPos(Vec2<float>& pos)
+{
+	float halfX = (m_size * m_aspectRatio) / 2.0f;
+	float halfY = m_size / 2.0f;
+	m_quad.v0.Position = {pos.m_x - halfX, pos.m_y - halfY, -1.0f};
+	m_quad.v1.Position = {pos.m_x + halfX, pos.m_y - halfY, -1.0f};
+	m_quad.v2.Position = {pos.m_x - halfX, pos.m_y + halfY, -1.0f};
+	m_quad.v3.Position = {pos.m_x + halfX, pos.m_y + halfY, -1.0f};
 }

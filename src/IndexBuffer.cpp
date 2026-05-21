@@ -2,13 +2,18 @@
 #include "GameEngine.h"
 
 
-IndexBuffer::IndexBuffer(const unsigned int* data, unsigned int count)
+IndexBuffer::IndexBuffer(const std::vector<unsigned int>* data, size_t count)
 	: m_Count(count)
 {
-	m_RendererID = GameEngine::Instance()->getRenderer()->getRID();
+	//std::cout << "IB prerenderer ID" << std::endl;
+	//m_RendererID = GameEngine::Instance()->getRenderer()->getRID();
+	//std::cout << "IB renderer ID established: " << m_RendererID << std::endl;
 	glGenBuffers(1, &m_RendererID);
+	std::cout << "IB genBuffers" << std::endl;
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_RendererID);
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, count * sizeof(unsigned int), data, GL_DYNAMIC_DRAW);
+	std::cout << "IB Bind buffer" << std::endl;
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, count * sizeof(unsigned int), data->data(), GL_DYNAMIC_DRAW);
+	std::cout << "IB buffer data set" << std::endl;
 }
 
 IndexBuffer::~IndexBuffer()

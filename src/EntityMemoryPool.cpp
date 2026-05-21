@@ -98,3 +98,8 @@ size_t EntityMemoryPool::getNumEntities()
 {
 	return m_numEntities;
 }
+
+size_t EntityMemoryPool::getMaxEnts()
+{
+	return m_MAX_ENTITIES;
+}

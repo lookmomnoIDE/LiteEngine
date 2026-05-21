@@ -1,20 +1,21 @@
 #pragma once
 #include <vector>
 #include "Components.h"
+#include "Vec2.h"
 
 class CTransform : public Component
 {
-	std::vector<float> 	m_pos 		= {0.0f, 0.0f};
-	std::vector<float> 	m_vel 		= {0.0f, 0.0f};
+	Vec2<float> 	m_pos 		= {0.0f, 0.0f};
+	Vec2<float> 	m_vel 		= {0.0f, 0.0f};
 public:
 	
 	CTransform();
-	CTransform(const std::vector<float> & p, std::vector<float> & v);
+	CTransform(const Vec2<float> & p, Vec2<float> & v);
 
-	std::vector<float>& getPos();
-	void setPos(std::vector<float> & p);
+	Vec2<float>& getPos();
+	void setPos(Vec2<float> & p);
 
-	std::vector<float>& getVel();
-	void setVel(std::vector<float> & v);
+	Vec2<float>& getVel();
+	void setVel(Vec2<float> & v);
 
 };

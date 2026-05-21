@@ -183,7 +183,12 @@ CMakeFiles/LiteEngine.dir/src/Renderer.cpp.obj: \
  C:/mingw64/include/c++/15.2.0/cstdint \
  C:/projects/LiteEngineV003/include/Tags.h \
  C:/projects/LiteEngineV003/include/CTransform.h \
+ C:/projects/LiteEngineV003/include/Vec2.h \
  C:/projects/LiteEngineV003/include/Cgrain.h \
+ C:/projects/LiteEngineV003/include/Quad.h \
+ C:/projects/LiteEngineV003/include/Vertex.h \
+ C:/projects/LiteEngineV003/include/Vec3.h \
+ C:/projects/LiteEngineV003/include/Vec4.h \
  C:/projects/LiteEngineV003/include/Csand.h \
  C:/projects/LiteEngineV003/include/Cgravity.h \
  C:/mingw64/include/c++/15.2.0/unordered_map \
@@ -213,4 +218,5 @@ CMakeFiles/LiteEngine.dir/src/Renderer.cpp.obj: \
  C:/mingw64/include/c++/15.2.0/backward/auto_ptr.h \
  C:/mingw64/include/c++/15.2.0/pstl/glue_memory_defs.h \
  C:/mingw64/include/c++/15.2.0/pstl/execution_defs.h \
- C:/projects/LiteEngineV003/include/InputHandler.h
+ C:/projects/LiteEngineV003/include/InputHandler.h \
+ C:/projects/LiteEngineV003/include/Vertex.h

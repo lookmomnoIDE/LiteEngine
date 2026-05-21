@@ -121,7 +121,12 @@ CMakeFiles/LiteEngine.dir/src/Entity.cpp.obj: \
  C:/projects/LiteEngineV003/include/Tags.h \
  C:/projects/LiteEngineV003/include/Entity.h \
  C:/projects/LiteEngineV003/include/CTransform.h \
+ C:/projects/LiteEngineV003/include/Vec2.h \
  C:/projects/LiteEngineV003/include/Cgrain.h \
+ C:/projects/LiteEngineV003/include/Quad.h \
+ C:/projects/LiteEngineV003/include/Vertex.h \
+ C:/projects/LiteEngineV003/include/Vec3.h \
+ C:/projects/LiteEngineV003/include/Vec4.h \
  C:/projects/LiteEngineV003/include/Csand.h \
  C:/projects/LiteEngineV003/include/Cgravity.h \
  C:/mingw64/include/c++/15.2.0/unordered_map \

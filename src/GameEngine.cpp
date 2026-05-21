@@ -47,7 +47,7 @@ void GameEngine::run()
 	changeScene<Scene_Play>("play", m_renderer);
 	while(m_running)
 	{
-		double currentTime = glfwGetTime();
+		currentTime = glfwGetTime();
 		m_entityMan->update();
 		GameEngine::sUserInput();
 		

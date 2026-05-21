@@ -2,6 +2,7 @@ CMakeFiles/LiteEngine.dir/src/Csand.cpp.obj: \
  C:\projects\LiteEngineV003\src\Csand.cpp \
  C:/projects/LiteEngineV003/include/Csand.h \
  C:/projects/LiteEngineV003/include/Components.h \
+ C:/projects/LiteEngineV003/include/Vec4.h \
  C:/mingw64/include/c++/15.2.0/vector \
  C:/mingw64/include/c++/15.2.0/bits/requires_hosted.h \
  C:/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++config.h \

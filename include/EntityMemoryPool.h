@@ -78,6 +78,8 @@ public:
 	int getEnum(std::string s);
 
 	size_t getNumEntities();
+
+	size_t getMaxEnts();
 };
 
 

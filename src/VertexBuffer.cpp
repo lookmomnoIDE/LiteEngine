@@ -1,13 +1,19 @@
 #include "VertexBuffer.h"
 #include "GameEngine.h"
+#include "Renderer.h"
 
 
-VertexBuffer::VertexBuffer(const void* data, unsigned int size)
+VertexBuffer::VertexBuffer(const void* data, size_t size)
 {
-	m_RendererID = GameEngine::Instance()->getRenderer()->getRID();
+	//std::cout << "Pre renderer ID" << std::endl;
+	//m_RendererID = GameEngine::Instance()->getRenderer()->getRID();
+	//std::cout << "Renderer ID established" << std::endl;
 	glGenBuffers(1, &m_RendererID);
+	std::cout << "General Buffers" << std::endl;
 	glBindBuffer(GL_ARRAY_BUFFER, m_RendererID);
+	std::cout << "Binded buffer" << std::endl;
 	glBufferData(GL_ARRAY_BUFFER, size, data, GL_DYNAMIC_DRAW);
+	std::cout << "Buffer data / size set." << std::endl;
 	//glBufferData static -> dynamic
 
 }
