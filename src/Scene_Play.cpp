@@ -1,13 +1,13 @@
 #include "Scene_Play.h"
 #include "GameEngine.h"
-
+//#include "Tag.h"
 #include "Vec2.h"
 
 
 Scene_Play::Scene_Play(GameEngine* game, Renderer* renderer) 
 	:m_game(game), m_renderer(renderer)
 {
-	Scene_Play::registerAction(GLFW_MOUSE_BUTTON_LEFT, "PLACE");
+	Scene_Play::registerAction(GLFW_MOUSE_BUTTON_LEFT, "PLACE"); // Change place -> LMB
 	Scene_Play::registerAction(GLFW_KEY_ESCAPE, "ESC");
 }
 
@@ -15,13 +15,14 @@ Scene_Play::Scene_Play(GameEngine* game, Renderer* renderer)
 void Scene_Play::init()
 {
 	//Initialize quads in memory
-	const EntityVec& entities = m_game->getEntityMan()->getEntities();
+	
 	const auto& pool = m_game->getPool();
-	m_quads.reserve(pool->getMaxEnts());
+	auto ME = pool->getMaxEnts();
+	m_quads.reserve(ME);
 	std::cout << "Pre scene init loop" << std::endl;
+	const EntityVec& entities = m_game->getEntityMan()->getEntities();
 	for (const Entity& e : entities)
 	{
-		std::cout << "Hello?" << std::endl;
 		auto id = e.getID();
 		pool->getComponent<Cgrain>(id).createQuad(pool->getComponent<CTransform>(id).getPos(), pool->getComponent<Csand>(id).getColor());
 	}
@@ -35,6 +36,7 @@ void Scene_Play::update()
 	const auto& pool = m_game->getPool();
 	//std::vector<Quad> m_quads;
 	std::cout << "entering scene update fn" << std::endl;
+	
 	//update transform positions. 
 	for ( const Entity& e : entities )
 	{	
@@ -47,7 +49,7 @@ void Scene_Play::update()
 		Cgravity& gravity = pool->getComponent<Cgravity>(id);
 		auto& vel = transform.getVel();
 		auto& pos = transform.getPos();
-		vel.m_y += gravity.getGravity();
+		vel.m_y += gravity.getGravity();;
 		pos.m_y += vel.m_y;
 		if (pos.m_y < -.9f)
 		{
@@ -66,8 +68,14 @@ void Scene_Play::update()
 		const auto 		id 			= e.getID();
 		CTransform& 	transform 	= pool->getComponent<CTransform>(id);
 		Cgrain& 		grain 		= pool->getComponent<Cgrain>(id);
-		auto& 			pos 		= transform.getPos();
-		grain.setQuadPos(pos);	
+		Csand& 			sand 		= pool->getComponent<Csand>(id);
+		//auto& 			pos 		= transform.getPos();
+		grain.setQuadPos(transform.getPos());	
+		if (sand.colorDirty)
+		{
+			grain.setQuadColor(sand.getColor());
+			sand.colorDirty = false;
+		}
 
 	}
 	std::cout << "quad positions set" << std::endl;
@@ -138,8 +146,6 @@ void Scene_Play::doAction(const Action& a)
 		if (a.name() == "PLACE")
 		{
 			m_primaryActionActive = true;
-			
-			std::cout << currentEntities++ << std::endl;
 		}
 	}
 	if(a.type() == "END")

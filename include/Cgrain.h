@@ -23,6 +23,7 @@ public:
 	Quad createQuad(const Vec2<float>& pos, const Vec4<float>& color);
 	Quad& getQuad();
 	void setQuadPos(Vec2<float>& pos);
+	void setQuadColor(Vec4<float>& color);
 
 
 };

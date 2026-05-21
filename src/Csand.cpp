@@ -14,7 +14,7 @@ Csand::Csand(const Vec4<float> & color)
 }
 
 
-const Vec4<float>& Csand::getColor()
+Vec4<float>& Csand::getColor()
 {
 	return m_color;
 }
