@@ -49,6 +49,9 @@ To Do: (Falling Sand)
 		[] Credits
 [] Camera (2D)
 [] Renderer(s)
+	[] figure out how to handle vertex data for primitive models. 
+		+ do I transform the the vertices via the matrix calculations from a matrix provided by the cpu  every frame 
+		+ or do I transform the vertices every frame?
 	[] Enitities
 	[] Particles
 [] Shaders
