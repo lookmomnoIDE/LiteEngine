@@ -4,6 +4,8 @@ LiteNGINE is a high-performance, data-oriented 2D game engine built around an En
 
 The engine combines modern ECS principles with practical object-oriented systems where appropriate, creating a flexible foundation for both simulation-heavy applications and traditional games.
 
+TESTTING G G G
+
 ## Features
 
 * **Data-Oriented ECS Architecture**
