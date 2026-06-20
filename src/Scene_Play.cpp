@@ -8,7 +8,7 @@
 Scene_Play::Scene_Play(GameEngine* game, Renderer* renderer) 
 	:m_game(game), m_renderer(renderer)
 {
-	Scene_Play::registerAction(GLFW_MOUSE_BUTTON_LEFT, "PLACE"); // Change place -> LMB
+	Scene_Play::registerAction(GLFW_MOUSE_BUTTON_LEFT, "_LMB"); // Change place -> LMB
 	Scene_Play::registerAction(GLFW_KEY_ESCAPE, "ESC");
 }
 
@@ -144,14 +144,14 @@ void Scene_Play::doAction(const Action& a)
 {
 	if (a.type() == "START")
 	{
-		if (a.name() == "PLACE")
+		if (a.name() == "_LMB")
 		{
 			m_primaryActionActive = true;
 		}
 	}
 	if(a.type() == "END")
 	{
-		if(a.name() == "PLACE")
+		if(a.name() == "_LMB")
 		{
 			m_primaryActionActive = false;
 		}

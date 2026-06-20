@@ -173,6 +173,12 @@ void Renderer::Clear()
 }
 
 
+void Renderer::setViewport(int startx, int starty, int vWidth, int vHeight)
+{
+	glViewport(startx, starty, vWidth, vHeight);
+}
+
+
 int Renderer::getWidth() const
 {
 	return m_width;
