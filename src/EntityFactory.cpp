@@ -2,6 +2,7 @@
 #include "GameEngine.h"
 
 
+
 EntityFactory* EntityFactory::Instance()
 {
 	static EntityFactory factory{};

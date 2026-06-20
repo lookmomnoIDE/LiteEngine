@@ -1,6 +1,7 @@
 #ifndef VEC2_H
 #define VEC2_H
 
+
 template <typename T>
 
 class Vec2

@@ -2,6 +2,7 @@
 #include <string>
 #include <Renderer.h>
 
+
 class Texture
 {
 	unsigned int m_RendererID;

@@ -4,6 +4,7 @@
 #include "Vec2.h"
 
 
+
 Scene_Play::Scene_Play(GameEngine* game, Renderer* renderer) 
 	:m_game(game), m_renderer(renderer)
 {

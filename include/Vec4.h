@@ -2,6 +2,7 @@
 #define VEC4_H
 
 
+
 template <typename T>
 class Vec4
 {

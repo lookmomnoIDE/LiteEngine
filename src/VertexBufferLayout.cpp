@@ -14,7 +14,7 @@ const std::vector<VertexBufferLayout::VertexBufferElement>& VertexBufferLayout::
 	return m_Elements;
 }
 
-
+ 
 unsigned int VertexBufferLayout::GetStride() const 
 {
 	return m_Stride;

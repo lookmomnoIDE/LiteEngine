@@ -2,6 +2,7 @@
 #define CGRAVITY_H
 #include "Components.h"
 
+
 class Cgravity : public Component
 {
 	float m_gravity = -0.00001;

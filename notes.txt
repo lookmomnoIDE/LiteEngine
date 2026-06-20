@@ -652,3 +652,28 @@ unsigned int Renderer::getRID()
 	return m_RendererID;
 }
 
+
+
+
+**Re: Parking Citation No. 76497122**
+**Date of Citation:** 06/20/2026
+**Violation Listed:** SDMC 86.0122(e) – Violation of Signs
+**Location Listed on Citation:** 3300 Ingraham St, San Diego, CA
+
+I respectfully contest this citation and request dismissal.
+
+This citation alleges a violation of posted signs and includes the remark “LOT CLOSED 2AM–4AM / SIGNS POSTED.” I did not observe any sign clearly advising that the specific lot where my vehicle was parked was closed between 2:00 a.m. and 4:00 a.m. The citation itself does not identify the specific sign relied upon, where it was posted, or how it provided notice to a driver entering and parking in that lot at night.
+
+Because this citation is based on an alleged posted restriction, the City must establish more than a conclusory statement that “signs were posted.” At minimum, the City should be required to provide competent evidence showing:
+
+1. **The exact parking lot in which my vehicle was allegedly parked**, not merely a general street address;
+2. **The exact sign or signs relied upon** for the citation;
+3. **The location of those sign(s)** in relation to the entrance used to access the lot and the area where the vehicle was parked;
+4. That the sign(s) were **clearly visible and legible at night to a reasonable motorist** entering and parking in that lot; and
+5. That the specific lot at issue was in fact subject to the claimed **2:00 a.m. to 4:00 a.m. closure** at the time of citation.
+
+The citation lists only a generalized address, “3300 Ingraham St,” and a generic remark that signs were posted. That is not enough by itself to establish that a clearly visible sign applied to the exact lot and exact parking area where my vehicle was located.
+
+I am contesting this citation in good faith because I genuinely did not see any posted sign giving notice that the lot where I parked was closed during the cited hours. If the City cannot produce evidence identifying the exact lot, the exact sign relied upon, and the sign’s visible placement as to that lot, then the citation should be dismissed.
+
+For those reasons, I respectfully request that Citation No. 76497122 be dismissed.

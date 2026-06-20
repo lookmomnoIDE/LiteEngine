@@ -1,5 +1,6 @@
 #include "Cgravity.h"
 
+
 Cgravity::Cgravity()
 {
 	active = true;

@@ -6,6 +6,7 @@
 //#include "SpawnSand.h"
 //#include "GLFW/glfw3.h"
 
+
 InputHandler& InputHandler::Instance()
 {
 	static InputHandler Instance{};

@@ -1,6 +1,7 @@
 #include "CTransform.h"
 //#include "Vec2.h"
 
+
 CTransform::CTransform()
 {
 	active = true;

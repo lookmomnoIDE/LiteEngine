@@ -4,6 +4,7 @@
 #include "Vec3.h"
 #include "Vec4.h"
 
+
 template <typename T>
 class Vertex
 {

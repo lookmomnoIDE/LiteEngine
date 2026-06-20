@@ -2,6 +2,7 @@
 #include "GameEngine.h"
 
 
+
 IndexBuffer::IndexBuffer(const std::vector<unsigned int>* data, size_t count)
 	: m_Count(count)
 {

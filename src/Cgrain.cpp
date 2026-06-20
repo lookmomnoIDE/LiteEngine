@@ -1,6 +1,7 @@
 #include "Cgrain.h"
 #include <iostream>
 
+
 Cgrain::Cgrain()
 {
 	active = true;

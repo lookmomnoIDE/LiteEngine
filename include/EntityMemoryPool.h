@@ -13,6 +13,7 @@
 #include <cstdint>
 #include <unordered_map>
 
+
 class Entity;
 static const size_t MAX_ENTITIES = 10000;
 

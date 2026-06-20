@@ -3,6 +3,7 @@
 #include "EntityMemoryPool.h"
 
 
+
 EntityMan* EntityMan::Instance()
 {
 	static EntityMan man{};
