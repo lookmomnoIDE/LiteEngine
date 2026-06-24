@@ -28,6 +28,7 @@ void GameEngine::Init()
 	m_renderer = new Renderer();
 	m_renderer->Init();
 	m_scenes["play"] = std::make_unique<Scene_Play>(this, m_renderer);
+	m_scenes["CGoL"] = std::make_unique<Scene_CGoL>(this, m_renderer);
 	m_factory->Init();
 	InputHandler::Instance();
 	InputHandler::Instance().Init();
@@ -45,6 +46,7 @@ void GameEngine::run()
 {
 	double currentTime, elapsedTime;
 
+	//changeScene<Scene_CGoL>("CGoL", m_renderer);
 	changeScene<Scene_Play>("play", m_renderer);
 	while(m_running)
 	{

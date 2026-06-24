@@ -25,7 +25,7 @@ void Cgrain::setSize(float size)
 
 
 
-Quad Cgrain::createQuad(const Vec2<float>& pos, const Vec4<float>& color)
+Quad<float> Cgrain::createQuad(const Vec2<float>& pos, const Vec4<float>& color)
 {
 	//EntityMemoryPool* pool = EntityMemoryPool::Instance();
 	//size_t id = e.getID();
@@ -52,7 +52,7 @@ Quad Cgrain::createQuad(const Vec2<float>& pos, const Vec4<float>& color)
 }
 
 
-Quad& Cgrain::getQuad()
+Quad<float>& Cgrain::getQuad()
 {
 	return m_quad;
 }

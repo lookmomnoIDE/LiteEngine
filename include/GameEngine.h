@@ -7,6 +7,7 @@
 #include "Renderer.h"
 #include "InputHandler.h"
 #include "Scene_Play.h"
+#include "Scene_CGOl.h"
 #include "EntityFactory.h"
 #include "EntityMemoryPool.h"
 #include "ICommand.h"

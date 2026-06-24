@@ -203,6 +203,7 @@ CMakeFiles/LiteEngine.dir/src/IndexBuffer.cpp.obj: \
  C:/projects/LiteEngineV003/include/InputHandler.h \
  C:/projects/LiteEngineV003/include/Scene_Play.h \
  C:/projects/LiteEngineV003/include/EntityFactory.h \
+ C:/projects/LiteEngineV003/include/Scene_CGOl.h \
  C:/mingw64/include/c++/15.2.0/memory \
  C:/mingw64/include/c++/15.2.0/bits/stl_tempbuf.h \
  C:/mingw64/include/c++/15.2.0/bits/stl_raw_storage_iter.h \

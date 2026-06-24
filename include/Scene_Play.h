@@ -15,7 +15,7 @@ class Scene_Play : public Scene
 	Renderer* m_renderer = nullptr;
 	double m_x, m_y;
 	bool m_primaryActionActive = false;
-	std::vector<Quad> m_quads;
+	std::vector<Quad<float>> m_quads;
 	unsigned int currentEntities = 0;
 
 public:

@@ -488,6 +488,30 @@ src/Renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Renderer.cpp.s
 .PHONY : src/Renderer.cpp.s
 
+src/Scene_CGoL.obj: src/Scene_CGoL.cpp.obj
+.PHONY : src/Scene_CGoL.obj
+
+# target to build an object file
+src/Scene_CGoL.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.obj
+.PHONY : src/Scene_CGoL.cpp.obj
+
+src/Scene_CGoL.i: src/Scene_CGoL.cpp.i
+.PHONY : src/Scene_CGoL.i
+
+# target to preprocess a source file
+src/Scene_CGoL.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.i
+.PHONY : src/Scene_CGoL.cpp.i
+
+src/Scene_CGoL.s: src/Scene_CGoL.cpp.s
+.PHONY : src/Scene_CGoL.s
+
+# target to generate assembly for a file
+src/Scene_CGoL.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.s
+.PHONY : src/Scene_CGoL.cpp.s
+
 src/Scene_Play.obj: src/Scene_Play.cpp.obj
 .PHONY : src/Scene_Play.obj
 
@@ -902,6 +926,9 @@ help:
 	@echo ... src/Renderer.obj
 	@echo ... src/Renderer.i
 	@echo ... src/Renderer.s
+	@echo ... src/Scene_CGoL.obj
+	@echo ... src/Scene_CGoL.i
+	@echo ... src/Scene_CGoL.s
 	@echo ... src/Scene_Play.obj
 	@echo ... src/Scene_Play.i
 	@echo ... src/Scene_Play.s

@@ -4,16 +4,15 @@
 
 #include "Vertex.h"
 
+template <typename T>
 class Quad
 {
 public:
-	Vertex<float> v0;
-	Vertex<float> v1;
-	Vertex<float> v2;
-	Vertex<float> v3;
 
-
-
+	Vertex<T> v0;
+	Vertex<T> v1;
+	Vertex<T> v2;
+	Vertex<T> v3;
 };
 
 

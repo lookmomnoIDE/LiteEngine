@@ -1,5 +1,5 @@
-#ifndef SCENE_PLAY_H
-#define SCENE_PLAY_H
+#ifndef SCENE_CGOL_H
+#define SCENE_CGOL_H
 
 
 #include "Scene.h"
@@ -8,18 +8,18 @@
 #include "Quad.h"
 #include <iostream>
 
-class Scene_Play : public Scene
+class Scene_CGoL : public Scene
 {
 	std::string m_level = "play";
 	GameEngine* m_game = nullptr;
 	Renderer* m_renderer = nullptr;
 	double m_x, m_y;
 	bool m_primaryActionActive = false;
-	std::vector<Quad> m_quads;
+	std::vector<Quad<float>> m_quads;
 	unsigned int currentEntities = 0;
 
 public:
-	Scene_Play(GameEngine* game, Renderer* renderer);
+	Scene_CGoL(GameEngine* game, Renderer* renderer);
 	void init() override;
 	void update() override;
 	void sAnimation();

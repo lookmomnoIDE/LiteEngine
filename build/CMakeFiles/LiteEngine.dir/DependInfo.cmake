@@ -24,6 +24,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/projects/LiteEngineV003/src/Invoker.cpp" "CMakeFiles/LiteEngine.dir/src/Invoker.cpp.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/Invoker.cpp.obj.d"
   "C:/projects/LiteEngineV003/src/Parser.cpp" "CMakeFiles/LiteEngine.dir/src/Parser.cpp.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/Parser.cpp.obj.d"
   "C:/projects/LiteEngineV003/src/Renderer.cpp" "CMakeFiles/LiteEngine.dir/src/Renderer.cpp.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/Renderer.cpp.obj.d"
+  "C:/projects/LiteEngineV003/src/Scene_CGoL.cpp" "CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.obj.d"
   "C:/projects/LiteEngineV003/src/Scene_Play.cpp" "CMakeFiles/LiteEngine.dir/src/Scene_Play.cpp.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/Scene_Play.cpp.obj.d"
   "C:/projects/LiteEngineV003/src/Shader.cpp" "CMakeFiles/LiteEngine.dir/src/Shader.cpp.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/Shader.cpp.obj.d"
   "C:/projects/LiteEngineV003/src/Texture.cpp" "CMakeFiles/LiteEngine.dir/src/Texture.cpp.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/Texture.cpp.obj.d"

@@ -45,6 +45,7 @@ add_executable(${PROJECT_NAME}
     src/Cgravity.cpp
     src/EntityFactory.cpp
     src/Scene_Play.cpp
+    src/Scene_CGoL.cpp
     src/GameEngine.cpp
     #src/SpawnSand.cpp
     #src/PlayRec.cpp

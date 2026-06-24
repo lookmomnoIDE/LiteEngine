@@ -29,6 +29,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/LiteEngine.dir/src/Parser.cpp.obj.d"
   "CMakeFiles/LiteEngine.dir/src/Renderer.cpp.obj"
   "CMakeFiles/LiteEngine.dir/src/Renderer.cpp.obj.d"
+  "CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.obj"
+  "CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.obj.d"
   "CMakeFiles/LiteEngine.dir/src/Scene_Play.cpp.obj"
   "CMakeFiles/LiteEngine.dir/src/Scene_Play.cpp.obj.d"
   "CMakeFiles/LiteEngine.dir/src/Shader.cpp.obj"

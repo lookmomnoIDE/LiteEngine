@@ -124,7 +124,7 @@ void Scene_Play::sRender()
     }
 	m_renderer->Clear();
 	m_renderer->getVB().Bind();
-	glBufferSubData(GL_ARRAY_BUFFER, 0, m_game->getPool()->getMaxEnts() * sizeof(Quad), m_quads.data());
+	glBufferSubData(GL_ARRAY_BUFFER, 0, m_game->getPool()->getMaxEnts() * sizeof(Quad<float>), m_quads.data());
 	m_renderer->DrawElements();
 	m_renderer->SwapBuffers();
 }
