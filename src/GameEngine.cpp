@@ -45,9 +45,12 @@ void GameEngine::update()
 void GameEngine::run()
 {
 	double currentTime, elapsedTime;
-
-	//changeScene<Scene_CGoL>("CGoL", m_renderer);
-	changeScene<Scene_Play>("play", m_renderer);
+	m_renderer->CGoLMemory();
+	changeScene<Scene_CGoL>("CGoL", m_renderer);
+	
+	//These two lines of code handle memory setup and scene deployment of the falling sand demo. 
+	//m_renderer->fallingSandMemory();
+	//changeScene<Scene_Play>("play", m_renderer);
 	while(m_running)
 	{
 		currentTime = glfwGetTime();

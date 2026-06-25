@@ -48,10 +48,10 @@ void Scene_CGoL::sRender()
 {
 	m_renderer->Clear();
 	m_renderer->getVB().Bind();
-	std::cout << "Pre data push" << std::endl;
+	//std::cout << "Pre data push" << std::endl;
 	//glBufferSubData(GL_ARRAY_BUFFER, 0, m_game->getPool()->getMaxEnts() * sizeof(Quad<float>), m_quads.data());
-	glBufferData(GL_ARRAY_BUFFER, static_cast<size_t>(m_game->getPool()->getMaxEnts() * sizeof(Quad<float>)), (void*)m_quads.data(), GL_STATIC_DRAW);
-	std::cout << "Post data Push" << std::endl;
+	//glBufferData(GL_ARRAY_BUFFER, static_cast<size_t>(m_game->getPool()->getMaxEnts() * sizeof(Quad<float>)), (void*)m_quads.data(), GL_STATIC_DRAW);
+	//std::cout << "Post data Push" << std::endl;
 	m_renderer->DrawElements();
 	m_renderer->SwapBuffers();
 }

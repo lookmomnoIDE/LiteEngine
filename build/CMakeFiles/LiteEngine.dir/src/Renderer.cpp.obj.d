@@ -220,4 +220,6 @@ CMakeFiles/LiteEngine.dir/src/Renderer.cpp.obj: \
  C:/mingw64/include/c++/15.2.0/pstl/glue_memory_defs.h \
  C:/mingw64/include/c++/15.2.0/pstl/execution_defs.h \
  C:/projects/LiteEngineV003/include/InputHandler.h \
- C:/projects/LiteEngineV003/include/Vertex.h
+ C:/projects/LiteEngineV003/include/Vertex.h \
+ C:/projects/LiteEngineV003/include/Quad.h \
+ C:/projects/LiteEngineV003/include/grid.h

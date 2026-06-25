@@ -2,6 +2,8 @@
 #include "GameEngine.h"
 #include "InputHandler.h"
 #include "Vertex.h"
+#include "Quad.h"
+#include "grid.h"
 
 
 #include <iostream>
@@ -57,23 +59,7 @@ Renderer::~Renderer()
 
 void Renderer::Init()
 {
-	std::cout << "Renderer: Pre buffer initialization" << std::endl;
-	const auto& ME = m_game->getPool()->getMaxEnts();
-	std::cout << "Renderer: Max Entities: " << ME << std::endl;
-	size_t memSize = ME * sizeof(Vertex<float>) * 4; // 4 because 4 verts in a quad
-	std::cout << "Renderer: Memory size: " << memSize << std::endl;
-	vb = new VertexBuffer(nullptr, memSize);
-	std::cout << "Renderer: VertexBuffer initialized" << std::endl;
-	std::vector<unsigned int> indices = Renderer::genIndicies(ME);
-	std::cout << "indices generated" << std::endl;
-	ib = new IndexBuffer(&indices, (size_t)6*ME); // Indices ok, 6 -> #number of active entities * 6
-	std::cout << "Index Buffer generated" << std::endl;
-	std::cout << "Renderer: initialized" << std::endl;
-	va = new VertexArray();
-	layout = new VertexBufferLayout();
-	layout->Push<float>(3);
-	layout->Push<float>(4);
-	va->addBuffer(*vb, *layout);
+	
 }
 
 Shader* Renderer::loadShader(std::string vertex, std::string fragment)
@@ -102,8 +88,8 @@ void Renderer::Draw(const VertexArray& va, const VertexBuffer& vb) const
 void Renderer::DrawElements() const
 {
 	// DEBUG
-    std::cout << "Stride: " << layout->GetStride() << std::endl; // should be 28
-    std::cout << "IB Count: " << ib->GetCount() << std::endl;   // should be maxEnts * 6
+    //std::cout << "Stride: " << layout->GetStride() << std::endl; // should be 28
+    //std::cout << "IB Count: " << ib->GetCount() << std::endl;   // should be maxEnts * 6
     //std::cout << "VB ID: " << vb->getID() << std::endl;
     //std::cout << "IB ID: " << ib->getID() << std::endl;
 	m_shader->use();
@@ -158,6 +144,53 @@ void Renderer::Square(const Entity e, Vec2<float> pos)
 	layout.Push<float>(4);
 	va.addBuffer(vb, layout);*/
 	//Renderer::DrawElements(va, vb, ib);
+}
+
+//This fn simply take the setup out of renderer init puts it in its own fn. 
+void Renderer::fallingSandMemory()
+{
+	std::cout << "Renderer: Pre buffer initialization" << std::endl;
+	const auto& ME = m_game->getPool()->getMaxEnts();
+	std::cout << "Renderer: Max Entities: " << ME << std::endl;
+	size_t memSize = ME * sizeof(Vertex<float>) * 4; // 4 because 4 verts in a quad
+	std::cout << "Renderer: Memory size: " << memSize << std::endl;
+	vb = new VertexBuffer(nullptr, memSize);
+	std::cout << "Renderer: VertexBuffer initialized" << std::endl;
+	std::vector<unsigned int> indices = Renderer::genIndicies(ME);
+	std::cout << "indices generated" << std::endl;
+	ib = new IndexBuffer(&indices, (size_t)6*ME); // Indices ok, 6 -> #number of active entities * 6
+	std::cout << "Index Buffer generated" << std::endl;
+	std::cout << "Renderer: initialized" << std::endl;
+	va = new VertexArray();
+	layout = new VertexBufferLayout();
+	layout->Push<float>(3);
+	layout->Push<float>(4);
+	va->addBuffer(*vb, *layout);
+}
+
+
+void Renderer::CGoLMemory()
+{
+	Grid g(this->getWidth(), this->getHeight(), 20, 2, 0);
+
+	unsigned int col = g.getCols();
+	unsigned int row = g.getRows();
+	//unsigned int memSize = (col + row)*static_cast<unsigned int>(sizeof(Quad<float>));
+	//vb = new VertexBuffer(nullptr, static_cast<size_t>(memSize));
+
+	std::vector<Quad<float>> quads = g.fabGridLines();
+	//vb = new VertexBuffer(&quads, sizeof(quads));
+	//vb = new VertexBuffer(quads.data(), quads.size());
+	std::vector<unsigned int> indices = Renderer::genIndicies(quads.size());
+	ib = new IndexBuffer(&indices, (size_t)(indices.size() * sizeof(unsigned int)));
+	vb = new VertexBuffer(quads.data(), quads.size() * sizeof(Quad<float>));
+	//ib = new IndexBuffer(&indices, (size_t)6*(col*row));
+	//ib = new IndexBuffer(&indices, (size_t)(6 * (col+row)));
+	va = new VertexArray();
+	layout = new VertexBufferLayout();
+	layout->Push<float>(3);
+	layout->Push<float>(4);
+	va->addBuffer(*vb, *layout);
 }
 
 

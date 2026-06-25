@@ -24,8 +24,8 @@ class InputHandler;
 
 class Renderer
 {
-	int m_width = 1920;
-	int m_height = 1050; 
+	unsigned int m_width = 1920;
+	unsigned int m_height = 1050; 
 	float m_aspectRatio;
 	//unsigned int m_RendererID;
 	GameEngine* m_game = nullptr;
@@ -45,6 +45,8 @@ public:
 	void Draw(const VertexArray& va, const VertexBuffer& vb) const;
 	void DrawElements() const;
 	void Square(const Entity e, Vec2<float> pos);
+	void fallingSandMemory();
+	void CGoLMemory();
 	void SwapBuffers();
 	void Clear();
 	void setViewport(int startx, int starty, int vWidth, int vHeight);
