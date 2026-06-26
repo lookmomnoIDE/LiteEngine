@@ -171,7 +171,7 @@ void Renderer::fallingSandMemory()
 
 void Renderer::CGoLMemory()
 {
-	Grid g(this->getWidth(), this->getHeight(), 20, 2, 0);
+	Grid g(this->getWidth(), this->getHeight(), 20, 4, 0);
 
 	unsigned int col = g.getCols();
 	unsigned int row = g.getRows();
@@ -186,6 +186,18 @@ void Renderer::CGoLMemory()
 	vb = new VertexBuffer(quads.data(), quads.size() * sizeof(Quad<float>));
 	//ib = new IndexBuffer(&indices, (size_t)6*(col*row));
 	//ib = new IndexBuffer(&indices, (size_t)(6 * (col+row)));
+	va = new VertexArray();
+	layout = new VertexBufferLayout();
+	layout->Push<float>(3);
+	layout->Push<float>(4);
+	va->addBuffer(*vb, *layout);
+}
+
+void Renderer::addGrid(std::vector<Quad<float>> quads)
+{
+	std::vector<unsigned int> indices = Renderer::genIndicies(quads.size());
+	ib = new IndexBuffer(&indices, (size_t)(indices.size() * sizeof(unsigned int)));
+	vb = new VertexBuffer(quads.data(), quads.size() * sizeof(Quad<float>));
 	va = new VertexArray();
 	layout = new VertexBufferLayout();
 	layout->Push<float>(3);

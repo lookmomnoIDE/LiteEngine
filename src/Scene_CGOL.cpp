@@ -16,8 +16,10 @@ Scene_CGoL::Scene_CGoL(GameEngine* game, Renderer* renderer)
 void Scene_CGoL::init()
 {
 	Grid g(m_renderer->getWidth(), m_renderer->getHeight(), 8, 2, 0);
-	m_quads = g.getGridLines();
+	m_quads = g.fabGridLines();
+	//m_quads = g.getGridLines();
 	std::cout << "Grid initialized!" << std::endl;
+	m_renderer->addGrid(m_quads);
 }	
 
 void Scene_CGoL::update()
@@ -48,10 +50,6 @@ void Scene_CGoL::sRender()
 {
 	m_renderer->Clear();
 	m_renderer->getVB().Bind();
-	//std::cout << "Pre data push" << std::endl;
-	//glBufferSubData(GL_ARRAY_BUFFER, 0, m_game->getPool()->getMaxEnts() * sizeof(Quad<float>), m_quads.data());
-	//glBufferData(GL_ARRAY_BUFFER, static_cast<size_t>(m_game->getPool()->getMaxEnts() * sizeof(Quad<float>)), (void*)m_quads.data(), GL_STATIC_DRAW);
-	//std::cout << "Post data Push" << std::endl;
 	m_renderer->DrawElements();
 	m_renderer->SwapBuffers();
 }

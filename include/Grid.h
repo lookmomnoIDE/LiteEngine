@@ -72,9 +72,6 @@ public:
 			lineY.v3.setVColor(Vec4<float>(0.0f, 0.0f, 0.0f, 1.0f));
 		    m_Quads.push_back(lineY);
 		}
-
-
-
 		return m_Quads;
 	}
 	std::vector<Quad<float>> getGridLines()

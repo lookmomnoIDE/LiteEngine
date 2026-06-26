@@ -47,6 +47,7 @@ public:
 	void Square(const Entity e, Vec2<float> pos);
 	void fallingSandMemory();
 	void CGoLMemory();
+	void addGrid(std::vector<Quad<float>> quads);
 	void SwapBuffers();
 	void Clear();
 	void setViewport(int startx, int starty, int vWidth, int vHeight);

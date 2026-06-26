@@ -45,7 +45,7 @@ void GameEngine::update()
 void GameEngine::run()
 {
 	double currentTime, elapsedTime;
-	m_renderer->CGoLMemory();
+	//m_renderer->CGoLMemory();
 	changeScene<Scene_CGoL>("CGoL", m_renderer);
 	
 	//These two lines of code handle memory setup and scene deployment of the falling sand demo. 
