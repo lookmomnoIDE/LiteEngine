@@ -99,7 +99,6 @@ void Renderer::DrawElements() const
 	m_shader->use();
 	for (auto i = 0; i < m_bufferCount; i++)
 	{
-		std::cout << i << std::endl;
 		auto va = m_VertexArrays[i].get();
 		va->Bind();
 		auto vb = m_VertexBuffers[i].get();

@@ -15,12 +15,16 @@ Scene_CGoL::Scene_CGoL(GameEngine* game, Renderer* renderer)
 
 void Scene_CGoL::init()
 {
-	Grid g(m_renderer->getWidth(), m_renderer->getHeight(), 8, 2, 0);
+	Grid g(m_renderer->getWidth(), m_renderer->getHeight(), 20, 4, 0);
 	m_quads = g.fabGridLines();
 	//m_quads = g.getGridLines();
 	std::cout << "Grid initialized!" << std::endl;
 	m_renderer->addQuadBuffer(m_quads);
 	std::cout << "Grids added to buffer!" << std::endl;
+
+	//Setup cells
+	//m_quads.clear();
+
 }	
 
 void Scene_CGoL::update()
