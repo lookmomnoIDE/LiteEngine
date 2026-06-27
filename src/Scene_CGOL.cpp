@@ -19,7 +19,8 @@ void Scene_CGoL::init()
 	m_quads = g.fabGridLines();
 	//m_quads = g.getGridLines();
 	std::cout << "Grid initialized!" << std::endl;
-	m_renderer->addGrid(m_quads);
+	m_renderer->addQuadBuffer(m_quads);
+	std::cout << "Grids added to buffer!" << std::endl;
 }	
 
 void Scene_CGoL::update()
@@ -49,8 +50,10 @@ void Scene_CGoL::sCollision()
 void Scene_CGoL::sRender()
 {
 	m_renderer->Clear();
-	m_renderer->getVB().Bind();
+	//m_renderer->getVB().Bind();
+	//std::cout << "Pre draw call" << std::endl;
 	m_renderer->DrawElements();
+	//std::cout << "Post draw call" << std::endl;
 	m_renderer->SwapBuffers();
 }
 

@@ -30,7 +30,7 @@ public:
 	~VertexBufferLayout();
 
 	
-	template <typename T> void Push(unsigned int count);
+	template <typename T> VertexBufferLayout* Push(unsigned int count);
 
 
 	const std::vector<VertexBufferElement>& GetElements() const;

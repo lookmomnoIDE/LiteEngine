@@ -84,19 +84,30 @@ void Renderer::Draw(const VertexArray& va, const VertexBuffer& vb) const
 	glDrawArrays(GL_TRIANGLES, 0, sizeof(vb));
 }
 
-
+/*
 void Renderer::DrawElements() const
 {
-	// DEBUG
-    //std::cout << "Stride: " << layout->GetStride() << std::endl; // should be 28
-    //std::cout << "IB Count: " << ib->GetCount() << std::endl;   // should be maxEnts * 6
-    //std::cout << "VB ID: " << vb->getID() << std::endl;
-    //std::cout << "IB ID: " << ib->getID() << std::endl;
 	m_shader->use();
 	va->Bind();
 	vb->Bind();
 	ib->Bind();
 	glDrawElements(GL_TRIANGLES, ib->GetCount(), GL_UNSIGNED_INT, 0);
+}*/
+
+void Renderer::DrawElements() const 
+{
+	m_shader->use();
+	for (auto i = 0; i < m_bufferCount; i++)
+	{
+		std::cout << i << std::endl;
+		auto va = m_VertexArrays[i].get();
+		va->Bind();
+		auto vb = m_VertexBuffers[i].get();
+		vb->Bind();
+		auto ib = m_IndexBuffers[i].get();
+		ib->Bind();
+		glDrawElements(GL_TRIANGLES, ib->GetCount(), GL_UNSIGNED_INT, 0);
+	}
 }
 
 void Renderer::Square(const Entity e, Vec2<float> pos)
@@ -206,6 +217,21 @@ void Renderer::addGrid(std::vector<Quad<float>> quads)
 }
 
 
+void Renderer::addQuadBuffer(std::vector<Quad<float>> quads)
+{
+	std::vector<unsigned int> indices = Renderer::genIndicies(quads.size());
+	m_IndexBuffers.push_back(std::make_unique<IndexBuffer>(&indices, (size_t)(indices.size()*sizeof(unsigned int))));
+	m_VertexBuffers.push_back(std::make_unique<VertexBuffer>(quads.data(), quads.size() * sizeof(Quad<float>)));
+	auto layout = std::make_unique<VertexBufferLayout>();
+	layout->Push<float>(3);
+	layout->Push<float>(4);
+	m_Layouts.push_back(std::move(layout));
+	m_VertexArrays.push_back(std::make_unique<VertexArray>(*m_VertexBuffers[m_bufferCount].get(), *m_Layouts[m_bufferCount].get()));// m_Layouts[m_bufferCount].get()));
+	m_bufferCount++;
+
+}
+
+
 void Renderer::SwapBuffers()
 {
 	glfwSwapBuffers(m_window);
@@ -261,4 +287,9 @@ std::vector<unsigned int> Renderer::genIndicies(unsigned int maxEntities)
 VertexBuffer& Renderer::getVB()
 {
 	return *vb;
+}
+
+unsigned int Renderer::getBufferCount()
+{
+	return m_bufferCount;
 }

@@ -352,16 +352,6 @@ CMakeFiles/LiteEngine.dir/src/main.cpp.obj: \
  C:/projects/LiteEngineV003/include/Cgravity.h \
  C:/projects/LiteEngineV003/include/Tags.h \
  C:/projects/LiteEngineV003/include/Renderer.h \
- C:/projects/LiteEngineV003/include/VertexArray.h \
- C:/projects/LiteEngineV003/include/VertexBuffer.h \
- C:/projects/LiteEngineV003/include/VertexBufferLayout.h \
- C:/projects/LiteEngineV003/include/shader.h \
- C:/projects/LiteEngineV003/include/Parser.h \
- C:/projects/LiteEngineV003/include/IndexBuffer.h \
- C:/projects/LiteEngineV003/include/InputHandler.h \
- C:/projects/LiteEngineV003/include/Scene_Play.h \
- C:/projects/LiteEngineV003/include/EntityFactory.h \
- C:/projects/LiteEngineV003/include/Scene_CGOl.h \
  C:/mingw64/include/c++/15.2.0/memory \
  C:/mingw64/include/c++/15.2.0/bits/stl_tempbuf.h \
  C:/mingw64/include/c++/15.2.0/bits/stl_raw_storage_iter.h \
@@ -377,5 +367,15 @@ CMakeFiles/LiteEngine.dir/src/main.cpp.obj: \
  C:/mingw64/include/c++/15.2.0/backward/auto_ptr.h \
  C:/mingw64/include/c++/15.2.0/pstl/glue_memory_defs.h \
  C:/mingw64/include/c++/15.2.0/pstl/execution_defs.h \
+ C:/projects/LiteEngineV003/include/VertexArray.h \
+ C:/projects/LiteEngineV003/include/VertexBuffer.h \
+ C:/projects/LiteEngineV003/include/VertexBufferLayout.h \
+ C:/projects/LiteEngineV003/include/shader.h \
+ C:/projects/LiteEngineV003/include/Parser.h \
+ C:/projects/LiteEngineV003/include/IndexBuffer.h \
+ C:/projects/LiteEngineV003/include/InputHandler.h \
+ C:/projects/LiteEngineV003/include/Scene_Play.h \
+ C:/projects/LiteEngineV003/include/EntityFactory.h \
+ C:/projects/LiteEngineV003/include/Scene_CGOl.h \
  C:/projects/LiteEngineV003/include/Texture.h \
  C:/projects/LiteEngineV003/include/Renderer.h

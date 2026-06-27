@@ -58,8 +58,10 @@ void GameEngine::run()
 		GameEngine::sUserInput();
 		
 		currentScene()->update();
-
+		std::cout << "Pre render loop" << std::endl;
         currentScene()->sRender();
+        std::cout << "Post render loop" << std::endl;
+
 
         currentScene()->sDoAction();
         m_currentFrame++;

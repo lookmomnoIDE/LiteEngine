@@ -6,6 +6,15 @@ VertexArray::VertexArray()
 {
 	glGenVertexArrays(1, &m_RendererID);
 }
+
+
+VertexArray::VertexArray(const VertexBuffer& vb, const VertexBufferLayout& layout)
+{
+	glGenVertexArrays(1, &m_RendererID);
+	addBuffer(vb, layout);
+}
+
+
 VertexArray::~VertexArray()
 {
 	glDeleteVertexArrays(1, &m_RendererID);

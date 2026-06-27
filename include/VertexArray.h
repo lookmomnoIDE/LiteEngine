@@ -15,6 +15,7 @@ class VertexArray
 
 public:
 	VertexArray();
+	VertexArray(const VertexBuffer& vb, const VertexBufferLayout& layout);
 	~VertexArray();
 
 	void addBuffer(const VertexBuffer& vb, const VertexBufferLayout& layout);

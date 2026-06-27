@@ -5,6 +5,7 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
+#include <memory>
 
 #include "VertexArray.h"
 #include "shader.h"
@@ -36,6 +37,14 @@ class Renderer
 	VertexArray* va = nullptr;
 	VertexBufferLayout* layout = nullptr;
 
+	//rewrite
+	std::vector<std::unique_ptr<VertexBuffer>> 			m_VertexBuffers;
+	std::vector<std::unique_ptr<VertexArray>>  			m_VertexArrays;
+	std::vector<std::unique_ptr<IndexBuffer>>  			m_IndexBuffers;
+	std::vector<std::unique_ptr<VertexBufferLayout>>	m_Layouts;
+	unsigned int m_bufferCount = 0;
+
+
 public:
 	Renderer();
 	~Renderer();
@@ -48,6 +57,7 @@ public:
 	void fallingSandMemory();
 	void CGoLMemory();
 	void addGrid(std::vector<Quad<float>> quads);
+	void addQuadBuffer(std::vector<Quad<float>> quads);
 	void SwapBuffers();
 	void Clear();
 	void setViewport(int startx, int starty, int vWidth, int vHeight);
@@ -56,6 +66,7 @@ public:
 
 	std::vector<unsigned int> genIndicies(unsigned int maxEntities);
 	VertexBuffer& getVB();
+	unsigned int getBufferCount();
 };
 
 #endif
