@@ -12,7 +12,7 @@
 
 class Cgrain : public Component
 {
-	float 	m_size 			= 0.01f;
+	float 	m_size 			= 20.0f;
 	float 	m_aspectRatio	= 1050.0f/1920.0f;
 	Quad<float>	m_quad;
 public:

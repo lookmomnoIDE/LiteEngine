@@ -377,5 +377,6 @@ CMakeFiles/LiteEngine.dir/src/main.cpp.obj: \
  C:/projects/LiteEngineV003/include/Scene_Play.h \
  C:/projects/LiteEngineV003/include/EntityFactory.h \
  C:/projects/LiteEngineV003/include/Scene_CGOl.h \
+ C:/projects/LiteEngineV003/include/Grid.h \
  C:/projects/LiteEngineV003/include/Texture.h \
  C:/projects/LiteEngineV003/include/Renderer.h

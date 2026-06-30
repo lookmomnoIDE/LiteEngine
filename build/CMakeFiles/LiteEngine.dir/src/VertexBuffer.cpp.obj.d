@@ -218,4 +218,5 @@ CMakeFiles/LiteEngine.dir/src/VertexBuffer.cpp.obj: \
  C:/projects/LiteEngineV003/include/Scene_Play.h \
  C:/projects/LiteEngineV003/include/EntityFactory.h \
  C:/projects/LiteEngineV003/include/Scene_CGOl.h \
+ C:/projects/LiteEngineV003/include/Grid.h \
  C:/projects/LiteEngineV003/include/Renderer.h

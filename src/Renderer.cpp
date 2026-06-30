@@ -67,8 +67,8 @@ Shader* Renderer::loadShader(std::string vertex, std::string fragment)
 	delete m_shader;
 	m_shader = nullptr;
 	m_shader = new Shader(vertex.c_str(), fragment.c_str());
-    m_shader->use();
-    return m_shader; 
+	m_shader->use();
+	return m_shader; 
 }
 
 GLFWwindow* Renderer::getWindow()
@@ -110,7 +110,7 @@ void Renderer::DrawElements() const
 		GLenum err = glGetError();
 		if (err != GL_NO_ERROR)
 		{
-		    std::cout << "GL Error in DrawElements: " << err << std::endl;
+			std::cout << "GL Error in DrawElements: " << err << std::endl;
 		}
 	}
 }
@@ -132,10 +132,10 @@ void Renderer::Square(const Entity e, Vec2<float> pos)
 
 	float verts[] = 
 	{
-    	pos.m_x - halfX,  pos.m_y - halfY,  -1.0f,  color.m_x, color.m_y, color.m_z, color.m_w,
-    	pos.m_x + halfX,  pos.m_y - halfY,  -1.0f,  color.m_x, color.m_y, color.m_z, color.m_w,
-    	pos.m_x - halfX,  pos.m_y + halfY,  -1.0f,  color.m_x, color.m_y, color.m_z, color.m_w,
-    	pos.m_x + halfX,  pos.m_y + halfY,  -1.0f,  color.m_x, color.m_y, color.m_z, color.m_w
+		pos.m_x - halfX,  pos.m_y - halfY,  -1.0f,  color.m_x, color.m_y, color.m_z, color.m_w,
+		pos.m_x + halfX,  pos.m_y - halfY,  -1.0f,  color.m_x, color.m_y, color.m_z, color.m_w,
+		pos.m_x - halfX,  pos.m_y + halfY,  -1.0f,  color.m_x, color.m_y, color.m_z, color.m_w,
+		pos.m_x + halfX,  pos.m_y + halfY,  -1.0f,  color.m_x, color.m_y, color.m_z, color.m_w
 	};*/
 
 	//Create funtion to generate indicies
@@ -144,8 +144,8 @@ void Renderer::Square(const Entity e, Vec2<float> pos)
 
 /*	unsigned int indices[] = 
 	{
-    	0, 1, 3,   // top-left,  top-right,    bottom-right
-    	0, 3, 2    // top-left,  bottom-right, bottom-left
+		0, 1, 3,   // top-left,  top-right,    bottom-right
+		0, 3, 2    // top-left,  bottom-right, bottom-left
 	};
 */
 	//Take everythiing below this comment and make it its own function
@@ -243,31 +243,31 @@ void Renderer::Square(const Entity e, Vec2<float> pos)
 
 void Renderer::addQuadBuffer(std::vector<Quad<float>>& quads)
 {
-    std::vector<unsigned int> indices = Renderer::genIndicies(quads.size());
+	std::vector<unsigned int> indices = Renderer::genIndicies(quads.size());
 
-    m_VertexBuffers.push_back(std::make_unique<VertexBuffer>(quads.data(), quads.size() * sizeof(Quad<float>)));
+	m_VertexBuffers.push_back(std::make_unique<VertexBuffer>(quads.data(), quads.size() * sizeof(Quad<float>)));
 
-    auto layout = std::make_unique<VertexBufferLayout>();
-    layout->Push<float>(3);
-    layout->Push<float>(4);
-    m_Layouts.push_back(std::move(layout));
+	auto layout = std::make_unique<VertexBufferLayout>();
+	layout->Push<float>(3);
+	layout->Push<float>(4);
+	m_Layouts.push_back(std::move(layout));
 
-    m_VertexArrays.push_back(std::make_unique<VertexArray>(
-        *m_VertexBuffers[m_bufferCount],
-        *m_Layouts[m_bufferCount]
-    ));
+	m_VertexArrays.push_back(std::make_unique<VertexArray>(
+		*m_VertexBuffers[m_bufferCount],
+		*m_Layouts[m_bufferCount]
+	));
 
-    // VAO is now bound from its constructor — attach IBO into it
-    m_IndexBuffers.push_back(std::make_unique<IndexBuffer>(indices.data(), indices.size()));
+	// VAO is now bound from its constructor — attach IBO into it
+	m_IndexBuffers.push_back(std::make_unique<IndexBuffer>(indices.data(), indices.size()));
 
-    m_bufferCount++;
+	m_bufferCount++;
 }
 
 
 void Renderer::updateQuadBuffer(size_t index, std::vector<Quad<float>>& quads)
 {
-    m_VertexBuffers[index]->Bind();
-    glBufferSubData(GL_ARRAY_BUFFER, 0, quads.size() * sizeof(Quad<float>), quads.data());
+	m_VertexBuffers[index]->Bind();
+	glBufferSubData(GL_ARRAY_BUFFER, 0, quads.size() * sizeof(Quad<float>), quads.data());
 }
 
 

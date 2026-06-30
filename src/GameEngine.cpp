@@ -59,18 +59,18 @@ void GameEngine::run()
 		
 		currentScene()->update();
 		std::cout << "Pre render loop" << std::endl;
-        currentScene()->sRender();
-        std::cout << "Post render loop" << std::endl;
+		currentScene()->sRender();
+		std::cout << "Post render loop" << std::endl;
 
 
-        currentScene()->sDoAction();
-        m_currentFrame++;
-        double elapsedTime = glfwGetTime();
-        double dt = elapsedTime - currentTime;
-        double FPS_ = (double)m_currentFrame/dt;
-        m_currentFrame = 0;
-        std::cout << "FPS: " << FPS_ << std::endl;
-        //std::cout << "Total entities: " << EntityMemoryPool::Instance()->getNumEntities() << std::endl;
+		currentScene()->sDoAction();
+		m_currentFrame++;
+		double elapsedTime = glfwGetTime();
+		double dt = elapsedTime - currentTime;
+		double FPS_ = (double)m_currentFrame/dt;
+		m_currentFrame = 0;
+		std::cout << "FPS: " << FPS_ << std::endl;
+		//std::cout << "Total entities: " << EntityMemoryPool::Instance()->getNumEntities() << std::endl;
 		//std::cout << m_currentFrame << std::endl;
 	}
 }
@@ -93,12 +93,12 @@ void GameEngine::quit()
 /*template <typename T, typename... Args>
 void GameEngine::changeScene(const std::string name, Args&&... args)
 {
-    m_scenes[name] = std::make_unique<T>(this, std::forward<Args>(args)...);
-    m_currentScene = name;
+	m_scenes[name] = std::make_unique<T>(this, std::forward<Args>(args)...);
+	m_currentScene = name;
 }*/
 
 Scene* GameEngine::currentScene() {
-    return m_scenes.count(m_currentScene) ? m_scenes[m_currentScene].get() : nullptr;
+	return m_scenes.count(m_currentScene) ? m_scenes[m_currentScene].get() : nullptr;
 }
 
 

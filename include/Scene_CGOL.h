@@ -6,6 +6,9 @@
 #include "EntityManager.h"
 #include "EntityFactory.h"
 #include "Quad.h"
+#include "Vec2.h"
+#include "Grid.h"
+
 #include <iostream>
 
 class Scene_CGoL : public Scene
@@ -19,6 +22,8 @@ class Scene_CGoL : public Scene
 	std::vector<std::vector<Quad<float>>> m_quadsList;
 	unsigned int currentEntities = 0;
 	unsigned int m_numQuads = 0;
+	Grid grid;
+
 
 public:
 	Scene_CGoL(GameEngine* game, Renderer* renderer);
@@ -28,7 +33,6 @@ public:
 	void sEnemySpawner(); 
 	void sCollision();
 	void sRender() override;
-	//void sDoAction();
 	void sGUI();
 	bool isPaused();
 	void doAction(const Action& a) override;

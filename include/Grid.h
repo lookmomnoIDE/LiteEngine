@@ -20,6 +20,11 @@ public:
 
 public:
 
+	Grid()
+	{
+
+	}
+
 	Grid(unsigned int vWidth, unsigned int vHeight, unsigned int size, unsigned int lineWidth, unsigned int state)
 	:m_CellSize(size), m_LineWidth(lineWidth), m_DefaultState(state), m_vWidth(vWidth), m_vHeight(vHeight)
 	{
@@ -74,17 +79,22 @@ public:
 		}
 		return m_Quads;
 	}
+	
 	std::vector<Quad<float>> getGridLines()
 	{
 		return m_Quads;
 	}
 
-
 	Vec2<float> getCenterOfCell(size_t e)
 	{
 		unsigned int i = (unsigned int)e % m_Col;
-		unsigned int j = (unsigned int)e / m_Row;
-		Vec2<float> pos((((i*m_CellSize)+(m_CellSize/2))/m_vWidth)-1, 1-(((j*m_CellSize)+(m_CellSize/2))/m_vHeight));
+		unsigned int j = (unsigned int)e / m_Col;
+	
+		float ndcX = (((i * m_CellSize) + (m_CellSize / 2.0f)) / m_vWidth) * 2.0f - 1.0f;
+	    float ndcY = 1.0f - (((j * m_CellSize) + (m_CellSize / 2.0f)) / m_vHeight) * 2.0f;
+
+		//Vec2<float> pos((((i*m_CellSize)+(m_CellSize/2))/m_vWidth)-1, 1-(((j*m_CellSize)+(m_CellSize/2))/m_vHeight));
+		Vec2<float> pos(ndcX, ndcY);
 		return pos;
 	}
 
@@ -93,20 +103,64 @@ public:
 		return m_CellSize;
 	}
 
-
 	unsigned int getCols()
 	{
 		return m_Col;
 	}
-
 
 	unsigned int getRows()
 	{
 		return m_Row;
 	}
 
+	unsigned int getLineWidth()
+	{
+		return m_LineWidth;
+	}
 
+	unsigned int getDefaultState()
+	{
+		return m_DefaultState;
+	}
 
+	unsigned int getWidth()
+	{
+		return m_vWidth;
+	}
+
+	unsigned int getHeight()
+	{
+		return m_vHeight;
+	}
+
+	void setCellSize(unsigned int size)
+	{
+		m_CellSize = size;
+	}
+
+	void setColRow(unsigned int vWidth, unsigned int vHeight)
+	{
+		m_vWidth = vWidth;
+		m_vHeight = vHeight;
+		m_Col = m_vWidth/m_CellSize;
+		m_Row = m_vHeight/m_CellSize;
+		m_grid.resize(m_Row, std::vector<unsigned int>(m_Col, m_DefaultState));
+	}
+
+	void setLineWidth(unsigned int lineWidth)
+	{
+		m_LineWidth = lineWidth;
+	}
+
+	void setDefaultState(unsigned int state)
+	{
+		m_DefaultState = state;
+	}
+
+	unsigned int getState(unsigned int row, unsigned int col)
+	{
+		return m_grid[row][col];
+	}
 };
 
 

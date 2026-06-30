@@ -1,8 +1,7 @@
 #include "Scene_CGOL.h"
 #include "GameEngine.h"
 //#include "Tag.h"
-#include "Vec2.h"
-#include "Grid.h"
+
 
 
 Scene_CGoL::Scene_CGoL(GameEngine* game, Renderer* renderer) 
@@ -65,7 +64,7 @@ void Scene_CGoL::init()
 	}*/
 	/*for (size_t i = 0; i < m_quadsList.size(); ++i) 
 	{
-    	m_renderer->addQuadBuffer(m_quadsList[i]);
+		m_renderer->addQuadBuffer(m_quadsList[i]);
 	}*/
 
 	std::cout << "End of init!" <<  std::endl;
@@ -73,7 +72,7 @@ void Scene_CGoL::init()
 
 void Scene_CGoL::update()
 {
-	m_quads.clear();
+/*	m_quads.clear();
 	const EntityVec& entities = m_game->getEntityMan()->getEntities();
 	const auto& pool = m_game->getPool();
 	for(const Entity& e: entities)
@@ -94,7 +93,7 @@ void Scene_CGoL::update()
 
 	}
 	m_renderer->addQuadBuffer( m_quads);
-	m_quads.clear();
+	m_quads.clear();*/
 }
 
 
