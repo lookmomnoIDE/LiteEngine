@@ -1,4 +1,5 @@
 #include "CTransform.h"
+#include <iostream>
 //#include "Vec2.h"
 
 
@@ -6,7 +7,16 @@ CTransform::CTransform()
 {
 	active = true;
 }
-CTransform::CTransform(const Vec2<float>& p, Vec2<float>& v)
+
+CTransform::CTransform(Vec2<float> p)
+	:m_pos(p)
+{
+	std::cout << "CTransform contructor" << std::endl;
+	active = true;
+	std::cout << "CTransform: " << active << std::endl;
+}
+
+CTransform::CTransform(Vec2<float>& p, Vec2<float>& v)
 		:m_pos(p), m_vel(v)
 {
 	active = true;

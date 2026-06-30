@@ -17,19 +17,84 @@ void Scene_CGoL::init()
 {
 	Grid g(m_renderer->getWidth(), m_renderer->getHeight(), 20, 4, 0);
 	m_quads = g.fabGridLines();
-	//m_quads = g.getGridLines();
-	std::cout << "Grid initialized!" << std::endl;
 	m_renderer->addQuadBuffer(m_quads);
-	std::cout << "Grids added to buffer!" << std::endl;
+	//m_quadsList.push_back(m_quads);
+	//m_renderer->addQuadBuffer(m_quads);
+	m_quads.clear();
 
-	//Setup cells
-	//m_quads.clear();
+	const auto& pool = m_game->getPool();
+	auto ME = pool->getMaxEnts();
+	auto factory = m_game->getFactory();
+	//m_quads.reserve(ME);
+	for (auto i = 0; i < ME; i++)
+	{
+		/*Tag target = static_cast<Tag>(pool->getEnum("sand"));
+		Entity e = m_game->getEntityMan()->addEntity(target); 
+		std::cout << "added a entity" << std::endl;*/
+		std::cout << "inside factory loop (iter: " << i << ")" << std::endl;
+		factory->addCell(g.getCenterOfCell((size_t)i));
+		std::cout << "added cell: " << i << std::endl;
+	}
 
+	//std::cout << "Pre scene init loop" << std::endl;
+	//m_game->getEntityMan()->update();
+	EntityVec& entities = m_game->getEntityMan()->getEntities();
+	std::cout << "# of Entities: " << entities.size() << std::endl;
+/*	for ( auto e : entities)
+	{
+		std::cout << "1. inside CTransform loop" << std::endl;
+		auto id = e.getID();
+		std::cout << "ID set: " << id << std::endl;
+		pool->getComponent<CTransform>(id).setPos(g.getCenterOfCell(id));
+		std::cout << "inside CTransform loop" << std::endl;
+	}*/
+
+	for ( auto e : entities)
+	{
+		std::cout << "1. inside grain loop" << std::endl;
+		auto id = e.getID();
+		m_quads.push_back(pool->getComponent<Cgrain>(id).createQuad(pool->getComponent<CTransform>(id).getPos(), pool->getComponent<Csand>(id).getColor()));
+		std::cout << "inside grain loop" << std::endl;
+	}
+	//m_quadsList.push_back(m_quads);
+	m_renderer->addQuadBuffer(m_quads);
+	m_quads.clear();
+	/*for (auto i : m_quadsList)
+	{
+		m_renderer->addQuadBuffer(m_quadsList[i]);
+	}*/
+	/*for (size_t i = 0; i < m_quadsList.size(); ++i) 
+	{
+    	m_renderer->addQuadBuffer(m_quadsList[i]);
+	}*/
+
+	std::cout << "End of init!" <<  std::endl;
 }	
 
 void Scene_CGoL::update()
 {
-	
+	m_quads.clear();
+	const EntityVec& entities = m_game->getEntityMan()->getEntities();
+	const auto& pool = m_game->getPool();
+	for(const Entity& e: entities)
+	{
+		//update quad positions. 
+		const auto 		id 			= e.getID();
+		CTransform& 	transform 	= pool->getComponent<CTransform>(id);
+		Cgrain& 		grain 		= pool->getComponent<Cgrain>(id);
+		Csand& 			sand 		= pool->getComponent<Csand>(id);
+		//auto& 			pos 		= transform.getPos();
+		grain.setQuadPos(transform.getPos());	
+		if (sand.colorDirty)
+		{
+			grain.setQuadColor(sand.getColor());
+			sand.colorDirty = false;
+		}
+		m_quads.push_back(grain.getQuad());
+
+	}
+	m_renderer->addQuadBuffer( m_quads);
+	m_quads.clear();
 }
 
 
@@ -54,10 +119,7 @@ void Scene_CGoL::sCollision()
 void Scene_CGoL::sRender()
 {
 	m_renderer->Clear();
-	//m_renderer->getVB().Bind();
-	//std::cout << "Pre draw call" << std::endl;
 	m_renderer->DrawElements();
-	//std::cout << "Post draw call" << std::endl;
 	m_renderer->SwapBuffers();
 }
 

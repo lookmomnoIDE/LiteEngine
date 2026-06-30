@@ -1,5 +1,6 @@
 #include "EntityMemoryPool.h"
 #include "Entity.h"
+#include <iostream>
 
 
 EntityMemoryPool::EntityMemoryPool(size_t MAX_ENTITIES)
@@ -67,6 +68,7 @@ bool EntityMemoryPool::hasTag(size_t entityID, Tag tag) const
 Entity EntityMemoryPool::addEntity(const Tag tag)
 {
 	size_t index = getNextEntityIndex();
+	std::cout << "EMP Index: " << index << std::endl;
 
 	m_tags[index] = tag;
 	m_active[index] = true;
@@ -82,6 +84,10 @@ size_t EntityMemoryPool::getNextEntityIndex()
 		{
 			return i;
 		}
+		/*else
+		{
+			std::cout << "Max Entities reached!" << std::endl;
+		}*/
 	}
 
 }

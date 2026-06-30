@@ -11,7 +11,8 @@ class CTransform : public Component
 public:
 	
 	CTransform();
-	CTransform(const Vec2<float> & p, Vec2<float> & v);
+	CTransform(Vec2<float> p);
+	CTransform(Vec2<float> & p, Vec2<float> & v);
 
 	Vec2<float>& getPos();
 	void setPos(Vec2<float> & p);

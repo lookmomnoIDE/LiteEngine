@@ -15,7 +15,7 @@
 
 
 class Entity;
-static const size_t MAX_ENTITIES = 10000;
+static const size_t MAX_ENTITIES = 6000;
 
 class EntityMemoryPool
 {

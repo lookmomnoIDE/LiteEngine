@@ -12,7 +12,7 @@ class IndexBuffer
 	unsigned int m_Count;
 
 public:
-	IndexBuffer(const std::vector<unsigned int>* data, size_t count);
+	IndexBuffer(const unsigned int* data, size_t count);
 
 	~IndexBuffer();
 

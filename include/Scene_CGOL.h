@@ -16,7 +16,9 @@ class Scene_CGoL : public Scene
 	double m_x, m_y;
 	bool m_primaryActionActive = false;
 	std::vector<Quad<float>> m_quads;
+	std::vector<std::vector<Quad<float>>> m_quadsList;
 	unsigned int currentEntities = 0;
+	unsigned int m_numQuads = 0;
 
 public:
 	Scene_CGoL(GameEngine* game, Renderer* renderer);

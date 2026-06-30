@@ -101,11 +101,17 @@ void Renderer::DrawElements() const
 	{
 		auto va = m_VertexArrays[i].get();
 		va->Bind();
-		auto vb = m_VertexBuffers[i].get();
-		vb->Bind();
+		//auto vb = m_VertexBuffers[i].get();
+		//vb->Bind();
 		auto ib = m_IndexBuffers[i].get();
 		ib->Bind();
+		std::cout << "Drawing " << ib->GetCount() << " indices" << std::endl;
 		glDrawElements(GL_TRIANGLES, ib->GetCount(), GL_UNSIGNED_INT, 0);
+		GLenum err = glGetError();
+		if (err != GL_NO_ERROR)
+		{
+		    std::cout << "GL Error in DrawElements: " << err << std::endl;
+		}
 	}
 }
 
@@ -157,7 +163,7 @@ void Renderer::Square(const Entity e, Vec2<float> pos)
 }
 
 //This fn simply take the setup out of renderer init puts it in its own fn. 
-void Renderer::fallingSandMemory()
+/*void Renderer::fallingSandMemory()
 {
 	std::cout << "Renderer: Pre buffer initialization" << std::endl;
 	const auto& ME = m_game->getPool()->getMaxEnts();
@@ -176,10 +182,10 @@ void Renderer::fallingSandMemory()
 	layout->Push<float>(3);
 	layout->Push<float>(4);
 	va->addBuffer(*vb, *layout);
-}
+}*/
 
 
-void Renderer::CGoLMemory()
+/*void Renderer::CGoLMemory()
 {
 	Grid g(this->getWidth(), this->getHeight(), 20, 4, 0);
 
@@ -201,9 +207,9 @@ void Renderer::CGoLMemory()
 	layout->Push<float>(3);
 	layout->Push<float>(4);
 	va->addBuffer(*vb, *layout);
-}
+}*/
 
-void Renderer::addGrid(std::vector<Quad<float>> quads)
+/*void Renderer::addGrid(std::vector<Quad<float>> quads)
 {
 	std::vector<unsigned int> indices = Renderer::genIndicies(quads.size());
 	ib = new IndexBuffer(&indices, (size_t)(indices.size() * sizeof(unsigned int)));
@@ -213,21 +219,55 @@ void Renderer::addGrid(std::vector<Quad<float>> quads)
 	layout->Push<float>(3);
 	layout->Push<float>(4);
 	va->addBuffer(*vb, *layout);
-}
+}*/
 
 
-void Renderer::addQuadBuffer(std::vector<Quad<float>> quads)
+/*void Renderer::addQuadBuffer(std::vector<Quad<float>>& quads)
 {
 	std::vector<unsigned int> indices = Renderer::genIndicies(quads.size());
+	std::cout << "Pre IB" << std::endl;
 	m_IndexBuffers.push_back(std::make_unique<IndexBuffer>(&indices, (size_t)(indices.size()*sizeof(unsigned int))));
+	std::cout << "Pre vb" << std::endl;
 	m_VertexBuffers.push_back(std::make_unique<VertexBuffer>(quads.data(), quads.size() * sizeof(Quad<float>)));
+	std::cout << "past VB" << std::endl;
 	auto layout = std::make_unique<VertexBufferLayout>();
 	layout->Push<float>(3);
 	layout->Push<float>(4);
 	m_Layouts.push_back(std::move(layout));
-	m_VertexArrays.push_back(std::make_unique<VertexArray>(*m_VertexBuffers[m_bufferCount].get(), *m_Layouts[m_bufferCount].get()));// m_Layouts[m_bufferCount].get()));
+	m_VertexArrays.push_back(std::make_unique<VertexArray>(*m_VertexBuffers[m_bufferCount].get(), *m_Layouts[m_bufferCount].get()));
 	m_bufferCount++;
 
+}*/
+
+
+
+void Renderer::addQuadBuffer(std::vector<Quad<float>>& quads)
+{
+    std::vector<unsigned int> indices = Renderer::genIndicies(quads.size());
+
+    m_VertexBuffers.push_back(std::make_unique<VertexBuffer>(quads.data(), quads.size() * sizeof(Quad<float>)));
+
+    auto layout = std::make_unique<VertexBufferLayout>();
+    layout->Push<float>(3);
+    layout->Push<float>(4);
+    m_Layouts.push_back(std::move(layout));
+
+    m_VertexArrays.push_back(std::make_unique<VertexArray>(
+        *m_VertexBuffers[m_bufferCount],
+        *m_Layouts[m_bufferCount]
+    ));
+
+    // VAO is now bound from its constructor — attach IBO into it
+    m_IndexBuffers.push_back(std::make_unique<IndexBuffer>(indices.data(), indices.size()));
+
+    m_bufferCount++;
+}
+
+
+void Renderer::updateQuadBuffer(size_t index, std::vector<Quad<float>>& quads)
+{
+    m_VertexBuffers[index]->Bind();
+    glBufferSubData(GL_ARRAY_BUFFER, 0, quads.size() * sizeof(Quad<float>), quads.data());
 }
 
 

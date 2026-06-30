@@ -80,8 +80,10 @@ public:
 	}
 
 
-	Vec2<float> getCenterOfCell(unsigned int i, unsigned int j)
+	Vec2<float> getCenterOfCell(size_t e)
 	{
+		unsigned int i = (unsigned int)e % m_Col;
+		unsigned int j = (unsigned int)e / m_Row;
 		Vec2<float> pos((((i*m_CellSize)+(m_CellSize/2))/m_vWidth)-1, 1-(((j*m_CellSize)+(m_CellSize/2))/m_vHeight));
 		return pos;
 	}

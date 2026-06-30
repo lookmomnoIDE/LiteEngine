@@ -1,6 +1,7 @@
 CMakeFiles/LiteEngine.dir/src/EntityFactory.cpp.obj: \
  C:\projects\LiteEngineV003\src\EntityFactory.cpp \
  C:/projects/LiteEngineV003/include/EntityFactory.h \
+ C:/projects/LiteEngineV003/include/Vec2.h \
  C:/projects/LiteEngineV003/include/GameEngine.h \
  C:/projects/LiteEngineV003/include/Scene.h \
  C:/mingw64/include/c++/15.2.0/string \
@@ -122,7 +123,6 @@ CMakeFiles/LiteEngine.dir/src/EntityFactory.cpp.obj: \
  C:/projects/LiteEngineV003/include/Components.h \
  C:/projects/LiteEngineV003/include/Entity.h \
  C:/projects/LiteEngineV003/include/CTransform.h \
- C:/projects/LiteEngineV003/include/Vec2.h \
  C:/projects/LiteEngineV003/include/Cgrain.h \
  C:/projects/LiteEngineV003/include/Quad.h \
  C:/projects/LiteEngineV003/include/Vertex.h \
