@@ -19,7 +19,7 @@ add_executable(${PROJECT_NAME}
 	src/glad.c
 
 	src/main.cpp
-    #src/Scene.cpp
+    src/Scene.cpp
 	src/imgui.cpp 
     src/imgui_draw.cpp 
     src/imgui_impl_glfw.cpp 
@@ -44,7 +44,7 @@ add_executable(${PROJECT_NAME}
     src/Csand.cpp
     src/Cgravity.cpp
     src/EntityFactory.cpp
-    src/Scene_Play.cpp
+    #src/Scene_Play.cpp
     src/Scene_CGoL.cpp
     src/GameEngine.cpp
     #src/SpawnSand.cpp

@@ -11,15 +11,15 @@
 class Scene_Play : public Scene
 {
 	std::string m_level = "play";
-	GameEngine* m_game = nullptr;
-	Renderer* m_renderer = nullptr;
+	//GameEngine* m_game = nullptr;
+	//Renderer* m_renderer = nullptr;
 	double m_x, m_y;
 	bool m_primaryActionActive = false;
 	std::vector<Quad<float>> m_quads;
 	unsigned int currentEntities = 0;
 
 public:
-	Scene_Play(GameEngine* game, Renderer* renderer);
+	Scene_Play(GameEngine* game, Renderer* renderer, size_t maxEntities);
 	void init() override;
 	void update() override;
 	void sAnimation();

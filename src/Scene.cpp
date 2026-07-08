@@ -3,7 +3,7 @@
 #include "Renderer.h"
 
 
-virtual void Scene::init()
+/*virtual void Scene::init()
 {
 	//registerAction()
 }
@@ -36,4 +36,14 @@ virtual void Scene::doAction(Command c)
 virtual void Scene::registerAction()
 {
 	//m_actionMap[c] = name;
+}*/
+
+EntityMemoryPool& Scene::getPool()
+{
+	return m_pool;
+}
+
+EntityMan& Scene::getEntityMan()
+{
+	return m_entityManager;
 }

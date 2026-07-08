@@ -129,6 +129,7 @@ CMakeFiles/LiteEngine.dir/src/Entity.cpp.obj: \
  C:/projects/LiteEngineV003/include/Vec4.h \
  C:/projects/LiteEngineV003/include/Csand.h \
  C:/projects/LiteEngineV003/include/Cgravity.h \
+ C:/projects/LiteEngineV003/include/CCell.h \
  C:/mingw64/include/c++/15.2.0/unordered_map \
  C:/mingw64/include/c++/15.2.0/bits/unordered_map.h \
  C:/mingw64/include/c++/15.2.0/bits/hashtable.h \

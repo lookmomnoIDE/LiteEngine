@@ -2,18 +2,22 @@
 #define ENTITYFACTORY_H
 
 #include "Vec2.h"
+#include "Quad.h"
+//#include "Scene.h"
 
 
-class GameEngine;
+class Scene;
 
 class EntityFactory
 {
-	GameEngine* m_game = nullptr;
+	//GameEngine* m_game = nullptr;
 public:
-	static EntityFactory* Instance();
+	EntityFactory();
+	~EntityFactory();
+	//static EntityFactory* Instance();
 	void Init();
 	void addSand(double xpos, double ypos);
-	void addCell(Vec2<float> pos);
+	void addCell(Quad<float>& quad, Scene& scene);
 
 };
 

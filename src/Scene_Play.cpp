@@ -5,8 +5,8 @@
 
 
 
-Scene_Play::Scene_Play(GameEngine* game, Renderer* renderer) 
-	:m_game(game), m_renderer(renderer)
+Scene_Play::Scene_Play(GameEngine* game, Renderer* renderer, size_t maxEntities) 
+	:m_game(game), m_renderer(renderer), m_maxEntities(maxEntities)
 {
 	Scene_Play::registerAction(GLFW_MOUSE_BUTTON_LEFT, "_LMB"); // Change place -> LMB
 	Scene_Play::registerAction(GLFW_KEY_ESCAPE, "ESC");

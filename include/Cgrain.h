@@ -12,19 +12,18 @@
 
 class Cgrain : public Component
 {
-	float 	m_size 			= 20.0f;
+	float 	m_size 			= 16.0f;
 	float 	m_aspectRatio	= 1050.0f/1920.0f;
 	Quad<float>	m_quad;
 public:
 
 	Cgrain();
+	Cgrain(const Vec2<float>& pos, Vec4<float>& color, float size);
 	Cgrain(float size);
 	float getSize();
 	void setSize(float size);
-	Quad<float> createQuad(const Vec2<float>& pos, const Vec4<float>& color);
+	Quad<float> createQuad(const Vec2<float>& pos, Vec4<float>& color);
 	Quad<float>& getQuad();
 	void setQuadPos(Vec2<float>& pos);
 	void setQuadColor(Vec4<float>& color);
-
-
 };

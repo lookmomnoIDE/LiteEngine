@@ -31,10 +31,7 @@ class GameEngine
 	bool m_running = false;
 	unsigned int m_currentFrame = 0;
 	std::string m_currentScene;
-	EntityMemoryPool* m_pool = EntityMemoryPool::Instance();
-	EntityMan* m_entityMan = EntityMan::Instance();
-	Renderer* m_renderer = nullptr;
-	EntityFactory* m_factory = EntityFactory::Instance();
+	Renderer* m_renderer = nullptr;		
 	unsigned int m_numRenderers = 0;
 public:
 	static GameEngine* Instance();

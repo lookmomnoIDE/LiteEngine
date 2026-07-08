@@ -10,29 +10,16 @@ EntityMemoryPool::EntityMemoryPool(size_t MAX_ENTITIES)
     std::get<std::vector<Cgrain>>(m_pool).resize(m_MAX_ENTITIES);
     std::get<std::vector<Csand>>(m_pool).resize(m_MAX_ENTITIES);
     std::get<std::vector<Cgravity>>(m_pool).resize(m_MAX_ENTITIES);
+    std::get<std::vector<CCell>>(m_pool).resize(m_MAX_ENTITIES);
     m_tags.resize(m_MAX_ENTITIES);
 	m_active.resize(m_MAX_ENTITIES, false);
 }
 
 
-EntityMemoryPool* EntityMemoryPool::Instance()
+/*EntityMemoryPool* EntityMemoryPool::Instance()
 {
 	static EntityMemoryPool pool{MAX_ENTITIES};
 	return &pool;
-}
-
-/*template <typename T>
-T& EntityMemoryPool::getComponent(size_t entityID)
-{
-	return std::get<std::vector<T>>(m_pool)[entityID];
-}*/
-
-
-
-/*template <typename T>
-void EntityMemoryPool::remComponent(size_t entityID)
-{
-	std::get<std::vector<T>>(m_pool)[entityID] = T();
 }
 */
 
@@ -73,23 +60,20 @@ Entity EntityMemoryPool::addEntity(const Tag tag)
 	m_tags[index] = tag;
 	m_active[index] = true;
 	m_numEntities++;
-	return Entity(index);
+	return Entity(index, *this);
 }
 
 size_t EntityMemoryPool::getNextEntityIndex()
 {
-	for(size_t i = 0; i < m_active.size(); i++)
-	{
-		if(!m_active[i])
-		{
-			return i;
-		}
-		/*else
-		{
-			std::cout << "Max Entities reached!" << std::endl;
-		}*/
-	}
-
+	for (size_t count = 0; count < m_active.size(); count++)
+    {
+        size_t i = (m_lastIndex + count) % m_active.size();
+        if (!m_active[i])
+        {
+            m_lastIndex = i;
+            return i;
+        }
+    }
 }
 
 int EntityMemoryPool::getEnum(std::string s)

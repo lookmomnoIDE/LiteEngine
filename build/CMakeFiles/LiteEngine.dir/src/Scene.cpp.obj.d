@@ -1,80 +1,24 @@
-CMakeFiles/LiteEngine.dir/src/IndexBuffer.cpp.obj: \
- C:\projects\LiteEngineV003\src\IndexBuffer.cpp \
- C:/projects/LiteEngineV003/include/IndexBuffer.h \
- C:/projects/LiteEngineV003/include/glad/glad.h \
- C:/projects/LiteEngineV003/include/KHR/khrplatform.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdint.h \
- C:/mingw64/x86_64-w64-mingw32/include/stdint.h \
- C:/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
+CMakeFiles/LiteEngine.dir/src/Scene.cpp.obj: \
+ C:\projects\LiteEngineV003\src\Scene.cpp \
+ C:/projects/LiteEngineV003/include/Scene.h \
+ C:/mingw64/include/c++/15.2.0/string \
+ C:/mingw64/include/c++/15.2.0/bits/requires_hosted.h \
+ C:/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++config.h \
+ C:/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/os_defines.h \
+ C:/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/cpu_defines.h \
+ C:/mingw64/include/c++/15.2.0/pstl/pstl_config.h \
+ C:/mingw64/include/c++/15.2.0/bits/stringfwd.h \
+ C:/mingw64/include/c++/15.2.0/bits/memoryfwd.h \
+ C:/mingw64/include/c++/15.2.0/bits/char_traits.h \
+ C:/mingw64/include/c++/15.2.0/bits/postypes.h \
+ C:/mingw64/include/c++/15.2.0/cwchar \
+ C:/mingw64/x86_64-w64-mingw32/include/wchar.h \
  C:/mingw64/x86_64-w64-mingw32/include/corecrt.h \
  C:/mingw64/x86_64-w64-mingw32/include/_mingw.h \
  C:/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h \
  C:/mingw64/x86_64-w64-mingw32/include/_mingw_secapi.h \
  C:/mingw64/x86_64-w64-mingw32/include/vadefs.h \
  C:/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h \
- C:/mingw64/x86_64-w64-mingw32/include/stddef.h \
- C:/projects/LiteEngineV003/include/GLFW/glfw3.h \
- C:/mingw64/include/c++/15.2.0/vector \
- C:/mingw64/include/c++/15.2.0/bits/requires_hosted.h \
- C:/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++config.h \
- C:/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/os_defines.h \
- C:/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/cpu_defines.h \
- C:/mingw64/include/c++/15.2.0/pstl/pstl_config.h \
- C:/mingw64/include/c++/15.2.0/bits/stl_algobase.h \
- C:/mingw64/include/c++/15.2.0/bits/functexcept.h \
- C:/mingw64/include/c++/15.2.0/bits/exception_defines.h \
- C:/mingw64/include/c++/15.2.0/bits/cpp_type_traits.h \
- C:/mingw64/include/c++/15.2.0/bits/version.h \
- C:/mingw64/include/c++/15.2.0/type_traits \
- C:/mingw64/include/c++/15.2.0/ext/type_traits.h \
- C:/mingw64/include/c++/15.2.0/ext/numeric_traits.h \
- C:/mingw64/include/c++/15.2.0/bits/stl_pair.h \
- C:/mingw64/include/c++/15.2.0/bits/move.h \
- C:/mingw64/include/c++/15.2.0/bits/utility.h \
- C:/mingw64/include/c++/15.2.0/bits/stl_iterator_base_types.h \
- C:/mingw64/include/c++/15.2.0/bits/stl_iterator_base_funcs.h \
- C:/mingw64/include/c++/15.2.0/bits/concept_check.h \
- C:/mingw64/include/c++/15.2.0/debug/assertions.h \
- C:/mingw64/include/c++/15.2.0/bits/stl_iterator.h \
- C:/mingw64/include/c++/15.2.0/bits/ptr_traits.h \
- C:/mingw64/include/c++/15.2.0/debug/debug.h \
- C:/mingw64/include/c++/15.2.0/bits/predefined_ops.h \
- C:/mingw64/include/c++/15.2.0/bit C:/mingw64/include/c++/15.2.0/concepts \
- C:/mingw64/include/c++/15.2.0/bits/allocator.h \
- C:/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++allocator.h \
- C:/mingw64/include/c++/15.2.0/bits/new_allocator.h \
- C:/mingw64/include/c++/15.2.0/new \
- C:/mingw64/include/c++/15.2.0/bits/exception.h \
- C:/mingw64/include/c++/15.2.0/bits/memoryfwd.h \
- C:/mingw64/include/c++/15.2.0/bits/stl_construct.h \
- C:/mingw64/include/c++/15.2.0/bits/stl_uninitialized.h \
- C:/mingw64/include/c++/15.2.0/ext/alloc_traits.h \
- C:/mingw64/include/c++/15.2.0/bits/alloc_traits.h \
- C:/mingw64/include/c++/15.2.0/bits/stl_vector.h \
- C:/mingw64/include/c++/15.2.0/initializer_list \
- C:/mingw64/include/c++/15.2.0/bits/stl_bvector.h \
- C:/mingw64/include/c++/15.2.0/bits/functional_hash.h \
- C:/mingw64/include/c++/15.2.0/bits/hash_bytes.h \
- C:/mingw64/include/c++/15.2.0/bits/refwrap.h \
- C:/mingw64/include/c++/15.2.0/bits/invoke.h \
- C:/mingw64/include/c++/15.2.0/bits/stl_function.h \
- C:/mingw64/include/c++/15.2.0/backward/binders.h \
- C:/mingw64/include/c++/15.2.0/bits/range_access.h \
- C:/mingw64/include/c++/15.2.0/bits/vector.tcc \
- C:/mingw64/include/c++/15.2.0/bits/memory_resource.h \
- C:/mingw64/include/c++/15.2.0/cstddef \
- C:/mingw64/include/c++/15.2.0/bits/uses_allocator.h \
- C:/mingw64/include/c++/15.2.0/bits/uses_allocator_args.h \
- C:/mingw64/include/c++/15.2.0/tuple \
- C:/projects/LiteEngineV003/include/GameEngine.h \
- C:/projects/LiteEngineV003/include/Scene.h \
- C:/mingw64/include/c++/15.2.0/string \
- C:/mingw64/include/c++/15.2.0/bits/stringfwd.h \
- C:/mingw64/include/c++/15.2.0/bits/char_traits.h \
- C:/mingw64/include/c++/15.2.0/bits/postypes.h \
- C:/mingw64/include/c++/15.2.0/cwchar \
- C:/mingw64/x86_64-w64-mingw32/include/wchar.h \
  C:/mingw64/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
  C:/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
  C:/mingw64/x86_64-w64-mingw32/include/corecrt_wctype.h \
@@ -82,10 +26,22 @@ CMakeFiles/LiteEngine.dir/src/IndexBuffer.cpp.obj: \
  C:/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h \
  C:/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
  C:/mingw64/x86_64-w64-mingw32/include/sec_api/wchar_s.h \
+ C:/mingw64/include/c++/15.2.0/type_traits \
+ C:/mingw64/include/c++/15.2.0/bits/version.h \
+ C:/mingw64/include/c++/15.2.0/bits/allocator.h \
+ C:/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++allocator.h \
+ C:/mingw64/include/c++/15.2.0/bits/new_allocator.h \
+ C:/mingw64/include/c++/15.2.0/new \
+ C:/mingw64/include/c++/15.2.0/bits/exception.h \
+ C:/mingw64/include/c++/15.2.0/bits/functexcept.h \
+ C:/mingw64/include/c++/15.2.0/bits/exception_defines.h \
+ C:/mingw64/include/c++/15.2.0/bits/move.h \
+ C:/mingw64/include/c++/15.2.0/bits/cpp_type_traits.h \
  C:/mingw64/include/c++/15.2.0/bits/localefwd.h \
  C:/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++locale.h \
  C:/mingw64/include/c++/15.2.0/clocale \
  C:/mingw64/x86_64-w64-mingw32/include/locale.h \
+ C:/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
  C:/mingw64/x86_64-w64-mingw32/include/stdio.h \
  C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
  C:/mingw64/include/c++/15.2.0/iosfwd \
@@ -93,8 +49,33 @@ CMakeFiles/LiteEngine.dir/src/IndexBuffer.cpp.obj: \
  C:/mingw64/x86_64-w64-mingw32/include/ctype.h \
  C:/mingw64/include/c++/15.2.0/bits/ostream_insert.h \
  C:/mingw64/include/c++/15.2.0/bits/cxxabi_forced.h \
+ C:/mingw64/include/c++/15.2.0/bits/stl_iterator_base_funcs.h \
+ C:/mingw64/include/c++/15.2.0/bits/concept_check.h \
+ C:/mingw64/include/c++/15.2.0/debug/assertions.h \
+ C:/mingw64/include/c++/15.2.0/bits/stl_iterator_base_types.h \
+ C:/mingw64/include/c++/15.2.0/bits/stl_iterator.h \
+ C:/mingw64/include/c++/15.2.0/ext/type_traits.h \
+ C:/mingw64/include/c++/15.2.0/bits/ptr_traits.h \
+ C:/mingw64/include/c++/15.2.0/bits/stl_function.h \
+ C:/mingw64/include/c++/15.2.0/backward/binders.h \
+ C:/mingw64/include/c++/15.2.0/ext/numeric_traits.h \
+ C:/mingw64/include/c++/15.2.0/bits/stl_algobase.h \
+ C:/mingw64/include/c++/15.2.0/bits/stl_pair.h \
+ C:/mingw64/include/c++/15.2.0/bits/utility.h \
+ C:/mingw64/include/c++/15.2.0/debug/debug.h \
+ C:/mingw64/include/c++/15.2.0/bits/predefined_ops.h \
+ C:/mingw64/include/c++/15.2.0/bit C:/mingw64/include/c++/15.2.0/concepts \
+ C:/mingw64/include/c++/15.2.0/bits/refwrap.h \
+ C:/mingw64/include/c++/15.2.0/bits/invoke.h \
+ C:/mingw64/include/c++/15.2.0/bits/range_access.h \
+ C:/mingw64/include/c++/15.2.0/initializer_list \
  C:/mingw64/include/c++/15.2.0/bits/basic_string.h \
+ C:/mingw64/include/c++/15.2.0/ext/alloc_traits.h \
+ C:/mingw64/include/c++/15.2.0/bits/alloc_traits.h \
+ C:/mingw64/include/c++/15.2.0/bits/stl_construct.h \
  C:/mingw64/include/c++/15.2.0/string_view \
+ C:/mingw64/include/c++/15.2.0/bits/functional_hash.h \
+ C:/mingw64/include/c++/15.2.0/bits/hash_bytes.h \
  C:/mingw64/include/c++/15.2.0/bits/string_view.tcc \
  C:/mingw64/include/c++/15.2.0/ext/string_conversions.h \
  C:/mingw64/include/c++/15.2.0/cstdlib \
@@ -112,7 +93,13 @@ CMakeFiles/LiteEngine.dir/src/IndexBuffer.cpp.obj: \
  C:/mingw64/include/c++/15.2.0/cerrno \
  C:/mingw64/include/c++/15.2.0/bits/charconv.h \
  C:/mingw64/include/c++/15.2.0/bits/basic_string.tcc \
- C:/mingw64/include/c++/15.2.0/map \
+ C:/mingw64/include/c++/15.2.0/bits/memory_resource.h \
+ C:/mingw64/include/c++/15.2.0/cstddef \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h \
+ C:/mingw64/x86_64-w64-mingw32/include/stddef.h \
+ C:/mingw64/include/c++/15.2.0/bits/uses_allocator.h \
+ C:/mingw64/include/c++/15.2.0/bits/uses_allocator_args.h \
+ C:/mingw64/include/c++/15.2.0/tuple C:/mingw64/include/c++/15.2.0/map \
  C:/mingw64/include/c++/15.2.0/bits/stl_tree.h \
  C:/mingw64/include/c++/15.2.0/ext/aligned_buffer.h \
  C:/mingw64/include/c++/15.2.0/bits/node_handle.h \
@@ -123,7 +110,14 @@ CMakeFiles/LiteEngine.dir/src/IndexBuffer.cpp.obj: \
  C:/projects/LiteEngineV003/include/EntityMemoryPool.h \
  C:/projects/LiteEngineV003/include/Components.h \
  C:/projects/LiteEngineV003/include/EntityManager.h \
+ C:/mingw64/include/c++/15.2.0/vector \
+ C:/mingw64/include/c++/15.2.0/bits/stl_uninitialized.h \
+ C:/mingw64/include/c++/15.2.0/bits/stl_vector.h \
+ C:/mingw64/include/c++/15.2.0/bits/stl_bvector.h \
+ C:/mingw64/include/c++/15.2.0/bits/vector.tcc \
  C:/mingw64/include/c++/15.2.0/cstdint \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdint.h \
+ C:/mingw64/x86_64-w64-mingw32/include/stdint.h \
  C:/projects/LiteEngineV003/include/Tags.h \
  C:/projects/LiteEngineV003/include/Entity.h \
  C:/projects/LiteEngineV003/include/CTransform.h \
@@ -142,7 +136,12 @@ CMakeFiles/LiteEngine.dir/src/IndexBuffer.cpp.obj: \
  C:/mingw64/include/c++/15.2.0/bits/hashtable_policy.h \
  C:/mingw64/include/c++/15.2.0/bits/enable_special_members.h \
  C:/projects/LiteEngineV003/include/EntityFactory.h \
+ C:/projects/LiteEngineV003/include/GameEngine.h \
+ C:/projects/LiteEngineV003/include/Scene.h \
  C:/projects/LiteEngineV003/include/Renderer.h \
+ C:/projects/LiteEngineV003/include/glad/glad.h \
+ C:/projects/LiteEngineV003/include/KHR/khrplatform.h \
+ C:/projects/LiteEngineV003/include/GLFW/glfw3.h \
  C:/mingw64/include/c++/15.2.0/iostream \
  C:/mingw64/include/c++/15.2.0/ostream \
  C:/mingw64/include/c++/15.2.0/bits/ostream.h \
@@ -217,8 +216,10 @@ CMakeFiles/LiteEngine.dir/src/IndexBuffer.cpp.obj: \
  C:/mingw64/include/c++/15.2.0/sstream \
  C:/mingw64/include/c++/15.2.0/bits/sstream.tcc \
  C:/projects/LiteEngineV003/include/Parser.h \
+ C:/projects/LiteEngineV003/include/IndexBuffer.h \
  C:/projects/LiteEngineV003/include/InputHandler.h \
  C:/projects/LiteEngineV003/include/Scene_Play.h \
  C:/projects/LiteEngineV003/include/Scene_CGOl.h \
  C:/projects/LiteEngineV003/include/Grid.h \
- C:/projects/LiteEngineV003/include/GeometryConstructor.h
+ C:/projects/LiteEngineV003/include/GeometryConstructor.h \
+ C:/projects/LiteEngineV003/include/Renderer.h

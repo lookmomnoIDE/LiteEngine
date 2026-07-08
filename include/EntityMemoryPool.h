@@ -7,7 +7,10 @@
 #include "Cgrain.h"
 #include "Csand.h"
 #include "Cgravity.h"
+#include "CCell.h"
 #include "Tags.h"
+
+
 #include <vector>
 #include <string>
 #include <cstdint>
@@ -15,7 +18,7 @@
 
 
 class Entity;
-static const size_t MAX_ENTITIES = 6000;
+//static const size_t MAX_ENTITIES = 15000;
 
 class EntityMemoryPool
 {
@@ -24,7 +27,8 @@ public:
 	std::vector<CTransform>,
 	std::vector<Cgrain>,
 	std::vector<Csand>,
-	std::vector<Cgravity>
+	std::vector<Cgravity>,
+	std::vector<CCell>
 	> EntityComponentVectorTuple;
 
 private:
@@ -33,10 +37,12 @@ private:
 	std::vector<Tag> m_tags;
 	std::vector<bool> m_active;
 	size_t m_MAX_ENTITIES;
-	EntityMemoryPool(size_t MAX_ENTITIES);
+	size_t m_lastIndex = 0;
+	
 
 public:
-	static EntityMemoryPool* Instance();
+	EntityMemoryPool(size_t MAX_ENTITIES);
+	//static EntityMemoryPool* Instance();
 
 	std::vector<bool>& getActive();
 
@@ -47,13 +53,16 @@ public:
 	}
 
 	template <typename T>
+	std::vector<T>& getComponentVector()
+	{
+		return std::get<std::vector<T>>(m_pool);
+	}
+
+	template <typename T>
 	bool hasComponent(size_t entityID)
 	{
-
 		auto& componentVec = std::get<std::vector<T>>(m_pool);
 	    return componentVec[entityID].isActive();
-		/*bool active = std::get<std::vector<T>>(m_pool)[entityID].isActive();
-		return active;*/
 	}
 	template <typename T>
 	void remComponent(size_t entityID)

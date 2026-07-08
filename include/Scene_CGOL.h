@@ -8,14 +8,13 @@
 #include "Quad.h"
 #include "Vec2.h"
 #include "Grid.h"
+#include "GeometryConstructor.h"
 
 #include <iostream>
 
 class Scene_CGoL : public Scene
 {
 	std::string m_level = "play";
-	GameEngine* m_game = nullptr;
-	Renderer* m_renderer = nullptr;
 	double m_x, m_y;
 	bool m_primaryActionActive = false;
 	std::vector<Quad<float>> m_quads;
@@ -23,10 +22,11 @@ class Scene_CGoL : public Scene
 	unsigned int currentEntities = 0;
 	unsigned int m_numQuads = 0;
 	Grid grid;
+	//size_t m_maxEntities;
 
 
 public:
-	Scene_CGoL(GameEngine* game, Renderer* renderer);
+	Scene_CGoL(GameEngine* game, Renderer* renderer, size_t maxEntities);
 	void init() override;
 	void update() override;
 	void sAnimation();
@@ -39,6 +39,9 @@ public:
 	void registerAction(int keycode, const std::string& aName) override;
 	void sDoAction() override;
 	std::map<int, std::string>& getAM() override;
+
+	EntityMemoryPool& getPool();
+	EntityMan& getEntityMan();
 
 
 };

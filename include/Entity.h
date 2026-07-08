@@ -9,8 +9,9 @@ class Entity
 {
 
 	size_t m_ID;
+	EntityMemoryPool* m_pool = nullptr;
 	Entity();
-	Entity(size_t id) : m_ID(id) {}
+	Entity(size_t id, EntityMemoryPool& pool) : m_ID(id), m_pool(&pool) {}
 	friend class EntityMan;
 	friend class EntityMemoryPool;
 public:

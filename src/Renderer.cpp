@@ -264,6 +264,30 @@ void Renderer::addQuadBuffer(std::vector<Quad<float>>& quads)
 }
 
 
+void Renderer::addCellBuffer(std::vector<CCell>& quads)
+{
+	std::vector<unsigned int> indices = Renderer::genIndicies(quads.size());
+
+	m_VertexBuffers.push_back(std::make_unique<VertexBuffer>(quads.data(), quads.size() * sizeof(Quad<float>)));
+
+	auto layout = std::make_unique<VertexBufferLayout>();
+	layout->Push<float>(3);
+	layout->Push<float>(4);
+	m_Layouts.push_back(std::move(layout));
+
+	m_VertexArrays.push_back(std::make_unique<VertexArray>(
+		*m_VertexBuffers[m_bufferCount],
+		*m_Layouts[m_bufferCount]
+	));
+
+	// VAO is now bound from its constructor — attach IBO into it
+	m_IndexBuffers.push_back(std::make_unique<IndexBuffer>(indices.data(), indices.size()));
+
+	m_bufferCount++;
+}
+
+
+
 void Renderer::updateQuadBuffer(size_t index, std::vector<Quad<float>>& quads)
 {
 	m_VertexBuffers[index]->Bind();

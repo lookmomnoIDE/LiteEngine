@@ -15,6 +15,7 @@ class Entity;
 typedef std::vector<Entity> 				EntityVec;
 typedef std::map<std::string, EntityVec> 	EntityMap;
 
+class EntityMemoryPool;
 
 class EntityMan
 {
@@ -23,9 +24,11 @@ class EntityMan
 	EntityMap 	m_entityMap;
 	std::vector<Entity> m_entitiesByTag;
 	size_t 		m_totalEntities = 0;
+	EntityMemoryPool* m_pool = nullptr;
 	
 public:
-	static EntityMan* Instance();
+	EntityMan(EntityMemoryPool& pool);
+	//static EntityMan* Instance();
 	void update();
 	Entity addEntity(const Tag tag);
 	EntityVec& getEntities();
@@ -34,4 +37,4 @@ public:
 	size_t getTotalEntities();
 };
 
-#endif //ENtityMan
+#endif

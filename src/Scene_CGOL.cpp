@@ -4,9 +4,11 @@
 
 
 
-Scene_CGoL::Scene_CGoL(GameEngine* game, Renderer* renderer) 
-	:m_game(game), m_renderer(renderer)
+Scene_CGoL::Scene_CGoL(GameEngine* game, Renderer* renderer, size_t maxEntities) 
+	:Scene(game, renderer, maxEntities)//m_game(game), m_renderer(renderer), m_maxEntities(maxEntities)
 {
+	//m_pool(m_maxEntities);
+	//m_entityManager(m_pool);
 	Scene_CGoL::registerAction(GLFW_MOUSE_BUTTON_LEFT, "_LMB"); // Change place -> LMB
 	Scene_CGoL::registerAction(GLFW_KEY_ESCAPE, "ESC");
 }
@@ -14,86 +16,55 @@ Scene_CGoL::Scene_CGoL(GameEngine* game, Renderer* renderer)
 
 void Scene_CGoL::init()
 {
-	Grid g(m_renderer->getWidth(), m_renderer->getHeight(), 20, 4, 0);
-	m_quads = g.fabGridLines();
-	m_renderer->addQuadBuffer(m_quads);
-	//m_quadsList.push_back(m_quads);
-	//m_renderer->addQuadBuffer(m_quads);
-	m_quads.clear();
-
-	const auto& pool = m_game->getPool();
-	auto ME = pool->getMaxEnts();
-	auto factory = m_game->getFactory();
-	//m_quads.reserve(ME);
-	for (auto i = 0; i < ME; i++)
-	{
-		/*Tag target = static_cast<Tag>(pool->getEnum("sand"));
-		Entity e = m_game->getEntityMan()->addEntity(target); 
-		std::cout << "added a entity" << std::endl;*/
-		std::cout << "inside factory loop (iter: " << i << ")" << std::endl;
-		factory->addCell(g.getCenterOfCell((size_t)i));
-		std::cout << "added cell: " << i << std::endl;
-	}
-
-	//std::cout << "Pre scene init loop" << std::endl;
-	//m_game->getEntityMan()->update();
-	EntityVec& entities = m_game->getEntityMan()->getEntities();
-	std::cout << "# of Entities: " << entities.size() << std::endl;
-/*	for ( auto e : entities)
-	{
-		std::cout << "1. inside CTransform loop" << std::endl;
-		auto id = e.getID();
-		std::cout << "ID set: " << id << std::endl;
-		pool->getComponent<CTransform>(id).setPos(g.getCenterOfCell(id));
-		std::cout << "inside CTransform loop" << std::endl;
-	}*/
-
-	for ( auto e : entities)
-	{
-		std::cout << "1. inside grain loop" << std::endl;
-		auto id = e.getID();
-		m_quads.push_back(pool->getComponent<Cgrain>(id).createQuad(pool->getComponent<CTransform>(id).getPos(), pool->getComponent<Csand>(id).getColor()));
-		std::cout << "inside grain loop" << std::endl;
-	}
-	//m_quadsList.push_back(m_quads);
+	unsigned int width, height;
+	width = m_renderer->getWidth();
+	height = m_renderer->getHeight();
+	Vec2<float> dims = {width, height};
+	grid.setCellSize(10);
+	grid.setLineWidth(4);
+	grid.setColRow(width, height);
+	m_quads = grid.fabGridLines();
 	m_renderer->addQuadBuffer(m_quads);
 	m_quads.clear();
-	/*for (auto i : m_quadsList)
+
+	auto ME = m_pool.getMaxEnts();
+	unsigned int size = grid.getCellSize() - 1;
+	Vec2<float> cSize = {(float)size/width*(width/height), (float)size/height};
+	Vec4<float> color = {1.0f, 1.0f, 1.0f, 1.0f};
+
+
+
+	m_quads.reserve(120*65*sizeof(Quad<float>));
+	for (unsigned int i = 0; i < grid.m_Col; i++)
 	{
-		m_renderer->addQuadBuffer(m_quadsList[i]);
-	}*/
-	/*for (size_t i = 0; i < m_quadsList.size(); ++i) 
-	{
-		m_renderer->addQuadBuffer(m_quadsList[i]);
-	}*/
+		for(unsigned int j = 0; j < grid.m_Row; j++)
+		{
+			std::cout << "inside factory loop (Cell: " << i << ", " << j << ")" << std::endl;
+			auto pos = grid.getCenterOfCell(Vec2<unsigned int>(i, j));
+			//auto pos = GConstructor::normalize(grid.getCenterOfCell(Vec2<unsigned int>(j, i)), dims);
+			auto q = GConstructor::rect(pos, color, cSize);
+			m_quads.push_back(q);
+			m_factory.addCell(q, *this);
+			std::cout << "added cell: " << i << ", " << j << " at " << pos.m_x << ", " << pos.m_y << std::endl;
+		}
+	}
+
+	m_renderer->addQuadBuffer(m_quads);
 
 	std::cout << "End of init!" <<  std::endl;
 }	
 
 void Scene_CGoL::update()
 {
-/*	m_quads.clear();
-	const EntityVec& entities = m_game->getEntityMan()->getEntities();
-	const auto& pool = m_game->getPool();
-	for(const Entity& e: entities)
+	for(unsigned int i = 0; i < grid.m_Col; i++)
 	{
-		//update quad positions. 
-		const auto 		id 			= e.getID();
-		CTransform& 	transform 	= pool->getComponent<CTransform>(id);
-		Cgrain& 		grain 		= pool->getComponent<Cgrain>(id);
-		Csand& 			sand 		= pool->getComponent<Csand>(id);
-		//auto& 			pos 		= transform.getPos();
-		grain.setQuadPos(transform.getPos());	
-		if (sand.colorDirty)
+		for(unsigned int j = 0; j < grid.m_Row; j++)
 		{
-			grain.setQuadColor(sand.getColor());
-			sand.colorDirty = false;
+			m_quads.push_back(m_pool.getComponent<CCell>((size_t)(i+j)).getQuad());
 		}
-		m_quads.push_back(grain.getQuad());
-
 	}
-	m_renderer->addQuadBuffer( m_quads);
-	m_quads.clear();*/
+	m_renderer->updateQuadBuffer(1, m_quads);
+	m_quads.clear();
 }
 
 
@@ -176,6 +147,5 @@ void Scene_CGoL::sDoAction()
 		std::cout << "Primary Action Active!" << std::endl;
 	}
 }
-
 
 

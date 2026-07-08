@@ -206,6 +206,7 @@ CMakeFiles/LiteEngine.dir/src/Renderer.cpp.obj: \
  C:/projects/LiteEngineV003/include/Vec4.h \
  C:/projects/LiteEngineV003/include/Csand.h \
  C:/projects/LiteEngineV003/include/Cgravity.h \
+ C:/projects/LiteEngineV003/include/CCell.h \
  C:/mingw64/include/c++/15.2.0/unordered_map \
  C:/mingw64/include/c++/15.2.0/bits/unordered_map.h \
  C:/mingw64/include/c++/15.2.0/bits/hashtable.h \
@@ -214,12 +215,13 @@ CMakeFiles/LiteEngine.dir/src/Renderer.cpp.obj: \
  C:/projects/LiteEngineV003/include/GameEngine.h \
  C:/projects/LiteEngineV003/include/Scene.h \
  C:/projects/LiteEngineV003/include/ICommand.h \
+ C:/projects/LiteEngineV003/include/EntityFactory.h \
  C:/projects/LiteEngineV003/include/Renderer.h \
  C:/projects/LiteEngineV003/include/InputHandler.h \
  C:/projects/LiteEngineV003/include/Scene_Play.h \
- C:/projects/LiteEngineV003/include/EntityFactory.h \
  C:/projects/LiteEngineV003/include/Scene_CGOl.h \
  C:/projects/LiteEngineV003/include/Grid.h \
+ C:/projects/LiteEngineV003/include/GeometryConstructor.h \
  C:/projects/LiteEngineV003/include/InputHandler.h \
  C:/projects/LiteEngineV003/include/Vertex.h \
  C:/projects/LiteEngineV003/include/Quad.h \

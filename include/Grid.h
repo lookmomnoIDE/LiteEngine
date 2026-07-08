@@ -2,6 +2,7 @@
 #define GRID_H
 
 #include <vector>
+#include <iostream>
 #include "Vec2.h"
 #include "Vec3.h"
 #include "Quad.h"
@@ -79,24 +80,43 @@ public:
 		}
 		return m_Quads;
 	}
-	
+
 	std::vector<Quad<float>> getGridLines()
 	{
 		return m_Quads;
 	}
 
-	Vec2<float> getCenterOfCell(size_t e)
+	/*Vec2<float> getCenterOfCell(size_t e)
 	{
+		std::cout << "inside grid center of cell fn" << std::endl;
+		std::cout << m_Col << std::endl;
 		unsigned int i = (unsigned int)e % m_Col;
 		unsigned int j = (unsigned int)e / m_Col;
-	
+		std::cout << "col row index" << std::endl;
 		float ndcX = (((i * m_CellSize) + (m_CellSize / 2.0f)) / m_vWidth) * 2.0f - 1.0f;
 	    float ndcY = 1.0f - (((j * m_CellSize) + (m_CellSize / 2.0f)) / m_vHeight) * 2.0f;
-
+	    std::cout << "ndcs" << std::endl;
 		//Vec2<float> pos((((i*m_CellSize)+(m_CellSize/2))/m_vWidth)-1, 1-(((j*m_CellSize)+(m_CellSize/2))/m_vHeight));
 		Vec2<float> pos(ndcX, ndcY);
+		std::cout << "end of grid center of cell fn" << std::endl;
 		return pos;
+	}*/
+
+
+	Vec2<float> getCenterOfCell(Vec2<unsigned int> index)
+	{
+		unsigned int j = index.m_y;
+		unsigned int i = index.m_x;
+		float ndcX = (((i * m_CellSize) + (m_CellSize / 2.0f)) / m_vWidth) * 2.0f - 1.0f;
+		float ndcY = 1.0f - (((j * m_CellSize) + (m_CellSize / 2.0f)) / m_vHeight) * 2.0f;	    
+		std::cout << "ndcs" << std::endl;
+		//Vec2<float> pos((((i*m_CellSize)+(m_CellSize/2))/m_vWidth)-1, 1-(((j*m_CellSize)+(m_CellSize/2))/m_vHeight));
+		Vec2<float> pos(ndcX, ndcY);
+		std::cout << "end of grid center of cell fn" << std::endl;
+		return pos;
+
 	}
+
 
 	unsigned int getCellSize()
 	{
@@ -138,12 +158,16 @@ public:
 		m_CellSize = size;
 	}
 
+	//Calculates row/col; do not try to set row/col manually 
 	void setColRow(unsigned int vWidth, unsigned int vHeight)
 	{
+		std::cout << "renderer width: " << vWidth << " renderer height: " << vHeight << std::endl;
 		m_vWidth = vWidth;
 		m_vHeight = vHeight;
+		std::cout << "grid width: " << m_vWidth << " grid height: " << m_vHeight << std::endl;
 		m_Col = m_vWidth/m_CellSize;
 		m_Row = m_vHeight/m_CellSize;
+		std::cout << "Col: " << m_Col << " Row: " << m_Row << " CellSize: " << m_CellSize << std::endl;
 		m_grid.resize(m_Row, std::vector<unsigned int>(m_Col, m_DefaultState));
 	}
 

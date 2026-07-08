@@ -58,6 +58,7 @@ public:
 	void CGoLMemory();
 	void addGrid(std::vector<Quad<float>> quads);
 	void addQuadBuffer(std::vector<Quad<float>>& quads);
+	void addCellBuffer(std::vector<CCell>& quads);
 	void updateQuadBuffer(size_t index, std::vector<Quad<float>>& quads);
 	void SwapBuffers();
 	void Clear();
