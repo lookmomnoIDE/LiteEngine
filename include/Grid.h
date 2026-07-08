@@ -185,6 +185,11 @@ public:
 	{
 		return m_grid[row][col];
 	}
+
+	void setState(unsigned int row, unsigned int col, unsigned int state)
+	{
+		m_grid[row][col] = state;
+	}
 };
 
 

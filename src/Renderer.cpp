@@ -44,6 +44,8 @@ Renderer::Renderer()
 	glViewport(0, 0, m_width, m_height);
 	m_shader = new Shader("../src/cool.vert", "../src/beans.frag");
 	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	
 }
 
@@ -291,7 +293,7 @@ void Renderer::addCellBuffer(std::vector<CCell>& quads)
 void Renderer::updateQuadBuffer(size_t index, std::vector<Quad<float>>& quads)
 {
 	m_VertexBuffers[index]->Bind();
-	glBufferSubData(GL_ARRAY_BUFFER, 0, quads.size() * sizeof(Quad<float>), quads.data());
+	glBufferSubData(GL_ARRAY_BUFFER, 0 , quads.size() * sizeof(Quad<float>), quads.data());
 }
 
 

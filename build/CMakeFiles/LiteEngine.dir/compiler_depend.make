@@ -2361,9 +2361,11 @@ CMakeFiles/LiteEngine.dir/src/Scene.cpp.obj: C:/projects/LiteEngineV003/src/Scen
   C:/projects/LiteEngineV003/include/shader.h
 
 CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.obj: C:/projects/LiteEngineV003/src/Scene_CGoL.cpp \
+  C:/mingw64/include/c++/15.2.0/algorithm \
   C:/mingw64/include/c++/15.2.0/backward/auto_ptr.h \
   C:/mingw64/include/c++/15.2.0/backward/binders.h \
   C:/mingw64/include/c++/15.2.0/bit \
+  C:/mingw64/include/c++/15.2.0/bits/algorithmfwd.h \
   C:/mingw64/include/c++/15.2.0/bits/align.h \
   C:/mingw64/include/c++/15.2.0/bits/alloc_traits.h \
   C:/mingw64/include/c++/15.2.0/bits/allocated_ptr.h \
@@ -2418,12 +2420,15 @@ CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.obj: C:/projects/LiteEngineV003/src
   C:/mingw64/include/c++/15.2.0/bits/shared_ptr.h \
   C:/mingw64/include/c++/15.2.0/bits/shared_ptr_atomic.h \
   C:/mingw64/include/c++/15.2.0/bits/shared_ptr_base.h \
+  C:/mingw64/include/c++/15.2.0/bits/specfun.h \
   C:/mingw64/include/c++/15.2.0/bits/sstream.tcc \
   C:/mingw64/include/c++/15.2.0/bits/std_abs.h \
+  C:/mingw64/include/c++/15.2.0/bits/stl_algo.h \
   C:/mingw64/include/c++/15.2.0/bits/stl_algobase.h \
   C:/mingw64/include/c++/15.2.0/bits/stl_bvector.h \
   C:/mingw64/include/c++/15.2.0/bits/stl_construct.h \
   C:/mingw64/include/c++/15.2.0/bits/stl_function.h \
+  C:/mingw64/include/c++/15.2.0/bits/stl_heap.h \
   C:/mingw64/include/c++/15.2.0/bits/stl_iterator.h \
   C:/mingw64/include/c++/15.2.0/bits/stl_iterator_base_funcs.h \
   C:/mingw64/include/c++/15.2.0/bits/stl_iterator_base_types.h \
@@ -2439,6 +2444,7 @@ CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.obj: C:/projects/LiteEngineV003/src
   C:/mingw64/include/c++/15.2.0/bits/streambuf_iterator.h \
   C:/mingw64/include/c++/15.2.0/bits/string_view.tcc \
   C:/mingw64/include/c++/15.2.0/bits/stringfwd.h \
+  C:/mingw64/include/c++/15.2.0/bits/uniform_int_dist.h \
   C:/mingw64/include/c++/15.2.0/bits/unique_ptr.h \
   C:/mingw64/include/c++/15.2.0/bits/unordered_map.h \
   C:/mingw64/include/c++/15.2.0/bits/uses_allocator.h \
@@ -2449,6 +2455,7 @@ CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.obj: C:/projects/LiteEngineV003/src
   C:/mingw64/include/c++/15.2.0/cctype \
   C:/mingw64/include/c++/15.2.0/cerrno \
   C:/mingw64/include/c++/15.2.0/clocale \
+  C:/mingw64/include/c++/15.2.0/cmath \
   C:/mingw64/include/c++/15.2.0/concepts \
   C:/mingw64/include/c++/15.2.0/cstddef \
   C:/mingw64/include/c++/15.2.0/cstdint \
@@ -2472,11 +2479,13 @@ CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.obj: C:/projects/LiteEngineV003/src
   C:/mingw64/include/c++/15.2.0/iosfwd \
   C:/mingw64/include/c++/15.2.0/iostream \
   C:/mingw64/include/c++/15.2.0/istream \
+  C:/mingw64/include/c++/15.2.0/limits \
   C:/mingw64/include/c++/15.2.0/map \
   C:/mingw64/include/c++/15.2.0/memory \
   C:/mingw64/include/c++/15.2.0/new \
   C:/mingw64/include/c++/15.2.0/ostream \
   C:/mingw64/include/c++/15.2.0/pstl/execution_defs.h \
+  C:/mingw64/include/c++/15.2.0/pstl/glue_algorithm_defs.h \
   C:/mingw64/include/c++/15.2.0/pstl/glue_memory_defs.h \
   C:/mingw64/include/c++/15.2.0/pstl/pstl_config.h \
   C:/mingw64/include/c++/15.2.0/sstream \
@@ -2486,6 +2495,18 @@ CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.obj: C:/projects/LiteEngineV003/src
   C:/mingw64/include/c++/15.2.0/string \
   C:/mingw64/include/c++/15.2.0/string_view \
   C:/mingw64/include/c++/15.2.0/system_error \
+  C:/mingw64/include/c++/15.2.0/tr1/bessel_function.tcc \
+  C:/mingw64/include/c++/15.2.0/tr1/beta_function.tcc \
+  C:/mingw64/include/c++/15.2.0/tr1/ell_integral.tcc \
+  C:/mingw64/include/c++/15.2.0/tr1/exp_integral.tcc \
+  C:/mingw64/include/c++/15.2.0/tr1/gamma.tcc \
+  C:/mingw64/include/c++/15.2.0/tr1/hypergeometric.tcc \
+  C:/mingw64/include/c++/15.2.0/tr1/legendre_function.tcc \
+  C:/mingw64/include/c++/15.2.0/tr1/modified_bessel_func.tcc \
+  C:/mingw64/include/c++/15.2.0/tr1/poly_hermite.tcc \
+  C:/mingw64/include/c++/15.2.0/tr1/poly_laguerre.tcc \
+  C:/mingw64/include/c++/15.2.0/tr1/riemann_zeta.tcc \
+  C:/mingw64/include/c++/15.2.0/tr1/special_function_util.h \
   C:/mingw64/include/c++/15.2.0/tuple \
   C:/mingw64/include/c++/15.2.0/type_traits \
   C:/mingw64/include/c++/15.2.0/typeinfo \
@@ -2526,6 +2547,7 @@ CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.obj: C:/projects/LiteEngineV003/src
   C:/mingw64/x86_64-w64-mingw32/include/limits.h \
   C:/mingw64/x86_64-w64-mingw32/include/locale.h \
   C:/mingw64/x86_64-w64-mingw32/include/malloc.h \
+  C:/mingw64/x86_64-w64-mingw32/include/math.h \
   C:/mingw64/x86_64-w64-mingw32/include/process.h \
   C:/mingw64/x86_64-w64-mingw32/include/pthread.h \
   C:/mingw64/x86_64-w64-mingw32/include/pthread_compat.h \
@@ -5676,13 +5698,13 @@ C:/mingw64/include/c++/15.2.0/bit:
 
 C:/mingw64/include/c++/15.2.0/bits/alloc_traits.h:
 
+C:/mingw64/x86_64-w64-mingw32/include/windows.h:
+
 C:/mingw64/include/c++/15.2.0/bits/ostream.h:
 
 C:/mingw64/include/c++/15.2.0/bits/locale_facets.tcc:
 
 C:/mingw64/x86_64-w64-mingw32/include/playsoundapi.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/windows.h:
 
 C:/mingw64/include/c++/15.2.0/bits/allocator.h:
 
@@ -6100,6 +6122,10 @@ C:/projects/LiteEngineV003/src/Scene_CGoL.cpp:
 
 C:/mingw64/x86_64-w64-mingw32/include/corecrt_stdio_config.h:
 
+C:/projects/LiteEngineV003/include/glm/ext/scalar_constants.hpp:
+
+C:/mingw64/include/c++/15.2.0/bits/stl_algo.h:
+
 C:/mingw64/x86_64-w64-mingw32/include/corecrt_wctype.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h:
@@ -6212,11 +6238,11 @@ C:/projects/LiteEngineV003/include/Vec4.h:
 
 C:/projects/LiteEngineV003/include/Vertex.h:
 
+C:/mingw64/x86_64-w64-mingw32/include/wincrypt.h:
+
 C:/projects/LiteEngineV003/src/Cgravity.cpp:
 
 C:/mingw64/x86_64-w64-mingw32/include/threadpoolapiset.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/wincrypt.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/threadpoollegacyapiset.h:
 
@@ -6264,11 +6290,11 @@ C:/projects/LiteEngineV003/include/Scene.h:
 
 C:/mingw64/include/c++/15.2.0/ext/aligned_buffer.h:
 
+C:/mingw64/x86_64-w64-mingw32/include/windef.h:
+
 C:/mingw64/include/c++/15.2.0/map:
 
 C:/mingw64/x86_64-w64-mingw32/include/rpcasync.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/windef.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/namespaceapi.h:
 
@@ -6314,11 +6340,13 @@ C:/mingw64/x86_64-w64-mingw32/include/minwinbase.h:
 
 C:/mingw64/include/c++/15.2.0/bits/stl_tempbuf.h:
 
+C:/mingw64/include/c++/15.2.0/bits/algorithmfwd.h:
+
 C:/mingw64/include/c++/15.2.0/bits/unique_ptr.h:
 
-C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/rtmintrin.h:
-
 C:/mingw64/x86_64-w64-mingw32/include/wincon.h:
+
+C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/rtmintrin.h:
 
 C:/projects/LiteEngineV003/include/glm/detail/type_mat3x3.hpp:
 
@@ -6418,27 +6446,29 @@ C:/projects/LiteEngineV003/src/Scene.cpp:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/mwaitintrin.h:
 
-C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/vpclmulqdqintrin.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/ole2.h:
-
-C:/projects/LiteEngineV003/include/Scene_CGOL.h:
-
-C:/projects/LiteEngineV003/include/glm/ext/vector_uint3_sized.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_double4x4.hpp:
-
-C:/projects/LiteEngineV003/src/Shader.cpp:
-
-C:/projects/LiteEngineV003/src/Texture.cpp:
+C:/mingw64/include/c++/15.2.0/algorithm:
 
 C:/mingw64/include/c++/15.2.0/bits/specfun.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/rpcnterr.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/utilapiset.h:
+
+C:/mingw64/include/c++/15.2.0/bits/stl_heap.h:
+
+C:/mingw64/include/c++/15.2.0/bits/uniform_int_dist.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/sysinfoapi.h:
+
+C:/mingw64/include/c++/15.2.0/tr1/poly_laguerre.tcc:
 
 C:/projects/LiteEngineV003/include/glm/detail/type_vec2.hpp:
 
 C:/mingw64/include/c++/15.2.0/cmath:
 
 C:/mingw64/include/c++/15.2.0/limits:
+
+C:/mingw64/include/c++/15.2.0/pstl/glue_algorithm_defs.h:
 
 C:/mingw64/include/c++/15.2.0/tr1/bessel_function.tcc:
 
@@ -6466,11 +6496,23 @@ C:/mingw64/include/c++/15.2.0/tr1/modified_bessel_func.tcc:
 
 C:/mingw64/include/c++/15.2.0/tr1/poly_hermite.tcc:
 
-C:/mingw64/x86_64-w64-mingw32/include/sysinfoapi.h:
-
-C:/mingw64/include/c++/15.2.0/tr1/poly_laguerre.tcc:
-
 C:/mingw64/include/c++/15.2.0/tr1/riemann_zeta.tcc:
+
+C:/mingw64/x86_64-w64-mingw32/include/math.h:
+
+C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/vpclmulqdqintrin.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/ole2.h:
+
+C:/projects/LiteEngineV003/include/Scene_CGOL.h:
+
+C:/projects/LiteEngineV003/include/glm/ext/vector_uint3_sized.hpp:
+
+C:/projects/LiteEngineV003/include/glm/ext/matrix_double4x4.hpp:
+
+C:/projects/LiteEngineV003/src/Shader.cpp:
+
+C:/projects/LiteEngineV003/src/Texture.cpp:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/emmintrin.h:
 
@@ -6483,8 +6525,6 @@ C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/xmmintrin.h:
 C:/mingw64/x86_64-w64-mingw32/include/_mingw_stdarg.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/assert.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/math.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx10_2-512bf16intrin.h:
 
@@ -6562,9 +6602,9 @@ C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx10_2minmaxintrin.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx512bf16intrin.h:
 
-C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/serializeintrin.h:
-
 C:/mingw64/x86_64-w64-mingw32/include/winbase.h:
+
+C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/serializeintrin.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx512bf16vlintrin.h:
 
@@ -6798,10 +6838,6 @@ C:/mingw64/x86_64-w64-mingw32/include/reason.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/rpcdce.h:
 
-C:/mingw64/x86_64-w64-mingw32/include/rpcnterr.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/utilapiset.h:
-
 C:/mingw64/x86_64-w64-mingw32/include/rpcsal.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/securityappcontainer.h:
@@ -6971,8 +7007,6 @@ C:/projects/LiteEngineV003/include/glm/ext/matrix_float4x4_precision.hpp:
 C:/projects/LiteEngineV003/include/glm/ext/matrix_transform.hpp:
 
 C:/projects/LiteEngineV003/include/glm/ext/matrix_transform.inl:
-
-C:/projects/LiteEngineV003/include/glm/ext/scalar_constants.hpp:
 
 C:/projects/LiteEngineV003/include/glm/ext/scalar_constants.inl:
 

@@ -45,9 +45,21 @@ public:
 	template <typename T, typename... Args>
 	void changeScene(const std::string name, Args&&... args)
 	{
-		m_currentScene = name;
-	    m_scenes[name] = std::make_unique<T>(this, std::forward<Args>(args)...);
-	    currentScene()->init();
+		if (m_currentScene != name)
+		{
+			m_currentScene = name;
+			m_scenes[name] = std::make_unique<T>(this, std::forward<Args>(args)...);
+			currentScene()->init();
+		}
+		else if(m_currentScene == name)
+		{
+			currentScene()->init();
+		}
+		else
+		{
+			std::cout << "Error: What you talkin' bout Willis?!" << std::endl;
+		}
+		
 	}
 	Scene* currentScene();
 	//Todo

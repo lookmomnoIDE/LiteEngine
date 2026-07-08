@@ -221,4 +221,26 @@ CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.obj: \
  C:/projects/LiteEngineV003/include/IndexBuffer.h \
  C:/projects/LiteEngineV003/include/InputHandler.h \
  C:/projects/LiteEngineV003/include/Scene_Play.h \
- C:/projects/LiteEngineV003/include/Scene_CGOl.h
+ C:/projects/LiteEngineV003/include/Scene_CGOl.h \
+ C:/mingw64/include/c++/15.2.0/cmath \
+ C:/mingw64/x86_64-w64-mingw32/include/math.h \
+ C:/mingw64/include/c++/15.2.0/bits/specfun.h \
+ C:/mingw64/include/c++/15.2.0/limits \
+ C:/mingw64/include/c++/15.2.0/tr1/gamma.tcc \
+ C:/mingw64/include/c++/15.2.0/tr1/special_function_util.h \
+ C:/mingw64/include/c++/15.2.0/tr1/bessel_function.tcc \
+ C:/mingw64/include/c++/15.2.0/tr1/beta_function.tcc \
+ C:/mingw64/include/c++/15.2.0/tr1/ell_integral.tcc \
+ C:/mingw64/include/c++/15.2.0/tr1/exp_integral.tcc \
+ C:/mingw64/include/c++/15.2.0/tr1/hypergeometric.tcc \
+ C:/mingw64/include/c++/15.2.0/tr1/legendre_function.tcc \
+ C:/mingw64/include/c++/15.2.0/tr1/modified_bessel_func.tcc \
+ C:/mingw64/include/c++/15.2.0/tr1/poly_hermite.tcc \
+ C:/mingw64/include/c++/15.2.0/tr1/poly_laguerre.tcc \
+ C:/mingw64/include/c++/15.2.0/tr1/riemann_zeta.tcc \
+ C:/mingw64/include/c++/15.2.0/algorithm \
+ C:/mingw64/include/c++/15.2.0/bits/stl_algo.h \
+ C:/mingw64/include/c++/15.2.0/bits/algorithmfwd.h \
+ C:/mingw64/include/c++/15.2.0/bits/stl_heap.h \
+ C:/mingw64/include/c++/15.2.0/bits/uniform_int_dist.h \
+ C:/mingw64/include/c++/15.2.0/pstl/glue_algorithm_defs.h
