@@ -11,8 +11,6 @@ Vec4<float> invisibleColor = {1.0f, 1.0f, 1.0f, 0.0f};
 Scene_CGoL::Scene_CGoL(GameEngine* game, Renderer* renderer, size_t maxEntities) 
 	:Scene(game, renderer, maxEntities)//m_game(game), m_renderer(renderer), m_maxEntities(maxEntities)
 {
-	//m_pool(m_maxEntities);
-	//m_entityManager(m_pool);
 	Scene_CGoL::registerAction(GLFW_MOUSE_BUTTON_LEFT, "_LMB"); // Change place -> LMB
 	Scene_CGoL::registerAction(GLFW_KEY_ESCAPE, "ESC");
 }
@@ -40,17 +38,15 @@ void Scene_CGoL::init()
 
 
 	m_quads.reserve((grid.m_Col * grid.m_Row));
-	for (unsigned int i = 0; i < grid.m_Col; i++)
+	for (unsigned int j = 0; j < grid.m_Row; j++)
 	{
-		for(unsigned int j = 0; j < grid.m_Row; j++)
+		for(unsigned int i = 0; i < grid.m_Col; i++)
 		{
-			//std::cout << "inside factory loop (Cell: " << i << ", " << j << ")" << std::endl;
+
 			auto pos = grid.getCenterOfCell(Vec2<unsigned int>(i, j));
-			//auto pos = GConstructor::normalize(grid.getCenterOfCell(Vec2<unsigned int>(j, i)), dims);
 			auto q = GConstructor::rect(pos, invisibleColor, cSize);
 			m_quads.push_back(q);
 			m_factory.addCell(q, *this);
-			//std::cout << "added cell: " << i << ", " << j << " at " << pos.m_x << ", " << pos.m_y << std::endl;
 		}
 	}
 
@@ -61,15 +57,29 @@ void Scene_CGoL::init()
 
 void Scene_CGoL::update()
 {
-/*	m_quads.clear();
-	m_quads.reserve((grid.m_Col * grid.m_Row));
-	for(size_t i = 0; i < (grid.m_Col * grid.m_Row); i++)
+
+	//Implement Rules
+	//1. Any live cell with fewer than two live neighbours dies, as if caused by underpopulation.
+	//
+	//2. Any live cell with two or three live neighbours lives on to the next generation.
+	//
+	//3. Any live cell with more than three live neighbours dies, as if by overpopulation.
+	//
+	//4. Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
+	for(size_t j = 0; j < grid.m_Row; j++)
 	{
-		Quad<float> quad = m_pool.getComponent<CCell>((size_t)(i)).getQuad(); 
-		m_quads.push_back(quad);
+		for(size_t i = 0; i < grid.m_Col; i++)
+		{
+
+		}
 	}
-	std::cout << "pushing vector of quads to buffer" << std::endl;
-	m_renderer->updateQuadBuffer(1, m_quads);*/
+
+
+
+
+
+
+
 	Vec4<float> visibleColor = {1.0f, 1.0f, 1.0f, 1.0f};
 	Vec4<float> invisibleColor = {1.0f, 1.0f, 1.0f, 0.0f};
 	m_quads.clear();
@@ -79,10 +89,9 @@ void Scene_CGoL::update()
 		for(size_t i = 0; i < grid.m_Col; i++)
 		{
 			auto currentState = grid.getState((unsigned int)j, (unsigned int)i);
-			//std::cout << "Current state: " << currentState << " at: " << i << ", " << j << std::endl;
 			if(currentState == 1)
 			{
-				auto& cell = m_pool.getComponent<CCell>((size_t)((j*grid.m_Row) + i));
+				auto& cell = m_pool.getComponent<CCell>((size_t)((j*grid.m_Col) + i));
 				cell.setColor(visibleColor); 
 				Quad<float> quad = cell.getQuad();
 				m_quads.push_back(quad);
@@ -171,29 +180,21 @@ void Scene_CGoL::sDoAction()
 	if (m_primaryActionActive)
 	{
 
-		//auto size = grid.getCellSize();
-		glfwGetCursorPos(m_renderer->getWindow(), &m_x, &m_y);
-		//auto indexX = std::floor((m_x/size));
-		//auto indexY = std::floor((m_y/size));
-		auto sizeX = (float)m_renderer->getWidth()  / static_cast<float>(grid.getCols());
-		auto sizeY = (float)m_renderer->getHeight() / static_cast<float>(grid.getRows());
-		
-		auto indexX = static_cast<unsigned int>(std::floor(m_x / sizeX));
-		auto indexY = static_cast<unsigned int>(std::floor(m_y / sizeY));
-		auto state = grid.getState(indexX, indexY);
-		//indexX = std::clamp(indexX, 0, grid.getCols() - 1);
-		//indexY = std::clamp(indexY, 0, grid.getRows() - 1);
+		auto size = grid.getCellSize();
+		glfwGetCursorPos(m_renderer->getWindow(), &m_x, &m_y);		
+		auto indexX = static_cast<unsigned int>(std::floor(m_x / size));
+		auto indexY = static_cast<unsigned int>(std::floor(m_y / size));
+		auto state = grid.getState(indexY, indexX);
+		indexX = std::clamp(indexX, 0u, grid.getCols() - 1);
+		indexY = std::clamp(indexY, 0u, grid.getRows() - 1);
 		if (state == 0)
 		{
-			grid.setState(indexX, indexY, 1);
+			grid.setState(indexY, indexX, 1);		
 		}
 		else
 		{
-			grid.setState(indexX, indexY, 0);
+			grid.setState(indexY, indexX, 0);	
 		}
-		//m_game->getFactory()->addSand(m_x, m_y);	
 		std::cout << "Primary Action Active!" << std::endl;
 	}
 }
-
-

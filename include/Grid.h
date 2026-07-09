@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <iostream>
+
 #include "Vec2.h"
 #include "Vec3.h"
 #include "Quad.h"
@@ -105,8 +106,8 @@ public:
 
 	Vec2<float> getCenterOfCell(Vec2<unsigned int> index)
 	{
-		unsigned int j = index.m_y;
 		unsigned int i = index.m_x;
+		unsigned int j = index.m_y;
 		float ndcX = (((i * m_CellSize) + (m_CellSize / 2.0f)) / m_vWidth) * 2.0f - 1.0f;
 		float ndcY = 1.0f - (((j * m_CellSize) + (m_CellSize / 2.0f)) / m_vHeight) * 2.0f;	    
 		std::cout << "ndcs" << std::endl;

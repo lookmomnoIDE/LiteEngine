@@ -15,6 +15,12 @@ public:
 	}
 
 	template <typename T>
+	static Vec2<T> normalize2D(Vec2<T> pos, Vec2<T> viewDims)
+	{
+		return Vec2<T>((pos.m_x/viewDims.m_x) * 2 - 1, 1 - (pos.m_y/viewDims.m_y) * 2);
+	}
+
+	template <typename T>
 	static Quad<T> rect(Vec2<T> pos, Vec4<T> color, Vec2<T> dims)
 	{
 		Quad<T> quad;
