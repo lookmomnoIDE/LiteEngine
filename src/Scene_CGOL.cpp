@@ -4,6 +4,7 @@
 
 #include <cmath>
 #include <algorithm>
+//I dont know where <vector> is and at this point I'm too afraid to ask :D
 
 Vec4<float> visibleColor = {1.0f, 1.0f, 1.0f, 1.0f};
 Vec4<float> invisibleColor = {1.0f, 1.0f, 1.0f, 0.0f};
@@ -13,6 +14,7 @@ Scene_CGoL::Scene_CGoL(GameEngine* game, Renderer* renderer, size_t maxEntities)
 {
 	Scene_CGoL::registerAction(GLFW_MOUSE_BUTTON_LEFT, "_LMB"); // Change place -> LMB
 	Scene_CGoL::registerAction(GLFW_KEY_ESCAPE, "ESC");
+	Scene_CGoL::registerAction(GLFW_KEY_P, "_P");
 }
 
 
@@ -66,43 +68,72 @@ void Scene_CGoL::update()
 	//3. Any live cell with more than three live neighbours dies, as if by overpopulation.
 	//
 	//4. Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
-	for(size_t j = 0; j < grid.m_Row; j++)
+	if(!m_paused)
 	{
-		for(size_t i = 0; i < grid.m_Col; i++)
+		std::vector<std::vector<unsigned int>> nextGrid;
+		nextGrid.resize(grid.m_Row, std::vector<unsigned int>(grid.m_Col, grid.m_DefaultState));
+		std::vector<unsigned int> neighbors = grid.countNeighbors();
+
+		for(size_t j = 0; j < grid.m_Row; j++)
 		{
-
-		}
-	}
-
-
-
-
-
-
-
-	Vec4<float> visibleColor = {1.0f, 1.0f, 1.0f, 1.0f};
-	Vec4<float> invisibleColor = {1.0f, 1.0f, 1.0f, 0.0f};
-	m_quads.clear();
-	m_quads.reserve((grid.m_Col * grid.m_Row));
-	for(size_t j = 0; j < grid.m_Row; j++)
-	{
-		for(size_t i = 0; i < grid.m_Col; i++)
-		{
-			auto currentState = grid.getState((unsigned int)j, (unsigned int)i);
-			if(currentState == 1)
+			for(size_t i = 0; i < grid.m_Col; i++)
 			{
+				unsigned int state = grid.getState(j, i);
+				unsigned int nIndex = (j*grid.m_Col) + i;
+				if(neighbors[nIndex] < 2)
+				{
+					nextGrid[j][i] = 0;
+				}
+				else if((neighbors[nIndex] == 2 || neighbors[nIndex] == 3) && state == 1)
+				{
+					nextGrid[j][i] = 1;
+				}
+				else if(neighbors[nIndex] > 3)
+				{
+					nextGrid[j][i] = 0;
+				}
+				else if(neighbors[nIndex] == 3 && state == 0)
+				{
+					nextGrid[j][i] = 1;
+				}
+			}
+		}
+		grid.m_grid = nextGrid;
+
+
+
+
+
+
+		
+		Vec4<float> visibleColor = {1.0f, 1.0f, 1.0f, 1.0f};
+		Vec4<float> invisibleColor = {1.0f, 1.0f, 1.0f, 0.0f};
+		m_quads.clear();
+		m_quads.reserve((grid.m_Col * grid.m_Row));
+		for(size_t j = 0; j < grid.m_Row; j++)
+		{
+			for(size_t i = 0; i < grid.m_Col; i++)
+			{
+
+				auto currentState = grid.getState((unsigned int)j, (unsigned int)i);
 				auto& cell = m_pool.getComponent<CCell>((size_t)((j*grid.m_Col) + i));
-				cell.setColor(visibleColor); 
-				Quad<float> quad = cell.getQuad();
-				m_quads.push_back(quad);
-			}
-			else
-			{
-				continue;
+				if(currentState == 1)
+				{
+					cell.setColor(visibleColor); 
+					Quad<float> quad = cell.getQuad();
+					m_quads.push_back(quad);
+				}
+				else if(currentState == 0)
+				{
+					cell.setColor(invisibleColor); 
+					Quad<float> quad = cell.getQuad();
+					m_quads.push_back(quad);
+				}
 			}
 		}
+		m_renderer->updateQuadBuffer(1, m_quads);
 	}
-	m_renderer->updateQuadBuffer(1, m_quads);	
+	
 }
 
 
@@ -149,6 +180,7 @@ void Scene_CGoL::doAction(const Action& a)
 		if (a.name() == "_LMB")
 		{
 			m_primaryActionActive = true;
+			m_paused = true;
 		}
 	}
 	if(a.type() == "END")
@@ -156,12 +188,26 @@ void Scene_CGoL::doAction(const Action& a)
 		if(a.name() == "_LMB")
 		{
 			m_primaryActionActive = false;
+			m_paused = false;
 		}
 	}
 	if (a.name() == "ESC")
 	{
 		m_game->quit();
 	}
+	if(a.name() == "_P")
+	{
+		if(!m_paused)
+		{
+			m_paused = true;
+		}
+		else
+		{
+			m_paused = false;
+		}
+	}
+	
+
 }
 
 void Scene_CGoL::registerAction(int keycode, const std::string& aName)

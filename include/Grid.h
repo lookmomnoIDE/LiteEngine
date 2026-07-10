@@ -18,7 +18,9 @@ public:
 	unsigned int m_DefaultState = 0;
 	unsigned int m_vWidth, m_vHeight;
 	std::vector<std::vector<unsigned int>> m_grid;	//m_Row, std::vector<unsigned int>(m_Col, m_DefaultState)
+	//std::vector<std::vector<unsigned int>> m_nextGrid;
 	std::vector<Quad<float>> m_Quads;
+	std::vector<unsigned int> m_Neighbors;
 
 public:
 
@@ -33,6 +35,7 @@ public:
 		m_Col = vWidth/m_CellSize;
 		m_Row = vHeight/m_CellSize;
 		m_grid.resize(m_Row, std::vector<unsigned int>(m_Col, m_DefaultState));
+		//m_nextGrid.resize(m_Row, std::vector<unsigned int>(m_Col, m_DefaultState));
 		//fabGridLines();
 	}
 
@@ -187,10 +190,110 @@ public:
 		return m_grid[row][col];
 	}
 
+	unsigned int getState(Vec2<unsigned int> index)
+	{
+		return m_grid[index.m_x][index.m_y];
+	}
+
 	void setState(unsigned int row, unsigned int col, unsigned int state)
 	{
 		m_grid[row][col] = state;
 	}
+
+
+	Vec2<unsigned int> makeIndexToroid(unsigned int row, unsigned int col)
+	{
+		//These conditionals make the map torodorial.
+		if(row > m_Row)
+		{
+			row = 0;
+		}
+		else if(row < 0)
+		{
+			row = m_Row;
+		}
+		if(col > m_Col)
+		{
+			col = 0;
+		}
+		else if(col < 0)
+		{
+			col = m_Col;
+		}
+		Vec2<unsigned int> index(row, col);
+		return index;
+	}
+
+	unsigned int wrap(int v, unsigned int max)
+	{
+	    return (v % (int)max + (int)max) % (int)max;
+	}
+
+
+	std::vector<unsigned int> countNeighbors()
+	{
+		m_Neighbors.clear();
+		m_Neighbors.reserve(m_Row*m_Col);
+		for(unsigned int j = 0; j < m_Row; j++)
+		{
+			for(unsigned int i = 0; i < m_Col; i++)
+			{
+				unsigned int state = 0;
+				unsigned int neighborCount = 0;
+				state = getState(wrap(j+1, m_Row), wrap(i-1, m_Col));			// upper left
+				if(state == 1)
+				{
+					neighborCount++;
+					state = 0;
+				}
+				state = getState(wrap(j+1, m_Row), wrap(i, m_Col));
+				if(state == 1)
+				{
+					neighborCount++;
+					state = 0;
+				}			// above
+				state = getState(wrap(j+1, m_Row), wrap(i+1, m_Col));
+				if(state == 1)
+				{
+					neighborCount++;
+					state = 0;
+				}			// upper right
+				state = getState(wrap(j, m_Row), wrap(i-1, m_Col));
+				if(state == 1)
+				{
+					neighborCount++;
+					state = 0;
+				}			// left
+				state = getState(wrap(j, m_Row), wrap(i+1, m_Col));
+				if(state == 1)
+				{
+					neighborCount++;
+					state = 0;
+				}			// right
+				state = getState(wrap(j-1, m_Row), wrap(i-1, m_Col));
+				if(state == 1)
+				{
+					neighborCount++;
+					state = 0;
+				}			// lower left
+				state = getState(wrap(j-1,m_Row), wrap(i, m_Col));
+				if(state == 1)
+				{
+					neighborCount++;
+					state = 0;
+				}			// below
+				state = getState(wrap(j-1,m_Row), wrap(i+1, m_Col));
+				if(state == 1)
+				{
+					neighborCount++;
+					state = 0;
+				}			// lower right
+				m_Neighbors.push_back(neighborCount);
+			}
+		}
+		return m_Neighbors;
+	}
+
 };
 
 
