@@ -15,6 +15,7 @@ Scene_CGoL::Scene_CGoL(GameEngine* game, Renderer* renderer, size_t maxEntities)
 	Scene_CGoL::registerAction(GLFW_MOUSE_BUTTON_LEFT, "_LMB"); // Change place -> LMB
 	Scene_CGoL::registerAction(GLFW_KEY_ESCAPE, "ESC");
 	Scene_CGoL::registerAction(GLFW_KEY_P, "_P");
+	Scene_CGoL::registerAction(GLFW_KEY_O, "_O");
 }
 
 
@@ -99,40 +100,40 @@ void Scene_CGoL::update()
 			}
 		}
 		grid.m_grid = nextGrid;
-
+	}
 
 
 
 
 
 		
-		Vec4<float> visibleColor = {1.0f, 1.0f, 1.0f, 1.0f};
-		Vec4<float> invisibleColor = {1.0f, 1.0f, 1.0f, 0.0f};
-		m_quads.clear();
-		m_quads.reserve((grid.m_Col * grid.m_Row));
-		for(size_t j = 0; j < grid.m_Row; j++)
+	Vec4<float> visibleColor = {1.0f, 1.0f, 1.0f, 1.0f};
+	Vec4<float> invisibleColor = {1.0f, 1.0f, 1.0f, 0.0f};
+	m_quads.clear();
+	m_quads.reserve((grid.m_Col * grid.m_Row));
+	for(size_t j = 0; j < grid.m_Row; j++)
+	{
+		for(size_t i = 0; i < grid.m_Col; i++)
 		{
-			for(size_t i = 0; i < grid.m_Col; i++)
-			{
 
-				auto currentState = grid.getState((unsigned int)j, (unsigned int)i);
-				auto& cell = m_pool.getComponent<CCell>((size_t)((j*grid.m_Col) + i));
-				if(currentState == 1)
-				{
-					cell.setColor(visibleColor); 
-					Quad<float> quad = cell.getQuad();
-					m_quads.push_back(quad);
-				}
-				else if(currentState == 0)
-				{
-					cell.setColor(invisibleColor); 
-					Quad<float> quad = cell.getQuad();
-					m_quads.push_back(quad);
-				}
+			auto currentState = grid.getState((unsigned int)j, (unsigned int)i);
+			auto& cell = m_pool.getComponent<CCell>((size_t)((j*grid.m_Col) + i));
+			if(currentState == 1)
+			{
+				cell.setColor(visibleColor); 
+				Quad<float> quad = cell.getQuad();
+				m_quads.push_back(quad);
+			}
+			else if(currentState == 0)
+			{
+				cell.setColor(invisibleColor); 
+				Quad<float> quad = cell.getQuad();
+				m_quads.push_back(quad);
 			}
 		}
-		m_renderer->updateQuadBuffer(1, m_quads);
 	}
+	m_renderer->updateQuadBuffer(1, m_quads);
+	
 	
 }
 
@@ -182,6 +183,14 @@ void Scene_CGoL::doAction(const Action& a)
 			m_primaryActionActive = true;
 			m_paused = true;
 		}
+		if(a.name() == "_P")
+		{
+			m_paused = true;
+		}
+		if(a.name() == "_O")
+		{
+			m_paused = false;
+		}
 	}
 	if(a.type() == "END")
 	{
@@ -195,19 +204,6 @@ void Scene_CGoL::doAction(const Action& a)
 	{
 		m_game->quit();
 	}
-	if(a.name() == "_P")
-	{
-		if(!m_paused)
-		{
-			m_paused = true;
-		}
-		else
-		{
-			m_paused = false;
-		}
-	}
-	
-
 }
 
 void Scene_CGoL::registerAction(int keycode, const std::string& aName)
