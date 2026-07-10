@@ -181,7 +181,6 @@ void Scene_CGoL::doAction(const Action& a)
 		if (a.name() == "_LMB")
 		{
 			m_primaryActionActive = true;
-			m_paused = true;
 		}
 		if(a.name() == "_P")
 		{
@@ -197,7 +196,6 @@ void Scene_CGoL::doAction(const Action& a)
 		if(a.name() == "_LMB")
 		{
 			m_primaryActionActive = false;
-			m_paused = false;
 		}
 	}
 	if (a.name() == "ESC")
