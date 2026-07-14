@@ -103,8 +103,15 @@ void InputHandler::processInput(GLFWwindow* window, int key, int scancode, int a
 	GameEngine* game = Instance().m_game;
 	if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
 	{
-		glfwSetWindowShouldClose(window, true);
-		game->quit();
+		if(am.find(key) == am.end())
+		{
+			std::cout << "Action Not found!" << std::endl;
+			return;
+		}
+		const std::string actionType = (action == GLFW_PRESS) ? "START" : "END";
+
+		Action a(am.at(key), actionType);
+		m_game->currentScene()->doAction(a);
 	}
 	if (key == GLFW_KEY_P && action == GLFW_PRESS)
 	{

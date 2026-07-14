@@ -1,4 +1,4 @@
-#ifndef COMMAND_H
+/*#ifndef COMMAND_H
 #define COMMAND_H
 
 
@@ -18,3 +18,4 @@ public:
 	virtual void execute() = 0;
 
 };
+*/

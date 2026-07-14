@@ -4,6 +4,7 @@
 
 #include <cmath>
 #include <algorithm>
+#include <stdexcept>
 //I dont know where <vector> is and at this point I'm too afraid to ask :D
 
 Vec4<float> visibleColor = {1.0f, 1.0f, 1.0f, 1.0f};
@@ -184,11 +185,14 @@ void Scene_CGoL::doAction(const Action& a)
 		}
 		if(a.name() == "_P")
 		{
-			m_paused = true;
-		}
-		if(a.name() == "_O")
-		{
-			m_paused = false;
+			if(m_paused == false)
+			{
+				m_paused = true;
+			}
+			else
+			{
+				m_paused = false;
+			}
 		}
 	}
 	if(a.type() == "END")
@@ -200,6 +204,7 @@ void Scene_CGoL::doAction(const Action& a)
 	}
 	if (a.name() == "ESC")
 	{
+		glfwSetWindowShouldClose(m_renderer->getWindow(), true);
 		m_game->quit();
 	}
 }
@@ -219,22 +224,22 @@ void Scene_CGoL::sDoAction()
 {
 	if (m_primaryActionActive)
 	{
-
 		auto size = grid.getCellSize();
 		glfwGetCursorPos(m_renderer->getWindow(), &m_x, &m_y);		
 		auto indexX = static_cast<unsigned int>(std::floor(m_x / size));
 		auto indexY = static_cast<unsigned int>(std::floor(m_y / size));
-		auto state = grid.getState(indexY, indexX);
-		indexX = std::clamp(indexX, 0u, grid.getCols() - 1);
-		indexY = std::clamp(indexY, 0u, grid.getRows() - 1);
-		if (state == 0)
+
+		if((indexY < grid.m_Row && indexY >= 0) && (indexX < grid.m_Col && indexX >= 0))
 		{
-			grid.setState(indexY, indexX, 1);		
-		}
-		else
-		{
-			grid.setState(indexY, indexX, 0);	
-		}
-		std::cout << "Primary Action Active!" << std::endl;
+			auto state = grid.getState(indexY, indexX);
+			if (state == 0)
+			{
+				grid.setState(indexY, indexX, 1);		
+			}
+			else
+			{
+				grid.setState(indexY, indexX, 0);	
+			}	
+		}	
 	}
 }
