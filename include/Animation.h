@@ -4,10 +4,11 @@
 #include <vector>
 
 #include "Vec2.h"
+#include "sprite.h"
 
 class Animation
 {
-	std::vector<Vec2<float>> m_AnimCoords;
+	std::vector<Sprite> m_AnimCoords;
 public:
 	Animation()
 	{
