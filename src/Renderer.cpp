@@ -107,8 +107,9 @@ void Renderer::DrawElements() const
 		//vb->Bind();
 		auto ib = m_IndexBuffers[i].get();
 		ib->Bind();
-		std::cout << "Drawing " << ib->GetCount() << " indices" << std::endl;
-		glDrawElements(GL_TRIANGLES, ib->GetCount(), GL_UNSIGNED_INT, 0);
+		auto count = ib->GetCount();
+		//std::cout << "Drawing " << count << " indices" << std::endl;
+		glDrawElements(GL_TRIANGLES, count, GL_UNSIGNED_INT, 0);
 		GLenum err = glGetError();
 		if (err != GL_NO_ERROR)
 		{
@@ -252,6 +253,7 @@ void Renderer::addQuadBuffer(std::vector<Quad<float>>& quads)
 	auto layout = std::make_unique<VertexBufferLayout>();
 	layout->Push<float>(3);
 	layout->Push<float>(4);
+	layout->Push<float>(2);
 	m_Layouts.push_back(std::move(layout));
 
 	m_VertexArrays.push_back(std::make_unique<VertexArray>(

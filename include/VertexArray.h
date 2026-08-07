@@ -10,8 +10,7 @@
 
 class VertexArray
 {
-
-	unsigned int m_RendererID;
+	unsigned int m_VAO;
 
 public:
 	VertexArray();

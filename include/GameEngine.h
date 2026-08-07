@@ -11,6 +11,7 @@
 #include "EntityFactory.h"
 #include "EntityMemoryPool.h"
 #include "ICommand.h"
+#include "assetManager.h"
 #include <string>
 #include <map>
 #include <memory>
@@ -32,6 +33,7 @@ class GameEngine
 	unsigned int m_currentFrame = 0;
 	std::string m_currentScene;
 	Renderer* m_renderer = nullptr;		
+	assetMan* m_assetMan = nullptr;
 	unsigned int m_numRenderers = 0;
 public:
 	static GameEngine* Instance();
@@ -68,6 +70,7 @@ public:
 	EntityMemoryPool* getPool();
 	EntityMan* getEntityMan();
 	EntityFactory* getFactory();
+	assetMan* getAssetMan();
 	void sUserInput();
 	unsigned int getUniqueRID();
 	//aMap* getAM();

@@ -5,13 +5,13 @@
 
 class Texture
 {
-	unsigned int m_RendererID;
+	unsigned int m_tName;
 	std::string m_FilePath;
 	unsigned char* m_LocalBuffer;
 	int m_Width, m_Height, m_BPP;
-	unsigned int m_Slot;
+	unsigned int m_Slot = 0;
 public:
-	Texture(const std::string path);
+	Texture(std::string path, unsigned int slot);
 
 	~Texture();
 

@@ -21,7 +21,7 @@ public:
 	}
 
 	template <typename T>
-	static Quad<T> rect(Vec2<T> pos, Vec4<T> color, Vec2<T> dims)
+	static Quad<T> rect(Vec2<T> pos, Vec4<T> color, Vec2<T> dims, Vec2<T> texCoords)
 	{
 		Quad<T> quad;
 
@@ -33,13 +33,14 @@ public:
 		quad.v1.setVColor(color);
 		quad.v2.setVColor(color);
 		quad.v3.setVColor(color);
+		quad.v0.setVTexCoord()
 
 		return quad;
 	}	
 
 
 	template <typename T>
-	static Quad<T> rect(Vec3<T> pos, Vec4<T> color, Vec2<T> dims)
+	static Quad<T> rect(Vec3<T> pos, Vec4<T> color, Vec2<T> dims, Vec2<T> texCoords)
 	{
 		Quad<T> quad;
 
@@ -51,6 +52,7 @@ public:
 		quad.v1.setVColor(color);
 		quad.v2.setVColor(color);
 		quad.v3.setVColor(color);
+		quad.v0.setVTexCoord()
 
 		return quad;
 	}	

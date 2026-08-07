@@ -12,6 +12,7 @@ class Vertex
 public:
 	Vec3<T> Position;
 	Vec4<T> Color;
+	Vec2<T> texCoords;
 
 
 	Vec3<T>& getVPosition()
@@ -34,6 +35,16 @@ public:
 	{
 		Color = c;
 		//return *this;
+	}
+
+	Vec2<T>& getVTexCoord()
+	{
+		return texCoords;
+	}
+
+	void setVTexCoord(Vec2<T> t)
+	{
+		texCoords = t;
 	}
 
 

@@ -13,6 +13,7 @@ GameEngine* GameEngine::Instance()
 GameEngine::~GameEngine()
 {
 	delete m_renderer;
+	delete m_assetMan;
 	//m_renderer = nullptr;
 
 
@@ -32,6 +33,7 @@ void GameEngine::Init()
 	//m_factory->Init();
 	InputHandler::Instance();
 	InputHandler::Instance().Init();
+	m_assetMan = new assetMan();
 	
 }
 
