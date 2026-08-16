@@ -25,7 +25,7 @@ void GameEngine::Init()
 
 	m_running = true;
 
-
+	m_assetMan = new assetMan();
 	m_renderer = new Renderer();
 	m_renderer->Init();
 	//m_scenes["play"] = std::make_unique<Scene_Play>(this, m_renderer, 10000);
@@ -33,7 +33,7 @@ void GameEngine::Init()
 	//m_factory->Init();
 	InputHandler::Instance();
 	InputHandler::Instance().Init();
-	m_assetMan = new assetMan();
+	
 	
 }
 
@@ -127,6 +127,11 @@ EntityFactory* GameEngine::getFactory()
 	return m_factory;
 }
 */
+
+assetMan* GameEngine::getAssetMan()
+{
+	return m_assetMan;
+}
 
 void GameEngine::sUserInput()
 {

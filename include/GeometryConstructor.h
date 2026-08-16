@@ -21,7 +21,7 @@ public:
 	}
 
 	template <typename T>
-	static Quad<T> rect(Vec2<T> pos, Vec4<T> color, Vec2<T> dims, Vec2<T> texCoords)
+	static Quad<T> rect(Vec2<T> pos, Vec4<T> color, Vec2<T> dims, std::vector<Vec2<T>> texCoords)
 	{
 		Quad<T> quad;
 
@@ -33,14 +33,17 @@ public:
 		quad.v1.setVColor(color);
 		quad.v2.setVColor(color);
 		quad.v3.setVColor(color);
-		quad.v0.setVTexCoord()
+		quad.v0.setVTexCoord(texCoords[0]);
+		quad.v1.setVTexCoord(texCoords[1]);
+		quad.v2.setVTexCoord(texCoords[2]);
+		quad.v3.setVTexCoord(texCoords[3]);
 
 		return quad;
 	}	
 
 
 	template <typename T>
-	static Quad<T> rect(Vec3<T> pos, Vec4<T> color, Vec2<T> dims, Vec2<T> texCoords)
+	static Quad<T> rect(Vec3<T> pos, Vec4<T> color, Vec2<T> dims, std::vector<Vec2<T>> texCoords)
 	{
 		Quad<T> quad;
 
@@ -52,7 +55,10 @@ public:
 		quad.v1.setVColor(color);
 		quad.v2.setVColor(color);
 		quad.v3.setVColor(color);
-		quad.v0.setVTexCoord()
+		quad.v0.setVTexCoord(texCoords[0]);
+		quad.v1.setVTexCoord(texCoords[1]);
+		quad.v2.setVTexCoord(texCoords[2]);
+		quad.v3.setVTexCoord(texCoords[3]);
 
 		return quad;
 	}	

@@ -28,8 +28,8 @@ public:
 	std::vector<Cgrain>,
 	std::vector<Csand>,
 	std::vector<Cgravity>,
-	std::vector<CCell>,
-	std::vector<CAnimation>
+	std::vector<CCell>
+	//std::vector<CAnimation>
 	> EntityComponentVectorTuple;
 
 private:

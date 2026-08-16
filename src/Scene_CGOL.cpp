@@ -38,7 +38,10 @@ void Scene_CGoL::init()
 	Vec2<float> cSize = {(float)size/width*(width/height), (float)size/height};
 	Vec4<float> visibleColor = {1.0f, 1.0f, 1.0f, 1.0f};
 	Vec4<float> invisibleColor = {1.0f, 1.0f, 1.0f, 0.0f};
-
+	std::vector<Vec2<float>> tCoords = {Vec2<float>(-1.0f, 0.0f), Vec2<float>(1.0f, 0.0f), Vec2<float>(0.0f, 1.0f), Vec2<float>(0.0f, -1.0f)};
+	assetMan* assetMan = m_game->getAssetMan();
+	auto texture = assetMan->getTexture("default");
+	//texture->Bind();
 
 
 	m_quads.reserve((grid.m_Col * grid.m_Row));
@@ -48,7 +51,7 @@ void Scene_CGoL::init()
 		{
 
 			auto pos = grid.getCenterOfCell(Vec2<unsigned int>(i, j));
-			auto q = GConstructor::rect(pos, invisibleColor, cSize);
+			auto q = GConstructor::rect(pos, visibleColor, cSize, tCoords);
 			m_quads.push_back(q);
 			m_factory.addCell(q, *this);
 		}

@@ -506,11 +506,26 @@ CMakeFiles/LiteEngine.dir/src/GameEngine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/LiteEngine.dir/src/GameEngine.cpp.s"
 	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\projects\LiteEngineV003\src\GameEngine.cpp -o CMakeFiles\LiteEngine.dir\src\GameEngine.cpp.s
 
+CMakeFiles/LiteEngine.dir/src/assetManager.cpp.obj: CMakeFiles/LiteEngine.dir/flags.make
+CMakeFiles/LiteEngine.dir/src/assetManager.cpp.obj: CMakeFiles/LiteEngine.dir/includes_CXX.rsp
+CMakeFiles/LiteEngine.dir/src/assetManager.cpp.obj: C:/projects/LiteEngineV003/src/assetManager.cpp
+CMakeFiles/LiteEngine.dir/src/assetManager.cpp.obj: CMakeFiles/LiteEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\projects\LiteEngineV003\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/LiteEngine.dir/src/assetManager.cpp.obj"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/LiteEngine.dir/src/assetManager.cpp.obj -MF CMakeFiles\LiteEngine.dir\src\assetManager.cpp.obj.d -o CMakeFiles\LiteEngine.dir\src\assetManager.cpp.obj -c C:\projects\LiteEngineV003\src\assetManager.cpp
+
+CMakeFiles/LiteEngine.dir/src/assetManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/LiteEngine.dir/src/assetManager.cpp.i"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\projects\LiteEngineV003\src\assetManager.cpp > CMakeFiles\LiteEngine.dir\src\assetManager.cpp.i
+
+CMakeFiles/LiteEngine.dir/src/assetManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/LiteEngine.dir/src/assetManager.cpp.s"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\projects\LiteEngineV003\src\assetManager.cpp -o CMakeFiles\LiteEngine.dir\src\assetManager.cpp.s
+
 CMakeFiles/LiteEngine.dir/src/Invoker.cpp.obj: CMakeFiles/LiteEngine.dir/flags.make
 CMakeFiles/LiteEngine.dir/src/Invoker.cpp.obj: CMakeFiles/LiteEngine.dir/includes_CXX.rsp
 CMakeFiles/LiteEngine.dir/src/Invoker.cpp.obj: C:/projects/LiteEngineV003/src/Invoker.cpp
 CMakeFiles/LiteEngine.dir/src/Invoker.cpp.obj: CMakeFiles/LiteEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\projects\LiteEngineV003\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/LiteEngine.dir/src/Invoker.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\projects\LiteEngineV003\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/LiteEngine.dir/src/Invoker.cpp.obj"
 	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/LiteEngine.dir/src/Invoker.cpp.obj -MF CMakeFiles\LiteEngine.dir\src\Invoker.cpp.obj.d -o CMakeFiles\LiteEngine.dir\src\Invoker.cpp.obj -c C:\projects\LiteEngineV003\src\Invoker.cpp
 
 CMakeFiles/LiteEngine.dir/src/Invoker.cpp.i: cmake_force
@@ -525,7 +540,7 @@ CMakeFiles/LiteEngine.dir/src/InputHandler.cpp.obj: CMakeFiles/LiteEngine.dir/fl
 CMakeFiles/LiteEngine.dir/src/InputHandler.cpp.obj: CMakeFiles/LiteEngine.dir/includes_CXX.rsp
 CMakeFiles/LiteEngine.dir/src/InputHandler.cpp.obj: C:/projects/LiteEngineV003/src/InputHandler.cpp
 CMakeFiles/LiteEngine.dir/src/InputHandler.cpp.obj: CMakeFiles/LiteEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\projects\LiteEngineV003\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/LiteEngine.dir/src/InputHandler.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\projects\LiteEngineV003\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/LiteEngine.dir/src/InputHandler.cpp.obj"
 	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/LiteEngine.dir/src/InputHandler.cpp.obj -MF CMakeFiles\LiteEngine.dir\src\InputHandler.cpp.obj.d -o CMakeFiles\LiteEngine.dir\src\InputHandler.cpp.obj -c C:\projects\LiteEngineV003\src\InputHandler.cpp
 
 CMakeFiles/LiteEngine.dir/src/InputHandler.cpp.i: cmake_force
@@ -567,6 +582,7 @@ LiteEngine_OBJECTS = \
 "CMakeFiles/LiteEngine.dir/src/EntityFactory.cpp.obj" \
 "CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.obj" \
 "CMakeFiles/LiteEngine.dir/src/GameEngine.cpp.obj" \
+"CMakeFiles/LiteEngine.dir/src/assetManager.cpp.obj" \
 "CMakeFiles/LiteEngine.dir/src/Invoker.cpp.obj" \
 "CMakeFiles/LiteEngine.dir/src/InputHandler.cpp.obj"
 
@@ -602,6 +618,7 @@ LiteEngine.exe: CMakeFiles/LiteEngine.dir/src/Cgravity.cpp.obj
 LiteEngine.exe: CMakeFiles/LiteEngine.dir/src/EntityFactory.cpp.obj
 LiteEngine.exe: CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.obj
 LiteEngine.exe: CMakeFiles/LiteEngine.dir/src/GameEngine.cpp.obj
+LiteEngine.exe: CMakeFiles/LiteEngine.dir/src/assetManager.cpp.obj
 LiteEngine.exe: CMakeFiles/LiteEngine.dir/src/Invoker.cpp.obj
 LiteEngine.exe: CMakeFiles/LiteEngine.dir/src/InputHandler.cpp.obj
 LiteEngine.exe: CMakeFiles/LiteEngine.dir/build.make
@@ -609,7 +626,7 @@ LiteEngine.exe: C:/projects/LiteEngineV003/lib/libglfw3.a
 LiteEngine.exe: CMakeFiles/LiteEngine.dir/linkLibs.rsp
 LiteEngine.exe: CMakeFiles/LiteEngine.dir/objects1.rsp
 LiteEngine.exe: CMakeFiles/LiteEngine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\projects\LiteEngineV003\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Linking CXX executable LiteEngine.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\projects\LiteEngineV003\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Linking CXX executable LiteEngine.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\LiteEngine.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

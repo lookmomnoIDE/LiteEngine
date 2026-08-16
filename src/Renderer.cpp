@@ -46,7 +46,12 @@ Renderer::Renderer()
 	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-	
+	assetMan* assetMan = m_game->getAssetMan();
+	std::cout << "loading texture" << std::endl;
+	assetMan->addTexture("default", "C:/projects/LiteEngineV003/res/textures/default.png");
+	std::cout << "texture loaded" << std::endl;
+	m_shader->setInt("texture0", 0);
+
 }
 
 Renderer::~Renderer()

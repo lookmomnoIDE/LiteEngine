@@ -222,6 +222,9 @@ CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.obj: \
  C:/projects/LiteEngineV003/include/InputHandler.h \
  C:/projects/LiteEngineV003/include/Scene_Play.h \
  C:/projects/LiteEngineV003/include/Scene_CGOl.h \
+ C:/projects/LiteEngineV003/include/assetManager.h \
+ C:/projects/LiteEngineV003/include/Texture.h \
+ C:/projects/LiteEngineV003/include/Renderer.h \
  C:/mingw64/include/c++/15.2.0/cmath \
  C:/mingw64/x86_64-w64-mingw32/include/math.h \
  C:/mingw64/include/c++/15.2.0/bits/specfun.h \

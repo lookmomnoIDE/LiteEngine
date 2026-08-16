@@ -11,7 +11,7 @@ EntityMemoryPool::EntityMemoryPool(size_t MAX_ENTITIES)
     std::get<std::vector<Csand>>(m_pool).resize(m_MAX_ENTITIES);
     std::get<std::vector<Cgravity>>(m_pool).resize(m_MAX_ENTITIES);
     std::get<std::vector<CCell>>(m_pool).resize(m_MAX_ENTITIES);
-    std::get<std::vector<CAnimation>>(m_pool).resize(m_MAX_ENTITIES);
+    //std::get<std::vector<CAnimation>>(m_pool).resize(m_MAX_ENTITIES);
     m_tags.resize(m_MAX_ENTITIES);
 	m_active.resize(m_MAX_ENTITIES, false);
 }

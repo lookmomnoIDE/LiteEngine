@@ -656,6 +656,30 @@ src/VertexBufferLayout.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/VertexBufferLayout.cpp.s
 .PHONY : src/VertexBufferLayout.cpp.s
 
+src/assetManager.obj: src/assetManager.cpp.obj
+.PHONY : src/assetManager.obj
+
+# target to build an object file
+src/assetManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/assetManager.cpp.obj
+.PHONY : src/assetManager.cpp.obj
+
+src/assetManager.i: src/assetManager.cpp.i
+.PHONY : src/assetManager.i
+
+# target to preprocess a source file
+src/assetManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/assetManager.cpp.i
+.PHONY : src/assetManager.cpp.i
+
+src/assetManager.s: src/assetManager.cpp.s
+.PHONY : src/assetManager.s
+
+# target to generate assembly for a file
+src/assetManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/assetManager.cpp.s
+.PHONY : src/assetManager.cpp.s
+
 src/glad.obj: src/glad.c.obj
 .PHONY : src/glad.obj
 
@@ -947,6 +971,9 @@ help:
 	@echo ... src/VertexBufferLayout.obj
 	@echo ... src/VertexBufferLayout.i
 	@echo ... src/VertexBufferLayout.s
+	@echo ... src/assetManager.obj
+	@echo ... src/assetManager.i
+	@echo ... src/assetManager.s
 	@echo ... src/glad.obj
 	@echo ... src/glad.i
 	@echo ... src/glad.s

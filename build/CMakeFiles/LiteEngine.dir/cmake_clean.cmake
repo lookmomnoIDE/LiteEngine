@@ -43,6 +43,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/LiteEngine.dir/src/VertexBuffer.cpp.obj.d"
   "CMakeFiles/LiteEngine.dir/src/VertexBufferLayout.cpp.obj"
   "CMakeFiles/LiteEngine.dir/src/VertexBufferLayout.cpp.obj.d"
+  "CMakeFiles/LiteEngine.dir/src/assetManager.cpp.obj"
+  "CMakeFiles/LiteEngine.dir/src/assetManager.cpp.obj.d"
   "CMakeFiles/LiteEngine.dir/src/glad.c.obj"
   "CMakeFiles/LiteEngine.dir/src/glad.c.obj.d"
   "CMakeFiles/LiteEngine.dir/src/imgui.cpp.obj"

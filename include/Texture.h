@@ -15,7 +15,7 @@ public:
 
 	~Texture();
 
-	void Bind(unsigned int slot = 0);
+	void Bind();
 
 	void unBind();
 

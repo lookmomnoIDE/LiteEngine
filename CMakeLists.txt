@@ -49,6 +49,7 @@ add_executable(${PROJECT_NAME}
     src/GameEngine.cpp
     #src/SpawnSand.cpp
     #src/PlayRec.cpp
+    src/assetManager.cpp
     src/Invoker.cpp
     src/InputHandler.cpp
     )

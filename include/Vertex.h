@@ -1,6 +1,7 @@
 #ifndef VERTEX_H
 #define VERTEX_H 
 
+#include "Vec2.h"
 #include "Vec3.h"
 #include "Vec4.h"
 

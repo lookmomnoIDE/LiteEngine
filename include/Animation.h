@@ -3,29 +3,25 @@
 
 #include <vector>
 
-#include "Vec2.h"
+//#include "Vec2.h"
 #include "sprite.h"
 
 class Animation
 {
 	std::vector<Sprite> m_AnimCoords;
 public:
-	Animation()
+	Animation(unsigned int animLength)
 	{
-
+		m_AnimCoords.reserve(animLength);
 	}
 	~Animation()
 	{
 
 	}
 
-	void addAnimation(unsigned int animLength, unsigned int FW, unsigned int FH, unsigned int row, unsigned int col)
+	void addSpriteToAnimation(unsigned int animLength, Sprite sprite)
 	{
-		m_AnimCoords.reserve(animLength);
-		for(unsigned int i = 0; i <= animLength; i++)
-		{
-			m_AnimCoords.push_back(Vec2<float>((col + i)*FW, row*FH));
-		}
+		m_AnimCoords.push_back(sprite);
 	}
 
 	std::vector<Vec2<float>>& getAnimation()

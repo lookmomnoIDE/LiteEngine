@@ -31,6 +31,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/projects/LiteEngineV003/src/VertexArray.cpp" "CMakeFiles/LiteEngine.dir/src/VertexArray.cpp.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/VertexArray.cpp.obj.d"
   "C:/projects/LiteEngineV003/src/VertexBuffer.cpp" "CMakeFiles/LiteEngine.dir/src/VertexBuffer.cpp.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/VertexBuffer.cpp.obj.d"
   "C:/projects/LiteEngineV003/src/VertexBufferLayout.cpp" "CMakeFiles/LiteEngine.dir/src/VertexBufferLayout.cpp.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/VertexBufferLayout.cpp.obj.d"
+  "C:/projects/LiteEngineV003/src/assetManager.cpp" "CMakeFiles/LiteEngine.dir/src/assetManager.cpp.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/assetManager.cpp.obj.d"
   "C:/projects/LiteEngineV003/src/imgui.cpp" "CMakeFiles/LiteEngine.dir/src/imgui.cpp.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/imgui.cpp.obj.d"
   "C:/projects/LiteEngineV003/src/imgui_demo.cpp" "CMakeFiles/LiteEngine.dir/src/imgui_demo.cpp.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/imgui_demo.cpp.obj.d"
   "C:/projects/LiteEngineV003/src/imgui_draw.cpp" "CMakeFiles/LiteEngine.dir/src/imgui_draw.cpp.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/imgui_draw.cpp.obj.d"

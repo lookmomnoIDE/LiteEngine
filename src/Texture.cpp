@@ -1,15 +1,19 @@
-#include <Texture.h>
+#include "Texture.h"
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
 
-Texture::Texture(const std::string path, unsigned int slot)
-	:m_FilePath(path), m_LocalBuffer(nullptr), m_Width(0), m_Height(0), m_BPP(0), m_Slot(slot)
+Texture::Texture(std::string path, unsigned int slot)
+	:m_FilePath(path), m_LocalBuffer(nullptr), m_Width(5000), m_Height(5000), m_BPP(0), m_Slot(slot)
 {
 	stbi_set_flip_vertically_on_load(1);
 	m_LocalBuffer = stbi_load(path.c_str(), &m_Width, &m_Height, &m_BPP, 4);
-	glGenTextures(1, &tName);
-	glBindTexture(GL_TEXTURE_2D, tName);
+	if(m_LocalBuffer != NULL)
+	{
+		std::cout << "Texture in buffer" << std::endl;
+	}
+	glGenTextures(1, &m_tName);
+	glBindTexture(GL_TEXTURE_2D, m_tName);
 
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
@@ -17,6 +21,7 @@ Texture::Texture(const std::string path, unsigned int slot)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, m_Width, m_Height, 0, GL_RGBA, GL_UNSIGNED_BYTE, m_LocalBuffer);
+	std::cout << "texture complete" << std::endl;
 
 }
 
@@ -27,13 +32,13 @@ Texture::~Texture()
 	{
 		stbi_image_free(m_LocalBuffer);
 	}	
-	glDeleteTextures(1, &tName);
+	glDeleteTextures(1, &m_tName);
 }
 
 void Texture::Bind() 
 {
 	glActiveTexture(GL_TEXTURE0 + m_Slot);
-	glBindTexture(GL_TEXTURE_2D, tName);
+	glBindTexture(GL_TEXTURE_2D, m_tName);
 }
 
 void Texture::unBind() 
