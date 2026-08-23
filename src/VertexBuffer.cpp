@@ -21,6 +21,13 @@ VertexBuffer::~VertexBuffer()
 {
 	glDeleteBuffers(1, &m_RendererID);
 }
+
+
+unsigned int VertexBuffer::getID()
+{
+	return m_RendererID;	
+}
+
  
 void VertexBuffer::Bind() const
 {

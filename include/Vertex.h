@@ -1,7 +1,6 @@
 #ifndef VERTEX_H
 #define VERTEX_H 
 
-#include "Vec2.h"
 #include "Vec3.h"
 #include "Vec4.h"
 
@@ -13,7 +12,6 @@ class Vertex
 public:
 	Vec3<T> Position;
 	Vec4<T> Color;
-	Vec2<T> texCoords;
 
 
 	Vec3<T>& getVPosition()
@@ -37,19 +35,6 @@ public:
 		Color = c;
 		//return *this;
 	}
-
-	Vec2<T>& getVTexCoord()
-	{
-		return texCoords;
-	}
-
-	void setVTexCoord(Vec2<T> t)
-	{
-		texCoords = t;
-	}
-
-
-
 };
 
 

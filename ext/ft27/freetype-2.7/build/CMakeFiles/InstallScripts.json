@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/projects/LiteEngineV003/ext/ft27/freetype-2.7/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

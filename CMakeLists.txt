@@ -7,13 +7,26 @@ set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
 
 # Tell CMake where to find the static library
 add_library(glfw STATIC IMPORTED)
-
+add_library(freetype STATIC IMPORTED)
 
 set_target_properties(glfw PROPERTIES
     IMPORTED_LOCATION "C:/projects/LiteEngineV003/lib/libglfw3.a"          # Linux/macOS
     # IMPORTED_LOCATION "C:/path/to/glfw3.lib"       # Windows
     INTERFACE_INCLUDE_DIRECTORIES "C:/projects/LiteEngineV003/include/GLFW"
 )
+
+#C:\projects\LiteEngineV003\ext\ft27\ft.compiled\lib
+set_target_properties(freetype PROPERTIES
+    IMPORTED_LOCATION "C:/projects/LiteEngineV003/ext/ft27/ft.compiled/lib/libfreetype.a"
+    INTERFACE_INCLUDE_DIRECTORIES "C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2"
+    )
+
+#C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2
+#C:\projects\LiteEngineV003\ext\ft27\ft.compiled\lib
+#C:\projects\LiteEngineV003\
+#add_subdirectory(ext/ft27/ft.compiled/lib)
+#target_link_libraries(YourTarget PRIVATE freetype)
+
 
 add_executable(${PROJECT_NAME}
 	src/glad.c
@@ -27,6 +40,7 @@ add_executable(${PROJECT_NAME}
     src/imgui_tables.cpp 
     src/imgui_widgets.cpp 
     src/imgui_demo.cpp
+    src/FTexture.cpp
     src/Texture.cpp
     src/IndexBuffer.cpp
     src/Renderer.cpp
@@ -46,6 +60,7 @@ add_executable(${PROJECT_NAME}
     src/EntityFactory.cpp
     #src/Scene_Play.cpp
     src/Scene_CGoL.cpp
+    src/Scene_test.cpp
     src/GameEngine.cpp
     #src/SpawnSand.cpp
     #src/PlayRec.cpp
@@ -64,13 +79,17 @@ target_include_directories(${PROJECT_NAME} PRIVATE include/glm/ext)
 target_include_directories(${PROJECT_NAME} PRIVATE include/glm/gtc)
 target_include_directories(${PROJECT_NAME} PRIVATE include/glm/gtx)
 target_include_directories(${PROJECT_NAME} PRIVATE include/glm/simd)
+#target_include_directories(${PROJECT_NAME} PRIVATE ext/ft27/ft.compiled/include/freetype2)
+#C:\projects\LiteEngineV003\ext\ft27\ft.compiled\include\freetype2
+
+
 
 
 
 
 # OpenGL (always static on Windows)
 find_package(OpenGL REQUIRED)
-
+find_package(freetype REQUIRED)
 
 
 
@@ -87,5 +106,6 @@ if(WIN32)
     	gdi32
     	dwmapi
         imm32
+        freetype
     )
 endif()

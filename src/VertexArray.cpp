@@ -36,6 +36,13 @@ void VertexArray::addBuffer(const VertexBuffer& vb, const VertexBufferLayout& la
 	}
 }
 
+
+unsigned int VertexArray::getID()
+{
+	return m_VAO;
+}
+
+
 void VertexArray::Bind() const
 {
 	glBindVertexArray(m_VAO);

@@ -38,19 +38,18 @@ Renderer::Renderer()
 	std::cout << m_aspectRatio << std::endl;
 	m_game = GameEngine::Instance();
 
-	//Set Renderer ID!
-	//m_RendererID = m_game->getUniqueRID();
-	//std::cout << "Renderer ID: " << m_RendererID << std::endl;
+
 	glViewport(0, 0, m_width, m_height);
-	m_shader = new Shader("../src/cool.vert", "../src/beans.frag");
+	m_shader = new Shader("../src/shaders/cool.vert", "../src/shaders/beans.frag");
 	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+	glEnable(GL_CULL_FACE);
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-	assetMan* assetMan = m_game->getAssetMan();
+	m_assetMan = m_game->getAssetMan();
 	std::cout << "loading texture" << std::endl;
-	assetMan->addTexture("default", "C:/projects/LiteEngineV003/res/textures/default.png");
+	m_assetMan->addTexture("default", "C:/projects/LiteEngineV003/res/textures/default.png");
 	std::cout << "texture loaded" << std::endl;
-	m_shader->setInt("texture0", 0);
+	//m_shader->setInt("texture0", 0);
 
 }
 
@@ -72,7 +71,6 @@ void Renderer::Init()
 Shader* Renderer::loadShader(std::string vertex, std::string fragment)
 {
 	delete m_shader;
-	m_shader = nullptr;
 	m_shader = new Shader(vertex.c_str(), fragment.c_str());
 	m_shader->use();
 	return m_shader; 
@@ -123,130 +121,29 @@ void Renderer::DrawElements() const
 	}
 }
 
-void Renderer::Square(const Entity e, Vec2<float> pos)
-{
-	/*EntityMemoryPool* pool = EntityMemoryPool::Instance();
-	size_t id = e.getID();
-	Cgrain& s = pool->getComponent<Cgrain>(id);
-	float size = s.getSize();
-	const Vec4<float>& color = {pool->getComponent<Csand>(id).getColor()};
 
-
-	//Instance verticies as a part of Cgrain
-
-
-	float halfX = (size * m_aspectRatio) / 2.0f;
-	float halfY = size / 2.0f;
-
-	float verts[] = 
-	{
-		pos.m_x - halfX,  pos.m_y - halfY,  -1.0f,  color.m_x, color.m_y, color.m_z, color.m_w,
-		pos.m_x + halfX,  pos.m_y - halfY,  -1.0f,  color.m_x, color.m_y, color.m_z, color.m_w,
-		pos.m_x - halfX,  pos.m_y + halfY,  -1.0f,  color.m_x, color.m_y, color.m_z, color.m_w,
-		pos.m_x + halfX,  pos.m_y + halfY,  -1.0f,  color.m_x, color.m_y, color.m_z, color.m_w
-	};*/
-
-	//Create funtion to generate indicies
-	//0, 1, 2, 3 	-> 4, 5, 6, 7 	-> 8, 9, 10, 11 ...
-	//0 - 3 		->	4 - 7 		-> 8 - 11 		...
-
-/*	unsigned int indices[] = 
-	{
-		0, 1, 3,   // top-left,  top-right,    bottom-right
-		0, 3, 2    // top-left,  bottom-right, bottom-left
-	};
-*/
-	//Take everythiing below this comment and make it its own function
-
-	/*VertexArray va;
-	VertexBuffer vb(verts, sizeof(verts));
-
-	IndexBuffer ib(indices, 6); // Indices ok, 6 -> #number of active entities * 6
-
-	VertexBufferLayout layout;
-	layout.Push<float>(3);
-	layout.Push<float>(4);
-	va.addBuffer(vb, layout);*/
-	//Renderer::DrawElements(va, vb, ib);
-}
-
-//This fn simply take the setup out of renderer init puts it in its own fn. 
-/*void Renderer::fallingSandMemory()
-{
-	std::cout << "Renderer: Pre buffer initialization" << std::endl;
-	const auto& ME = m_game->getPool()->getMaxEnts();
-	std::cout << "Renderer: Max Entities: " << ME << std::endl;
-	size_t memSize = ME * sizeof(Vertex<float>) * 4; // 4 because 4 verts in a quad
-	std::cout << "Renderer: Memory size: " << memSize << std::endl;
-	vb = new VertexBuffer(nullptr, memSize);
-	std::cout << "Renderer: VertexBuffer initialized" << std::endl;
-	std::vector<unsigned int> indices = Renderer::genIndicies(ME);
-	std::cout << "indices generated" << std::endl;
-	ib = new IndexBuffer(&indices, (size_t)6*ME); // Indices ok, 6 -> #number of active entities * 6
-	std::cout << "Index Buffer generated" << std::endl;
-	std::cout << "Renderer: initialized" << std::endl;
-	va = new VertexArray();
-	layout = new VertexBufferLayout();
-	layout->Push<float>(3);
-	layout->Push<float>(4);
-	va->addBuffer(*vb, *layout);
-}*/
-
-
-/*void Renderer::CGoLMemory()
-{
-	Grid g(this->getWidth(), this->getHeight(), 20, 4, 0);
-
-	unsigned int col = g.getCols();
-	unsigned int row = g.getRows();
-	//unsigned int memSize = (col + row)*static_cast<unsigned int>(sizeof(Quad<float>));
-	//vb = new VertexBuffer(nullptr, static_cast<size_t>(memSize));
-
-	std::vector<Quad<float>> quads = g.fabGridLines();
-	//vb = new VertexBuffer(&quads, sizeof(quads));
-	//vb = new VertexBuffer(quads.data(), quads.size());
-	std::vector<unsigned int> indices = Renderer::genIndicies(quads.size());
-	ib = new IndexBuffer(&indices, (size_t)(indices.size() * sizeof(unsigned int)));
-	vb = new VertexBuffer(quads.data(), quads.size() * sizeof(Quad<float>));
-	//ib = new IndexBuffer(&indices, (size_t)6*(col*row));
-	//ib = new IndexBuffer(&indices, (size_t)(6 * (col+row)));
-	va = new VertexArray();
-	layout = new VertexBufferLayout();
-	layout->Push<float>(3);
-	layout->Push<float>(4);
-	va->addBuffer(*vb, *layout);
-}*/
-
-/*void Renderer::addGrid(std::vector<Quad<float>> quads)
+void Renderer::addQuadBufferT(std::vector<Quad<float>>& quads)
 {
 	std::vector<unsigned int> indices = Renderer::genIndicies(quads.size());
-	ib = new IndexBuffer(&indices, (size_t)(indices.size() * sizeof(unsigned int)));
-	vb = new VertexBuffer(quads.data(), quads.size() * sizeof(Quad<float>));
-	va = new VertexArray();
-	layout = new VertexBufferLayout();
-	layout->Push<float>(3);
-	layout->Push<float>(4);
-	va->addBuffer(*vb, *layout);
-}*/
 
-
-/*void Renderer::addQuadBuffer(std::vector<Quad<float>>& quads)
-{
-	std::vector<unsigned int> indices = Renderer::genIndicies(quads.size());
-	std::cout << "Pre IB" << std::endl;
-	m_IndexBuffers.push_back(std::make_unique<IndexBuffer>(&indices, (size_t)(indices.size()*sizeof(unsigned int))));
-	std::cout << "Pre vb" << std::endl;
 	m_VertexBuffers.push_back(std::make_unique<VertexBuffer>(quads.data(), quads.size() * sizeof(Quad<float>)));
-	std::cout << "past VB" << std::endl;
+
 	auto layout = std::make_unique<VertexBufferLayout>();
 	layout->Push<float>(3);
 	layout->Push<float>(4);
+	layout->Push<float>(2);
 	m_Layouts.push_back(std::move(layout));
-	m_VertexArrays.push_back(std::make_unique<VertexArray>(*m_VertexBuffers[m_bufferCount].get(), *m_Layouts[m_bufferCount].get()));
+
+	m_VertexArrays.push_back(std::make_unique<VertexArray>(
+		*m_VertexBuffers[m_bufferCount],
+		*m_Layouts[m_bufferCount]
+	));
+
+	// VAO is now bound from its constructor — attach IBO into it
+	m_IndexBuffers.push_back(std::make_unique<IndexBuffer>(indices.data(), indices.size()));
+
 	m_bufferCount++;
-
-}*/
-
+}
 
 
 void Renderer::addQuadBuffer(std::vector<Quad<float>>& quads)
@@ -258,7 +155,6 @@ void Renderer::addQuadBuffer(std::vector<Quad<float>>& quads)
 	auto layout = std::make_unique<VertexBufferLayout>();
 	layout->Push<float>(3);
 	layout->Push<float>(4);
-	layout->Push<float>(2);
 	m_Layouts.push_back(std::move(layout));
 
 	m_VertexArrays.push_back(std::make_unique<VertexArray>(
@@ -364,4 +260,74 @@ VertexBuffer& Renderer::getVB()
 unsigned int Renderer::getBufferCount()
 {
 	return m_bufferCount;
+}
+
+
+// configure VAO/VBO for texture quads
+// -----------------------------------
+//glGenVertexArrays(1, &VAO);
+//glGenBuffers(1, &VBO);
+//glBindVertexArray(VAO);
+//glBindBuffer(GL_ARRAY_BUFFER, VBO);
+//glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 6 * 4, NULL, GL_DYNAMIC_DRAW);
+//glEnableVertexAttribArray(0);
+//glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(float), 0);
+//glBindBuffer(GL_ARRAY_BUFFER, 0);
+//glBindVertexArray(0);
+
+
+// render line of text
+// -------------------
+void Renderer::RenderText(std::string text, float x, float y, std::string fontName, float scale = 1.0f)
+{
+	// activate corresponding render state	
+	std::cout << "in render text" << std::endl;
+	Shader* shader = loadShader("../src/shaders/text.vert", "../src/shaders/text.frag");
+	std::cout << "text shader loaded!" << std::endl;
+	shader->use();
+	unsigned int m_texID = m_assetMan->getFont(fontName)->m_texID;
+	glActiveTexture(GL_TEXTURE0 + m_texID); 
+	std::cout << "active texture set to: " << m_texID << std::endl;
+	glBindVertexArray(m_VertexArrays[m_texID]->getID());
+	// disable byte-alignment restriction
+	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+
+	// iterate through all characters
+	std::string::const_iterator c;
+	for (c = text.begin(); c != text.end(); c++) 
+	{
+		auto characterMap = m_assetMan->getFont(fontName)->m_Characters;
+		Character* ch = characterMap[*c];
+		//Character ch = Characters[*c];
+
+		float xpos = x + ch->m_bearing.m_x * scale;
+		float ypos = y - (ch->m_size.m_y - ch->m_bearing.m_y) * scale;
+
+		float w = ch->m_size.m_x * scale;
+		float h = ch->m_size.m_y * scale;
+		// update VBO for each character
+		float vertices[6][4] = {
+			{ xpos,     ypos + h,   0.0f, 0.0f },            
+			{ xpos,     ypos,       0.0f, 1.0f },
+			{ xpos + w, ypos,       1.0f, 1.0f },
+
+			{ xpos,     ypos + h,   0.0f, 0.0f },
+			{ xpos + w, ypos,       1.0f, 1.0f },
+			{ xpos + w, ypos + h,   1.0f, 0.0f }           
+		};
+		// render glyph texture over quad
+		glBindTexture(GL_TEXTURE_2D, m_texID);
+		// update content of VBO memory
+		glBindBuffer(GL_ARRAY_BUFFER, m_VertexBuffers[m_texID]->getID());
+		glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(vertices), vertices); // be sure to use glBufferSubData and not glBufferData
+
+		glBindBuffer(GL_ARRAY_BUFFER, 0);
+		// render quad
+		glDrawArrays(GL_TRIANGLES, 0, 6);
+		// now advance cursors for next glyph (note that advance is number of 1/64 pixels)
+		x += (ch->Advance >> 6) * scale; // bitshift by 6 to get value in pixels (2^6 = 64 (divide amount of 1/64th pixels by 64 to get amount of pixels))
+	}
+	//REMEBER TO COMMENT OUT AFTER TESTING!!!!!!!!!!!
+	glBindVertexArray(0);
+	glBindTexture(GL_TEXTURE_2D, 0);
 }

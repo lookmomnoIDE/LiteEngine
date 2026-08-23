@@ -344,6 +344,30 @@ src/EntityMemoryPool.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/EntityMemoryPool.cpp.s
 .PHONY : src/EntityMemoryPool.cpp.s
 
+src/FTexture.obj: src/FTexture.cpp.obj
+.PHONY : src/FTexture.obj
+
+# target to build an object file
+src/FTexture.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/FTexture.cpp.obj
+.PHONY : src/FTexture.cpp.obj
+
+src/FTexture.i: src/FTexture.cpp.i
+.PHONY : src/FTexture.i
+
+# target to preprocess a source file
+src/FTexture.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/FTexture.cpp.i
+.PHONY : src/FTexture.cpp.i
+
+src/FTexture.s: src/FTexture.cpp.s
+.PHONY : src/FTexture.s
+
+# target to generate assembly for a file
+src/FTexture.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/FTexture.cpp.s
+.PHONY : src/FTexture.cpp.s
+
 src/GameEngine.obj: src/GameEngine.cpp.obj
 .PHONY : src/GameEngine.obj
 
@@ -535,6 +559,30 @@ src/Scene_CGoL.s: src/Scene_CGoL.cpp.s
 src/Scene_CGoL.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.s
 .PHONY : src/Scene_CGoL.cpp.s
+
+src/Scene_test.obj: src/Scene_test.cpp.obj
+.PHONY : src/Scene_test.obj
+
+# target to build an object file
+src/Scene_test.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Scene_test.cpp.obj
+.PHONY : src/Scene_test.cpp.obj
+
+src/Scene_test.i: src/Scene_test.cpp.i
+.PHONY : src/Scene_test.i
+
+# target to preprocess a source file
+src/Scene_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Scene_test.cpp.i
+.PHONY : src/Scene_test.cpp.i
+
+src/Scene_test.s: src/Scene_test.cpp.s
+.PHONY : src/Scene_test.s
+
+# target to generate assembly for a file
+src/Scene_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Scene_test.cpp.s
+.PHONY : src/Scene_test.cpp.s
 
 src/Shader.obj: src/Shader.cpp.obj
 .PHONY : src/Shader.obj
@@ -932,6 +980,9 @@ help:
 	@echo ... src/EntityMemoryPool.obj
 	@echo ... src/EntityMemoryPool.i
 	@echo ... src/EntityMemoryPool.s
+	@echo ... src/FTexture.obj
+	@echo ... src/FTexture.i
+	@echo ... src/FTexture.s
 	@echo ... src/GameEngine.obj
 	@echo ... src/GameEngine.i
 	@echo ... src/GameEngine.s
@@ -956,6 +1007,9 @@ help:
 	@echo ... src/Scene_CGoL.obj
 	@echo ... src/Scene_CGoL.i
 	@echo ... src/Scene_CGoL.s
+	@echo ... src/Scene_test.obj
+	@echo ... src/Scene_test.i
+	@echo ... src/Scene_test.s
 	@echo ... src/Shader.obj
 	@echo ... src/Shader.i
 	@echo ... src/Shader.s

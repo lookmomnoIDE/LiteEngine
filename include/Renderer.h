@@ -21,6 +21,7 @@
 //#include "EntityFactory.h" // TEMPORARY REMOVE AFTER COMMANDS
 class GameEngine;
 class InputHandler;
+class assetMan;
 
 
 class Renderer
@@ -32,6 +33,7 @@ class Renderer
 	GameEngine* m_game = nullptr;
 	Shader* m_shader = nullptr;
 	GLFWwindow* m_window = nullptr;
+	assetMan* m_assetMan = nullptr;
 	VertexBuffer* vb = nullptr;
 	IndexBuffer* ib = nullptr;
 	VertexArray* va = nullptr;
@@ -57,6 +59,7 @@ public:
 	void fallingSandMemory();
 	void CGoLMemory();
 	void addGrid(std::vector<Quad<float>> quads);
+	void addQuadBufferT(std::vector<Quad<float>>& quads);
 	void addQuadBuffer(std::vector<Quad<float>>& quads);
 	void addCellBuffer(std::vector<CCell>& quads);
 	void updateQuadBuffer(size_t index, std::vector<Quad<float>>& quads);
@@ -69,6 +72,7 @@ public:
 	std::vector<unsigned int> genIndicies(unsigned int maxEntities);
 	VertexBuffer& getVB();
 	unsigned int getBufferCount();
+	void RenderText(std::string text, float x, float y, std::string fontName, float scale);
 };
 
 #endif

@@ -34,13 +34,13 @@ public:
 		m_quad.v3.setVColor(color);
 	}
 
-	void setTexCoords(unsigned int FW, unsigned int FH, unsigned int frame)
+/*	void setTexCoords(unsigned int FW, unsigned int FH, unsigned int frame)
 	{
 		m_quad.v0.setVTexCoord(Vec2<float>(frame * FW, 0));
 		m_quad.v1.setVTexCoord(Vec2<float>(FW, 0));
 		m_quad.v2.setVTexCoord(Vec2<float>(FW, FH));
 		m_quad.v3.setVTexCoord(Vec2<float>(0, FH));
-	}
+	}*/
 };
 
 

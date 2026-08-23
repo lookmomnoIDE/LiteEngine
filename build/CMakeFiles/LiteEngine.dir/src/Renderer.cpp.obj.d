@@ -222,8 +222,31 @@ CMakeFiles/LiteEngine.dir/src/Renderer.cpp.obj: \
  C:/projects/LiteEngineV003/include/Scene_CGOl.h \
  C:/projects/LiteEngineV003/include/Grid.h \
  C:/projects/LiteEngineV003/include/GeometryConstructor.h \
+ C:/projects/LiteEngineV003/include/Scene_test.h \
  C:/projects/LiteEngineV003/include/assetManager.h \
  C:/projects/LiteEngineV003/include/Texture.h \
+ C:/projects/LiteEngineV003/include/FTexture.h \
+ C:/projects/LiteEngineV003/include/ft2build.h \
+ C:/projects/LiteEngineV003/include/freetype/config/ftheader.h \
+ C:/projects/LiteEngineV003/include/freetype/freetype.h \
+ C:/projects/LiteEngineV003/include/freetype/config/ftconfig.h \
+ C:/projects/LiteEngineV003/include/freetype/config/ftoption.h \
+ C:/projects/LiteEngineV003/include/freetype/config/ftstdlib.h \
+ C:/mingw64/x86_64-w64-mingw32/include/string.h \
+ C:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
+ C:/mingw64/x86_64-w64-mingw32/include/setjmp.h \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdarg.h \
+ C:/mingw64/x86_64-w64-mingw32/include/stdarg.h \
+ C:/mingw64/x86_64-w64-mingw32/include/_mingw_stdarg.h \
+ C:/projects/LiteEngineV003/include/freetype/fttypes.h \
+ C:/projects/LiteEngineV003/include/freetype/ftsystem.h \
+ C:/projects/LiteEngineV003/include/freetype/ftimage.h \
+ C:/projects/LiteEngineV003/include/freetype/fterrors.h \
+ C:/projects/LiteEngineV003/include/freetype/ftmoderr.h \
+ C:/projects/LiteEngineV003/include/freetype/fterrdef.h \
+ C:/projects/LiteEngineV003/include/Library.h \
+ C:/projects/LiteEngineV003/include/Font.h \
+ C:/projects/LiteEngineV003/include/Character.h \
  C:/projects/LiteEngineV003/include/InputHandler.h \
  C:/projects/LiteEngineV003/include/Vertex.h \
  C:/projects/LiteEngineV003/include/Quad.h \

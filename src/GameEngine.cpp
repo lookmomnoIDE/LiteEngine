@@ -30,6 +30,7 @@ void GameEngine::Init()
 	m_renderer->Init();
 	//m_scenes["play"] = std::make_unique<Scene_Play>(this, m_renderer, 10000);
 	//m_scenes["CGoL"] = std::make_unique<Scene_CGoL>(this, m_renderer, 30000);
+	//m_scenes["test"] = std::make_unique<Scene_test>(this, m_renderer, 1000);
 	//m_factory->Init();
 	InputHandler::Instance();
 	InputHandler::Instance().Init();
@@ -48,7 +49,9 @@ void GameEngine::run()
 {
 	double currentTime, elapsedTime;
 	//m_renderer->CGoLMemory();
-	changeScene<Scene_CGoL>("CGoL", m_renderer, (192*105));
+	//changeScene<Scene_CGoL>("CGoL", m_renderer, (192*105));
+	size_t EES = 1000;
+	changeScene<Scene_test>("test", m_renderer, EES);
 	//currentScene()->init();
 	//These two lines of code handle memory setup and scene deployment of the falling sand demo. 
 	//m_renderer->fallingSandMemory();

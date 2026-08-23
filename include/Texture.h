@@ -1,4 +1,5 @@
-#pragma once
+#ifndef TEXTURE_H
+#define TEXTURE_H
 #include <string>
 #include <Renderer.h>
 
@@ -22,3 +23,4 @@ public:
 	const unsigned int GetSlot() const;
 };
 
+#endif

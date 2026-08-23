@@ -8,6 +8,7 @@
 #include "InputHandler.h"
 #include "Scene_Play.h"
 #include "Scene_CGOl.h"
+#include "Scene_test.h"
 #include "EntityFactory.h"
 #include "EntityMemoryPool.h"
 #include "ICommand.h"
@@ -27,7 +28,6 @@ class GameEngine
 
 	std::map<std::string, std::unique_ptr<Scene>> m_scenes;
 	std::string m_scene;
-	//Assets m_assets;	//TODO
 	bool m_paused = false;
 	bool m_running = false;
 	unsigned int m_currentFrame = 0;

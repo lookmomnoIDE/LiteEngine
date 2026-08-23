@@ -1,0 +1,10 @@
+C:/projects/LiteEngineV003/ext/ft27/freetype-2.7/build/CMakeFiles/freetype.dir
+C:/projects/LiteEngineV003/ext/ft27/freetype-2.7/build/CMakeFiles/dist.dir
+C:/projects/LiteEngineV003/ext/ft27/freetype-2.7/build/CMakeFiles/package.dir
+C:/projects/LiteEngineV003/ext/ft27/freetype-2.7/build/CMakeFiles/package_source.dir
+C:/projects/LiteEngineV003/ext/ft27/freetype-2.7/build/CMakeFiles/edit_cache.dir
+C:/projects/LiteEngineV003/ext/ft27/freetype-2.7/build/CMakeFiles/rebuild_cache.dir
+C:/projects/LiteEngineV003/ext/ft27/freetype-2.7/build/CMakeFiles/list_install_components.dir
+C:/projects/LiteEngineV003/ext/ft27/freetype-2.7/build/CMakeFiles/install.dir
+C:/projects/LiteEngineV003/ext/ft27/freetype-2.7/build/CMakeFiles/install/local.dir
+C:/projects/LiteEngineV003/ext/ft27/freetype-2.7/build/CMakeFiles/install/strip.dir

@@ -3,7 +3,6 @@
 
 void assetMan::addTexture(std::string name, std::string path)
 {
-	std::cout << "in assetMan" << std::endl;
 	Texture* tex = new Texture(path, texCounter);
 	m_Textures[name] = tex;
 	texCounter++;
@@ -18,12 +17,18 @@ void assetMan::addSound(std::string name, std::string path)
 {
 
 }
+*/
 
+
+//TODO ADDreSS SILENT FAILURE IN THE ADDFONT FN. COULD BE ANYTHING... ;D
 void assetMan::addFont(std::string name, std::string path)
 {
-
+	m_Library.addFace(name, path, texCounter);
+	FTexture* fontTexture = new FTexture(m_Library.getFont(name)->getFace(), texCounter);
+	m_FTextures[name] = fontTexture;
+	texCounter++;
 }
-*/
+
 Texture* assetMan::getTexture(std::string name)
 {
 	return m_Textures[name];
@@ -38,8 +43,9 @@ Sound& assetMan::getASound(std::string name)
 {
 
 }
-
-Font& assetMan::getFont(std::string name)
+*/
+Font* assetMan::getFont(std::string name)
 {
-	
-}*/
+	return m_Library.getFont(name);
+	//return m_FTextures[name];
+}
