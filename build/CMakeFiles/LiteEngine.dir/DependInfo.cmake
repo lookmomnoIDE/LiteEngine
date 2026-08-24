@@ -23,6 +23,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/projects/LiteEngineV003/src/IndexBuffer.cpp" "CMakeFiles/LiteEngine.dir/src/IndexBuffer.cpp.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/IndexBuffer.cpp.obj.d"
   "C:/projects/LiteEngineV003/src/InputHandler.cpp" "CMakeFiles/LiteEngine.dir/src/InputHandler.cpp.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/InputHandler.cpp.obj.d"
   "C:/projects/LiteEngineV003/src/Invoker.cpp" "CMakeFiles/LiteEngine.dir/src/Invoker.cpp.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/Invoker.cpp.obj.d"
+  "C:/projects/LiteEngineV003/src/Library.cpp" "CMakeFiles/LiteEngine.dir/src/Library.cpp.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/Library.cpp.obj.d"
   "C:/projects/LiteEngineV003/src/Parser.cpp" "CMakeFiles/LiteEngine.dir/src/Parser.cpp.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/Parser.cpp.obj.d"
   "C:/projects/LiteEngineV003/src/Renderer.cpp" "CMakeFiles/LiteEngine.dir/src/Renderer.cpp.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/Renderer.cpp.obj.d"
   "C:/projects/LiteEngineV003/src/Scene.cpp" "CMakeFiles/LiteEngine.dir/src/Scene.cpp.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/Scene.cpp.obj.d"

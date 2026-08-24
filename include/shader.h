@@ -9,6 +9,7 @@
 #include <iostream>
 
 #include "Parser.h"
+#include "Vec4.h"
 
 
 class Shader
@@ -32,6 +33,8 @@ public:
 	void setBool(const std::string &name, bool value) const;
 	void setInt(const std::string &name, int value) const;
 	void setFloat(const std::string &name, float value) const;
+	void setFloat4(const std::string &name, float value0, float value1, float value2, float value3) const;
+	void setMat4(const std::string &name, const float* value) const;
 
 };
 

@@ -18,20 +18,26 @@ Scene_test::Scene_test(GameEngine* game, Renderer* renderer, size_t maxEntities)
 
 
 
+//C:\projects\LiteEngineV003\res\fonts\short
 
 //C:\projects\LiteEngineV003\res/fonts/oldschool_pc_font_pack_v2.2_win/ttf - Mx (mixed outline+bitmap)/Mx437_IBM_3270pc.ttf
 void Scene_test::init()
 {
 	std::cout << "inside scene test init fn" << std::endl;
-	m_game->getAssetMan()->addFont("IBM", "../res/fonts/oldschool_pc_font_pack_v2.2_win/ttf - Mx (mixed outline+bitmap)/Mx437_IBM_3270pc.ttf");
+	m_game->getAssetMan()->addFont("IBM", "fonts/short/Mx437_IBM_3270pc.ttf");
 	std::cout << "after add font" << std::endl;
+	//std::vector<float> vertices = m_renderer->RenderText("Hello, text!", 0.0f, 0.0f, "IBM", 10.0f);
+	//std::cout << "rendered text?" << std::endl;
+	//m_renderer->addTextBuffer(vertices);
+	//std::cout << "added text buffer?" << std::endl;
+
 }	
 
 void Scene_test::update()
 {
 	std::cout << "inside scene test update loop" << std::endl;
 	//void Renderer::RenderText(std::string text, float x, float y, std::string fontName, float scale = 1)
-	m_renderer->RenderText("Hello, text!", 0.0f, 0.0f, "IBM", 1.0f);
+	
 	
 }
 
@@ -57,7 +63,8 @@ void Scene_test::sCollision()
 void Scene_test::sRender()
 {
 	m_renderer->Clear();
-	m_renderer->DrawElements();
+	//m_renderer->DrawElements();
+	m_renderer->drawText("Hello, text!", 0.0f, 0.0f, "IBM", 10.0f);
 	m_renderer->SwapBuffers();
 }
 

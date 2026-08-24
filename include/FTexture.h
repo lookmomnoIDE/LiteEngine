@@ -25,6 +25,8 @@ public:
 	void unBind();
 
 	const unsigned int GetSlot() const;
+
+	unsigned int getName();
 };
 
 

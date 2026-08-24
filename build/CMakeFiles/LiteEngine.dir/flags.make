@@ -3,13 +3,13 @@
 
 # compile C with C:/mingw64/bin/gcc.exe
 # compile CXX with C:/mingw64/bin/c++.exe
-C_DEFINES = 
+C_DEFINES = -DLITE_ENGINE_RES_DIR=\"C:/projects/LiteEngineV003/res/\"
 
 C_INCLUDES = @CMakeFiles/LiteEngine.dir/includes_C.rsp
 
 C_FLAGS = 
 
-CXX_DEFINES = 
+CXX_DEFINES = -DLITE_ENGINE_RES_DIR=\"C:/projects/LiteEngineV003/res/\"
 
 CXX_INCLUDES = @CMakeFiles/LiteEngine.dir/includes_CXX.rsp
 

@@ -6,6 +6,7 @@
 #include <GLFW/glfw3.h>
 #include <iostream>
 #include <memory>
+#include <array>
 
 #include "VertexArray.h"
 #include "shader.h"
@@ -38,6 +39,7 @@ class Renderer
 	IndexBuffer* ib = nullptr;
 	VertexArray* va = nullptr;
 	VertexBufferLayout* layout = nullptr;
+	unsigned int m_textBufferIndex = 1;
 
 	//rewrite
 	std::vector<std::unique_ptr<VertexBuffer>> 			m_VertexBuffers;
@@ -62,7 +64,9 @@ public:
 	void addQuadBufferT(std::vector<Quad<float>>& quads);
 	void addQuadBuffer(std::vector<Quad<float>>& quads);
 	void addCellBuffer(std::vector<CCell>& quads);
+	void addTextBuffer(std::vector<float> vertices);
 	void updateQuadBuffer(size_t index, std::vector<Quad<float>>& quads);
+	void updateTextBuffer(std::vector<float> vertices);
 	void SwapBuffers();
 	void Clear();
 	void setViewport(int startx, int starty, int vWidth, int vHeight);
@@ -72,7 +76,9 @@ public:
 	std::vector<unsigned int> genIndicies(unsigned int maxEntities);
 	VertexBuffer& getVB();
 	unsigned int getBufferCount();
-	void RenderText(std::string text, float x, float y, std::string fontName, float scale);
+	//std::vector<float> RenderText(std::string text, float x, float y, std::string fontName, float scale);
+	//void drawText(std::string fontName);
+	void drawText(std::string text, float x, float y, std::string fontName, float scale);
 };
 
 #endif

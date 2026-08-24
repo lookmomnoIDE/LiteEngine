@@ -403,6 +403,5 @@ CMakeFiles/LiteEngine.dir/src/main.cpp.obj: \
  C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/fterrors.h \
  C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/ftmoderr.h \
  C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/fterrdef.h \
- C:/projects/LiteEngineV003/include/Library.h \
  C:/projects/LiteEngineV003/include/Font.h \
  C:/projects/LiteEngineV003/include/Character.h

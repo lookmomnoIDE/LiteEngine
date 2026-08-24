@@ -27,6 +27,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/LiteEngine.dir/src/InputHandler.cpp.obj.d"
   "CMakeFiles/LiteEngine.dir/src/Invoker.cpp.obj"
   "CMakeFiles/LiteEngine.dir/src/Invoker.cpp.obj.d"
+  "CMakeFiles/LiteEngine.dir/src/Library.cpp.obj"
+  "CMakeFiles/LiteEngine.dir/src/Library.cpp.obj.d"
   "CMakeFiles/LiteEngine.dir/src/Parser.cpp.obj"
   "CMakeFiles/LiteEngine.dir/src/Parser.cpp.obj.d"
   "CMakeFiles/LiteEngine.dir/src/Renderer.cpp.obj"

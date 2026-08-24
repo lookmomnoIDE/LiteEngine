@@ -2,6 +2,7 @@
 #define FONT_H
 
 #include <map>
+#include <glad/glad.h>
 
 #include <ft2build.h>
 #include FT_FREETYPE_H
@@ -22,16 +23,35 @@ public:
 	}
 	~Font()
 	{
-		for (auto& [GLchar, Character] : m_Characters)
+		for (auto& [ch, glyph] : m_Characters)
 		{
-			delete Character;
+		    delete glyph;
 		}
-
 		FT_Done_Face(m_Face);
 	}
+
+
+	void addCharacter(unsigned int texID, GLchar c)
+	{
+		Character* character = new Character{
+			texID,
+			Vec2<int>(m_Face->glyph->bitmap.width, m_Face->glyph->bitmap.rows),
+			Vec2<int>(m_Face->glyph->bitmap_left, m_Face->glyph->bitmap_top),
+			static_cast<unsigned int>(m_Face->glyph->advance.x)
+		};
+		this->getCharMap().insert(std::pair<GLchar, Character*>(c, character));
+	}
+
+
 	FT_FaceRec_* getFace()
 	{
 		return m_Face;
+	}
+	
+
+	std::map<GLchar, Character*>& getCharMap()
+	{
+		return m_Characters;
 	}
 };
 

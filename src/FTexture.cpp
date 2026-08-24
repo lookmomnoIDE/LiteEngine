@@ -8,6 +8,8 @@ FTexture::FTexture(FT_FaceRec_* face, unsigned int slot)
 	glBindTexture(GL_TEXTURE_2D, m_tName);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RED, m_Width, m_Height, 0, GL_RED, GL_UNSIGNED_BYTE, face->glyph->bitmap.buffer);
 	// set texture options
+	// disable byte-alignment restriction
+	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
@@ -34,4 +36,9 @@ void FTexture::unBind()
 const unsigned int FTexture::GetSlot() const
 {
 	return m_Slot;
+}
+
+unsigned int FTexture::getName()
+{
+	return m_tName;
 }

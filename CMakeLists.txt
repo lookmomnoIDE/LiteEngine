@@ -21,6 +21,10 @@ set_target_properties(freetype PROPERTIES
     INTERFACE_INCLUDE_DIRECTORIES "C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2"
     )
 
+
+
+
+
 #C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2
 #C:\projects\LiteEngineV003\ext\ft27\ft.compiled\lib
 #C:\projects\LiteEngineV003\
@@ -67,6 +71,7 @@ add_executable(${PROJECT_NAME}
     src/assetManager.cpp
     src/Invoker.cpp
     src/InputHandler.cpp
+    src/Library.cpp
     )
 
 target_include_directories(${PROJECT_NAME} PRIVATE include)
@@ -85,7 +90,7 @@ target_include_directories(${PROJECT_NAME} PRIVATE include/glm/simd)
 
 
 
-
+target_compile_definitions(${PROJECT_NAME} PRIVATE LITE_ENGINE_RES_DIR="${CMAKE_SOURCE_DIR}/res/")
 
 # OpenGL (always static on Windows)
 find_package(OpenGL REQUIRED)

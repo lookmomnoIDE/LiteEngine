@@ -170,6 +170,8 @@ CMakeFiles/LiteEngine.dir/src/FTexture.cpp.obj: \
  C:/mingw64/include/c++/15.2.0/backward/auto_ptr.h \
  C:/mingw64/include/c++/15.2.0/pstl/glue_memory_defs.h \
  C:/mingw64/include/c++/15.2.0/pstl/execution_defs.h \
+ C:/mingw64/include/c++/15.2.0/array \
+ C:/mingw64/include/c++/15.2.0/compare \
  C:/projects/LiteEngineV003/include/VertexArray.h \
  C:/projects/LiteEngineV003/include/VertexBuffer.h \
  C:/projects/LiteEngineV003/include/VertexBufferLayout.h \
@@ -186,6 +188,7 @@ CMakeFiles/LiteEngine.dir/src/FTexture.cpp.obj: \
  C:/mingw64/include/c++/15.2.0/sstream \
  C:/mingw64/include/c++/15.2.0/bits/sstream.tcc \
  C:/projects/LiteEngineV003/include/Parser.h \
+ C:/projects/LiteEngineV003/include/Vec4.h \
  C:/projects/LiteEngineV003/include/IndexBuffer.h \
  C:/projects/LiteEngineV003/include/Entity.h \
  C:/projects/LiteEngineV003/include/EntityMemoryPool.h \
@@ -205,7 +208,6 @@ CMakeFiles/LiteEngine.dir/src/FTexture.cpp.obj: \
  C:/projects/LiteEngineV003/include/Quad.h \
  C:/projects/LiteEngineV003/include/Vertex.h \
  C:/projects/LiteEngineV003/include/Vec3.h \
- C:/projects/LiteEngineV003/include/Vec4.h \
  C:/projects/LiteEngineV003/include/Csand.h \
  C:/projects/LiteEngineV003/include/Cgravity.h \
  C:/projects/LiteEngineV003/include/CCell.h \

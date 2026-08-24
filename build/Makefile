@@ -464,6 +464,30 @@ src/Invoker.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Invoker.cpp.s
 .PHONY : src/Invoker.cpp.s
 
+src/Library.obj: src/Library.cpp.obj
+.PHONY : src/Library.obj
+
+# target to build an object file
+src/Library.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Library.cpp.obj
+.PHONY : src/Library.cpp.obj
+
+src/Library.i: src/Library.cpp.i
+.PHONY : src/Library.i
+
+# target to preprocess a source file
+src/Library.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Library.cpp.i
+.PHONY : src/Library.cpp.i
+
+src/Library.s: src/Library.cpp.s
+.PHONY : src/Library.s
+
+# target to generate assembly for a file
+src/Library.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Library.cpp.s
+.PHONY : src/Library.cpp.s
+
 src/Parser.obj: src/Parser.cpp.obj
 .PHONY : src/Parser.obj
 
@@ -995,6 +1019,9 @@ help:
 	@echo ... src/Invoker.obj
 	@echo ... src/Invoker.i
 	@echo ... src/Invoker.s
+	@echo ... src/Library.obj
+	@echo ... src/Library.i
+	@echo ... src/Library.s
 	@echo ... src/Parser.obj
 	@echo ... src/Parser.i
 	@echo ... src/Parser.s
