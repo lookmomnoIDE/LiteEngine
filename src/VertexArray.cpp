@@ -1,5 +1,17 @@
 #include "VertexArray.h"
 #include "VertexBuffer.h"
+#include <glad/glad.h>
+
+
+void l_checkError(std::string message)
+{
+	GLenum err = glGetError();
+	if (err != GL_NO_ERROR)
+	{
+		std::cout << "GL Error in DrawElements: " << err << std::endl;
+	}
+	std::cout << message << std::endl;
+}
 
 
 VertexArray::VertexArray()
@@ -30,8 +42,11 @@ void VertexArray::addBuffer(const VertexBuffer& vb, const VertexBufferLayout& la
 	for(unsigned int i = 0; i < elements.size(); i++)
 	{
 		const auto& element = elements[i];
+		l_checkError("before attrib");
 		glVertexAttribPointer(i, element.count, element.type, element.normalized, layout.GetStride(), (const void*)(uintptr_t)offset);
+		l_checkError("after attrib");
 		glEnableVertexAttribArray(i);
+		l_checkError("after enable");
 		offset += element.count * element.typeSize;
 	}
 }

@@ -2,6 +2,7 @@
 #define GEOMETRYCONSTRUCTOR_H
 
 #include "Quad.h"
+#include "tQuad.h"
 
 class GConstructor
 {
@@ -21,30 +22,53 @@ public:
 	}
 
 	//t for textured not tyrannasouras!
+/*
 	template <typename T>
-	static Quad<T> tRect(Vec2<T> pos, Vec4<T> color, Vec2<T> dims, std::vector<Vec2<T>> texCoords)
+	static tQuad<T> tRect(Vec2<T> pos, Vec4<T> color, Vec2<T> dims, std::vector<Vec2<T>> texCoords)
 	{
-		Quad<T> quad;
+		tQuad<T> tquad;
 
-	    quad.v0.setVPosition(Vec3<float>((pos.m_x - dims.m_x), pos.m_y - dims.m_y, 1.0f));
-	    quad.v1.setVPosition(Vec3<float>((pos.m_x + dims.m_x), pos.m_y - dims.m_y, 1.0f));
-	    quad.v2.setVPosition(Vec3<float>((pos.m_x - dims.m_x), pos.m_y + dims.m_y, 1.0f));
-	    quad.v3.setVPosition(Vec3<float>((pos.m_x + dims.m_x), pos.m_y + dims.m_y, 1.0f));
-	    quad.v0.setVColor(color);
-		quad.v1.setVColor(color);
-		quad.v2.setVColor(color);
-		quad.v3.setVColor(color);
-		quad.v0.setVTexCoord(texCoords[0]);
-		quad.v1.setVTexCoord(texCoords[1]);
-		quad.v2.setVTexCoord(texCoords[2]);
-		quad.v3.setVTexCoord(texCoords[3]);
+	    tquad.v0.setVPosition(Vec3<float>((pos.m_x - dims.m_x), pos.m_y - dims.m_y, 1.0f));
+	    tquad.v1.setVPosition(Vec3<float>((pos.m_x + dims.m_x), pos.m_y - dims.m_y, 1.0f));
+	    tquad.v2.setVPosition(Vec3<float>((pos.m_x - dims.m_x), pos.m_y + dims.m_y, 1.0f));
+	    tquad.v3.setVPosition(Vec3<float>((pos.m_x + dims.m_x), pos.m_y + dims.m_y, 1.0f));
+	    tquad.v0.setVColor(color);
+		tquad.v1.setVColor(color);
+		tquad.v2.setVColor(color);
+		tquad.v3.setVColor(color);
+		tquad.v0.setVTexCoord(texCoords[0]);
+		tquad.v1.setVTexCoord(texCoords[1]);
+		tquad.v2.setVTexCoord(texCoords[2]);
+		tquad.v3.setVTexCoord(texCoords[3]);
 
-		return quad;
-	}	
+		return tquad;
+	}
+*/
+template <typename T>
+static tQuad<T> tRect(Vec2<T> pos, Vec4<T> color, Vec2<T> dims, std::vector<Vec2<T>> texCoords)
+{
+	tQuad<T> tquad;
+
+    tquad.v0.setVPosition(Vec3<float>((pos.m_x + dims.m_x), (pos.m_y + dims.m_y), 1.0f));
+    tquad.v1.setVPosition(Vec3<float>((pos.m_x + dims.m_x), (pos.m_y - dims.m_y), 1.0f));
+    tquad.v2.setVPosition(Vec3<float>((pos.m_x - dims.m_x), (pos.m_y + dims.m_y), 1.0f));
+    tquad.v3.setVPosition(Vec3<float>((pos.m_x - dims.m_x), (pos.m_y - dims.m_y), 1.0f));
+    tquad.v0.setVColor(color);
+	tquad.v1.setVColor(color);
+	tquad.v2.setVColor(color);
+	tquad.v3.setVColor(color);
+	tquad.v0.setVTexCoord(texCoords[0]);
+	tquad.v1.setVTexCoord(texCoords[1]);
+	tquad.v2.setVTexCoord(texCoords[2]);
+	tquad.v3.setVTexCoord(texCoords[3]);
+
+	return tquad;
+}	
+
 
 
 	//t for textured not tyrannasouras!
-	template <typename T>
+/*	template <typename T>
 	static Quad<T> tRect(Vec3<T> pos, Vec4<T> color, Vec2<T> dims, std::vector<Vec2<T>> texCoords)
 	{
 		Quad<T> quad;
@@ -63,7 +87,7 @@ public:
 		quad.v3.setVTexCoord(texCoords[3]);
 
 		return quad;
-	}	
+	}	*/
 
 
 	template <typename T>
@@ -71,10 +95,10 @@ public:
 	{
 		Quad<T> quad;
 
-	    quad.v0.setVPosition(Vec3<float>((pos.m_x - dims.m_x), pos.m_y - dims.m_y, 1.0f));
+	    quad.v0.setVPosition(Vec3<float>((pos.m_x + dims.m_x), pos.m_y + dims.m_y, 1.0f));
 	    quad.v1.setVPosition(Vec3<float>((pos.m_x + dims.m_x), pos.m_y - dims.m_y, 1.0f));
 	    quad.v2.setVPosition(Vec3<float>((pos.m_x - dims.m_x), pos.m_y + dims.m_y, 1.0f));
-	    quad.v3.setVPosition(Vec3<float>((pos.m_x + dims.m_x), pos.m_y + dims.m_y, 1.0f));
+	    quad.v3.setVPosition(Vec3<float>((pos.m_x - dims.m_x), pos.m_y - dims.m_y, 1.0f));
 	    quad.v0.setVColor(color);
 		quad.v1.setVColor(color);
 		quad.v2.setVColor(color);
@@ -89,10 +113,10 @@ public:
 	{
 		Quad<T> quad;
 
-	    quad.v0.setVPosition(Vec3<float>((pos.m_x - dims.m_x), pos.m_y - dims.m_y, pos.m_z));
-	    quad.v1.setVPosition(Vec3<float>((pos.m_x + dims.m_x), pos.m_y - dims.m_y, pos.m_z));
-	    quad.v2.setVPosition(Vec3<float>((pos.m_x - dims.m_x), pos.m_y + dims.m_y, pos.m_z));
-	    quad.v3.setVPosition(Vec3<float>((pos.m_x + dims.m_x), pos.m_y + dims.m_y, pos.m_z));
+	    quad.v0.setVPosition(Vec3<float>((pos.m_x + dims.m_x), pos.m_y + dims.m_y, 1.0f));
+	    quad.v1.setVPosition(Vec3<float>((pos.m_x + dims.m_x), pos.m_y - dims.m_y, 1.0f));
+	    quad.v2.setVPosition(Vec3<float>((pos.m_x - dims.m_x), pos.m_y + dims.m_y, 1.0f));
+	    quad.v3.setVPosition(Vec3<float>((pos.m_x - dims.m_x), pos.m_y - dims.m_y, 1.0f));
 	    quad.v0.setVColor(color);
 		quad.v1.setVColor(color);
 		quad.v2.setVColor(color);

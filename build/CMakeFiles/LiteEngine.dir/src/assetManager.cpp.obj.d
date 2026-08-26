@@ -217,6 +217,8 @@ CMakeFiles/LiteEngine.dir/src/assetManager.cpp.obj: \
  C:/mingw64/include/c++/15.2.0/bits/hashtable.h \
  C:/mingw64/include/c++/15.2.0/bits/hashtable_policy.h \
  C:/mingw64/include/c++/15.2.0/bits/enable_special_members.h \
+ C:/projects/LiteEngineV003/include/tQuad.h \
+ C:/projects/LiteEngineV003/include/tVertex.h \
  C:/projects/LiteEngineV003/include/FTexture.h \
  C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/ft2build.h \
  C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/config/ftheader.h \

@@ -53,6 +53,11 @@ public:
 	{
 		return m_Characters;
 	}
+
+	unsigned int getTexID()
+	{
+		return m_texID;
+	}
 };
 
 

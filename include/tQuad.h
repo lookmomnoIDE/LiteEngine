@@ -2,10 +2,10 @@
 #define TQUAD_H
 
 
-#include "Vertex.h"
+#include "tVertex.h"
 
 template <typename T>
-class Quad
+class tQuad
 {
 public:
 

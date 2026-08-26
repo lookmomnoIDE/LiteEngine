@@ -1,5 +1,5 @@
-CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.obj: \
- C:\projects\LiteEngineV003\src\Scene_CGoL.cpp \
+CMakeFiles/LiteEngine.dir/src/Scene_CGOL.cpp.obj: \
+ C:\projects\LiteEngineV003\src\Scene_CGOL.cpp \
  C:/projects/LiteEngineV003/include/Scene_CGOL.h \
  C:/projects/LiteEngineV003/include/Scene.h \
  C:/mingw64/include/c++/15.2.0/string \
@@ -137,6 +137,8 @@ CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.obj: \
  C:/mingw64/include/c++/15.2.0/bits/hashtable_policy.h \
  C:/mingw64/include/c++/15.2.0/bits/enable_special_members.h \
  C:/projects/LiteEngineV003/include/EntityFactory.h \
+ C:/projects/LiteEngineV003/include/tQuad.h \
+ C:/projects/LiteEngineV003/include/tVertex.h \
  C:/projects/LiteEngineV003/include/Grid.h \
  C:/mingw64/include/c++/15.2.0/iostream \
  C:/mingw64/include/c++/15.2.0/ostream \

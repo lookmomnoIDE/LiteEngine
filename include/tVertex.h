@@ -7,7 +7,7 @@
 
 
 template <typename T>
-class Vertex
+class tVertex
 {
 
 public:

@@ -17,28 +17,28 @@ Scene_test::Scene_test(GameEngine* game, Renderer* renderer, size_t maxEntities)
 }
 
 
-
 //C:\projects\LiteEngineV003\res\fonts\short
-
-//C:\projects\LiteEngineV003\res/fonts/oldschool_pc_font_pack_v2.2_win/ttf - Mx (mixed outline+bitmap)/Mx437_IBM_3270pc.ttf
 void Scene_test::init()
 {
 	std::cout << "inside scene test init fn" << std::endl;
 	m_game->getAssetMan()->addFont("IBM", "fonts/short/Mx437_IBM_3270pc.ttf");
 	std::cout << "after add font" << std::endl;
-	//std::vector<float> vertices = m_renderer->RenderText("Hello, text!", 0.0f, 0.0f, "IBM", 10.0f);
-	//std::cout << "rendered text?" << std::endl;
-	//m_renderer->addTextBuffer(vertices);
-	//std::cout << "added text buffer?" << std::endl;
+	
+	//static Quad<T> tRect(Vec2<T> pos, Vec4<T> color, Vec2<T> dims, std::vector<Vec2<T>> texCoords)
+	Vec2<float> pos = Vec2<float>(0.0f, 0.0f);
+	Vec4<float> color = Vec4<float>(1.0f, 0.0f, 0.0f, 0.2f);
+	Vec2<float> dims = Vec2<float>(0.5f, 0.5f);
+	std::vector<Vec2<float>> texCoords = std::vector<Vec2<float>>{Vec2<float>(1.0f, 0.0f), Vec2<float>(1.0f, 1.0f), Vec2<float>(0.0f, 0.0f), Vec2<float>(0.0f, 1.0f)};
+	tQuad<float> tquad = GConstructor::tRect(pos, color, dims, texCoords);
+	m_tQuads.push_back(tquad);
+	m_renderer->addQuadBufferT(m_tQuads);
+	m_renderer->initTextBuffer(256);
+}
 
-}	
 
 void Scene_test::update()
 {
-	std::cout << "inside scene test update loop" << std::endl;
-	//void Renderer::RenderText(std::string text, float x, float y, std::string fontName, float scale = 1)
-	
-	
+
 }
 
 
@@ -63,8 +63,8 @@ void Scene_test::sCollision()
 void Scene_test::sRender()
 {
 	m_renderer->Clear();
-	//m_renderer->DrawElements();
-	m_renderer->drawText("Hello, text!", 0.0f, 0.0f, "IBM", 10.0f);
+	m_renderer->DrawElements("default");
+	m_renderer->drawText("Hello, text!", 50.0f, 50.0f, "IBM", 1.0f);
 	m_renderer->SwapBuffers();
 }
 
@@ -74,10 +74,12 @@ void Scene_test::sGUI()
 
 }
 
+
 bool Scene_test::isPaused()
 {
 	return m_paused;
 }
+
 
 void Scene_test::doAction(const Action& a)
 {
@@ -113,16 +115,19 @@ void Scene_test::doAction(const Action& a)
 	}
 }
 
+
 void Scene_test::registerAction(int keycode, const std::string& aName)
 {
 	m_actionMap[keycode] = aName;
 }
+
 
 std::map<int, std::string>& Scene_test::getAM()
 {
 	std::cout << "AM size: " << m_actionMap.size() << std::endl;
 	return m_actionMap;
 }
+
 
 void Scene_test::sDoAction()
 {

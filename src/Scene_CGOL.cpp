@@ -36,8 +36,8 @@ void Scene_CGoL::init()
 	auto ME = m_pool.getMaxEnts();
 	unsigned int size = grid.getCellSize() - 1;
 	Vec2<float> cSize = {(float)size/width*(width/height), (float)size/height};
-	Vec4<float> visibleColor = {1.0f, 1.0f, 1.0f, 1.0f};
-	Vec4<float> invisibleColor = {1.0f, 1.0f, 1.0f, 0.0f};
+	//Vec4<float> visibleColor = {1.0f, 1.0f, 1.0f, 1.0f};
+	//Vec4<float> invisibleColor = {1.0f, 1.0f, 1.0f, 0.0f};
 	//std::vector<Vec2<float>> tCoords = {Vec2<float>(-1.0f, 0.0f), Vec2<float>(1.0f, 0.0f), Vec2<float>(0.0f, 1.0f), Vec2<float>(0.0f, -1.0f)};
 	//assetMan* assetMan = m_game->getAssetMan();
 	//auto texture = assetMan->getTexture("default");
@@ -111,8 +111,8 @@ void Scene_CGoL::update()
 
 
 		
-	Vec4<float> visibleColor = {1.0f, 1.0f, 1.0f, 1.0f};
-	Vec4<float> invisibleColor = {1.0f, 1.0f, 1.0f, 0.0f};
+	//Vec4<float> visibleColor = {1.0f, 1.0f, 1.0f, 1.0f};
+	//Vec4<float> invisibleColor = {1.0f, 1.0f, 1.0f, 0.0f};
 	m_quads.clear();
 	m_quads.reserve((grid.m_Col * grid.m_Row));
 	for(size_t j = 0; j < grid.m_Row; j++)

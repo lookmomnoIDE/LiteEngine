@@ -42,7 +42,7 @@ void assetMan::addSound(std::string name, std::string path)
 */
 
 
-//TODO ADDreSS SILENT FAILURE IN THE ADDFONT FN. COULD BE ANYTHING... ;D
+
 void assetMan::addFont(std::string name, std::string path)
 {
 	std::cout << "inside add font in assetMan" << std::endl;

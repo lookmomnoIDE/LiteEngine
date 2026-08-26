@@ -14,6 +14,18 @@ float projection[16] = {
 	0.0f, 		0.0f, 		0.0f, 	1.0f    // column 3 (translation)
 };
 
+
+void checkError(std::string message)
+{
+	GLenum err = glGetError();
+	if (err != GL_NO_ERROR)
+	{
+		std::cout << "GL Error in DrawElements: " << err << std::endl;
+	}
+	std::cout << message << std::endl;
+}
+
+
 Renderer::Renderer()
 {
 	glfwInit();
@@ -46,20 +58,23 @@ Renderer::Renderer()
 
 
 	glViewport(0, 0, m_width, m_height);
+	checkError("before load");
 	m_shader = new Shader("../src/shaders/cool.vert", "../src/shaders/beans.frag");
+	checkError("after load");
 	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-	glEnable(GL_CULL_FACE);
+	//glEnable(GL_CULL_FACE);
+	checkError("after cull");
 	glEnable(GL_BLEND);
+	checkError("after blend");
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	checkError("after blendfunc");
 	m_assetMan = m_game->getAssetMan();
 	std::cout << "loading texture" << std::endl;
 	m_assetMan->addTexture("default", "C:/projects/LiteEngineV003/res/textures/default.png");
+	checkError("after texture");
 	std::cout << "texture loaded" << std::endl;
 	//m_shader->setInt("texture0", 0);
-	std::vector<float> blanks;
-	blanks.reserve(69*24);
-	addTextBuffer(blanks);
-	
+		
 
 }
 
@@ -78,7 +93,7 @@ void Renderer::Init()
 	
 }
 
-Shader* Renderer::loadShader(std::string vertex, std::string fragment)
+Shader* Renderer::loadShader(std::string vertex, std::string fragment) 
 {
 	delete m_shader;
 	m_shader = new Shader(vertex.c_str(), fragment.c_str());
@@ -109,15 +124,19 @@ void Renderer::DrawElements() const
 	glDrawElements(GL_TRIANGLES, ib->GetCount(), GL_UNSIGNED_INT, 0);
 }*/
 
-void Renderer::DrawElements() const 
+
+
+void Renderer::DrawElements() 
 {
-	m_shader->use();
+	Shader* m_shader = loadShader("../src/shaders/cool.vert", "../src/shaders/beans.frag");
+    m_shader->use();
+    //glActiveTexture(0);
 	for (auto i = 0; i < m_bufferCount; i++)
 	{
 		auto va = m_VertexArrays[i].get();
 		va->Bind();
-		//auto vb = m_VertexBuffers[i].get();
-		//vb->Bind();
+		auto vb = m_VertexBuffers[i].get();
+		vb->Bind();
 		auto ib = m_IndexBuffers[i].get();
 		ib->Bind();
 		auto count = ib->GetCount();
@@ -132,11 +151,40 @@ void Renderer::DrawElements() const
 }
 
 
-void Renderer::addQuadBufferT(std::vector<Quad<float>>& quads)
+void Renderer::DrawElements(std::string texture) 
+{
+	//checkError("before load");
+	Shader* m_shader = loadShader("../src/shaders/texturedCool.vert", "../src/shaders/texturedBeans.frag");
+	//checkError("after load");
+    m_shader->use();
+    //checkError("after use");
+    m_assetMan->getTexture(texture)->Bind();
+    //checkError("after bind");
+    
+    //glActiveTexture();
+	for (auto i = 0; i < m_bufferCount-1; i++)
+	{
+
+		auto va = m_VertexArrays[i].get();
+		va->Bind();
+		auto vb = m_VertexBuffers[i].get();
+		vb->Bind();
+		auto ib = m_IndexBuffers[i].get();
+		ib->Bind();
+		auto count = ib->GetCount();
+		//std::cout << "Drawing " << count << " indices" << std::endl;
+		glDrawElements(GL_TRIANGLES, count, GL_UNSIGNED_INT, 0);
+
+	}
+}
+
+
+
+void Renderer::addQuadBufferT(std::vector<tQuad<float>>& quads)
 {
 	std::vector<unsigned int> indices = Renderer::genIndicies(quads.size());
 
-	m_VertexBuffers.push_back(std::make_unique<VertexBuffer>(quads.data(), quads.size() * sizeof(Quad<float>)));
+	m_VertexBuffers.push_back(std::make_unique<VertexBuffer>(quads.data(), quads.size() * sizeof(tQuad<float>)));
 
 	auto layout = std::make_unique<VertexBufferLayout>();
 	layout->Push<float>(3);
@@ -215,6 +263,13 @@ void Renderer::addCellBuffer(std::vector<CCell>& quads)
 //glBindVertexArray(0);
 
 
+void Renderer::initTextBuffer(size_t maxChars)
+{
+    std::vector<float> dummy(maxChars * 24, 0.0f); // 6 verts * 4 floats per char
+    addTextBuffer(dummy); // allocates buffer at max capacity, GL_DYNAMIC_DRAW ideally
+}
+
+
 void Renderer::addTextBuffer(std::vector<float> vertices)
 {
 	//std::vector<unsigned int> indices = Renderer::genIndicies(vertices.size());
@@ -226,12 +281,12 @@ void Renderer::addTextBuffer(std::vector<float> vertices)
 	m_Layouts.push_back(std::move(layout));
 
 	m_VertexArrays.push_back(std::make_unique<VertexArray>(
-		*m_VertexBuffers[m_textBufferIndex],
-		*m_Layouts[0]
+		*m_VertexBuffers.back(),
+    	*m_Layouts.back()
 	));
 
-	//m_textBufferIndex = m_bufferCount;
-	//m_bufferCount++;
+	m_textBufferIndex = m_bufferCount;
+	m_bufferCount++;
 }
 
 
@@ -257,7 +312,9 @@ void Renderer::SwapBuffers()
 
 void Renderer::Clear()
 {
+	checkError("before");
 	glClear(GL_COLOR_BUFFER_BIT);
+	checkError("after");
 }
 
 
@@ -281,17 +338,18 @@ int Renderer::getHeight() const
 std::vector<unsigned int> Renderer::genIndicies(unsigned int maxEntities)
 {
 	std::vector<unsigned int> indices;
+	std::cout << maxEntities << std::endl;
 	indices.reserve((size_t)maxEntities*6);
-	Vec3<unsigned int> firstTriangle = {0, 1, 3};
-	Vec3<unsigned int> secondTriangle = {0, 3, 2};
+	Vec3<unsigned int> firstTriangle = {0, 1, 3};//{0, 1, 3};
+	Vec3<unsigned int> secondTriangle = {0, 3, 2};//{0, 3, 2};
 	Vec3<unsigned int> offset = {4, 4, 4};
 
 	for (unsigned int i = 0; i < maxEntities; i++)
 	{
-		indices.push_back(firstTriangle.m_x);//, firstTriangle.m_y, firstTriangle.m_z );
+		indices.push_back(firstTriangle.m_x);
 		indices.push_back(firstTriangle.m_y);
 		indices.push_back(firstTriangle.m_z);
-		indices.push_back(secondTriangle.m_x);//, secondTriangle.m_y, secondTriangle.m_z);
+		indices.push_back(secondTriangle.m_x);
 		indices.push_back(secondTriangle.m_y);
 		indices.push_back(secondTriangle.m_z);
 		firstTriangle += offset;
@@ -392,19 +450,25 @@ void Renderer::drawText(std::string fontName)
 
 void Renderer::drawText(std::string text, float x, float y, std::string fontName, float scale)
 {
+	auto* font = m_assetMan->getFont(fontName);
+	//checkError("before load");
     Shader* m_shader = loadShader("../src/shaders/text.vert", "../src/shaders/text.frag");
+    //checkError("after load");
     m_shader->use();
+    //checkError("after use");
     m_shader->setFloat4("ourColor", 1.0f, 1.0f, 1.0f, 1.0f);
+    //checkError("after ourColor");
     m_shader->setMat4("projection", (float*)projection);
-
-    glActiveTexture(GL_TEXTURE0 + m_textBufferIndex);
-    glBindVertexArray(m_VertexArrays[m_textBufferIndex]->getID());
-
-    auto& characterMap = m_assetMan->getFont(fontName)->getCharMap();
+    //checkError("after proj");
+    m_shader->setInt("text", font->getTexID());
+    
+    auto& characterMap = font->getCharMap();
 
     std::vector<float> verts;
 	verts.reserve(text.length()*24);
-
+	//std::vector<unsigned int> texIDs;
+	glBindVertexArray(m_VertexArrays[m_textBufferIndex]->getID());
+	glActiveTexture(GL_TEXTURE0 + font->getTexID());
     for (char c : text)
     {
         Character* ch = characterMap[c];
@@ -415,30 +479,19 @@ void Renderer::drawText(std::string text, float x, float y, std::string fontName
         float w = ch->m_size.m_x * scale;
         float h = ch->m_size.m_y * scale;
 
-        float vertices[6][4] = {
-            { xpos,     ypos + h,   0.0f, 0.0f },
-            { xpos,     ypos,       0.0f, 1.0f },
-            { xpos + w, ypos,       1.0f, 1.0f },
-            { xpos,     ypos + h,   0.0f, 0.0f },
-            { xpos + w, ypos,       1.0f, 1.0f },
-            { xpos + w, ypos + h,   1.0f, 0.0f }
+        std::vector<float> verts = {
+            xpos,     ypos + h,   0.0f, 0.0f,
+            xpos,     ypos,       0.0f, 1.0f,
+            xpos + w, ypos,       1.0f, 1.0f,
+            xpos,     ypos + h,   0.0f, 0.0f,
+            xpos + w, ypos,       1.0f, 1.0f,
+            xpos + w, ypos + h,   1.0f, 0.0f
         };
-        /*for(int i = 0; i < 6; i++)
-		{
-			for(int j = 0; j < 4; j++)
-			{
-				verts.push_back(vertices[i][j]);
-			}
-		}*/
-		//updateTextBuffer(verts);
 
-        glBindTexture(GL_TEXTURE_2D, ch->m_texID);   // <-- per-character texture, this glyph's actual bitmap
-
-        glBindBuffer(GL_ARRAY_BUFFER, m_VertexBuffers[m_textBufferIndex]->getID());
-        glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(vertices), vertices);
-        glBindBuffer(GL_ARRAY_BUFFER, 0);
-
-        glDrawArrays(GL_TRIANGLES, 0, 6);   // 6 vertices for this one glyph's quad
+        updateTextBuffer(verts);    	
+    	glBindTexture(GL_TEXTURE_2D, ch->m_texID);
+    	glDrawArrays(GL_TRIANGLES, 0, 6); // offset into the buffer, 6 verts per glyph
+    	
 
         x += (ch->Advance >> 6) * scale;
     }

@@ -54,10 +54,10 @@ public:
 		                    // half-width in NDC
 		    Quad<float> lineX;
 
-		    lineX.v0.setVPosition(Vec3<float>((x - hw), -1.0f - hh, 1.0f));
-		    lineX.v1.setVPosition(Vec3<float>((x + hw), -1.0f - hh, 1.0f));
-		    lineX.v2.setVPosition(Vec3<float>((x - hw),  1.0f + hh, 1.0f));
-		    lineX.v3.setVPosition(Vec3<float>((x + hw),  1.0f + hh, 1.0f));
+		    lineX.v0.setVPosition(Vec3<float>((x + hw),  1.0f, 1.0f));
+		    lineX.v1.setVPosition(Vec3<float>((x + hw),  -1.0f, 1.0f));
+		    lineX.v2.setVPosition(Vec3<float>((x - hw),  1.0f, 1.0f));
+		    lineX.v3.setVPosition(Vec3<float>((x - hw),  -1.0f, 1.0f));
 		    lineX.v0.setVColor(Vec4<float>(0.0f, 0.0f, 0.0f, 1.0f));
 			lineX.v1.setVColor(Vec4<float>(0.0f, 0.0f, 0.0f, 1.0f));
 			lineX.v2.setVColor(Vec4<float>(0.0f, 0.0f, 0.0f, 1.0f));
@@ -72,10 +72,10 @@ public:
 		    
 		    Quad<float> lineY;
 
-		    lineY.v0.setVPosition(Vec3<float>((-1.0f - hw), y - hh, 1.0f));
-		    lineY.v1.setVPosition(Vec3<float>(( 1.0f + hw), y - hh, 1.0f));
-		    lineY.v2.setVPosition(Vec3<float>((-1.0f - hw), y + hh, 1.0f));
-		    lineY.v3.setVPosition(Vec3<float>(( 1.0f + hw), y + hh, 1.0f));
+		    lineY.v0.setVPosition(Vec3<float>((1.0f), y + hh, 1.0f));
+		    lineY.v1.setVPosition(Vec3<float>((1.0f), y - hh, 1.0f));
+		    lineY.v2.setVPosition(Vec3<float>((-1.0f), y + hh, 1.0f));
+		    lineY.v3.setVPosition(Vec3<float>((-1.0f), y - hh, 1.0f));
 		    lineY.v0.setVColor(Vec4<float>(0.0f, 0.0f, 0.0f, 1.0f));
 			lineY.v1.setVColor(Vec4<float>(0.0f, 0.0f, 0.0f, 1.0f));
 			lineY.v2.setVColor(Vec4<float>(0.0f, 0.0f, 0.0f, 1.0f));

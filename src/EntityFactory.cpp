@@ -90,3 +90,12 @@ void EntityFactory::addCell(Quad<float>& quad, Scene& scene)
 	auto id = e.getID();
 	pool.getComponent<CCell>(id) = CCell(quad);
 }
+
+/*void EntityFactory::addCell(tQuad<float>& quad, Scene& scene)
+{
+	auto& pool = scene.getPool();
+	Tag target = static_cast<Tag>(pool.getEnum("sand"));
+	Entity e = scene.getEntityMan().addEntity(target); 
+	auto id = e.getID();
+	pool.getComponent<CCell>(id) = CCell(quad);
+}*/

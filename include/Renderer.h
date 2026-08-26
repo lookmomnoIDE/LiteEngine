@@ -17,6 +17,7 @@
 #include "Vec2.h"
 #include "Vec3.h"
 #include "Vec4.h"
+#include "tQuad.h"
 
 
 //#include "EntityFactory.h" // TEMPORARY REMOVE AFTER COMMANDS
@@ -39,7 +40,7 @@ class Renderer
 	IndexBuffer* ib = nullptr;
 	VertexArray* va = nullptr;
 	VertexBufferLayout* layout = nullptr;
-	unsigned int m_textBufferIndex = 1;
+	unsigned int m_textBufferIndex;
 
 	//rewrite
 	std::vector<std::unique_ptr<VertexBuffer>> 			m_VertexBuffers;
@@ -56,14 +57,16 @@ public:
 	Shader* loadShader(std::string vertex, std::string fragment);
 	GLFWwindow* getWindow();
 	void Draw(const VertexArray& va, const VertexBuffer& vb) const;
-	void DrawElements() const;
+	void DrawElements();
+	void DrawElements(std::string texture);
 	void Square(const Entity e, Vec2<float> pos);
 	void fallingSandMemory();
 	void CGoLMemory();
 	void addGrid(std::vector<Quad<float>> quads);
-	void addQuadBufferT(std::vector<Quad<float>>& quads);
+	void addQuadBufferT(std::vector<tQuad<float>>& quads);
 	void addQuadBuffer(std::vector<Quad<float>>& quads);
 	void addCellBuffer(std::vector<CCell>& quads);
+	void initTextBuffer(size_t maxChars);
 	void addTextBuffer(std::vector<float> vertices);
 	void updateQuadBuffer(size_t index, std::vector<Quad<float>>& quads);
 	void updateTextBuffer(std::vector<float> vertices);

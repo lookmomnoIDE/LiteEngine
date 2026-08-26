@@ -216,6 +216,8 @@ CMakeFiles/LiteEngine.dir/src/Texture.cpp.obj: \
  C:/mingw64/include/c++/15.2.0/bits/hashtable.h \
  C:/mingw64/include/c++/15.2.0/bits/hashtable_policy.h \
  C:/mingw64/include/c++/15.2.0/bits/enable_special_members.h \
+ C:/projects/LiteEngineV003/include/tQuad.h \
+ C:/projects/LiteEngineV003/include/tVertex.h \
  C:/projects/LiteEngineV003/include/stb_image.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdarg.h \
  C:/mingw64/x86_64-w64-mingw32/include/stdarg.h \

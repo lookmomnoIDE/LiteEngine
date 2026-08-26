@@ -6,6 +6,8 @@ CMakeFiles/LiteEngine.dir/src/EntityFactory.cpp.obj: \
  C:/projects/LiteEngineV003/include/Vertex.h \
  C:/projects/LiteEngineV003/include/Vec3.h \
  C:/projects/LiteEngineV003/include/Vec4.h \
+ C:/projects/LiteEngineV003/include/tQuad.h \
+ C:/projects/LiteEngineV003/include/tVertex.h \
  C:/projects/LiteEngineV003/include/GameEngine.h \
  C:/projects/LiteEngineV003/include/Scene.h \
  C:/mingw64/include/c++/15.2.0/string \

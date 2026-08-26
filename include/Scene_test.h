@@ -6,6 +6,7 @@
 #include "EntityManager.h"
 #include "EntityFactory.h"
 #include "Quad.h"
+#include "tQuad.h"
 #include "Vec2.h"
 #include "Grid.h"
 #include "GeometryConstructor.h"
@@ -18,6 +19,7 @@ class Scene_test : public Scene
 	double m_x, m_y;
 	bool m_primaryActionActive = false;
 	std::vector<Quad<float>> m_quads;
+	std::vector<tQuad<float>> m_tQuads;
 	std::vector<std::vector<Quad<float>>> m_quadsList;
 	unsigned int currentEntities = 0;
 	unsigned int m_numQuads = 0;

@@ -786,6 +786,8 @@ CMakeFiles/LiteEngine.dir/src/EntityFactory.cpp.obj
  C:/projects/LiteEngineV003/include/assetManager.h
  C:/projects/LiteEngineV003/include/glad/glad.h
  C:/projects/LiteEngineV003/include/shader.h
+ C:/projects/LiteEngineV003/include/tQuad.h
+ C:/projects/LiteEngineV003/include/tVertex.h
 
 CMakeFiles/LiteEngine.dir/src/EntityManager.cpp.obj
  C:/projects/LiteEngineV003/src/EntityManager.cpp
@@ -1347,6 +1349,8 @@ CMakeFiles/LiteEngine.dir/src/FTexture.cpp.obj
  C:/projects/LiteEngineV003/include/VertexBufferLayout.h
  C:/projects/LiteEngineV003/include/glad/glad.h
  C:/projects/LiteEngineV003/include/shader.h
+ C:/projects/LiteEngineV003/include/tQuad.h
+ C:/projects/LiteEngineV003/include/tVertex.h
 
 CMakeFiles/LiteEngine.dir/src/GameEngine.cpp.obj
  C:/projects/LiteEngineV003/src/GameEngine.cpp
@@ -1599,6 +1603,8 @@ CMakeFiles/LiteEngine.dir/src/GameEngine.cpp.obj
  C:/projects/LiteEngineV003/include/assetManager.h
  C:/projects/LiteEngineV003/include/glad/glad.h
  C:/projects/LiteEngineV003/include/shader.h
+ C:/projects/LiteEngineV003/include/tQuad.h
+ C:/projects/LiteEngineV003/include/tVertex.h
 
 CMakeFiles/LiteEngine.dir/src/IndexBuffer.cpp.obj
  C:/projects/LiteEngineV003/src/IndexBuffer.cpp
@@ -1851,6 +1857,8 @@ CMakeFiles/LiteEngine.dir/src/IndexBuffer.cpp.obj
  C:/projects/LiteEngineV003/include/assetManager.h
  C:/projects/LiteEngineV003/include/glad/glad.h
  C:/projects/LiteEngineV003/include/shader.h
+ C:/projects/LiteEngineV003/include/tQuad.h
+ C:/projects/LiteEngineV003/include/tVertex.h
 
 CMakeFiles/LiteEngine.dir/src/InputHandler.cpp.obj
  C:/projects/LiteEngineV003/src/InputHandler.cpp
@@ -2103,6 +2111,8 @@ CMakeFiles/LiteEngine.dir/src/InputHandler.cpp.obj
  C:/projects/LiteEngineV003/include/assetManager.h
  C:/projects/LiteEngineV003/include/glad/glad.h
  C:/projects/LiteEngineV003/include/shader.h
+ C:/projects/LiteEngineV003/include/tQuad.h
+ C:/projects/LiteEngineV003/include/tVertex.h
 
 CMakeFiles/LiteEngine.dir/src/Invoker.cpp.obj
  C:/projects/LiteEngineV003/src/Invoker.cpp
@@ -2349,6 +2359,8 @@ CMakeFiles/LiteEngine.dir/src/Library.cpp.obj
  C:/projects/LiteEngineV003/include/assetManager.h
  C:/projects/LiteEngineV003/include/glad/glad.h
  C:/projects/LiteEngineV003/include/shader.h
+ C:/projects/LiteEngineV003/include/tQuad.h
+ C:/projects/LiteEngineV003/include/tVertex.h
 
 CMakeFiles/LiteEngine.dir/src/Parser.cpp.obj
  C:/projects/LiteEngineV003/src/Parser.cpp
@@ -2760,6 +2772,8 @@ CMakeFiles/LiteEngine.dir/src/Renderer.cpp.obj
  C:/projects/LiteEngineV003/include/glad/glad.h
  C:/projects/LiteEngineV003/include/grid.h
  C:/projects/LiteEngineV003/include/shader.h
+ C:/projects/LiteEngineV003/include/tQuad.h
+ C:/projects/LiteEngineV003/include/tVertex.h
 
 CMakeFiles/LiteEngine.dir/src/Scene.cpp.obj
  C:/projects/LiteEngineV003/src/Scene.cpp
@@ -3012,9 +3026,11 @@ CMakeFiles/LiteEngine.dir/src/Scene.cpp.obj
  C:/projects/LiteEngineV003/include/assetManager.h
  C:/projects/LiteEngineV003/include/glad/glad.h
  C:/projects/LiteEngineV003/include/shader.h
+ C:/projects/LiteEngineV003/include/tQuad.h
+ C:/projects/LiteEngineV003/include/tVertex.h
 
-CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.obj
- C:/projects/LiteEngineV003/src/Scene_CGoL.cpp
+CMakeFiles/LiteEngine.dir/src/Scene_CGOL.cpp.obj
+ C:/projects/LiteEngineV003/src/Scene_CGOL.cpp
  C:/mingw64/include/c++/15.2.0/algorithm
  C:/mingw64/include/c++/15.2.0/array
  C:/mingw64/include/c++/15.2.0/backward/auto_ptr.h
@@ -3287,6 +3303,8 @@ CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.obj
  C:/projects/LiteEngineV003/include/assetManager.h
  C:/projects/LiteEngineV003/include/glad/glad.h
  C:/projects/LiteEngineV003/include/shader.h
+ C:/projects/LiteEngineV003/include/tQuad.h
+ C:/projects/LiteEngineV003/include/tVertex.h
 
 CMakeFiles/LiteEngine.dir/src/Scene_test.cpp.obj
  C:/projects/LiteEngineV003/src/Scene_test.cpp
@@ -3561,6 +3579,8 @@ CMakeFiles/LiteEngine.dir/src/Scene_test.cpp.obj
  C:/projects/LiteEngineV003/include/assetManager.h
  C:/projects/LiteEngineV003/include/glad/glad.h
  C:/projects/LiteEngineV003/include/shader.h
+ C:/projects/LiteEngineV003/include/tQuad.h
+ C:/projects/LiteEngineV003/include/tVertex.h
 
 CMakeFiles/LiteEngine.dir/src/Shader.cpp.obj
  C:/projects/LiteEngineV003/src/Shader.cpp
@@ -3972,6 +3992,8 @@ CMakeFiles/LiteEngine.dir/src/Texture.cpp.obj
  C:/projects/LiteEngineV003/include/glad/glad.h
  C:/projects/LiteEngineV003/include/shader.h
  C:/projects/LiteEngineV003/include/stb_image.h
+ C:/projects/LiteEngineV003/include/tQuad.h
+ C:/projects/LiteEngineV003/include/tVertex.h
 
 CMakeFiles/LiteEngine.dir/src/VertexArray.cpp.obj
  C:/projects/LiteEngineV003/src/VertexArray.cpp
@@ -4387,6 +4409,8 @@ CMakeFiles/LiteEngine.dir/src/VertexBuffer.cpp.obj
  C:/projects/LiteEngineV003/include/assetManager.h
  C:/projects/LiteEngineV003/include/glad/glad.h
  C:/projects/LiteEngineV003/include/shader.h
+ C:/projects/LiteEngineV003/include/tQuad.h
+ C:/projects/LiteEngineV003/include/tVertex.h
 
 CMakeFiles/LiteEngine.dir/src/VertexBufferLayout.cpp.obj
  C:/projects/LiteEngineV003/src/VertexBufferLayout.cpp
@@ -4700,6 +4724,8 @@ CMakeFiles/LiteEngine.dir/src/assetManager.cpp.obj
  C:/projects/LiteEngineV003/include/assetManager.h
  C:/projects/LiteEngineV003/include/glad/glad.h
  C:/projects/LiteEngineV003/include/shader.h
+ C:/projects/LiteEngineV003/include/tQuad.h
+ C:/projects/LiteEngineV003/include/tVertex.h
 
 CMakeFiles/LiteEngine.dir/src/glad.c.obj
  C:/projects/LiteEngineV003/src/glad.c
@@ -6923,4 +6949,6 @@ CMakeFiles/LiteEngine.dir/src/main.cpp.obj
  C:/projects/LiteEngineV003/include/glm/vector_relational.hpp
  C:/projects/LiteEngineV003/include/includes.h
  C:/projects/LiteEngineV003/include/shader.h
+ C:/projects/LiteEngineV003/include/tQuad.h
+ C:/projects/LiteEngineV003/include/tVertex.h
 

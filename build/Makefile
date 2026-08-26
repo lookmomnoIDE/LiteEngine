@@ -560,29 +560,29 @@ src/Scene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Scene.cpp.s
 .PHONY : src/Scene.cpp.s
 
-src/Scene_CGoL.obj: src/Scene_CGoL.cpp.obj
-.PHONY : src/Scene_CGoL.obj
+src/Scene_CGOL.obj: src/Scene_CGOL.cpp.obj
+.PHONY : src/Scene_CGOL.obj
 
 # target to build an object file
-src/Scene_CGoL.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.obj
-.PHONY : src/Scene_CGoL.cpp.obj
+src/Scene_CGOL.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Scene_CGOL.cpp.obj
+.PHONY : src/Scene_CGOL.cpp.obj
 
-src/Scene_CGoL.i: src/Scene_CGoL.cpp.i
-.PHONY : src/Scene_CGoL.i
+src/Scene_CGOL.i: src/Scene_CGOL.cpp.i
+.PHONY : src/Scene_CGOL.i
 
 # target to preprocess a source file
-src/Scene_CGoL.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.i
-.PHONY : src/Scene_CGoL.cpp.i
+src/Scene_CGOL.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Scene_CGOL.cpp.i
+.PHONY : src/Scene_CGOL.cpp.i
 
-src/Scene_CGoL.s: src/Scene_CGoL.cpp.s
-.PHONY : src/Scene_CGoL.s
+src/Scene_CGOL.s: src/Scene_CGOL.cpp.s
+.PHONY : src/Scene_CGOL.s
 
 # target to generate assembly for a file
-src/Scene_CGoL.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.s
-.PHONY : src/Scene_CGoL.cpp.s
+src/Scene_CGOL.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Scene_CGOL.cpp.s
+.PHONY : src/Scene_CGOL.cpp.s
 
 src/Scene_test.obj: src/Scene_test.cpp.obj
 .PHONY : src/Scene_test.obj
@@ -1031,9 +1031,9 @@ help:
 	@echo ... src/Scene.obj
 	@echo ... src/Scene.i
 	@echo ... src/Scene.s
-	@echo ... src/Scene_CGoL.obj
-	@echo ... src/Scene_CGoL.i
-	@echo ... src/Scene_CGoL.s
+	@echo ... src/Scene_CGOL.obj
+	@echo ... src/Scene_CGOL.i
+	@echo ... src/Scene_CGOL.s
 	@echo ... src/Scene_test.obj
 	@echo ... src/Scene_test.i
 	@echo ... src/Scene_test.s

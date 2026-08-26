@@ -3,6 +3,7 @@
 
 #include "Vec2.h"
 #include "Quad.h"
+#include "tQuad.h"
 //#include "Scene.h"
 
 
@@ -18,6 +19,7 @@ public:
 	void Init();
 	void addSand(double xpos, double ypos);
 	void addCell(Quad<float>& quad, Scene& scene);
+	//void addCell(tQuad<float>& quad, Scene& scene);
 
 };
 

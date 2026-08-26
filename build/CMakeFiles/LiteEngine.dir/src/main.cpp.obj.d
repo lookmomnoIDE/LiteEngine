@@ -353,6 +353,8 @@ CMakeFiles/LiteEngine.dir/src/main.cpp.obj: \
  C:/projects/LiteEngineV003/include/Cgravity.h \
  C:/projects/LiteEngineV003/include/CCell.h \
  C:/projects/LiteEngineV003/include/EntityFactory.h \
+ C:/projects/LiteEngineV003/include/tQuad.h \
+ C:/projects/LiteEngineV003/include/tVertex.h \
  C:/projects/LiteEngineV003/include/Renderer.h \
  C:/mingw64/include/c++/15.2.0/memory \
  C:/mingw64/include/c++/15.2.0/bits/stl_tempbuf.h \

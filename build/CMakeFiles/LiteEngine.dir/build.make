@@ -491,20 +491,20 @@ CMakeFiles/LiteEngine.dir/src/EntityFactory.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/LiteEngine.dir/src/EntityFactory.cpp.s"
 	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\projects\LiteEngineV003\src\EntityFactory.cpp -o CMakeFiles\LiteEngine.dir\src\EntityFactory.cpp.s
 
-CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.obj: CMakeFiles/LiteEngine.dir/flags.make
-CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.obj: CMakeFiles/LiteEngine.dir/includes_CXX.rsp
-CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.obj: C:/projects/LiteEngineV003/src/Scene_CGoL.cpp
-CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.obj: CMakeFiles/LiteEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\projects\LiteEngineV003\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.obj"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.obj -MF CMakeFiles\LiteEngine.dir\src\Scene_CGoL.cpp.obj.d -o CMakeFiles\LiteEngine.dir\src\Scene_CGoL.cpp.obj -c C:\projects\LiteEngineV003\src\Scene_CGoL.cpp
+CMakeFiles/LiteEngine.dir/src/Scene_CGOL.cpp.obj: CMakeFiles/LiteEngine.dir/flags.make
+CMakeFiles/LiteEngine.dir/src/Scene_CGOL.cpp.obj: CMakeFiles/LiteEngine.dir/includes_CXX.rsp
+CMakeFiles/LiteEngine.dir/src/Scene_CGOL.cpp.obj: C:/projects/LiteEngineV003/src/Scene_CGOL.cpp
+CMakeFiles/LiteEngine.dir/src/Scene_CGOL.cpp.obj: CMakeFiles/LiteEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\projects\LiteEngineV003\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/LiteEngine.dir/src/Scene_CGOL.cpp.obj"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/LiteEngine.dir/src/Scene_CGOL.cpp.obj -MF CMakeFiles\LiteEngine.dir\src\Scene_CGOL.cpp.obj.d -o CMakeFiles\LiteEngine.dir\src\Scene_CGOL.cpp.obj -c C:\projects\LiteEngineV003\src\Scene_CGOL.cpp
 
-CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.i"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\projects\LiteEngineV003\src\Scene_CGoL.cpp > CMakeFiles\LiteEngine.dir\src\Scene_CGoL.cpp.i
+CMakeFiles/LiteEngine.dir/src/Scene_CGOL.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/LiteEngine.dir/src/Scene_CGOL.cpp.i"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\projects\LiteEngineV003\src\Scene_CGOL.cpp > CMakeFiles\LiteEngine.dir\src\Scene_CGOL.cpp.i
 
-CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.s"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\projects\LiteEngineV003\src\Scene_CGoL.cpp -o CMakeFiles\LiteEngine.dir\src\Scene_CGoL.cpp.s
+CMakeFiles/LiteEngine.dir/src/Scene_CGOL.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/LiteEngine.dir/src/Scene_CGOL.cpp.s"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\projects\LiteEngineV003\src\Scene_CGOL.cpp -o CMakeFiles\LiteEngine.dir\src\Scene_CGOL.cpp.s
 
 CMakeFiles/LiteEngine.dir/src/Scene_test.cpp.obj: CMakeFiles/LiteEngine.dir/flags.make
 CMakeFiles/LiteEngine.dir/src/Scene_test.cpp.obj: CMakeFiles/LiteEngine.dir/includes_CXX.rsp
@@ -626,7 +626,7 @@ LiteEngine_OBJECTS = \
 "CMakeFiles/LiteEngine.dir/src/Csand.cpp.obj" \
 "CMakeFiles/LiteEngine.dir/src/Cgravity.cpp.obj" \
 "CMakeFiles/LiteEngine.dir/src/EntityFactory.cpp.obj" \
-"CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.obj" \
+"CMakeFiles/LiteEngine.dir/src/Scene_CGOL.cpp.obj" \
 "CMakeFiles/LiteEngine.dir/src/Scene_test.cpp.obj" \
 "CMakeFiles/LiteEngine.dir/src/GameEngine.cpp.obj" \
 "CMakeFiles/LiteEngine.dir/src/assetManager.cpp.obj" \
@@ -665,7 +665,7 @@ LiteEngine.exe: CMakeFiles/LiteEngine.dir/src/EntityMemoryPool.cpp.obj
 LiteEngine.exe: CMakeFiles/LiteEngine.dir/src/Csand.cpp.obj
 LiteEngine.exe: CMakeFiles/LiteEngine.dir/src/Cgravity.cpp.obj
 LiteEngine.exe: CMakeFiles/LiteEngine.dir/src/EntityFactory.cpp.obj
-LiteEngine.exe: CMakeFiles/LiteEngine.dir/src/Scene_CGoL.cpp.obj
+LiteEngine.exe: CMakeFiles/LiteEngine.dir/src/Scene_CGOL.cpp.obj
 LiteEngine.exe: CMakeFiles/LiteEngine.dir/src/Scene_test.cpp.obj
 LiteEngine.exe: CMakeFiles/LiteEngine.dir/src/GameEngine.cpp.obj
 LiteEngine.exe: CMakeFiles/LiteEngine.dir/src/assetManager.cpp.obj

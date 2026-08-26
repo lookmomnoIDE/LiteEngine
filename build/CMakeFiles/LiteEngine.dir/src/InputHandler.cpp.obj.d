@@ -139,6 +139,8 @@ CMakeFiles/LiteEngine.dir/src/InputHandler.cpp.obj: \
  C:/mingw64/include/c++/15.2.0/bits/hashtable_policy.h \
  C:/mingw64/include/c++/15.2.0/bits/enable_special_members.h \
  C:/projects/LiteEngineV003/include/EntityFactory.h \
+ C:/projects/LiteEngineV003/include/tQuad.h \
+ C:/projects/LiteEngineV003/include/tVertex.h \
  C:/projects/LiteEngineV003/include/Renderer.h \
  C:/projects/LiteEngineV003/include/glad/glad.h \
  C:/projects/LiteEngineV003/include/KHR/khrplatform.h \
