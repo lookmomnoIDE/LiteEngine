@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/projects/LiteEngineV003/src/glad.c" "CMakeFiles/LiteEngine.dir/src/glad.c.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/glad.c.obj.d"
+  "C:/projects/LiteEngineV003/src/miniaudio.c" "CMakeFiles/LiteEngine.dir/src/miniaudio.c.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/miniaudio.c.obj.d"
   "C:/projects/LiteEngineV003/src/CTransform.cpp" "CMakeFiles/LiteEngine.dir/src/CTransform.cpp.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/CTransform.cpp.obj.d"
   "C:/projects/LiteEngineV003/src/Cgrain.cpp" "CMakeFiles/LiteEngine.dir/src/Cgrain.cpp.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/Cgrain.cpp.obj.d"
   "C:/projects/LiteEngineV003/src/Cgravity.cpp" "CMakeFiles/LiteEngine.dir/src/Cgravity.cpp.obj" "gcc" "CMakeFiles/LiteEngine.dir/src/Cgravity.cpp.obj.d"

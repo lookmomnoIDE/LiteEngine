@@ -21,8 +21,6 @@ Texture::Texture(std::string path, unsigned int slot)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, m_Width, m_Height, 0, GL_RGBA, GL_UNSIGNED_BYTE, m_LocalBuffer);
-	std::cout << "texture complete" << std::endl;
-
 }
 
 
@@ -41,7 +39,6 @@ void Texture::Bind()
 	{
 		std::cout << "local buffer is pointer to null pointer" << std::endl;
 	}
-	std::cout << "m_Slot: " << m_Slot << std::endl;
 	glActiveTexture(GL_TEXTURE0 + m_Slot);
 	glBindTexture(GL_TEXTURE_2D, m_tName);
 }

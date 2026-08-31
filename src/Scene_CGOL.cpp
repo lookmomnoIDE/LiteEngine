@@ -178,7 +178,7 @@ bool Scene_CGoL::isPaused()
 	return m_paused;
 }
 
-void Scene_test::doAction(const Action& a)
+void Scene_CGoL::doAction(const Action& a)
 {
 	if (a.type() == "START")
 	{

@@ -69,6 +69,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/LiteEngine.dir/src/imgui_widgets.cpp.obj.d"
   "CMakeFiles/LiteEngine.dir/src/main.cpp.obj"
   "CMakeFiles/LiteEngine.dir/src/main.cpp.obj.d"
+  "CMakeFiles/LiteEngine.dir/src/miniaudio.c.obj"
+  "CMakeFiles/LiteEngine.dir/src/miniaudio.c.obj.d"
   "LiteEngine.exe"
   "LiteEngine.exe.manifest"
   "LiteEngine.pdb"

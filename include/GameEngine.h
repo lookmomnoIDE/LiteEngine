@@ -17,6 +17,8 @@
 #include <map>
 #include <memory>
 #include <iostream>
+#include <chrono>
+#include <random>
 
 
 class Scene;
@@ -36,6 +38,9 @@ class GameEngine
 	Renderer* m_renderer = nullptr;		
 	assetMan* m_assetMan = nullptr;
 	unsigned int m_numRenderers = 0;
+	double m_frameCount = 0;
+	std::chrono::steady_clock::time_point m_fpsWindowStart = std::chrono::steady_clock::now();
+	double FPS_ = 0;
 
 public:
 	static GameEngine* Instance();

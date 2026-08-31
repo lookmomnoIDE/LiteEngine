@@ -968,6 +968,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/miniaudio.obj: src/miniaudio.c.obj
+.PHONY : src/miniaudio.obj
+
+# target to build an object file
+src/miniaudio.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/miniaudio.c.obj
+.PHONY : src/miniaudio.c.obj
+
+src/miniaudio.i: src/miniaudio.c.i
+.PHONY : src/miniaudio.i
+
+# target to preprocess a source file
+src/miniaudio.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/miniaudio.c.i
+.PHONY : src/miniaudio.c.i
+
+src/miniaudio.s: src/miniaudio.c.s
+.PHONY : src/miniaudio.s
+
+# target to generate assembly for a file
+src/miniaudio.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/miniaudio.c.s
+.PHONY : src/miniaudio.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -1082,6 +1106,9 @@ help:
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... src/miniaudio.obj
+	@echo ... src/miniaudio.i
+	@echo ... src/miniaudio.s
 .PHONY : help
 
 
