@@ -188,6 +188,8 @@ CMakeFiles/LiteEngine.dir/src/Scene_test.cpp.obj: \
  C:/mingw64/include/c++/15.2.0/istream \
  C:/mingw64/include/c++/15.2.0/bits/istream.tcc \
  C:/projects/LiteEngineV003/include/GeometryConstructor.h \
+ C:/projects/LiteEngineV003/include/Kingdom.h \
+ C:/projects/LiteEngineV003/include/TKHelpers.h \
  C:/projects/LiteEngineV003/include/GameEngine.h \
  C:/projects/LiteEngineV003/include/Renderer.h \
  C:/projects/LiteEngineV003/include/glad/glad.h \

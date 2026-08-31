@@ -1,5 +1,7 @@
 #include "GameEngine.h"
 
+float green[4] = {0.0f, 1.0f, 0.0f, 1.0f};
+
 
 
 GameEngine* GameEngine::Instance()
@@ -34,6 +36,7 @@ void GameEngine::Init()
 	//m_factory->Init();
 	InputHandler::Instance();
 	InputHandler::Instance().Init();
+	m_assetMan->addFont("IBM", "fonts/short/Mx437_IBM_3270pc.ttf");
 	
 	
 }
@@ -47,36 +50,36 @@ void GameEngine::update()
 
 void GameEngine::run()
 {
-	double currentTime, elapsedTime;
-	//m_renderer->CGoLMemory();
+	std::string sFPS;
 	//changeScene<Scene_CGoL>("CGoL", m_renderer, (192*105));
-	//size_t EES = 1000;
-	changeScene<Scene_test>("test", m_renderer, 1000);
+	changeScene<Scene_test>("test", m_renderer, 50);
 	//currentScene()->init();
-	//These two lines of code handle memory setup and scene deployment of the falling sand demo. 
-	//m_renderer->fallingSandMemory();
+
 	//changeScene<Scene_Play>("play", m_renderer);
 	while(m_running)
 	{
-		currentTime = glfwGetTime();
+		//auto currentSeconds = std::chrono::duration_cast<std::chrono::seconds>(std::chrono::system_clock::now().time_since_epoch());
+		//auto now = std::chrono::steady_clock::now();
 		//m_entityMan->update();
 		GameEngine::sUserInput();
-		std::cout << "Pre-update loop" << std::endl;
+		
 		currentScene()->update();
-		std::cout << "Pre render loop" << std::endl;
+		
 		currentScene()->sRender();
-		std::cout << "Post render loop" << std::endl;
-
-
+		
 		currentScene()->sDoAction();
-		m_currentFrame++;
-		double elapsedTime = glfwGetTime();
-		double dt = elapsedTime - currentTime;
-		double FPS_ = (double)m_currentFrame/dt;
-		m_currentFrame = 0;
-		std::cout << "FPS: " << FPS_ << std::endl;
-		//std::cout << "Total entities: " << EntityMemoryPool::Instance()->getNumEntities() << std::endl;
-		//std::cout << m_currentFrame << std::endl;
+
+		
+		if(m_engineOverlay)
+		{
+			if(m_frameCount >= 60)
+			{
+				sFPS = calcumalateFPS();
+			}
+			m_renderer->drawText(sFPS, 1790.0f, 1000.0f, "IBM", 0.5f, green);
+		}
+		m_frameCount++;
+		m_renderer->SwapBuffers();
 	}
 }
 
@@ -85,8 +88,6 @@ void GameEngine::quit()
 {
 
 	m_running = false;
-	m_currentFrame = 0;
-	std::cout << "Successful quit!" << std::endl;
 }
 
 
@@ -138,6 +139,7 @@ assetMan* GameEngine::getAssetMan()
 
 void GameEngine::sUserInput()
 {
+
 	glfwPollEvents();
 	//m_handler->processInput(m_renderer->getWindow());
 }
@@ -152,3 +154,27 @@ unsigned int GameEngine::getUniqueRID()
 {
 	return m_numRenderers++;
 }	
+
+void GameEngine::toggleOverlay()
+{
+	if(m_engineOverlay)
+	{
+		m_engineOverlay = false;
+	}
+	else
+	{
+		m_engineOverlay = true;
+	}
+}
+
+
+std::string GameEngine::calcumalateFPS()
+{
+	std::string fps;
+	auto now = std::chrono::steady_clock::now();
+	std::chrono::duration<double> dt = now - m_fpsWindowStart;
+	FPS_ = ((m_frameCount) / dt.count());
+	m_fpsWindowStart = now;
+	m_frameCount = 0;
+	return fps = "FPS: " + std::to_string((unsigned int)FPS_);
+}

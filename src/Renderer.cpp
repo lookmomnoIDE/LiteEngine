@@ -58,21 +58,22 @@ Renderer::Renderer()
 
 
 	glViewport(0, 0, m_width, m_height);
-	checkError("before load");
+	//checkError("before load");
 	m_shader = new Shader("../src/shaders/cool.vert", "../src/shaders/beans.frag");
-	checkError("after load");
+	//checkError("after load");
 	glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 	//glEnable(GL_CULL_FACE);
-	checkError("after cull");
+	//checkError("after cull");
 	glEnable(GL_BLEND);
-	checkError("after blend");
+	//checkError("after blend");
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-	checkError("after blendfunc");
+	//checkError("after blendfunc");
 	m_assetMan = m_game->getAssetMan();
 	std::cout << "loading texture" << std::endl;
 	m_assetMan->addTexture("default", "C:/projects/LiteEngineV003/res/textures/default.png");
-	checkError("after texture");
+	//checkError("after texture");
 	std::cout << "texture loaded" << std::endl;
+	initTextBuffer(128);
 	//m_shader->setInt("texture0", 0);
 		
 
@@ -131,13 +132,15 @@ void Renderer::DrawElements()
 	Shader* m_shader = loadShader("../src/shaders/cool.vert", "../src/shaders/beans.frag");
     m_shader->use();
     //glActiveTexture(0);
-	for (auto i = 0; i < m_bufferCount; i++)
+	for (auto i : m_quadBuffers)
 	{
 		auto va = m_VertexArrays[i].get();
 		va->Bind();
 		auto vb = m_VertexBuffers[i].get();
 		vb->Bind();
-		auto ib = m_IndexBuffers[i].get();
+		//-1 because text buffer is loaded first and doesnt have an index buffer so index is off by one. may dig into this in the futre
+		//hope thats not foreshadowing. 
+		auto ib = m_IndexBuffers[i-1].get();
 		ib->Bind();
 		auto count = ib->GetCount();
 		//std::cout << "Drawing " << count << " indices" << std::endl;
@@ -162,14 +165,16 @@ void Renderer::DrawElements(std::string texture)
     //checkError("after bind");
     
     //glActiveTexture();
-	for (auto i = 0; i < m_bufferCount-1; i++)
+	for (auto i : m_quadBuffers)	
 	{
 
 		auto va = m_VertexArrays[i].get();
 		va->Bind();
 		auto vb = m_VertexBuffers[i].get();
 		vb->Bind();
-		auto ib = m_IndexBuffers[i].get();
+		//-1 because text buffer is loaded first and doesnt have an index buffer so index is off by one. may dig into this in the futre
+		//hope thats not foreshadowing. 
+		auto ib = m_IndexBuffers[i-1].get();
 		ib->Bind();
 		auto count = ib->GetCount();
 		//std::cout << "Drawing " << count << " indices" << std::endl;
@@ -199,7 +204,7 @@ void Renderer::addQuadBufferT(std::vector<tQuad<float>>& quads)
 
 	// VAO is now bound from its constructor — attach IBO into it
 	m_IndexBuffers.push_back(std::make_unique<IndexBuffer>(indices.data(), indices.size()));
-
+	m_quadBuffers.push_back(m_bufferCount);
 	m_bufferCount++;
 }
 
@@ -222,7 +227,7 @@ void Renderer::addQuadBuffer(std::vector<Quad<float>>& quads)
 
 	// VAO is now bound from its constructor — attach IBO into it
 	m_IndexBuffers.push_back(std::make_unique<IndexBuffer>(indices.data(), indices.size()));
-
+	m_quadBuffers.push_back(m_bufferCount);
 	m_bufferCount++;
 }
 
@@ -245,7 +250,7 @@ void Renderer::addCellBuffer(std::vector<CCell>& quads)
 
 	// VAO is now bound from its constructor — attach IBO into it
 	m_IndexBuffers.push_back(std::make_unique<IndexBuffer>(indices.data(), indices.size()));
-
+	m_quadBuffers.push_back(m_bufferCount);
 	m_bufferCount++;
 }
 
@@ -297,7 +302,7 @@ void Renderer::updateQuadBuffer(size_t index, std::vector<Quad<float>>& quads)
 	glBufferSubData(GL_ARRAY_BUFFER, 0 , quads.size() * sizeof(Quad<float>), quads.data());
 }
 
-void Renderer::updateTextBuffer(std::vector<float> vertices)
+void Renderer::updateTextBuffer(std::vector<float>& vertices)
 {
 	m_VertexBuffers[m_textBufferIndex]->Bind();
 	glBufferSubData(GL_ARRAY_BUFFER, 0 , vertices.size() * sizeof(float), vertices.data());
@@ -312,9 +317,9 @@ void Renderer::SwapBuffers()
 
 void Renderer::Clear()
 {
-	checkError("before");
+	//checkError("before");
 	glClear(GL_COLOR_BUFFER_BIT);
-	checkError("after");
+	//checkError("after");
 }
 
 
@@ -448,7 +453,7 @@ void Renderer::drawText(std::string fontName)
 	glBindTexture(GL_TEXTURE_2D, 0);
 }*/
 
-void Renderer::drawText(std::string text, float x, float y, std::string fontName, float scale)
+void Renderer::drawText(std::string text, float x, float y, std::string fontName, float scale, float color[4])
 {
 	auto* font = m_assetMan->getFont(fontName);
 	//checkError("before load");
@@ -456,7 +461,7 @@ void Renderer::drawText(std::string text, float x, float y, std::string fontName
     //checkError("after load");
     m_shader->use();
     //checkError("after use");
-    m_shader->setFloat4("ourColor", 1.0f, 1.0f, 1.0f, 1.0f);
+    m_shader->setFloat4("ourColor", color[0], color[1], color[2], color[3]);
     //checkError("after ourColor");
     m_shader->setMat4("projection", (float*)projection);
     //checkError("after proj");

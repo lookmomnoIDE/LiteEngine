@@ -226,6 +226,8 @@ CMakeFiles/LiteEngine.dir/src/GameEngine.cpp.obj: \
  C:/projects/LiteEngineV003/include/Grid.h \
  C:/projects/LiteEngineV003/include/GeometryConstructor.h \
  C:/projects/LiteEngineV003/include/Scene_test.h \
+ C:/projects/LiteEngineV003/include/Kingdom.h \
+ C:/projects/LiteEngineV003/include/TKHelpers.h \
  C:/projects/LiteEngineV003/include/assetManager.h \
  C:/projects/LiteEngineV003/include/Texture.h \
  C:/projects/LiteEngineV003/include/Renderer.h \

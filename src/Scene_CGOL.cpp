@@ -178,7 +178,7 @@ bool Scene_CGoL::isPaused()
 	return m_paused;
 }
 
-void Scene_CGoL::doAction(const Action& a)
+void Scene_test::doAction(const Action& a)
 {
 	if (a.type() == "START")
 	{
@@ -186,7 +186,8 @@ void Scene_CGoL::doAction(const Action& a)
 		{
 			m_primaryActionActive = true;
 		}
-		if(a.name() == "_P")
+
+		if(a.name() == "SPACE")
 		{
 			if(m_paused == false)
 			{
@@ -196,6 +197,11 @@ void Scene_CGoL::doAction(const Action& a)
 			{
 				m_paused = false;
 			}
+		}
+
+		if(a.name() == "_F3")
+		{
+			m_game->toggleOverlay();
 		}
 	}
 	if(a.type() == "END")

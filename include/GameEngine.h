@@ -30,11 +30,13 @@ class GameEngine
 	std::string m_scene;
 	bool m_paused = false;
 	bool m_running = false;
+	bool m_engineOverlay = false;
 	unsigned int m_currentFrame = 0;
 	std::string m_currentScene;
 	Renderer* m_renderer = nullptr;		
 	assetMan* m_assetMan = nullptr;
 	unsigned int m_numRenderers = 0;
+
 public:
 	static GameEngine* Instance();
 	~GameEngine();
@@ -73,6 +75,8 @@ public:
 	assetMan* getAssetMan();
 	void sUserInput();
 	unsigned int getUniqueRID();
+	void toggleOverlay();
+	std::string calcumalateFPS();
 	//aMap* getAM();
 };
 

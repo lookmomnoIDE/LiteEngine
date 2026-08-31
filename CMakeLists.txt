@@ -72,6 +72,7 @@ add_executable(${PROJECT_NAME}
     src/Invoker.cpp
     src/InputHandler.cpp
     src/Library.cpp
+    src/miniaudio.c
     )
 
 target_include_directories(${PROJECT_NAME} PRIVATE include)

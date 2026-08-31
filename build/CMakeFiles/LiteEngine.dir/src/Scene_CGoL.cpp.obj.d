@@ -227,6 +227,8 @@ CMakeFiles/LiteEngine.dir/src/Scene_CGOL.cpp.obj: \
  C:/projects/LiteEngineV003/include/Scene_Play.h \
  C:/projects/LiteEngineV003/include/Scene_CGOl.h \
  C:/projects/LiteEngineV003/include/Scene_test.h \
+ C:/projects/LiteEngineV003/include/Kingdom.h \
+ C:/projects/LiteEngineV003/include/TKHelpers.h \
  C:/projects/LiteEngineV003/include/assetManager.h \
  C:/projects/LiteEngineV003/include/Texture.h \
  C:/projects/LiteEngineV003/include/Renderer.h \

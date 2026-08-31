@@ -20,3 +20,16 @@ const std::string Parser::loadFromFile(const char* filename)
 	fin.close();
 	return buffer.str();
 }
+
+/*
+static const std::string Parser::loadConfig(const char* filename)
+{
+	std::ifstream fin(filename);
+	if(!fin.is_open())
+	{
+		std::cout << "ERROR: Failed to load config " << filename << std::endl;
+		return "";
+	}
+
+}
+*/

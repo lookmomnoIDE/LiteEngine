@@ -760,6 +760,7 @@ CMakeFiles/LiteEngine.dir/src/EntityFactory.cpp.obj: C:/projects/LiteEngineV003/
   C:/projects/LiteEngineV003/include/IndexBuffer.h \
   C:/projects/LiteEngineV003/include/InputHandler.h \
   C:/projects/LiteEngineV003/include/KHR/khrplatform.h \
+  C:/projects/LiteEngineV003/include/Kingdom.h \
   C:/projects/LiteEngineV003/include/Parser.h \
   C:/projects/LiteEngineV003/include/Quad.h \
   C:/projects/LiteEngineV003/include/Renderer.h \
@@ -767,6 +768,7 @@ CMakeFiles/LiteEngine.dir/src/EntityFactory.cpp.obj: C:/projects/LiteEngineV003/
   C:/projects/LiteEngineV003/include/Scene_CGOl.h \
   C:/projects/LiteEngineV003/include/Scene_Play.h \
   C:/projects/LiteEngineV003/include/Scene_test.h \
+  C:/projects/LiteEngineV003/include/TKHelpers.h \
   C:/projects/LiteEngineV003/include/Tags.h \
   C:/projects/LiteEngineV003/include/Texture.h \
   C:/projects/LiteEngineV003/include/Vec2.h \
@@ -1573,6 +1575,7 @@ CMakeFiles/LiteEngine.dir/src/GameEngine.cpp.obj: C:/projects/LiteEngineV003/src
   C:/projects/LiteEngineV003/include/IndexBuffer.h \
   C:/projects/LiteEngineV003/include/InputHandler.h \
   C:/projects/LiteEngineV003/include/KHR/khrplatform.h \
+  C:/projects/LiteEngineV003/include/Kingdom.h \
   C:/projects/LiteEngineV003/include/Parser.h \
   C:/projects/LiteEngineV003/include/Quad.h \
   C:/projects/LiteEngineV003/include/Renderer.h \
@@ -1580,6 +1583,7 @@ CMakeFiles/LiteEngine.dir/src/GameEngine.cpp.obj: C:/projects/LiteEngineV003/src
   C:/projects/LiteEngineV003/include/Scene_CGOl.h \
   C:/projects/LiteEngineV003/include/Scene_Play.h \
   C:/projects/LiteEngineV003/include/Scene_test.h \
+  C:/projects/LiteEngineV003/include/TKHelpers.h \
   C:/projects/LiteEngineV003/include/Tags.h \
   C:/projects/LiteEngineV003/include/Texture.h \
   C:/projects/LiteEngineV003/include/Vec2.h \
@@ -1826,6 +1830,7 @@ CMakeFiles/LiteEngine.dir/src/IndexBuffer.cpp.obj: C:/projects/LiteEngineV003/sr
   C:/projects/LiteEngineV003/include/IndexBuffer.h \
   C:/projects/LiteEngineV003/include/InputHandler.h \
   C:/projects/LiteEngineV003/include/KHR/khrplatform.h \
+  C:/projects/LiteEngineV003/include/Kingdom.h \
   C:/projects/LiteEngineV003/include/Parser.h \
   C:/projects/LiteEngineV003/include/Quad.h \
   C:/projects/LiteEngineV003/include/Renderer.h \
@@ -1833,6 +1838,7 @@ CMakeFiles/LiteEngine.dir/src/IndexBuffer.cpp.obj: C:/projects/LiteEngineV003/sr
   C:/projects/LiteEngineV003/include/Scene_CGOl.h \
   C:/projects/LiteEngineV003/include/Scene_Play.h \
   C:/projects/LiteEngineV003/include/Scene_test.h \
+  C:/projects/LiteEngineV003/include/TKHelpers.h \
   C:/projects/LiteEngineV003/include/Tags.h \
   C:/projects/LiteEngineV003/include/Texture.h \
   C:/projects/LiteEngineV003/include/Vec2.h \
@@ -2079,6 +2085,7 @@ CMakeFiles/LiteEngine.dir/src/InputHandler.cpp.obj: C:/projects/LiteEngineV003/s
   C:/projects/LiteEngineV003/include/IndexBuffer.h \
   C:/projects/LiteEngineV003/include/InputHandler.h \
   C:/projects/LiteEngineV003/include/KHR/khrplatform.h \
+  C:/projects/LiteEngineV003/include/Kingdom.h \
   C:/projects/LiteEngineV003/include/Parser.h \
   C:/projects/LiteEngineV003/include/Quad.h \
   C:/projects/LiteEngineV003/include/Renderer.h \
@@ -2086,6 +2093,7 @@ CMakeFiles/LiteEngine.dir/src/InputHandler.cpp.obj: C:/projects/LiteEngineV003/s
   C:/projects/LiteEngineV003/include/Scene_CGOl.h \
   C:/projects/LiteEngineV003/include/Scene_Play.h \
   C:/projects/LiteEngineV003/include/Scene_test.h \
+  C:/projects/LiteEngineV003/include/TKHelpers.h \
   C:/projects/LiteEngineV003/include/Tags.h \
   C:/projects/LiteEngineV003/include/Texture.h \
   C:/projects/LiteEngineV003/include/Vec2.h \
@@ -2735,6 +2743,7 @@ CMakeFiles/LiteEngine.dir/src/Renderer.cpp.obj: C:/projects/LiteEngineV003/src/R
   C:/projects/LiteEngineV003/include/IndexBuffer.h \
   C:/projects/LiteEngineV003/include/InputHandler.h \
   C:/projects/LiteEngineV003/include/KHR/khrplatform.h \
+  C:/projects/LiteEngineV003/include/Kingdom.h \
   C:/projects/LiteEngineV003/include/Parser.h \
   C:/projects/LiteEngineV003/include/Quad.h \
   C:/projects/LiteEngineV003/include/Renderer.h \
@@ -2742,6 +2751,7 @@ CMakeFiles/LiteEngine.dir/src/Renderer.cpp.obj: C:/projects/LiteEngineV003/src/R
   C:/projects/LiteEngineV003/include/Scene_CGOl.h \
   C:/projects/LiteEngineV003/include/Scene_Play.h \
   C:/projects/LiteEngineV003/include/Scene_test.h \
+  C:/projects/LiteEngineV003/include/TKHelpers.h \
   C:/projects/LiteEngineV003/include/Tags.h \
   C:/projects/LiteEngineV003/include/Texture.h \
   C:/projects/LiteEngineV003/include/Vec2.h \
@@ -2989,6 +2999,7 @@ CMakeFiles/LiteEngine.dir/src/Scene.cpp.obj: C:/projects/LiteEngineV003/src/Scen
   C:/projects/LiteEngineV003/include/IndexBuffer.h \
   C:/projects/LiteEngineV003/include/InputHandler.h \
   C:/projects/LiteEngineV003/include/KHR/khrplatform.h \
+  C:/projects/LiteEngineV003/include/Kingdom.h \
   C:/projects/LiteEngineV003/include/Parser.h \
   C:/projects/LiteEngineV003/include/Quad.h \
   C:/projects/LiteEngineV003/include/Renderer.h \
@@ -2996,6 +3007,7 @@ CMakeFiles/LiteEngine.dir/src/Scene.cpp.obj: C:/projects/LiteEngineV003/src/Scen
   C:/projects/LiteEngineV003/include/Scene_CGOl.h \
   C:/projects/LiteEngineV003/include/Scene_Play.h \
   C:/projects/LiteEngineV003/include/Scene_test.h \
+  C:/projects/LiteEngineV003/include/TKHelpers.h \
   C:/projects/LiteEngineV003/include/Tags.h \
   C:/projects/LiteEngineV003/include/Texture.h \
   C:/projects/LiteEngineV003/include/Vec2.h \
@@ -3264,6 +3276,7 @@ CMakeFiles/LiteEngine.dir/src/Scene_CGOL.cpp.obj: C:/projects/LiteEngineV003/src
   C:/projects/LiteEngineV003/include/IndexBuffer.h \
   C:/projects/LiteEngineV003/include/InputHandler.h \
   C:/projects/LiteEngineV003/include/KHR/khrplatform.h \
+  C:/projects/LiteEngineV003/include/Kingdom.h \
   C:/projects/LiteEngineV003/include/Parser.h \
   C:/projects/LiteEngineV003/include/Quad.h \
   C:/projects/LiteEngineV003/include/Renderer.h \
@@ -3272,6 +3285,7 @@ CMakeFiles/LiteEngine.dir/src/Scene_CGOL.cpp.obj: C:/projects/LiteEngineV003/src
   C:/projects/LiteEngineV003/include/Scene_CGOl.h \
   C:/projects/LiteEngineV003/include/Scene_Play.h \
   C:/projects/LiteEngineV003/include/Scene_test.h \
+  C:/projects/LiteEngineV003/include/TKHelpers.h \
   C:/projects/LiteEngineV003/include/Tags.h \
   C:/projects/LiteEngineV003/include/Texture.h \
   C:/projects/LiteEngineV003/include/Vec2.h \
@@ -3540,6 +3554,7 @@ CMakeFiles/LiteEngine.dir/src/Scene_test.cpp.obj: C:/projects/LiteEngineV003/src
   C:/projects/LiteEngineV003/include/IndexBuffer.h \
   C:/projects/LiteEngineV003/include/InputHandler.h \
   C:/projects/LiteEngineV003/include/KHR/khrplatform.h \
+  C:/projects/LiteEngineV003/include/Kingdom.h \
   C:/projects/LiteEngineV003/include/Parser.h \
   C:/projects/LiteEngineV003/include/Quad.h \
   C:/projects/LiteEngineV003/include/Renderer.h \
@@ -3547,6 +3562,7 @@ CMakeFiles/LiteEngine.dir/src/Scene_test.cpp.obj: C:/projects/LiteEngineV003/src
   C:/projects/LiteEngineV003/include/Scene_CGOl.h \
   C:/projects/LiteEngineV003/include/Scene_Play.h \
   C:/projects/LiteEngineV003/include/Scene_test.h \
+  C:/projects/LiteEngineV003/include/TKHelpers.h \
   C:/projects/LiteEngineV003/include/Tags.h \
   C:/projects/LiteEngineV003/include/Texture.h \
   C:/projects/LiteEngineV003/include/Vec2.h \
@@ -4366,6 +4382,7 @@ CMakeFiles/LiteEngine.dir/src/VertexBuffer.cpp.obj: C:/projects/LiteEngineV003/s
   C:/projects/LiteEngineV003/include/IndexBuffer.h \
   C:/projects/LiteEngineV003/include/InputHandler.h \
   C:/projects/LiteEngineV003/include/KHR/khrplatform.h \
+  C:/projects/LiteEngineV003/include/Kingdom.h \
   C:/projects/LiteEngineV003/include/Parser.h \
   C:/projects/LiteEngineV003/include/Quad.h \
   C:/projects/LiteEngineV003/include/Renderer.h \
@@ -4373,6 +4390,7 @@ CMakeFiles/LiteEngine.dir/src/VertexBuffer.cpp.obj: C:/projects/LiteEngineV003/s
   C:/projects/LiteEngineV003/include/Scene_CGOl.h \
   C:/projects/LiteEngineV003/include/Scene_Play.h \
   C:/projects/LiteEngineV003/include/Scene_test.h \
+  C:/projects/LiteEngineV003/include/TKHelpers.h \
   C:/projects/LiteEngineV003/include/Tags.h \
   C:/projects/LiteEngineV003/include/Texture.h \
   C:/projects/LiteEngineV003/include/Vec2.h \
@@ -6568,10 +6586,8 @@ CMakeFiles/LiteEngine.dir/src/main.cpp.obj: C:/projects/LiteEngineV003/src/main.
   C:/mingw64/include/c++/15.2.0/bits/shared_ptr.h \
   C:/mingw64/include/c++/15.2.0/bits/shared_ptr_atomic.h \
   C:/mingw64/include/c++/15.2.0/bits/shared_ptr_base.h \
-  C:/mingw64/include/c++/15.2.0/bits/specfun.h \
   C:/mingw64/include/c++/15.2.0/bits/sstream.tcc \
   C:/mingw64/include/c++/15.2.0/bits/std_abs.h \
-  C:/mingw64/include/c++/15.2.0/bits/std_function.h \
   C:/mingw64/include/c++/15.2.0/bits/stl_algobase.h \
   C:/mingw64/include/c++/15.2.0/bits/stl_bvector.h \
   C:/mingw64/include/c++/15.2.0/bits/stl_construct.h \
@@ -6598,11 +6614,9 @@ CMakeFiles/LiteEngine.dir/src/main.cpp.obj: C:/projects/LiteEngineV003/src/main.
   C:/mingw64/include/c++/15.2.0/bits/utility.h \
   C:/mingw64/include/c++/15.2.0/bits/vector.tcc \
   C:/mingw64/include/c++/15.2.0/bits/version.h \
-  C:/mingw64/include/c++/15.2.0/cassert \
   C:/mingw64/include/c++/15.2.0/cctype \
   C:/mingw64/include/c++/15.2.0/cerrno \
   C:/mingw64/include/c++/15.2.0/clocale \
-  C:/mingw64/include/c++/15.2.0/cmath \
   C:/mingw64/include/c++/15.2.0/compare \
   C:/mingw64/include/c++/15.2.0/concepts \
   C:/mingw64/include/c++/15.2.0/cstddef \
@@ -6622,13 +6636,11 @@ CMakeFiles/LiteEngine.dir/src/main.cpp.obj: C:/projects/LiteEngineV003/src/main.
   C:/mingw64/include/c++/15.2.0/ext/string_conversions.h \
   C:/mingw64/include/c++/15.2.0/ext/type_traits.h \
   C:/mingw64/include/c++/15.2.0/fstream \
-  C:/mingw64/include/c++/15.2.0/functional \
   C:/mingw64/include/c++/15.2.0/initializer_list \
   C:/mingw64/include/c++/15.2.0/ios \
   C:/mingw64/include/c++/15.2.0/iosfwd \
   C:/mingw64/include/c++/15.2.0/iostream \
   C:/mingw64/include/c++/15.2.0/istream \
-  C:/mingw64/include/c++/15.2.0/limits \
   C:/mingw64/include/c++/15.2.0/map \
   C:/mingw64/include/c++/15.2.0/memory \
   C:/mingw64/include/c++/15.2.0/new \
@@ -6643,18 +6655,6 @@ CMakeFiles/LiteEngine.dir/src/main.cpp.obj: C:/projects/LiteEngineV003/src/main.
   C:/mingw64/include/c++/15.2.0/string \
   C:/mingw64/include/c++/15.2.0/string_view \
   C:/mingw64/include/c++/15.2.0/system_error \
-  C:/mingw64/include/c++/15.2.0/tr1/bessel_function.tcc \
-  C:/mingw64/include/c++/15.2.0/tr1/beta_function.tcc \
-  C:/mingw64/include/c++/15.2.0/tr1/ell_integral.tcc \
-  C:/mingw64/include/c++/15.2.0/tr1/exp_integral.tcc \
-  C:/mingw64/include/c++/15.2.0/tr1/gamma.tcc \
-  C:/mingw64/include/c++/15.2.0/tr1/hypergeometric.tcc \
-  C:/mingw64/include/c++/15.2.0/tr1/legendre_function.tcc \
-  C:/mingw64/include/c++/15.2.0/tr1/modified_bessel_func.tcc \
-  C:/mingw64/include/c++/15.2.0/tr1/poly_hermite.tcc \
-  C:/mingw64/include/c++/15.2.0/tr1/poly_laguerre.tcc \
-  C:/mingw64/include/c++/15.2.0/tr1/riemann_zeta.tcc \
-  C:/mingw64/include/c++/15.2.0/tr1/special_function_util.h \
   C:/mingw64/include/c++/15.2.0/tuple \
   C:/mingw64/include/c++/15.2.0/type_traits \
   C:/mingw64/include/c++/15.2.0/typeinfo \
@@ -6686,7 +6686,6 @@ CMakeFiles/LiteEngine.dir/src/main.cpp.obj: C:/projects/LiteEngineV003/src/main.
   C:/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h \
   C:/mingw64/x86_64-w64-mingw32/include/_mingw_stdarg.h \
   C:/mingw64/x86_64-w64-mingw32/include/_timeval.h \
-  C:/mingw64/x86_64-w64-mingw32/include/assert.h \
   C:/mingw64/x86_64-w64-mingw32/include/corecrt.h \
   C:/mingw64/x86_64-w64-mingw32/include/corecrt_startup.h \
   C:/mingw64/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
@@ -6698,7 +6697,6 @@ CMakeFiles/LiteEngine.dir/src/main.cpp.obj: C:/projects/LiteEngineV003/src/main.
   C:/mingw64/x86_64-w64-mingw32/include/limits.h \
   C:/mingw64/x86_64-w64-mingw32/include/locale.h \
   C:/mingw64/x86_64-w64-mingw32/include/malloc.h \
-  C:/mingw64/x86_64-w64-mingw32/include/math.h \
   C:/mingw64/x86_64-w64-mingw32/include/process.h \
   C:/mingw64/x86_64-w64-mingw32/include/pthread.h \
   C:/mingw64/x86_64-w64-mingw32/include/pthread_compat.h \
@@ -6760,6 +6758,7 @@ CMakeFiles/LiteEngine.dir/src/main.cpp.obj: C:/projects/LiteEngineV003/src/main.
   C:/projects/LiteEngineV003/include/IndexBuffer.h \
   C:/projects/LiteEngineV003/include/InputHandler.h \
   C:/projects/LiteEngineV003/include/KHR/khrplatform.h \
+  C:/projects/LiteEngineV003/include/Kingdom.h \
   C:/projects/LiteEngineV003/include/Parser.h \
   C:/projects/LiteEngineV003/include/Quad.h \
   C:/projects/LiteEngineV003/include/Renderer.h \
@@ -6767,6 +6766,7 @@ CMakeFiles/LiteEngine.dir/src/main.cpp.obj: C:/projects/LiteEngineV003/src/main.
   C:/projects/LiteEngineV003/include/Scene_CGOl.h \
   C:/projects/LiteEngineV003/include/Scene_Play.h \
   C:/projects/LiteEngineV003/include/Scene_test.h \
+  C:/projects/LiteEngineV003/include/TKHelpers.h \
   C:/projects/LiteEngineV003/include/Tags.h \
   C:/projects/LiteEngineV003/include/Texture.h \
   C:/projects/LiteEngineV003/include/Vec2.h \
@@ -6778,141 +6778,6 @@ CMakeFiles/LiteEngine.dir/src/main.cpp.obj: C:/projects/LiteEngineV003/src/main.
   C:/projects/LiteEngineV003/include/VertexBufferLayout.h \
   C:/projects/LiteEngineV003/include/assetManager.h \
   C:/projects/LiteEngineV003/include/glad/glad.h \
-  C:/projects/LiteEngineV003/include/glm/common.hpp \
-  C:/projects/LiteEngineV003/include/glm/detail/_fixes.hpp \
-  C:/projects/LiteEngineV003/include/glm/detail/_vectorize.hpp \
-  C:/projects/LiteEngineV003/include/glm/detail/compute_common.hpp \
-  C:/projects/LiteEngineV003/include/glm/detail/compute_vector_decl.hpp \
-  C:/projects/LiteEngineV003/include/glm/detail/compute_vector_relational.hpp \
-  C:/projects/LiteEngineV003/include/glm/detail/func_common.inl \
-  C:/projects/LiteEngineV003/include/glm/detail/func_exponential.inl \
-  C:/projects/LiteEngineV003/include/glm/detail/func_geometric.inl \
-  C:/projects/LiteEngineV003/include/glm/detail/func_matrix.inl \
-  C:/projects/LiteEngineV003/include/glm/detail/func_trigonometric.inl \
-  C:/projects/LiteEngineV003/include/glm/detail/func_vector_relational.inl \
-  C:/projects/LiteEngineV003/include/glm/detail/qualifier.hpp \
-  C:/projects/LiteEngineV003/include/glm/detail/setup.hpp \
-  C:/projects/LiteEngineV003/include/glm/detail/type_mat2x2.hpp \
-  C:/projects/LiteEngineV003/include/glm/detail/type_mat2x2.inl \
-  C:/projects/LiteEngineV003/include/glm/detail/type_mat2x3.hpp \
-  C:/projects/LiteEngineV003/include/glm/detail/type_mat2x3.inl \
-  C:/projects/LiteEngineV003/include/glm/detail/type_mat2x4.hpp \
-  C:/projects/LiteEngineV003/include/glm/detail/type_mat2x4.inl \
-  C:/projects/LiteEngineV003/include/glm/detail/type_mat3x2.hpp \
-  C:/projects/LiteEngineV003/include/glm/detail/type_mat3x2.inl \
-  C:/projects/LiteEngineV003/include/glm/detail/type_mat3x3.hpp \
-  C:/projects/LiteEngineV003/include/glm/detail/type_mat3x3.inl \
-  C:/projects/LiteEngineV003/include/glm/detail/type_mat3x4.hpp \
-  C:/projects/LiteEngineV003/include/glm/detail/type_mat3x4.inl \
-  C:/projects/LiteEngineV003/include/glm/detail/type_mat4x2.hpp \
-  C:/projects/LiteEngineV003/include/glm/detail/type_mat4x2.inl \
-  C:/projects/LiteEngineV003/include/glm/detail/type_mat4x3.hpp \
-  C:/projects/LiteEngineV003/include/glm/detail/type_mat4x3.inl \
-  C:/projects/LiteEngineV003/include/glm/detail/type_mat4x4.hpp \
-  C:/projects/LiteEngineV003/include/glm/detail/type_mat4x4.inl \
-  C:/projects/LiteEngineV003/include/glm/detail/type_vec1.hpp \
-  C:/projects/LiteEngineV003/include/glm/detail/type_vec1.inl \
-  C:/projects/LiteEngineV003/include/glm/detail/type_vec2.hpp \
-  C:/projects/LiteEngineV003/include/glm/detail/type_vec2.inl \
-  C:/projects/LiteEngineV003/include/glm/detail/type_vec3.hpp \
-  C:/projects/LiteEngineV003/include/glm/detail/type_vec3.inl \
-  C:/projects/LiteEngineV003/include/glm/detail/type_vec4.hpp \
-  C:/projects/LiteEngineV003/include/glm/detail/type_vec4.inl \
-  C:/projects/LiteEngineV003/include/glm/exponential.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_clip_space.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_clip_space.inl \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_double2x2.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_double2x2_precision.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_double2x3.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_double2x3_precision.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_double2x4.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_double2x4_precision.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_double3x2.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_double3x2_precision.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_double3x3.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_double3x3_precision.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_double3x4.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_double3x4_precision.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_double4x2.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_double4x2_precision.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_double4x3.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_double4x3_precision.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_double4x4.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_double4x4_precision.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_float2x2.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_float2x2_precision.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_float2x3.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_float2x3_precision.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_float2x4.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_float2x4_precision.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_float3x2.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_float3x2_precision.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_float3x3.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_float3x3_precision.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_float3x4.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_float3x4_precision.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_float4x2.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_float4x2_precision.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_float4x3.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_float4x3_precision.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_float4x4.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_float4x4_precision.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_transform.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/matrix_transform.inl \
-  C:/projects/LiteEngineV003/include/glm/ext/scalar_constants.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/scalar_constants.inl \
-  C:/projects/LiteEngineV003/include/glm/ext/scalar_int_sized.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/scalar_uint_sized.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/vector_bool2.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/vector_bool2_precision.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/vector_bool3.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/vector_bool3_precision.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/vector_bool4.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/vector_bool4_precision.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/vector_double2.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/vector_double2_precision.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/vector_double3.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/vector_double3_precision.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/vector_double4.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/vector_double4_precision.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/vector_float2.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/vector_float2_precision.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/vector_float3.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/vector_float3_precision.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/vector_float4.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/vector_float4_precision.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/vector_int2.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/vector_int2_sized.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/vector_int3.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/vector_int3_sized.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/vector_int4.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/vector_int4_sized.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/vector_uint2.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/vector_uint2_sized.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/vector_uint3.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/vector_uint3_sized.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/vector_uint4.hpp \
-  C:/projects/LiteEngineV003/include/glm/ext/vector_uint4_sized.hpp \
-  C:/projects/LiteEngineV003/include/glm/geometric.hpp \
-  C:/projects/LiteEngineV003/include/glm/gtc/constants.hpp \
-  C:/projects/LiteEngineV003/include/glm/gtc/constants.inl \
-  C:/projects/LiteEngineV003/include/glm/mat2x2.hpp \
-  C:/projects/LiteEngineV003/include/glm/mat2x3.hpp \
-  C:/projects/LiteEngineV003/include/glm/mat2x4.hpp \
-  C:/projects/LiteEngineV003/include/glm/mat3x2.hpp \
-  C:/projects/LiteEngineV003/include/glm/mat3x3.hpp \
-  C:/projects/LiteEngineV003/include/glm/mat3x4.hpp \
-  C:/projects/LiteEngineV003/include/glm/mat4x2.hpp \
-  C:/projects/LiteEngineV003/include/glm/mat4x3.hpp \
-  C:/projects/LiteEngineV003/include/glm/mat4x4.hpp \
-  C:/projects/LiteEngineV003/include/glm/matrix.hpp \
-  C:/projects/LiteEngineV003/include/glm/simd/platform.h \
-  C:/projects/LiteEngineV003/include/glm/trigonometric.hpp \
-  C:/projects/LiteEngineV003/include/glm/vec2.hpp \
-  C:/projects/LiteEngineV003/include/glm/vec3.hpp \
-  C:/projects/LiteEngineV003/include/glm/vec4.hpp \
-  C:/projects/LiteEngineV003/include/glm/vector_relational.hpp \
-  C:/projects/LiteEngineV003/include/includes.h \
   C:/projects/LiteEngineV003/include/shader.h \
   C:/projects/LiteEngineV003/include/tQuad.h \
   C:/projects/LiteEngineV003/include/tVertex.h
@@ -6922,17 +6787,11 @@ C:/projects/LiteEngineV003/src/CTransform.cpp:
 
 C:/mingw64/x86_64-w64-mingw32/include/propidl.h:
 
-C:/projects/LiteEngineV003/include/glm/ext/matrix_double3x2_precision.hpp:
-
 C:/mingw64/include/c++/15.2.0/bits/stl_function.h:
-
-C:/projects/LiteEngineV003/include/glm/detail/type_vec3.inl:
 
 C:/mingw64/include/c++/15.2.0/bits/basic_ios.h:
 
 C:/mingw64/include/c++/15.2.0/bits/new_allocator.h:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_float4x2_precision.hpp:
 
 C:/mingw64/include/c++/15.2.0/backward/binders.h:
 
@@ -6943,8 +6802,6 @@ C:/mingw64/x86_64-w64-mingw32/include/locale.h:
 C:/mingw64/include/c++/15.2.0/bits/basic_ios.tcc:
 
 C:/mingw64/include/c++/15.2.0/bits/stl_iterator.h:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_float3x3_precision.hpp:
 
 C:/mingw64/include/c++/15.2.0/bits/hash_bytes.h:
 
@@ -6990,19 +6847,15 @@ C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/movrsintrin.h:
 
 C:/mingw64/include/c++/15.2.0/bits/char_traits.h:
 
-C:/mingw64/include/c++/15.2.0/bits/concept_check.h:
-
 C:/mingw64/x86_64-w64-mingw32/include/rpcndr.h:
 
-C:/mingw64/include/c++/15.2.0/bits/functexcept.h:
+C:/mingw64/include/c++/15.2.0/bits/concept_check.h:
 
-C:/projects/LiteEngineV003/include/glm/ext/vector_double4.hpp:
+C:/mingw64/include/c++/15.2.0/bits/functexcept.h:
 
 C:/mingw64/include/c++/15.2.0/bits/uses_allocator_args.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/amxfp16intrin.h:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_float2x3.hpp:
 
 C:/projects/LiteEngineV003/src/imgui_impl_opengl3.cpp:
 
@@ -7024,9 +6877,9 @@ C:/mingw64/include/c++/15.2.0/bits/stl_iterator_base_types.h:
 
 C:/mingw64/include/c++/15.2.0/bits/cxxabi_init_exception.h:
 
-C:/mingw64/include/c++/15.2.0/bits/string_view.tcc:
-
 C:/mingw64/x86_64-w64-mingw32/include/rpcnsi.h:
+
+C:/mingw64/include/c++/15.2.0/bits/string_view.tcc:
 
 C:/mingw64/include/c++/15.2.0/bits/exception.h:
 
@@ -7072,11 +6925,7 @@ C:/mingw64/include/c++/15.2.0/bits/localefwd.h:
 
 C:/mingw64/include/c++/15.2.0/cwchar:
 
-C:/projects/LiteEngineV003/include/glm/ext/vector_double3.hpp:
-
 C:/mingw64/include/c++/15.2.0/bits/stl_construct.h:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_float2x4.hpp:
 
 C:/mingw64/x86_64-w64-mingw32/include/objidlbase.h:
 
@@ -7105,8 +6954,6 @@ C:/mingw64/x86_64-w64-mingw32/include/_mingw_unicode.h:
 C:/mingw64/include/c++/15.2.0/cctype:
 
 C:/mingw64/x86_64-w64-mingw32/include/pshpack1.h:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_float3x4_precision.hpp:
 
 C:/mingw64/include/c++/15.2.0/bits/ostream.tcc:
 
@@ -7140,11 +6987,7 @@ C:/mingw64/include/c++/15.2.0/bits/stl_vector.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/mmiscapi.h:
 
-C:/projects/LiteEngineV003/include/includes.h:
-
 C:/mingw64/include/c++/15.2.0/bits/stl_bvector.h:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_double2x3_precision.hpp:
 
 C:/mingw64/include/c++/15.2.0/bits/stl_iterator_base_funcs.h:
 
@@ -7171,8 +7014,6 @@ C:/mingw64/include/c++/15.2.0/bits/vector.tcc:
 C:/mingw64/include/c++/15.2.0/stdlib.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/sched.h:
-
-C:/projects/LiteEngineV003/include/glm/common.hpp:
 
 C:/mingw64/include/c++/15.2.0/bits/version.h:
 
@@ -7206,19 +7047,11 @@ C:/mingw64/include/c++/15.2.0/cwctype:
 
 C:/mingw64/include/c++/15.2.0/debug/assertions.h:
 
-C:/projects/LiteEngineV003/include/glm/mat3x2.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_double2x2.hpp:
-
 C:/mingw64/x86_64-w64-mingw32/include/lzexpand.h:
-
-C:/projects/LiteEngineV003/include/glm/simd/platform.h:
 
 C:/mingw64/include/c++/15.2.0/debug/debug.h:
 
 C:/mingw64/include/c++/15.2.0/exception:
-
-C:/projects/LiteEngineV003/include/glm/detail/func_exponential.inl:
 
 C:/mingw64/include/c++/15.2.0/ext/alloc_traits.h:
 
@@ -7240,8 +7073,6 @@ C:/mingw64/include/c++/15.2.0/ext/type_traits.h:
 
 C:/mingw64/include/c++/15.2.0/initializer_list:
 
-C:/projects/LiteEngineV003/include/glm/detail/func_common.inl:
-
 C:/mingw64/include/c++/15.2.0/ios:
 
 C:/mingw64/include/c++/15.2.0/iosfwd:
@@ -7256,9 +7087,9 @@ C:/mingw64/include/c++/15.2.0/iostream:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx512fp16vlintrin.h:
 
-C:/projects/LiteEngineV003/include/glm/ext/matrix_double2x4_precision.hpp:
-
 C:/projects/LiteEngineV003/include/Scene_Play.h:
+
+C:/projects/LiteEngineV003/include/TKHelpers.h:
 
 C:/mingw64/include/c++/15.2.0/istream:
 
@@ -7277,8 +7108,6 @@ C:/mingw64/include/c++/15.2.0/streambuf:
 C:/mingw64/x86_64-w64-mingw32/include/cguid.h:
 
 C:/mingw64/include/c++/15.2.0/string:
-
-C:/projects/LiteEngineV003/include/glm/gtc/constants.inl:
 
 C:/mingw64/x86_64-w64-mingw32/include/malloc.h:
 
@@ -7304,8 +7133,6 @@ C:/mingw64/include/c++/15.2.0/bits/hashtable_policy.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/memoryapi.h:
 
-C:/projects/LiteEngineV003/include/glm/detail/compute_vector_decl.hpp:
-
 C:/mingw64/include/c++/15.2.0/typeinfo:
 
 C:/projects/LiteEngineV003/include/Components.h:
@@ -7315,8 +7142,6 @@ C:/mingw64/include/c++/15.2.0/vector:
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/x86gprintrin.h:
 
 C:/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/atomic_word.h:
-
-C:/projects/LiteEngineV003/include/glm/detail/type_mat4x3.inl:
 
 C:/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++allocator.h:
 
@@ -7370,8 +7195,6 @@ C:/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h:
 
-C:/projects/LiteEngineV003/include/glm/ext/matrix_float3x2_precision.hpp:
-
 C:/mingw64/x86_64-w64-mingw32/include/stdarg.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/_mingw_secapi.h:
@@ -7379,8 +7202,6 @@ C:/mingw64/x86_64-w64-mingw32/include/_mingw_secapi.h:
 C:/mingw64/x86_64-w64-mingw32/include/_timeval.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/corecrt_stdio_config.h:
-
-C:/projects/LiteEngineV003/include/glm/ext/scalar_constants.hpp:
 
 C:/mingw64/include/c++/15.2.0/bits/stl_algo.h:
 
@@ -7397,8 +7218,6 @@ C:/mingw64/include/c++/15.2.0/backward/auto_ptr.h:
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avxvnniintrin.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/ctype.h:
-
-C:/projects/LiteEngineV003/include/glm/ext/vector_float3.hpp:
 
 C:/mingw64/x86_64-w64-mingw32/include/limits.h:
 
@@ -7448,8 +7267,6 @@ C:/mingw64/x86_64-w64-mingw32/include/synchapi.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/stdio.h:
 
-C:/projects/LiteEngineV003/include/glm/detail/type_mat2x3.inl:
-
 C:/mingw64/x86_64-w64-mingw32/include/stdlib.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/swprintf.inl:
@@ -7470,13 +7287,7 @@ C:/mingw64/x86_64-w64-mingw32/include/wctype.h:
 
 C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/config/ftheader.h:
 
-C:/projects/LiteEngineV003/include/glm/mat2x4.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_double3x4.hpp:
-
 C:/projects/LiteEngineV003/include/CTransform.h:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_clip_space.inl:
 
 C:/mingw64/x86_64-w64-mingw32/include/winver.h:
 
@@ -7528,15 +7339,11 @@ C:/mingw64/include/c++/15.2.0/bits/erase_if.h:
 
 C:/mingw64/include/c++/15.2.0/bits/hashtable.h:
 
-C:/projects/LiteEngineV003/include/glm/ext/matrix_float4x2.hpp:
-
 C:/projects/LiteEngineV003/include/tQuad.h:
 
 C:/mingw64/include/c++/15.2.0/bits/node_handle.h:
 
 C:/mingw64/include/c++/15.2.0/bits/stl_map.h:
-
-C:/projects/LiteEngineV003/include/glm/detail/type_mat2x2.inl:
 
 C:/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++io.h:
 
@@ -7570,8 +7377,6 @@ C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdint.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/stdint.h:
 
-C:/projects/LiteEngineV003/include/glm/ext/matrix_double4x3.hpp:
-
 C:/projects/LiteEngineV003/include/assetManager.h:
 
 C:/projects/LiteEngineV003/include/CCell.h:
@@ -7581,8 +7386,6 @@ C:/projects/LiteEngineV003/include/EntityManager.h:
 C:/projects/LiteEngineV003/include/EntityMemoryPool.h:
 
 C:/projects/LiteEngineV003/include/Tags.h:
-
-C:/projects/LiteEngineV003/include/glm/ext/vector_float3_precision.hpp:
 
 C:/mingw64/include/c++/15.2.0/bits/align.h:
 
@@ -7618,8 +7421,6 @@ C:/mingw64/x86_64-w64-mingw32/include/wincon.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/rtmintrin.h:
 
-C:/projects/LiteEngineV003/include/glm/detail/type_mat3x3.hpp:
-
 C:/mingw64/include/c++/15.2.0/ext/concurrence.h:
 
 C:/mingw64/include/c++/15.2.0/fstream:
@@ -7650,10 +7451,6 @@ C:/mingw64/x86_64-w64-mingw32/include/psdk_inc/intrin-impl.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/setjmp.h:
 
-C:/projects/LiteEngineV003/include/glm/mat2x2.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_double3x2.hpp:
-
 C:/mingw64/x86_64-w64-mingw32/include/string.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/debugapi.h:
@@ -7673,8 +7470,6 @@ C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/confi
 C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/fterrdef.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/combaseapi.h:
-
-C:/projects/LiteEngineV003/include/glm/ext/vector_bool3_precision.hpp:
 
 C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/fterrors.h:
 
@@ -7698,8 +7493,6 @@ C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/lzcntintrin.h:
 
 C:/projects/LiteEngineV003/include/GameEngine.h:
 
-C:/projects/LiteEngineV003/include/glm/geometric.hpp:
-
 C:/projects/LiteEngineV003/include/GeometryConstructor.h:
 
 C:/projects/LiteEngineV003/include/ICommand.h:
@@ -7709,6 +7502,14 @@ C:/projects/LiteEngineV003/include/IndexBuffer.h:
 C:/projects/LiteEngineV003/include/InputHandler.h:
 
 C:/projects/LiteEngineV003/include/KHR/khrplatform.h:
+
+C:/projects/LiteEngineV003/include/Kingdom.h:
+
+C:/mingw64/include/c++/15.2.0/tr1/poly_laguerre.tcc:
+
+C:/mingw64/x86_64-w64-mingw32/include/sysinfoapi.h:
+
+C:/mingw64/include/c++/15.2.0/bits/uniform_int_dist.h:
 
 C:/projects/LiteEngineV003/include/imgui_internal.h:
 
@@ -7727,10 +7528,6 @@ C:/projects/LiteEngineV003/include/glad/glad.h:
 C:/projects/LiteEngineV003/include/shader.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/bmi2intrin.h:
-
-C:/projects/LiteEngineV003/include/glm/mat3x3.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_double2x3.hpp:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx10_2-512minmaxintrin.h:
 
@@ -7756,8 +7553,6 @@ C:/projects/LiteEngineV003/include/Library.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/apiset.h:
 
-C:/projects/LiteEngineV003/include/glm/detail/type_vec1.inl:
-
 C:/projects/LiteEngineV003/src/Parser.cpp:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx10_2mediaintrin.h:
@@ -7765,10 +7560,6 @@ C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx10_2mediaintrin.h:
 C:/mingw64/x86_64-w64-mingw32/include/processtopologyapi.h:
 
 C:/projects/LiteEngineV003/include/grid.h:
-
-C:/projects/LiteEngineV003/include/glm/ext/vector_float4.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_float4x3_precision.hpp:
 
 C:/projects/LiteEngineV003/src/Scene.cpp:
 
@@ -7781,14 +7572,6 @@ C:/mingw64/include/c++/15.2.0/algorithm:
 C:/mingw64/include/c++/15.2.0/bits/specfun.h:
 
 C:/mingw64/include/c++/15.2.0/bits/stl_heap.h:
-
-C:/mingw64/include/c++/15.2.0/tr1/poly_laguerre.tcc:
-
-C:/mingw64/x86_64-w64-mingw32/include/sysinfoapi.h:
-
-C:/mingw64/include/c++/15.2.0/bits/uniform_int_dist.h:
-
-C:/projects/LiteEngineV003/include/glm/detail/type_vec2.hpp:
 
 C:/mingw64/include/c++/15.2.0/cmath:
 
@@ -7803,8 +7586,6 @@ C:/mingw64/include/c++/15.2.0/tr1/beta_function.tcc:
 C:/mingw64/x86_64-w64-mingw32/include/consoleapi2.h:
 
 C:/mingw64/include/c++/15.2.0/tr1/ell_integral.tcc:
-
-C:/projects/LiteEngineV003/include/glm/ext/vector_float2_precision.hpp:
 
 C:/mingw64/include/c++/15.2.0/tr1/gamma.tcc:
 
@@ -7821,10 +7602,6 @@ C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/vpclmulqdqintrin.h:
 C:/mingw64/x86_64-w64-mingw32/include/ole2.h:
 
 C:/projects/LiteEngineV003/include/Scene_CGOL.h:
-
-C:/projects/LiteEngineV003/include/glm/ext/vector_uint3_sized.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_double4x4.hpp:
 
 C:/projects/LiteEngineV003/src/Shader.cpp:
 
@@ -7844,8 +7621,6 @@ C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx512ifmavlintrin.h:
 
 C:/projects/LiteEngineV003/src/VertexArray.cpp:
 
-C:/projects/LiteEngineV003/include/glm/detail/type_mat2x4.inl:
-
 C:/mingw64/x86_64-w64-mingw32/include/sec_api/stralign_s.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx512bitalgvlintrin.h:
@@ -7855,10 +7630,6 @@ C:/projects/LiteEngineV003/src/VertexBufferLayout.cpp:
 C:/mingw64/x86_64-w64-mingw32/include/mmsyscom.h:
 
 C:/projects/LiteEngineV003/src/assetManager.cpp:
-
-C:/projects/LiteEngineV003/include/glm/mat4x4.hpp:
-
-C:/projects/LiteEngineV003/include/glm/detail/type_vec2.inl:
 
 C:/projects/LiteEngineV003/src/glad.c:
 
@@ -7883,10 +7654,6 @@ C:/mingw64/x86_64-w64-mingw32/include/GL/gl.h:
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx512vldqintrin.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/amxtileintrin.h:
-
-C:/projects/LiteEngineV003/include/glm/mat2x3.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_double3x3.hpp:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/amxtransposeintrin.h:
 
@@ -7914,13 +7681,9 @@ C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/serializeintrin.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx512bf16vlintrin.h:
 
-C:/projects/LiteEngineV003/include/glm/ext/vector_double4_precision.hpp:
-
 C:/mingw64/x86_64-w64-mingw32/include/profileapi.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx512cdintrin.h:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_double3x4_precision.hpp:
 
 C:/mingw64/x86_64-w64-mingw32/include/winsock.h:
 
@@ -7956,8 +7719,6 @@ C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/pkuintrin.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/xtestintrin.h:
 
-C:/mingw64/include/c++/15.2.0/functional:
-
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avxintrin.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avxvnniint8intrin.h:
@@ -7984,8 +7745,6 @@ C:/mingw64/x86_64-w64-mingw32/include/bcrypt.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/wmmintrin.h:
 
-C:/mingw64/include/c++/15.2.0/cassert:
-
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/keylockerintrin.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/lwpintrin.h:
@@ -7995,8 +7754,6 @@ C:/mingw64/x86_64-w64-mingw32/include/ioapiset.h:
 C:/mingw64/x86_64-w64-mingw32/include/psdk_inc/_socket_types.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/mm3dnow.h:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_double3x3_precision.hpp:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/mwaitxintrin.h:
 
@@ -8038,15 +7795,11 @@ C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/vaesintrin.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/x86intrin.h:
 
-C:/projects/LiteEngineV003/include/glm/ext/vector_double2.hpp:
-
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/xsaveintrin.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/xsaveoptintrin.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/xsavesintrin.h:
-
-C:/projects/LiteEngineV003/include/glm/ext/vector_bool4_precision.hpp:
 
 C:/mingw64/x86_64-w64-mingw32/include/_bsd_types.h:
 
@@ -8100,8 +7853,6 @@ C:/mingw64/x86_64-w64-mingw32/include/oleauto.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/oleidl.h:
 
-C:/projects/LiteEngineV003/include/glm/ext/matrix_double4x2.hpp:
-
 C:/mingw64/x86_64-w64-mingw32/include/poppack.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/processenv.h:
@@ -8113,8 +7864,6 @@ C:/mingw64/x86_64-w64-mingw32/include/prsht.h:
 C:/mingw64/x86_64-w64-mingw32/include/psdk_inc/_ip_types.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/psdk_inc/_wsadata.h:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_double4x3_precision.hpp:
 
 C:/mingw64/x86_64-w64-mingw32/include/pshpack2.h:
 
@@ -8132,8 +7881,6 @@ C:/mingw64/x86_64-w64-mingw32/include/rpcnterr.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/rpcsal.h:
 
-C:/projects/LiteEngineV003/include/glm/detail/type_vec4.hpp:
-
 C:/mingw64/x86_64-w64-mingw32/include/sal.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/sdkddkver.h:
@@ -8145,8 +7892,6 @@ C:/mingw64/x86_64-w64-mingw32/include/servprov.h:
 C:/mingw64/x86_64-w64-mingw32/include/shellapi.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/stralign.h:
-
-C:/projects/LiteEngineV003/include/glm/ext/vector_double3_precision.hpp:
 
 C:/mingw64/x86_64-w64-mingw32/include/systemtopologyapi.h:
 
@@ -8182,8 +7927,6 @@ C:/mingw64/x86_64-w64-mingw32/include/wtypesbase.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/winuser.h:
 
-C:/projects/LiteEngineV003/include/glm/detail/compute_common.hpp:
-
 C:/mingw64/x86_64-w64-mingw32/include/wnnc.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/wow64apiset.h:
@@ -8217,153 +7960,3 @@ C:/projects/LiteEngineV003/src/imgui_tables.cpp:
 C:/projects/LiteEngineV003/src/imgui_widgets.cpp:
 
 C:/projects/LiteEngineV003/src/main.cpp:
-
-C:/mingw64/include/c++/15.2.0/bits/std_function.h:
-
-C:/projects/LiteEngineV003/include/glm/ext/vector_int3.hpp:
-
-C:/projects/LiteEngineV003/include/glm/detail/_fixes.hpp:
-
-C:/projects/LiteEngineV003/include/glm/detail/_vectorize.hpp:
-
-C:/projects/LiteEngineV003/include/glm/detail/compute_vector_relational.hpp:
-
-C:/projects/LiteEngineV003/include/glm/detail/func_geometric.inl:
-
-C:/projects/LiteEngineV003/include/glm/detail/func_matrix.inl:
-
-C:/projects/LiteEngineV003/include/glm/detail/func_trigonometric.inl:
-
-C:/projects/LiteEngineV003/include/glm/detail/setup.hpp:
-
-C:/projects/LiteEngineV003/include/glm/detail/func_vector_relational.inl:
-
-C:/projects/LiteEngineV003/include/glm/detail/qualifier.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/vector_int2_sized.hpp:
-
-C:/projects/LiteEngineV003/include/glm/detail/type_mat2x2.hpp:
-
-C:/projects/LiteEngineV003/include/glm/detail/type_mat2x3.hpp:
-
-C:/projects/LiteEngineV003/include/glm/detail/type_mat2x4.hpp:
-
-C:/projects/LiteEngineV003/include/glm/detail/type_mat3x2.hpp:
-
-C:/projects/LiteEngineV003/include/glm/detail/type_mat3x2.inl:
-
-C:/projects/LiteEngineV003/include/glm/detail/type_mat3x3.inl:
-
-C:/projects/LiteEngineV003/include/glm/detail/type_mat3x4.hpp:
-
-C:/projects/LiteEngineV003/include/glm/detail/type_mat3x4.inl:
-
-C:/projects/LiteEngineV003/include/glm/detail/type_mat4x2.hpp:
-
-C:/projects/LiteEngineV003/include/glm/detail/type_mat4x2.inl:
-
-C:/projects/LiteEngineV003/include/glm/detail/type_mat4x3.hpp:
-
-C:/projects/LiteEngineV003/include/glm/detail/type_mat4x4.hpp:
-
-C:/projects/LiteEngineV003/include/glm/detail/type_mat4x4.inl:
-
-C:/projects/LiteEngineV003/include/glm/detail/type_vec1.hpp:
-
-C:/projects/LiteEngineV003/include/glm/detail/type_vec3.hpp:
-
-C:/projects/LiteEngineV003/include/glm/detail/type_vec4.inl:
-
-C:/projects/LiteEngineV003/include/glm/exponential.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/vector_float4_precision.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_clip_space.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_double2x2_precision.hpp:
-
-C:/projects/LiteEngineV003/include/glm/mat3x4.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_double2x4.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_double4x2_precision.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_double4x4_precision.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_float2x2.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_float2x2_precision.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_float2x3_precision.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_float2x4_precision.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_float3x2.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_float3x3.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_float3x4.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_float4x3.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_float4x4.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_float4x4_precision.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_transform.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/matrix_transform.inl:
-
-C:/projects/LiteEngineV003/include/glm/ext/scalar_constants.inl:
-
-C:/projects/LiteEngineV003/include/glm/ext/scalar_int_sized.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/scalar_uint_sized.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/vector_bool2.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/vector_bool2_precision.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/vector_bool3.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/vector_bool4.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/vector_uint2_sized.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/vector_double2_precision.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/vector_float2.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/vector_int2.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/vector_int3_sized.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/vector_int4.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/vector_int4_sized.hpp:
-
-C:/projects/LiteEngineV003/include/glm/gtc/constants.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/vector_uint2.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/vector_uint3.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/vector_uint4.hpp:
-
-C:/projects/LiteEngineV003/include/glm/ext/vector_uint4_sized.hpp:
-
-C:/projects/LiteEngineV003/include/glm/mat4x2.hpp:
-
-C:/projects/LiteEngineV003/include/glm/mat4x3.hpp:
-
-C:/projects/LiteEngineV003/include/glm/matrix.hpp:
-
-C:/projects/LiteEngineV003/include/glm/trigonometric.hpp:
-
-C:/projects/LiteEngineV003/include/glm/vec2.hpp:
-
-C:/projects/LiteEngineV003/include/glm/vec3.hpp:
-
-C:/projects/LiteEngineV003/include/glm/vec4.hpp:
-
-C:/projects/LiteEngineV003/include/glm/vector_relational.hpp:

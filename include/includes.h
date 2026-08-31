@@ -1,3 +1,4 @@
+/*
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -11,10 +12,10 @@
 #include <glm/ext/matrix_transform.hpp> // glm::translate, glm::rotate, glm::scale
 #include <glm/ext/matrix_clip_space.hpp> // glm::perspective
 #include <glm/ext/scalar_constants.hpp> // glm::pi\
+*/
 
-
-#include "GameEngine.h"
-#include "shader.h"
+//#include "GameEngine.h"
+/*#include "shader.h"
 #include "VertexBuffer.h"
 #include "IndexBuffer.h"
 #include "VertexArray.h"
@@ -23,6 +24,6 @@
 #include "Texture.h"
 #include "IndexBuffer.h"
 #include "Entity.h"
-#include "EntityMemoryPool.h"
+#include "EntityMemoryPool.h"*/
 
 

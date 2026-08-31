@@ -293,6 +293,19 @@ public:
 		}
 		return m_Neighbors;
 	}
+	
+
+	void randomizeGrid()
+	{
+		for(unsigned int i = 0; i < m_Row; i++)
+		{
+			for(unsigned int j = 0; j < m_Col; j++)
+			{
+				unsigned int state = rand() % 2;
+				setState(i, j, state);
+			}
+		}
+	}
 
 };
 

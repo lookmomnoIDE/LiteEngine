@@ -58,7 +58,7 @@ void InputHandler::framebuffer_size_callback(GLFWwindow* window, int width, int 
 void InputHandler::mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 {
 	const auto& am = m_game->currentScene()->getAM();
-	if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS)
+	if (button == GLFW_MOUSE_BUTTON_LEFT)
 	{
 		//const auto& am = m_game->currentScene()->getAM();
 		//std::cout << m_game->currentScene() << std::endl;
@@ -73,7 +73,7 @@ void InputHandler::mouse_button_callback(GLFWwindow* window, int button, int act
 		Action a(am.at(button), actionType);
 		m_game->currentScene()->doAction(a);
 	}
-	if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_RELEASE)
+	if (button == GLFW_MOUSE_BUTTON_RIGHT)
 	{
 		
 		//std::cout << m_game->currentScene() << std::endl;
@@ -113,7 +113,7 @@ void InputHandler::processInput(GLFWwindow* window, int key, int scancode, int a
 		Action a(am.at(key), actionType);
 		m_game->currentScene()->doAction(a);
 	}
-	if (key == GLFW_KEY_P && action == GLFW_PRESS)
+	if (key == GLFW_KEY_P)
 	{
 		if(am.find(key) == am.end())
 		{
@@ -125,22 +125,7 @@ void InputHandler::processInput(GLFWwindow* window, int key, int scancode, int a
 		Action a(am.at(key), actionType);
 		m_game->currentScene()->doAction(a);
 	}
-	if (key == GLFW_KEY_P && action == GLFW_RELEASE)
-	{
-		
-		//std::cout << m_game->currentScene() << std::endl;
-		if(am.find(key) == am.end())
-		{
-			std::cout << "Action Not found!" << std::endl;
-			return;
-		}
-
-		const std::string actionType = (action == GLFW_PRESS) ? "START" : "END";
-
-		Action a(am.at(key), actionType);
-		m_game->currentScene()->doAction(a);
-	}
-	if (key == GLFW_KEY_O && action == GLFW_PRESS)
+	if (key == GLFW_KEY_O)
 	{
 		if(am.find(key) == am.end())
 		{
@@ -152,21 +137,31 @@ void InputHandler::processInput(GLFWwindow* window, int key, int scancode, int a
 		Action a(am.at(key), actionType);
 		m_game->currentScene()->doAction(a);
 	}
-	if (key == GLFW_KEY_O && action == GLFW_RELEASE)
+	if (key == GLFW_KEY_SPACE)
 	{
-		
-		//std::cout << m_game->currentScene() << std::endl;
 		if(am.find(key) == am.end())
 		{
 			std::cout << "Action Not found!" << std::endl;
 			return;
 		}
-
 		const std::string actionType = (action == GLFW_PRESS) ? "START" : "END";
 
 		Action a(am.at(key), actionType);
 		m_game->currentScene()->doAction(a);
 	}
+	if (key == GLFW_KEY_F3)
+	{
+		if(am.find(key) == am.end())
+		{
+			std::cout << "Action Not found!" << std::endl;
+			return;
+		}
+		const std::string actionType = (action == GLFW_PRESS) ? "START" : "END";
+
+		Action a(am.at(key), actionType);
+		m_game->currentScene()->doAction(a);
+	}
+	
 	
 }
 

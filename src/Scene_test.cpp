@@ -2,9 +2,22 @@
 #include "GameEngine.h"
 //#include "Tag.h"
 
+
+struct UIArea
+{
+	Vec2<float> pos;
+	Vec4<float> color;
+	Vec2<float> dims;
+	std::vector<Vec2<float>> texCoords;
+};
+
+
 #include <cmath>
 #include <algorithm>
 #include <stdexcept>
+
+float white[4] = {1.0f, 1.0f, 1.0f, 1.0f};
+float red[4] = {1.0f, 0.0f, 0.0f, 1.0f};
 
 
 Scene_test::Scene_test(GameEngine* game, Renderer* renderer, size_t maxEntities) 
@@ -14,31 +27,53 @@ Scene_test::Scene_test(GameEngine* game, Renderer* renderer, size_t maxEntities)
 	Scene_test::registerAction(GLFW_KEY_ESCAPE, "ESC");
 	Scene_test::registerAction(GLFW_KEY_P, "_P");
 	Scene_test::registerAction(GLFW_KEY_O, "_O");
+	Scene_test::registerAction(GLFW_KEY_SPACE, "SPACE");
+	Scene_test::registerAction(GLFW_KEY_F3, "_F3");
 }
 
 
 //C:\projects\LiteEngineV003\res\fonts\short
 void Scene_test::init()
 {
-	std::cout << "inside scene test init fn" << std::endl;
-	m_game->getAssetMan()->addFont("IBM", "fonts/short/Mx437_IBM_3270pc.ttf");
-	std::cout << "after add font" << std::endl;
-	
 	//static Quad<T> tRect(Vec2<T> pos, Vec4<T> color, Vec2<T> dims, std::vector<Vec2<T>> texCoords)
-	Vec2<float> pos = Vec2<float>(0.0f, 0.0f);
-	Vec4<float> color = Vec4<float>(1.0f, 0.0f, 0.0f, 0.2f);
-	Vec2<float> dims = Vec2<float>(0.5f, 0.5f);
+	Vec2<float> pos = Vec2<float>(0.0f, -0.75f);
+	Vec4<float> color = Vec4<float>(0.0f, 0.0f, 1.0f, 1.0f);
+	Vec2<float> dims = Vec2<float>(1.0f, 0.29f);
 	std::vector<Vec2<float>> texCoords = std::vector<Vec2<float>>{Vec2<float>(1.0f, 0.0f), Vec2<float>(1.0f, 1.0f), Vec2<float>(0.0f, 0.0f), Vec2<float>(0.0f, 1.0f)};
 	tQuad<float> tquad = GConstructor::tRect(pos, color, dims, texCoords);
 	m_tQuads.push_back(tquad);
+	//m_renderer->addQuadBufferT(m_tQuads);
+	pos = Vec2<float>(0.0f, 0.98f);
+	color = Vec4<float>(0.0f, 0.0f, 1.0f, 1.0f);
+	dims = Vec2<float>(1.0f, 0.02f);
+	texCoords = std::vector<Vec2<float>>{Vec2<float>(1.0f, 0.0f), Vec2<float>(1.0f, 1.0f), Vec2<float>(0.0f, 0.0f), Vec2<float>(0.0f, 1.0f)};
+	tquad = GConstructor::tRect(pos, color, dims, texCoords);
+	m_tQuads.push_back(tquad);
 	m_renderer->addQuadBufferT(m_tQuads);
-	m_renderer->initTextBuffer(256);
+
+	//UIArea toolbar{pos, color, dims, texCoords};
+
+	//m_renderer->initTextBuffer(256);
+
 }
 
 
 void Scene_test::update()
 {
-
+	if(!m_paused)
+	{	
+		
+		if(m_frameCounter % 60 == 0)
+		{
+			thyKingdom.hiddenPop *= 1.002;
+			thyKingdom.population = thyKingdom.hiddenPop;
+			thyKingdom.militaryPower = thyKingdom.population * thyKingdom.conscriptionRate;
+			m_dayCounter++;
+			m_date = TKHelpers::calculateDate(m_dayCounter);
+			m_frameCounter = 0;
+		}
+		m_frameCounter++;
+	}
 }
 
 
@@ -64,8 +99,14 @@ void Scene_test::sRender()
 {
 	m_renderer->Clear();
 	m_renderer->DrawElements("default");
-	m_renderer->drawText("Hello, text!", 50.0f, 50.0f, "IBM", 1.0f);
-	m_renderer->SwapBuffers();
+	m_renderer->drawText(m_date, 50.0f, 950.0f, "IBM", 1.0f, white);
+	m_renderer->drawText("Population: " + std::to_string(thyKingdom.population), 50.0f, 850.0f, "IBM", 1.0f, white);
+	m_renderer->drawText("Military Power: " + std::to_string(thyKingdom.militaryPower), 50.0f, 750.0f, "IBM", 1.0f, white);
+	if(m_paused)
+	{
+		m_renderer->drawText("Paused", ((1920.0/2.0f)-5.0f), ((1050.0f/2.0f)-10.0f), "IBM", 1.0f, red); 
+	}
+	//m_renderer->SwapBuffers();
 }
 
 
@@ -89,7 +130,8 @@ void Scene_test::doAction(const Action& a)
 		{
 			m_primaryActionActive = true;
 		}
-		if(a.name() == "_P")
+
+		if(a.name() == "SPACE")
 		{
 			if(m_paused == false)
 			{
@@ -99,6 +141,11 @@ void Scene_test::doAction(const Action& a)
 			{
 				m_paused = false;
 			}
+		}
+
+		if(a.name() == "_F3")
+		{
+			m_game->toggleOverlay();
 		}
 	}
 	if(a.type() == "END")
