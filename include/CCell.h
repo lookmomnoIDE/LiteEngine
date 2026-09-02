@@ -35,7 +35,7 @@ public:
 		m_quad = quad;
 	}
 
-	void setColor(Vec4<float>& color)
+	void setColor(Color color)
 	{
 		m_quad.v0.setVColor(color);
 		m_quad.v1.setVColor(color);

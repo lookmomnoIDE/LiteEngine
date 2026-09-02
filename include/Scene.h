@@ -4,15 +4,19 @@
 
 #include <string>
 #include <map>
+#include <memory>
 
 #include "ICommand.h"
 #include "EntityMemoryPool.h"
-#include "EntityManager.h"
 #include "EntityFactory.h"
+#include "EntityManager.h"
+
+
 
 class GameEngine;
 class Renderer;
-//class EntityFactory;
+class assetMan;
+class Palette;
 
 class Scene 
 {
@@ -22,9 +26,11 @@ public:
 	std::map<int, std::string> m_actionMap;
 	GameEngine* m_game = nullptr;
 	Renderer* m_renderer = nullptr;
+	assetMan* m_assetMan = nullptr;
+	Palette* m_palette;
 	EntityMemoryPool m_pool; 
+	EntityFactory m_factory;
     EntityMan m_entityManager;
-    EntityFactory m_factory;
     size_t m_maxEntities;
 
 	Scene(GameEngine* game, Renderer* renderer, size_t maxEntities)

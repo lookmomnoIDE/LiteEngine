@@ -7,6 +7,7 @@
 #include "Vec2.h"
 #include "Vec3.h"
 #include "Quad.h"
+#include "Color.h"
 
 
 class Grid {
@@ -21,6 +22,7 @@ public:
 	//std::vector<std::vector<unsigned int>> m_nextGrid;
 	std::vector<Quad<float>> m_Quads;
 	std::vector<unsigned int> m_Neighbors;
+
 
 public:
 
@@ -40,7 +42,7 @@ public:
 	}
 
 	//Fabricate grid vertices to deliver to the renderer. 
-	std::vector<Quad<float>> fabGridLines() 
+	std::vector<Quad<float>> fabGridLines(Color color) 
 	{
 		
 		float hw = (m_LineWidth / 2.0f) / (float)m_vWidth;
@@ -58,10 +60,10 @@ public:
 		    lineX.v1.setVPosition(Vec3<float>((x + hw),  -1.0f, 1.0f));
 		    lineX.v2.setVPosition(Vec3<float>((x - hw),  1.0f, 1.0f));
 		    lineX.v3.setVPosition(Vec3<float>((x - hw),  -1.0f, 1.0f));
-		    lineX.v0.setVColor(Vec4<float>(0.0f, 0.0f, 0.0f, 1.0f));
-			lineX.v1.setVColor(Vec4<float>(0.0f, 0.0f, 0.0f, 1.0f));
-			lineX.v2.setVColor(Vec4<float>(0.0f, 0.0f, 0.0f, 1.0f));
-			lineX.v3.setVColor(Vec4<float>(0.0f, 0.0f, 0.0f, 1.0f));
+		    lineX.v0.setVColor(color);
+			lineX.v1.setVColor(color);
+			lineX.v2.setVColor(color);
+			lineX.v3.setVColor(color);
 		    m_Quads.push_back(lineX);
 		}
 
@@ -76,35 +78,66 @@ public:
 		    lineY.v1.setVPosition(Vec3<float>((1.0f), y - hh, 1.0f));
 		    lineY.v2.setVPosition(Vec3<float>((-1.0f), y + hh, 1.0f));
 		    lineY.v3.setVPosition(Vec3<float>((-1.0f), y - hh, 1.0f));
-		    lineY.v0.setVColor(Vec4<float>(0.0f, 0.0f, 0.0f, 1.0f));
-			lineY.v1.setVColor(Vec4<float>(0.0f, 0.0f, 0.0f, 1.0f));
-			lineY.v2.setVColor(Vec4<float>(0.0f, 0.0f, 0.0f, 1.0f));
-			lineY.v3.setVColor(Vec4<float>(0.0f, 0.0f, 0.0f, 1.0f));
+		    lineY.v0.setVColor(color);
+			lineY.v1.setVColor(color);
+			lineY.v2.setVColor(color);
+			lineY.v3.setVColor(color);
 		    m_Quads.push_back(lineY);
 		}
 		return m_Quads;
 	}
 
+
+	std::vector<Quad<float>> fabGridLines(Color color, float xOffsetLeft = 0, float xOffsetRight = 0, float yOffsetTop= 0, float yOffsetBot = 0) 
+	{
+		
+		float hw = (m_LineWidth / 2.0f) / (float)m_vWidth;
+		float hh = (m_LineWidth / 2.0f) / (float)m_vHeight;
+		//float aspect = ((float)m_vHeight/(float)m_vWidth);
+
+		// Vertical lines (X axis sweep)
+		for (float i = 0; i <= m_Col; i++)
+		{
+		    float x = (i/ (float)m_Col) * 2.0f - 1.0f;           // NDC: -1 to 1
+		                    // half-width in NDC
+		    Quad<float> lineX;
+
+		    lineX.v0.setVPosition(Vec3<float>((x + hw - xOffsetRight),  1.0f, 1.0f));
+		    lineX.v1.setVPosition(Vec3<float>((x + hw - xOffsetRight),  -1.0f, 1.0f));
+		    lineX.v2.setVPosition(Vec3<float>((x - hw + xOffsetLeft),  1.0f, 1.0f));
+		    lineX.v3.setVPosition(Vec3<float>((x - hw + xOffsetLeft),  -1.0f, 1.0f));
+		    lineX.v0.setVColor(color);
+			lineX.v1.setVColor(color);
+			lineX.v2.setVColor(color);
+			lineX.v3.setVColor(color);
+		    m_Quads.push_back(lineX);
+		}
+
+		// Horizontal lines (Y axis sweep)
+		for (float j = 0; j <= m_Row; j++)
+		{
+		    float y = (j / (float)m_Row) * 2.0f - 1.0f;
+		    
+		    Quad<float> lineY;
+
+		    lineY.v0.setVPosition(Vec3<float>((1.0f), y + hh - yOffsetTop, 1.0f));
+		    lineY.v1.setVPosition(Vec3<float>((1.0f), y - hh + yOffsetBot, 1.0f));
+		    lineY.v2.setVPosition(Vec3<float>((-1.0f), y + hh - yOffsetTop, 1.0f));
+		    lineY.v3.setVPosition(Vec3<float>((-1.0f), y - hh + yOffsetBot, 1.0f));
+		    lineY.v0.setVColor(color);
+			lineY.v1.setVColor(color);
+			lineY.v2.setVColor(color);
+			lineY.v3.setVColor(color);
+		    m_Quads.push_back(lineY);
+		}
+		return m_Quads;
+	}
+
+
 	std::vector<Quad<float>> getGridLines()
 	{
 		return m_Quads;
 	}
-
-	/*Vec2<float> getCenterOfCell(size_t e)
-	{
-		std::cout << "inside grid center of cell fn" << std::endl;
-		std::cout << m_Col << std::endl;
-		unsigned int i = (unsigned int)e % m_Col;
-		unsigned int j = (unsigned int)e / m_Col;
-		std::cout << "col row index" << std::endl;
-		float ndcX = (((i * m_CellSize) + (m_CellSize / 2.0f)) / m_vWidth) * 2.0f - 1.0f;
-	    float ndcY = 1.0f - (((j * m_CellSize) + (m_CellSize / 2.0f)) / m_vHeight) * 2.0f;
-	    std::cout << "ndcs" << std::endl;
-		//Vec2<float> pos((((i*m_CellSize)+(m_CellSize/2))/m_vWidth)-1, 1-(((j*m_CellSize)+(m_CellSize/2))/m_vHeight));
-		Vec2<float> pos(ndcX, ndcY);
-		std::cout << "end of grid center of cell fn" << std::endl;
-		return pos;
-	}*/
 
 
 	Vec2<float> getCenterOfCell(Vec2<unsigned int> index)
@@ -113,10 +146,9 @@ public:
 		unsigned int j = index.m_y;
 		float ndcX = (((i * m_CellSize) + (m_CellSize / 2.0f)) / m_vWidth) * 2.0f - 1.0f;
 		float ndcY = 1.0f - (((j * m_CellSize) + (m_CellSize / 2.0f)) / m_vHeight) * 2.0f;	    
-		std::cout << "ndcs" << std::endl;
 		//Vec2<float> pos((((i*m_CellSize)+(m_CellSize/2))/m_vWidth)-1, 1-(((j*m_CellSize)+(m_CellSize/2))/m_vHeight));
 		Vec2<float> pos(ndcX, ndcY);
-		std::cout << "end of grid center of cell fn" << std::endl;
+		//std::cout << "end of grid center of cell fn" << std::endl;
 		return pos;
 
 	}
@@ -293,7 +325,7 @@ public:
 		}
 		return m_Neighbors;
 	}
-	
+
 
 	void randomizeGrid()
 	{

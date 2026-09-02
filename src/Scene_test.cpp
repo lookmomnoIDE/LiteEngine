@@ -1,6 +1,6 @@
 #include "Scene_test.h"
 #include "GameEngine.h"
-//#include "Tag.h"
+
 
 
 struct UIArea
@@ -104,7 +104,7 @@ void Scene_test::sRender()
 	m_renderer->drawText("Military Power: " + std::to_string(thyKingdom.militaryPower), 50.0f, 750.0f, "IBM", 1.0f, white);
 	if(m_paused)
 	{
-		m_renderer->drawText("Paused", ((1920.0/2.0f)-5.0f), ((1050.0f/2.0f)-10.0f), "IBM", 1.0f, red); 
+		m_renderer->drawText("Paused", ((1920.0/2.0f)-5.0f), ((1050.0f/2.0f)-20.0f), "IBM", 1.0f, red); 
 	}
 	//m_renderer->SwapBuffers();
 }

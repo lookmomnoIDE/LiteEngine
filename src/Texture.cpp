@@ -1,6 +1,8 @@
 #include "Texture.h"
 #define STB_IMAGE_IMPLEMENTATION
-#include "stb_image.h"
+#include <stb_image.h>
+#include <glad/glad.h>
+#include <iostream>
 
 
 Texture::Texture(std::string path, unsigned int slot)
@@ -8,9 +10,9 @@ Texture::Texture(std::string path, unsigned int slot)
 {
 	stbi_set_flip_vertically_on_load(1);
 	m_LocalBuffer = stbi_load(path.c_str(), &m_Width, &m_Height, &m_BPP, 4);
-	if(m_LocalBuffer != NULL)
+	if(m_LocalBuffer == NULL)
 	{
-		std::cout << "Texture in buffer" << std::endl;
+		std::cout << "Texture not in buffer" << std::endl;
 	}
 	glGenTextures(1, &m_tName);
 	glBindTexture(GL_TEXTURE_2D, m_tName);

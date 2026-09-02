@@ -7,7 +7,7 @@ EntityMemoryPool::EntityMemoryPool(size_t MAX_ENTITIES)
     : m_MAX_ENTITIES(MAX_ENTITIES), m_numEntities(0)
 {
     std::get<std::vector<CTransform>>(m_pool).resize(m_MAX_ENTITIES);
-    std::get<std::vector<Cgrain>>(m_pool).resize(m_MAX_ENTITIES);
+    //std::get<std::vector<Cgrain>>(m_pool).resize(m_MAX_ENTITIES);
     std::get<std::vector<Csand>>(m_pool).resize(m_MAX_ENTITIES);
     std::get<std::vector<Cgravity>>(m_pool).resize(m_MAX_ENTITIES);
     std::get<std::vector<CCell>>(m_pool).resize(m_MAX_ENTITIES);
@@ -56,12 +56,12 @@ bool EntityMemoryPool::hasTag(size_t entityID, Tag tag) const
 Entity EntityMemoryPool::addEntity(const Tag tag)
 {
 	size_t index = getNextEntityIndex();
-	std::cout << "EMP Index: " << index << std::endl;
+	//std::cout << "EMP Index: " << index << std::endl;
 
 	m_tags[index] = tag;
 	m_active[index] = true;
 	m_numEntities++;
-	return Entity(index, *this);
+	return Entity(index);
 }
 
 size_t EntityMemoryPool::getNextEntityIndex()
@@ -75,15 +75,6 @@ size_t EntityMemoryPool::getNextEntityIndex()
             return i;
         }
     }
-}
-
-int EntityMemoryPool::getEnum(std::string s)
-{
-    static const std::unordered_map<std::string, uint8_t> tagMap = {
-        {"grain", 0}, {"sand", 1}, {"gravity", 2}  // your actual tags
-    };
-    auto it = tagMap.find(s);
-    return (it != tagMap.end()) ? it->second : 255; // 255 = not found
 }
 
 size_t EntityMemoryPool::getNumEntities()

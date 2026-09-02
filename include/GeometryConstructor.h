@@ -3,6 +3,7 @@
 
 #include "Quad.h"
 #include "tQuad.h"
+#include "Color.h"
 
 class GConstructor
 {
@@ -45,7 +46,7 @@ public:
 	}
 */
 template <typename T>
-static tQuad<T> tRect(Vec2<T> pos, Vec4<T> color, Vec2<T> dims, std::vector<Vec2<T>> texCoords)
+static tQuad<T> tRect(Vec2<T> pos, Color color, Vec2<T> dims, std::vector<Vec2<T>> texCoords)
 {
 	tQuad<T> tquad;
 
@@ -91,7 +92,7 @@ static tQuad<T> tRect(Vec2<T> pos, Vec4<T> color, Vec2<T> dims, std::vector<Vec2
 
 
 	template <typename T>
-	static Quad<T> rect(Vec2<T> pos, Vec4<T> color, Vec2<T> dims)
+	static Quad<T> rect(Vec2<T> pos, Color color, Vec2<T> dims)
 	{
 		Quad<T> quad;
 
@@ -109,7 +110,7 @@ static tQuad<T> tRect(Vec2<T> pos, Vec4<T> color, Vec2<T> dims, std::vector<Vec2
 
 
 	template <typename T>
-	static Quad<T> rect(Vec3<T> pos, Vec4<T> color, Vec2<T> dims)
+	static Quad<T> rect(Vec3<T> pos, Color color, Vec2<T> dims)
 	{
 		Quad<T> quad;
 
@@ -127,7 +128,7 @@ static tQuad<T> tRect(Vec2<T> pos, Vec4<T> color, Vec2<T> dims, std::vector<Vec2
 
 
 	template <typename T>
-	static Quad<T> square(Vec2<T> pos, Vec4<T> color, float dims)
+	static Quad<T> square(Vec2<T> pos, Color color, float dims)
 	{
 		Quad<T> quad;
 

@@ -34,7 +34,6 @@ set_target_properties(freetype PROPERTIES
 
 add_executable(${PROJECT_NAME}
 	src/glad.c
-
 	src/main.cpp
     src/Scene.cpp
 	src/imgui.cpp 
@@ -54,7 +53,7 @@ add_executable(${PROJECT_NAME}
     src/VertexBuffer.cpp
     src/VertexBufferLayout.cpp
     src/Entity.cpp
-    src/Cgrain.cpp
+    #src/Cgrain.cpp
     src/Components.cpp
     src/CTransform.cpp
     src/EntityManager.cpp
@@ -63,8 +62,9 @@ add_executable(${PROJECT_NAME}
     src/Cgravity.cpp
     src/EntityFactory.cpp
     #src/Scene_Play.cpp
-    src/Scene_CGOL.cpp
-    src/Scene_test.cpp
+    #src/Scene_CGOL.cpp
+    #src/Scene_test.cpp
+    src/Scene_FS.cpp
     src/GameEngine.cpp
     #src/SpawnSand.cpp
     #src/PlayRec.cpp

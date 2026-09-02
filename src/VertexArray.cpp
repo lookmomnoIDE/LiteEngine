@@ -32,7 +32,7 @@ VertexArray::~VertexArray()
 	glDeleteVertexArrays(1, &m_VAO);
 }
 
-
+////ERRROR BEGINS HERRRRRE LOGGING OFF
 void VertexArray::addBuffer(const VertexBuffer& vb, const VertexBufferLayout& layout)
 {
 	Bind();

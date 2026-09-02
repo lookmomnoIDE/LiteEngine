@@ -85,7 +85,7 @@ void EntityFactory::Init()
 void EntityFactory::addCell(Quad<float>& quad, Scene& scene)
 {
 	auto& pool = scene.getPool();
-	Tag target = static_cast<Tag>(pool.getEnum("sand"));
+	Tag target = NONE;
 	Entity e = scene.getEntityMan().addEntity(target); 
 	auto id = e.getID();
 	pool.getComponent<CCell>(id) = CCell(quad);

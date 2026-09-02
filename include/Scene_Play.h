@@ -1,12 +1,8 @@
 #ifndef SCENE_PLAY_H
 #define SCENE_PLAY_H
 
-
 #include "Scene.h"
-#include "EntityManager.h"
-#include "EntityFactory.h"
-#include "Quad.h"
-#include <iostream>
+
 
 class Scene_Play : public Scene
 {

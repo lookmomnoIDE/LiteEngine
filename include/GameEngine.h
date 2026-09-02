@@ -9,10 +9,12 @@
 #include "Scene_Play.h"
 #include "Scene_CGOl.h"
 #include "Scene_test.h"
+#include "Scene_FS.h"
 #include "EntityFactory.h"
 #include "EntityMemoryPool.h"
 #include "ICommand.h"
 #include "assetManager.h"
+#include "palette.h"
 #include <string>
 #include <map>
 #include <memory>
@@ -37,6 +39,7 @@ class GameEngine
 	std::string m_currentScene;
 	Renderer* m_renderer = nullptr;		
 	assetMan* m_assetMan = nullptr;
+	Palette* m_palette;
 	unsigned int m_numRenderers = 0;
 	double m_frameCount = 0;
 	std::chrono::steady_clock::time_point m_fpsWindowStart = std::chrono::steady_clock::now();

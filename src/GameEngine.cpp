@@ -36,7 +36,9 @@ void GameEngine::Init()
 	//m_factory->Init();
 	InputHandler::Instance();
 	InputHandler::Instance().Init();
+	
 	m_assetMan->addFont("IBM", "fonts/short/Mx437_IBM_3270pc.ttf");
+	m_palette = m_assetMan->loadPalette("colors", "colors.txt");
 	
 	
 }
@@ -52,7 +54,8 @@ void GameEngine::run()
 {
 	std::string sFPS;
 	//changeScene<Scene_CGoL>("CGoL", m_renderer, (192*105));
-	changeScene<Scene_test>("test", m_renderer, 50);
+	//changeScene<Scene_test>("test", m_renderer, 50);
+	changeScene<Scene_FS>("FS", m_renderer, (192*105));
 	//currentScene()->init();
 
 	//changeScene<Scene_Play>("play", m_renderer);
@@ -60,7 +63,7 @@ void GameEngine::run()
 	{
 		//auto currentSeconds = std::chrono::duration_cast<std::chrono::seconds>(std::chrono::system_clock::now().time_since_epoch());
 		//auto now = std::chrono::steady_clock::now();
-		//m_entityMan->update();
+
 		GameEngine::sUserInput();
 		
 		currentScene()->update();
@@ -76,7 +79,7 @@ void GameEngine::run()
 			{
 				sFPS = calcumalateFPS();
 			}
-			m_renderer->drawText(sFPS, 1790.0f, 1000.0f, "IBM", 0.5f, green);
+			m_renderer->drawText(sFPS, 1790.0f, 1000.0f, "IBM", 0.5f, m_palette->getColor("green"));
 		}
 		m_frameCount++;
 		m_renderer->SwapBuffers();

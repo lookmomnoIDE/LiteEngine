@@ -1,7 +1,11 @@
 #include "Scene_Play.h"
-#include "GameEngine.h"
+#include "EntityManager.h"
+#include "EntityFactory.h"
+#include "Quad.h"
+//#include "GameEngine.h"
 //#include "Tag.h"
 #include "Vec2.h"
+#include <iostream>
 
 
 

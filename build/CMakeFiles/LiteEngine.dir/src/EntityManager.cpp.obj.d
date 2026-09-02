@@ -127,6 +127,7 @@ CMakeFiles/LiteEngine.dir/src/EntityManager.cpp.obj: \
  C:/projects/LiteEngineV003/include/Vertex.h \
  C:/projects/LiteEngineV003/include/Vec3.h \
  C:/projects/LiteEngineV003/include/Vec4.h \
+ C:/projects/LiteEngineV003/include/Color.h \
  C:/projects/LiteEngineV003/include/Csand.h \
  C:/projects/LiteEngineV003/include/Cgravity.h \
  C:/projects/LiteEngineV003/include/CCell.h \

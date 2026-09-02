@@ -1,9 +1,25 @@
 #include "Renderer.h"
+
+
 #include "GameEngine.h"
-#include "InputHandler.h"
+#include "VertexArray.h"
+#include "shader.h"
+#include "VertexBuffer.h"
+#include "IndexBuffer.h"
+//#include "Entity.h"
+//#include "EntityMemoryPool.h"
+#include "Vec2.h"
+#include "Vec3.h"
+#include "Vec4.h"
+#include "Texture.h"
+#include "FTexture.h"
+#include "Font.h"
+//#include "InputHandler.h"
 #include "Vertex.h"
-#include "Quad.h"
+#include "assetManager.h"
+
 #include "grid.h"
+
 
 
 #include <iostream>
@@ -15,7 +31,7 @@ float projection[16] = {
 };
 
 
-void checkError(std::string message)
+/*void checkError(std::string message)
 {
 	GLenum err = glGetError();
 	if (err != GL_NO_ERROR)
@@ -24,7 +40,7 @@ void checkError(std::string message)
 	}
 	std::cout << message << std::endl;
 }
-
+*/
 
 Renderer::Renderer()
 {
@@ -69,7 +85,7 @@ Renderer::Renderer()
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	//checkError("after blendfunc");
 	m_assetMan = m_game->getAssetMan();
-	std::cout << "loading texture" << std::endl;
+	std::cout << "loading texture n render init fn" << std::endl;
 	m_assetMan->addTexture("default", "C:/projects/LiteEngineV003/res/textures/default.png");
 	//checkError("after texture");
 	std::cout << "texture loaded" << std::endl;
@@ -79,20 +95,21 @@ Renderer::Renderer()
 
 }
 
+
+/////RENDERER IS THE MEMORY LEAK:)	
+
 Renderer::~Renderer()
 {
 	delete m_shader;
-	delete vb;
-	delete ib;
-	delete va;
-	delete layout;
 	glfwTerminate();
 }
+
 
 void Renderer::Init()
 {
 	
 }
+
 
 Shader* Renderer::loadShader(std::string vertex, std::string fragment) 
 {
@@ -102,30 +119,87 @@ Shader* Renderer::loadShader(std::string vertex, std::string fragment)
 	return m_shader; 
 }
 
+
 GLFWwindow* Renderer::getWindow()
 {
 	return m_window;
 }
 
-void Renderer::Draw(const VertexArray& va, const VertexBuffer& vb) const
+
+void Renderer::drawTQuadBuffer()
 {
-	m_shader->use();
-	va.Bind();
-	vb.Bind();
-	glDrawArrays(GL_TRIANGLES, 0, sizeof(vb));
+	Shader* m_shader = loadShader("../src/shaders/texturedCool.vert", "../src/shaders/texturedBeans.frag");
+    m_shader->use();
+    auto vb = m_VertexBuffers[m_tQuadBufferIndex].get();
+	vb->Bind();
+	auto ib = m_IndexBuffers[m_tQuadBufferIndex].get();
+	ib->Bind();
+	auto count = ib->GetCount();
+	//std::cout << "Drawing " << count << " indices" << std::endl;
+	glDrawElements(GL_TRIANGLES, count, GL_UNSIGNED_INT, 0);
+	GLenum err = glGetError();
+	if (err != GL_NO_ERROR)
+	{
+		std::cout << "GL Error in drawTQuadBuffer: " << err << std::endl;
+	}
 }
 
-/*
-void Renderer::DrawElements() const
+void Renderer::drawQuadBuffer()
 {
-	m_shader->use();
-	va->Bind();
+	Shader* m_shader = loadShader("../src/shaders/cool.vert", "../src/shaders/beans.frag");
+    m_shader->use();
+    auto vb = m_VertexBuffers[m_quadBufferIndex].get();
 	vb->Bind();
+	auto ib = m_IndexBuffers[m_quadBufferIndex].get();
 	ib->Bind();
-	glDrawElements(GL_TRIANGLES, ib->GetCount(), GL_UNSIGNED_INT, 0);
-}*/
+	auto count = ib->GetCount();
+	//std::cout << "Drawing " << count << " indices" << std::endl;
+	glDrawElements(GL_TRIANGLES, count, GL_UNSIGNED_INT, 0);
+	GLenum err = glGetError();
+	if (err != GL_NO_ERROR)
+	{
+		std::cout << "GL Error in drawQuadBuffer: " << err << std::endl;
+	}
+}
 
 
+void Renderer::drawGridBuffer()
+{
+	Shader* m_shader = loadShader("../src/shaders/cool.vert", "../src/shaders/beans.frag");
+    m_shader->use();
+    auto vb = m_VertexBuffers[m_gridBufferIndex].get();
+	vb->Bind();
+	auto ib = m_IndexBuffers[m_gridBufferIndex].get();
+	ib->Bind();
+	auto count = ib->GetCount();
+	//std::cout << "Drawing " << count << " indices" << std::endl;
+	glDrawElements(GL_TRIANGLES, count, GL_UNSIGNED_INT, 0);
+	GLenum err = glGetError();
+	if (err != GL_NO_ERROR)
+	{
+		std::cout << "GL Error in drawGridBuffer: " << err << std::endl;
+	}
+}
+
+
+void Renderer::drawUIBuffer()
+{
+	Shader* m_shader = loadShader("../src/shaders/texturedCool.vert", "../src/shaders/texturedBeans.frag");
+    m_shader->use();
+    auto vb = m_VertexBuffers[m_UIBufferIndex].get();
+	vb->Bind();
+	auto ib = m_IndexBuffers[m_UIBufferIndex].get();
+	ib->Bind();
+	auto count = ib->GetCount();
+	//std::cout << "Drawing " << count << " indices" << std::endl;
+	glDrawElements(GL_TRIANGLES, count, GL_UNSIGNED_INT, 0);
+	GLenum err = glGetError();
+	if (err != GL_NO_ERROR)
+	{
+		std::cout << "GL Error in drawUIBuffer: " << err << std::endl;
+	}
+}
+/*
 
 void Renderer::DrawElements() 
 {
@@ -182,7 +256,46 @@ void Renderer::DrawElements(std::string texture)
 
 	}
 }
+*/
 
+void Renderer::initUIBuffer(size_t size)
+{
+    std::vector<tQuad<float>> dummy;
+    dummy.reserve(size); // 6 verts * 4 floats per char
+    addUIBuffer(dummy); // allocates buffer at max capacity, GL_DYNAMIC_DRAW ideally
+}
+
+
+void Renderer::addUIBuffer(std::vector<tQuad<float>>& quads)
+{
+	std::vector<unsigned int> indices = Renderer::genIndicies(quads.size());
+
+	m_VertexBuffers.push_back(std::make_unique<VertexBuffer>(quads.data(), quads.size() * sizeof(tQuad<float>)));
+
+	auto layout = std::make_unique<VertexBufferLayout>();
+	layout->Push<float>(3);
+	layout->Push<float>(4);
+	layout->Push<float>(2);
+	m_Layouts.push_back(std::move(layout));
+
+	m_VertexArrays.push_back(std::make_unique<VertexArray>(
+		*m_VertexBuffers[m_bufferCount],
+		*m_Layouts[m_bufferCount]
+	));
+
+	// VAO is now bound from its constructor — attach IBO into it
+	m_IndexBuffers.push_back(std::make_unique<IndexBuffer>(indices.data(), indices.size()));
+	m_UIBufferIndex = m_bufferCount;
+	m_bufferCount++;
+}
+
+
+void Renderer::initTQuadBuffer(size_t size)
+{
+    std::vector<tQuad<float>> dummy;
+    dummy.reserve(size); // 6 verts * 4 floats per char
+    addQuadBufferT(dummy); // allocates buffer at max capacity, GL_DYNAMIC_DRAW ideally
+}
 
 
 void Renderer::addQuadBufferT(std::vector<tQuad<float>>& quads)
@@ -204,8 +317,16 @@ void Renderer::addQuadBufferT(std::vector<tQuad<float>>& quads)
 
 	// VAO is now bound from its constructor — attach IBO into it
 	m_IndexBuffers.push_back(std::make_unique<IndexBuffer>(indices.data(), indices.size()));
-	m_quadBuffers.push_back(m_bufferCount);
+	m_tQuadBufferIndex = m_bufferCount;
 	m_bufferCount++;
+}
+
+
+void Renderer::initQuadBuffer(size_t size)
+{
+    std::vector<Quad<float>> dummy;
+    dummy.reserve(size); // 6 verts * 4 floats per char
+    addQuadBuffer(dummy); // allocates buffer at max capacity, GL_DYNAMIC_DRAW ideally
 }
 
 
@@ -227,12 +348,20 @@ void Renderer::addQuadBuffer(std::vector<Quad<float>>& quads)
 
 	// VAO is now bound from its constructor — attach IBO into it
 	m_IndexBuffers.push_back(std::make_unique<IndexBuffer>(indices.data(), indices.size()));
-	m_quadBuffers.push_back(m_bufferCount);
+	m_quadBufferIndex = m_bufferCount;
 	m_bufferCount++;
 }
 
 
-void Renderer::addCellBuffer(std::vector<CCell>& quads)
+void Renderer::initGridBuffer(size_t size)
+{
+    std::vector<Quad<float>> dummy;
+    dummy.reserve(size); // 6 verts * 4 floats per char
+    addGridBuffer(dummy); // allocates buffer at max capacity, GL_DYNAMIC_DRAW ideally
+}
+
+
+void Renderer::addGridBuffer(std::vector<Quad<float>>& quads)
 {
 	std::vector<unsigned int> indices = Renderer::genIndicies(quads.size());
 
@@ -250,22 +379,10 @@ void Renderer::addCellBuffer(std::vector<CCell>& quads)
 
 	// VAO is now bound from its constructor — attach IBO into it
 	m_IndexBuffers.push_back(std::make_unique<IndexBuffer>(indices.data(), indices.size()));
-	m_quadBuffers.push_back(m_bufferCount);
+	m_gridBufferIndex = m_bufferCount;
 	m_bufferCount++;
 }
 
-
-// configure VAO/VBO for texture quads
-// -----------------------------------
-//glGenVertexArrays(1, &VAO);
-//glGenBuffers(1, &VBO);
-//glBindVertexArray(VAO);
-//glBindBuffer(GL_ARRAY_BUFFER, VBO);
-//glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 6 * 4, NULL, GL_DYNAMIC_DRAW);
-//glEnableVertexAttribArray(0);
-//glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(float), 0);
-//glBindBuffer(GL_ARRAY_BUFFER, 0);
-//glBindVertexArray(0);
 
 
 void Renderer::initTextBuffer(size_t maxChars)
@@ -295,16 +412,36 @@ void Renderer::addTextBuffer(std::vector<float> vertices)
 }
 
 
-
-void Renderer::updateQuadBuffer(size_t index, std::vector<Quad<float>>& quads)
+void Renderer::updateQuadBufferT(std::vector<tQuad<float>>& quads)
 {
-	m_VertexBuffers[index]->Bind();
+	m_VertexBuffers[m_tQuadBufferIndex]->Bind();
+	glBufferSubData(GL_ARRAY_BUFFER, 0 , quads.size() * sizeof(tQuad<float>), quads.data());
+}
+
+
+void Renderer::updateQuadBuffer(std::vector<Quad<float>>& quads)
+{
+	m_VertexBuffers[m_quadBufferIndex]->Bind();
 	glBufferSubData(GL_ARRAY_BUFFER, 0 , quads.size() * sizeof(Quad<float>), quads.data());
 }
 
 void Renderer::updateTextBuffer(std::vector<float>& vertices)
 {
 	m_VertexBuffers[m_textBufferIndex]->Bind();
+	glBufferSubData(GL_ARRAY_BUFFER, 0 , vertices.size() * sizeof(float), vertices.data());
+}
+
+
+void Renderer::updateGridBuffer(std::vector<Quad<float>>& vertices)
+{
+	m_VertexBuffers[m_gridBufferIndex]->Bind();
+	glBufferSubData(GL_ARRAY_BUFFER, 0 , vertices.size() * sizeof(float), vertices.data());
+}
+
+
+void Renderer::updateUIBuffer(std::vector<tQuad<float>>& vertices)
+{
+	m_VertexBuffers[m_UIBufferIndex]->Bind();
 	glBufferSubData(GL_ARRAY_BUFFER, 0 , vertices.size() * sizeof(float), vertices.data());
 }
 
@@ -364,10 +501,6 @@ std::vector<unsigned int> Renderer::genIndicies(unsigned int maxEntities)
 	return indices;
 }
 
-VertexBuffer& Renderer::getVB()
-{
-	return *vb;
-}
 
 unsigned int Renderer::getBufferCount()
 {
@@ -453,7 +586,7 @@ void Renderer::drawText(std::string fontName)
 	glBindTexture(GL_TEXTURE_2D, 0);
 }*/
 
-void Renderer::drawText(std::string text, float x, float y, std::string fontName, float scale, float color[4])
+void Renderer::drawText(std::string text, float x, float y, std::string fontName, float scale, Color& color)
 {
 	auto* font = m_assetMan->getFont(fontName);
 	//checkError("before load");
@@ -461,7 +594,7 @@ void Renderer::drawText(std::string text, float x, float y, std::string fontName
     //checkError("after load");
     m_shader->use();
     //checkError("after use");
-    m_shader->setFloat4("ourColor", color[0], color[1], color[2], color[3]);
+    m_shader->setFloat4("ourColor", color);//, color->m_g, color->m_b, color->m_a);
     //checkError("after ourColor");
     m_shader->setMat4("projection", (float*)projection);
     //checkError("after proj");

@@ -3,17 +3,25 @@
 
 #include <map>
 #include <string>
+#include <iostream>
+#include <unordered_map>
+#include <memory>
 
-#include "Texture.h"
-#include "FTexture.h"
-#include "Font.h"
+//#include "Texture.h"
+//#include "FTexture.h"
+//#include "Font.h"
+//#include "palette.h"
 class Library;	
-
+class Palette;
+class Texture;
+class FTexture;
+class Font;
 
 class assetMan
 {
 	std::map<std::string, Texture*> 	m_Textures;
 	std::map<std::string, FTexture*>	m_FTextures;
+	std::map<std::string, Palette*>		m_palettes;
 	//std::map<std::string, Sound*> 	m_Sounds;
 	Library* m_Library = nullptr;
 	unsigned int texCounter = 0;
@@ -41,7 +49,9 @@ public:
 
 	void setFTMap(FTexture* ftexture, std::string name);
 	FTexture* getFTMapTexture(std::string name);
-
+	Palette* makeEmptyPalette(std::string name);
+	Palette* loadPalette(std::string name, const std::string path);
+	Palette* getPalette(std::string name);
 };
 
 #endif

@@ -19,6 +19,7 @@ public:
 	double hiddenPop = 500.0;
 	unsigned int population = hiddenPop;
 	int gold = 500;
+	int income = 5;
 	unsigned int militaryPower = 0;
 	float conscriptionRate = .15;
 	std::vector<Job> jobsList;
@@ -26,8 +27,8 @@ public:
 	{
 
 	}
-	Kingdom(unsigned int population, int gold)
-	:population(population), gold(gold)
+	Kingdom(unsigned int population, int gold, int income, float conscriptionRate)
+	:population(population), gold(gold), income(income), conscriptionRate(conscriptionRate)
 	{
 
 	}

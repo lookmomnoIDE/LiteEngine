@@ -1,6 +1,6 @@
-CMakeFiles/LiteEngine.dir/src/Scene_test.cpp.obj: \
- C:\projects\LiteEngineV003\src\Scene_test.cpp \
- C:/projects/LiteEngineV003/include/Scene_test.h \
+CMakeFiles/LiteEngine.dir/src/Scene_FS.cpp.obj: \
+ C:\projects\LiteEngineV003\src\Scene_FS.cpp \
+ C:/projects/LiteEngineV003/include/Scene_FS.h \
  C:/projects/LiteEngineV003/include/Scene.h \
  C:/mingw64/include/c++/15.2.0/string \
  C:/mingw64/include/c++/15.2.0/bits/requires_hosted.h \
@@ -107,49 +107,16 @@ CMakeFiles/LiteEngine.dir/src/Scene_test.cpp.obj: \
  C:/mingw64/include/c++/15.2.0/bits/stl_map.h \
  C:/mingw64/include/c++/15.2.0/bits/stl_multimap.h \
  C:/mingw64/include/c++/15.2.0/bits/erase_if.h \
- C:/projects/LiteEngineV003/include/ICommand.h \
- C:/projects/LiteEngineV003/include/EntityMemoryPool.h \
- C:/projects/LiteEngineV003/include/Components.h \
- C:/projects/LiteEngineV003/include/EntityManager.h \
- C:/mingw64/include/c++/15.2.0/vector \
+ C:/mingw64/include/c++/15.2.0/memory \
+ C:/mingw64/include/c++/15.2.0/bits/stl_tempbuf.h \
  C:/mingw64/include/c++/15.2.0/bits/stl_uninitialized.h \
- C:/mingw64/include/c++/15.2.0/bits/stl_vector.h \
- C:/mingw64/include/c++/15.2.0/bits/stl_bvector.h \
- C:/mingw64/include/c++/15.2.0/bits/vector.tcc \
- C:/mingw64/include/c++/15.2.0/cstdint \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdint.h \
- C:/mingw64/x86_64-w64-mingw32/include/stdint.h \
- C:/projects/LiteEngineV003/include/Tags.h \
- C:/projects/LiteEngineV003/include/Entity.h \
- C:/projects/LiteEngineV003/include/CTransform.h \
- C:/projects/LiteEngineV003/include/Vec2.h \
- C:/projects/LiteEngineV003/include/Cgrain.h \
- C:/projects/LiteEngineV003/include/Quad.h \
- C:/projects/LiteEngineV003/include/Vertex.h \
- C:/projects/LiteEngineV003/include/Vec3.h \
- C:/projects/LiteEngineV003/include/Vec4.h \
- C:/projects/LiteEngineV003/include/Csand.h \
- C:/projects/LiteEngineV003/include/Cgravity.h \
- C:/projects/LiteEngineV003/include/CCell.h \
- C:/mingw64/include/c++/15.2.0/unordered_map \
- C:/mingw64/include/c++/15.2.0/bits/unordered_map.h \
- C:/mingw64/include/c++/15.2.0/bits/hashtable.h \
- C:/mingw64/include/c++/15.2.0/bits/hashtable_policy.h \
- C:/mingw64/include/c++/15.2.0/bits/enable_special_members.h \
- C:/projects/LiteEngineV003/include/EntityFactory.h \
- C:/projects/LiteEngineV003/include/tQuad.h \
- C:/projects/LiteEngineV003/include/tVertex.h \
- C:/projects/LiteEngineV003/include/Grid.h \
- C:/mingw64/include/c++/15.2.0/iostream \
- C:/mingw64/include/c++/15.2.0/ostream \
- C:/mingw64/include/c++/15.2.0/bits/ostream.h \
- C:/mingw64/include/c++/15.2.0/ios \
- C:/mingw64/include/c++/15.2.0/exception \
- C:/mingw64/include/c++/15.2.0/bits/exception_ptr.h \
- C:/mingw64/include/c++/15.2.0/bits/cxxabi_init_exception.h \
+ C:/mingw64/include/c++/15.2.0/bits/stl_raw_storage_iter.h \
+ C:/mingw64/include/c++/15.2.0/bits/align.h \
+ C:/mingw64/include/c++/15.2.0/bits/unique_ptr.h \
+ C:/mingw64/include/c++/15.2.0/bits/shared_ptr.h \
+ C:/mingw64/include/c++/15.2.0/bits/shared_ptr_base.h \
  C:/mingw64/include/c++/15.2.0/typeinfo \
- C:/mingw64/include/c++/15.2.0/bits/nested_exception.h \
- C:/mingw64/include/c++/15.2.0/bits/ios_base.h \
+ C:/mingw64/include/c++/15.2.0/bits/allocated_ptr.h \
  C:/mingw64/include/c++/15.2.0/ext/atomicity.h \
  C:/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/gthr.h \
  C:/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/gthr-default.h \
@@ -168,6 +135,55 @@ CMakeFiles/LiteEngine.dir/src/Scene_test.cpp.obj: \
  C:/mingw64/x86_64-w64-mingw32/include/sched.h \
  C:/mingw64/x86_64-w64-mingw32/include/pthread_unistd.h \
  C:/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/atomic_word.h \
+ C:/mingw64/include/c++/15.2.0/ext/concurrence.h \
+ C:/mingw64/include/c++/15.2.0/exception \
+ C:/mingw64/include/c++/15.2.0/bits/exception_ptr.h \
+ C:/mingw64/include/c++/15.2.0/bits/cxxabi_init_exception.h \
+ C:/mingw64/include/c++/15.2.0/bits/nested_exception.h \
+ C:/mingw64/include/c++/15.2.0/bits/shared_ptr_atomic.h \
+ C:/mingw64/include/c++/15.2.0/bits/atomic_base.h \
+ C:/mingw64/include/c++/15.2.0/bits/atomic_lockfree_defines.h \
+ C:/mingw64/include/c++/15.2.0/backward/auto_ptr.h \
+ C:/mingw64/include/c++/15.2.0/pstl/glue_memory_defs.h \
+ C:/mingw64/include/c++/15.2.0/pstl/execution_defs.h \
+ C:/projects/LiteEngineV003/include/ICommand.h \
+ C:/projects/LiteEngineV003/include/EntityMemoryPool.h \
+ C:/projects/LiteEngineV003/include/Components.h \
+ C:/projects/LiteEngineV003/include/EntityManager.h \
+ C:/mingw64/include/c++/15.2.0/vector \
+ C:/mingw64/include/c++/15.2.0/bits/stl_vector.h \
+ C:/mingw64/include/c++/15.2.0/bits/stl_bvector.h \
+ C:/mingw64/include/c++/15.2.0/bits/vector.tcc \
+ C:/mingw64/include/c++/15.2.0/cstdint \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdint.h \
+ C:/mingw64/x86_64-w64-mingw32/include/stdint.h \
+ C:/projects/LiteEngineV003/include/Tags.h \
+ C:/projects/LiteEngineV003/include/Entity.h \
+ C:/projects/LiteEngineV003/include/CTransform.h \
+ C:/projects/LiteEngineV003/include/Vec2.h \
+ C:/projects/LiteEngineV003/include/Cgrain.h \
+ C:/projects/LiteEngineV003/include/Quad.h \
+ C:/projects/LiteEngineV003/include/Vertex.h \
+ C:/projects/LiteEngineV003/include/Vec3.h \
+ C:/projects/LiteEngineV003/include/Vec4.h \
+ C:/projects/LiteEngineV003/include/Color.h \
+ C:/projects/LiteEngineV003/include/Csand.h \
+ C:/projects/LiteEngineV003/include/Cgravity.h \
+ C:/projects/LiteEngineV003/include/CCell.h \
+ C:/mingw64/include/c++/15.2.0/unordered_map \
+ C:/mingw64/include/c++/15.2.0/bits/unordered_map.h \
+ C:/mingw64/include/c++/15.2.0/bits/hashtable.h \
+ C:/mingw64/include/c++/15.2.0/bits/hashtable_policy.h \
+ C:/mingw64/include/c++/15.2.0/bits/enable_special_members.h \
+ C:/projects/LiteEngineV003/include/EntityFactory.h \
+ C:/projects/LiteEngineV003/include/tQuad.h \
+ C:/projects/LiteEngineV003/include/tVertex.h \
+ C:/projects/LiteEngineV003/include/Grid.h \
+ C:/mingw64/include/c++/15.2.0/iostream \
+ C:/mingw64/include/c++/15.2.0/ostream \
+ C:/mingw64/include/c++/15.2.0/bits/ostream.h \
+ C:/mingw64/include/c++/15.2.0/ios \
+ C:/mingw64/include/c++/15.2.0/bits/ios_base.h \
  C:/mingw64/include/c++/15.2.0/bits/locale_classes.h \
  C:/mingw64/include/c++/15.2.0/bits/locale_classes.tcc \
  C:/mingw64/include/c++/15.2.0/system_error \
@@ -195,64 +211,23 @@ CMakeFiles/LiteEngine.dir/src/Scene_test.cpp.obj: \
  C:/projects/LiteEngineV003/include/glad/glad.h \
  C:/projects/LiteEngineV003/include/KHR/khrplatform.h \
  C:/projects/LiteEngineV003/include/GLFW/glfw3.h \
- C:/mingw64/include/c++/15.2.0/memory \
- C:/mingw64/include/c++/15.2.0/bits/stl_tempbuf.h \
- C:/mingw64/include/c++/15.2.0/bits/stl_raw_storage_iter.h \
- C:/mingw64/include/c++/15.2.0/bits/align.h \
- C:/mingw64/include/c++/15.2.0/bits/unique_ptr.h \
- C:/mingw64/include/c++/15.2.0/bits/shared_ptr.h \
- C:/mingw64/include/c++/15.2.0/bits/shared_ptr_base.h \
- C:/mingw64/include/c++/15.2.0/bits/allocated_ptr.h \
- C:/mingw64/include/c++/15.2.0/ext/concurrence.h \
- C:/mingw64/include/c++/15.2.0/bits/shared_ptr_atomic.h \
- C:/mingw64/include/c++/15.2.0/bits/atomic_base.h \
- C:/mingw64/include/c++/15.2.0/bits/atomic_lockfree_defines.h \
- C:/mingw64/include/c++/15.2.0/backward/auto_ptr.h \
- C:/mingw64/include/c++/15.2.0/pstl/glue_memory_defs.h \
- C:/mingw64/include/c++/15.2.0/pstl/execution_defs.h \
  C:/mingw64/include/c++/15.2.0/array \
  C:/mingw64/include/c++/15.2.0/compare \
- C:/projects/LiteEngineV003/include/VertexArray.h \
- C:/projects/LiteEngineV003/include/VertexBuffer.h \
- C:/projects/LiteEngineV003/include/VertexBufferLayout.h \
- C:/projects/LiteEngineV003/include/shader.h \
+ C:/projects/LiteEngineV003/include/InputHandler.h \
+ C:/projects/LiteEngineV003/include/Scene_Play.h \
+ C:/projects/LiteEngineV003/include/Scene_CGOl.h \
+ C:/projects/LiteEngineV003/include/GeometryConstructor.h \
+ C:/projects/LiteEngineV003/include/Scene_test.h \
+ C:/projects/LiteEngineV003/include/Kingdom.h \
+ C:/projects/LiteEngineV003/include/TKHelpers.h \
+ C:/projects/LiteEngineV003/include/Scene_FS.h \
+ C:/projects/LiteEngineV003/include/assetManager.h \
+ C:/projects/LiteEngineV003/include/palette.h \
  C:/mingw64/include/c++/15.2.0/fstream \
  C:/mingw64/include/c++/15.2.0/bits/codecvt.h \
  C:/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/basic_file.h \
  C:/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++io.h \
  C:/mingw64/include/c++/15.2.0/bits/fstream.tcc \
- C:/mingw64/include/c++/15.2.0/sstream \
- C:/mingw64/include/c++/15.2.0/bits/sstream.tcc \
- C:/projects/LiteEngineV003/include/Parser.h \
- C:/projects/LiteEngineV003/include/IndexBuffer.h \
- C:/projects/LiteEngineV003/include/InputHandler.h \
- C:/projects/LiteEngineV003/include/Scene_Play.h \
- C:/projects/LiteEngineV003/include/Scene_CGOl.h \
- C:/projects/LiteEngineV003/include/Scene_test.h \
- C:/projects/LiteEngineV003/include/assetManager.h \
- C:/projects/LiteEngineV003/include/Texture.h \
- C:/projects/LiteEngineV003/include/Renderer.h \
- C:/projects/LiteEngineV003/include/FTexture.h \
- C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/ft2build.h \
- C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/config/ftheader.h \
- C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/freetype.h \
- C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/config/ftconfig.h \
- C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/config/ftoption.h \
- C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/config/ftstdlib.h \
- C:/mingw64/x86_64-w64-mingw32/include/string.h \
- C:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
- C:/mingw64/x86_64-w64-mingw32/include/setjmp.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdarg.h \
- C:/mingw64/x86_64-w64-mingw32/include/stdarg.h \
- C:/mingw64/x86_64-w64-mingw32/include/_mingw_stdarg.h \
- C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/fttypes.h \
- C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/ftsystem.h \
- C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/ftimage.h \
- C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/fterrors.h \
- C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/ftmoderr.h \
- C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/fterrdef.h \
- C:/projects/LiteEngineV003/include/Font.h \
- C:/projects/LiteEngineV003/include/Character.h \
  C:/mingw64/include/c++/15.2.0/chrono \
  C:/mingw64/include/c++/15.2.0/bits/chrono.h \
  C:/mingw64/include/c++/15.2.0/ratio C:/mingw64/include/c++/15.2.0/limits \

@@ -1,5 +1,6 @@
 #include "Library.h"
 #include "assetManager.h"
+#include "FTexture.h"
 
 
 Library::Library()

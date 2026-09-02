@@ -158,4 +158,5 @@ CMakeFiles/LiteEngine.dir/src/Shader.cpp.obj: \
  C:/mingw64/include/c++/15.2.0/bits/sstream.tcc \
  C:/mingw64/include/c++/15.2.0/iostream \
  C:/projects/LiteEngineV003/include/Parser.h \
- C:/projects/LiteEngineV003/include/Vec4.h
+ C:/projects/LiteEngineV003/include/Vec4.h \
+ C:/projects/LiteEngineV003/include/Color.h

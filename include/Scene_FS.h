@@ -1,22 +1,17 @@
-#ifndef SCENE_TEST_H
-#define SCENE_TEST_H
+#ifndef SCENE_FS_H
+#define SCENE_FS_H
 
 
 #include "Scene.h"
-#include "EntityManager.h"
-#include "EntityFactory.h"
+//#include "EntityManager.h"
+//#include "EntityFactory.h"
 #include "Quad.h"
 #include "tQuad.h"
-#include "Vec2.h"
+//#include "Vec2.h"
 #include "Grid.h"
-#include "GeometryConstructor.h"
-#include "Kingdom.h"
-#include "TKHelpers.h"
-#include "Tags.h"
 
-#include <iostream>
 
-class Scene_test : public Scene
+class Scene_FS : public Scene
 {
 	std::string m_level = "play";
 	double m_x, m_y, m_currentTime, m_elapsedTime, m_dt;
@@ -28,15 +23,13 @@ class Scene_test : public Scene
 	unsigned int m_numQuads = 0;
 	unsigned int m_frameCounter = 0;
 	Grid grid;
-	unsigned int m_dayCounter = 0;
-	std::string m_date = "";
-	Kingdom thyKingdom;
+	
 	//size_t m_maxEntities;
 
 
 public:
-	Scene_test(GameEngine* game, Renderer* renderer, size_t maxEntities);
-	~Scene_test(){}
+	Scene_FS(GameEngine* game, Renderer* renderer, size_t maxEntities);
+	~Scene_FS(){}
 	void init() override;
 	void update() override;
 	void sAnimation();

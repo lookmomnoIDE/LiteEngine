@@ -3,6 +3,7 @@
 
 #include "Vec3.h"
 #include "Vec4.h"
+#include "Color.h"
 
 
 template <typename T>
@@ -11,7 +12,7 @@ class Vertex
 
 public:
 	Vec3<T> Position;
-	Vec4<T> Color;
+	Color color;
 
 
 	Vec3<T>& getVPosition()
@@ -25,14 +26,14 @@ public:
 		//return *this;
 	}
 
-	Vec4<T>& getVColor()
+	Color& getVColor()
 	{
-		return Color;
+		return color;
 	}
 
-	void setVColor( Vec4<T> c)
+	void setVColor( Color c)
 	{
-		Color = c;
+		color = c;
 		//return *this;
 	}
 };

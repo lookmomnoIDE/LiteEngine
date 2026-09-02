@@ -3,11 +3,14 @@
 #include <string_view>
 
 
-enum class Tag : uint8_t
+enum Tag : uint8_t
 {
-    none        = 0,
-    sand        = 1,
-    // Add your own...
-
+    NONE,
+    SAND,
+    WATER,
+    GRASS,
+    SANDSTONE,
+    ROCK,
+    SMOKE,
     COUNT  // always last lets you size arrays, validate, etc.
 };

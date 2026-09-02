@@ -25,7 +25,7 @@ class EntityMemoryPool
 public:
 	typedef std::tuple<
 	std::vector<CTransform>,
-	std::vector<Cgrain>,
+	//std::vector<Cgrain>,
 	std::vector<Csand>,
 	std::vector<Cgravity>,
 	std::vector<CCell>
@@ -85,8 +85,6 @@ public:
 	Entity addEntity(const Tag tag);
 
 	size_t getNextEntityIndex();
-
-	int getEnum(std::string s);
 
 	size_t getNumEntities();
 

@@ -170,42 +170,35 @@ CMakeFiles/LiteEngine.dir/src/Renderer.cpp.obj: \
  C:/mingw64/include/c++/15.2.0/pstl/execution_defs.h \
  C:/mingw64/include/c++/15.2.0/array \
  C:/mingw64/include/c++/15.2.0/compare \
- C:/projects/LiteEngineV003/include/VertexArray.h \
- C:/projects/LiteEngineV003/include/VertexBuffer.h \
- C:/projects/LiteEngineV003/include/VertexBufferLayout.h \
  C:/mingw64/include/c++/15.2.0/vector \
  C:/mingw64/include/c++/15.2.0/bits/stl_vector.h \
  C:/mingw64/include/c++/15.2.0/bits/stl_bvector.h \
  C:/mingw64/include/c++/15.2.0/bits/vector.tcc \
- C:/projects/LiteEngineV003/include/shader.h \
- C:/mingw64/include/c++/15.2.0/fstream \
- C:/mingw64/include/c++/15.2.0/bits/codecvt.h \
- C:/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/basic_file.h \
- C:/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++io.h \
- C:/mingw64/include/c++/15.2.0/bits/fstream.tcc \
- C:/mingw64/include/c++/15.2.0/sstream \
- C:/mingw64/include/c++/15.2.0/bits/sstream.tcc \
- C:/projects/LiteEngineV003/include/Parser.h \
+ C:/projects/LiteEngineV003/include/tQuad.h \
+ C:/projects/LiteEngineV003/include/tVertex.h \
+ C:/projects/LiteEngineV003/include/Vec2.h \
+ C:/projects/LiteEngineV003/include/Vec3.h \
  C:/projects/LiteEngineV003/include/Vec4.h \
- C:/projects/LiteEngineV003/include/IndexBuffer.h \
- C:/projects/LiteEngineV003/include/Entity.h \
- C:/projects/LiteEngineV003/include/EntityMemoryPool.h \
- C:/projects/LiteEngineV003/include/Components.h \
- C:/projects/LiteEngineV003/include/EntityManager.h \
+ C:/projects/LiteEngineV003/include/Color.h \
+ C:/projects/LiteEngineV003/include/Quad.h \
+ C:/projects/LiteEngineV003/include/Vertex.h \
+ C:/projects/LiteEngineV003/include/GameEngine.h \
+ C:/projects/LiteEngineV003/include/Scene.h \
  C:/mingw64/include/c++/15.2.0/map \
  C:/mingw64/include/c++/15.2.0/bits/stl_tree.h \
  C:/mingw64/include/c++/15.2.0/bits/node_handle.h \
  C:/mingw64/include/c++/15.2.0/bits/stl_map.h \
  C:/mingw64/include/c++/15.2.0/bits/stl_multimap.h \
  C:/mingw64/include/c++/15.2.0/bits/erase_if.h \
+ C:/projects/LiteEngineV003/include/ICommand.h \
+ C:/projects/LiteEngineV003/include/EntityMemoryPool.h \
+ C:/projects/LiteEngineV003/include/Components.h \
+ C:/projects/LiteEngineV003/include/EntityManager.h \
  C:/mingw64/include/c++/15.2.0/cstdint \
  C:/projects/LiteEngineV003/include/Tags.h \
+ C:/projects/LiteEngineV003/include/Entity.h \
  C:/projects/LiteEngineV003/include/CTransform.h \
- C:/projects/LiteEngineV003/include/Vec2.h \
  C:/projects/LiteEngineV003/include/Cgrain.h \
- C:/projects/LiteEngineV003/include/Quad.h \
- C:/projects/LiteEngineV003/include/Vertex.h \
- C:/projects/LiteEngineV003/include/Vec3.h \
  C:/projects/LiteEngineV003/include/Csand.h \
  C:/projects/LiteEngineV003/include/Cgravity.h \
  C:/projects/LiteEngineV003/include/CCell.h \
@@ -214,11 +207,6 @@ CMakeFiles/LiteEngine.dir/src/Renderer.cpp.obj: \
  C:/mingw64/include/c++/15.2.0/bits/hashtable.h \
  C:/mingw64/include/c++/15.2.0/bits/hashtable_policy.h \
  C:/mingw64/include/c++/15.2.0/bits/enable_special_members.h \
- C:/projects/LiteEngineV003/include/tQuad.h \
- C:/projects/LiteEngineV003/include/tVertex.h \
- C:/projects/LiteEngineV003/include/GameEngine.h \
- C:/projects/LiteEngineV003/include/Scene.h \
- C:/projects/LiteEngineV003/include/ICommand.h \
  C:/projects/LiteEngineV003/include/EntityFactory.h \
  C:/projects/LiteEngineV003/include/Renderer.h \
  C:/projects/LiteEngineV003/include/InputHandler.h \
@@ -229,29 +217,14 @@ CMakeFiles/LiteEngine.dir/src/Renderer.cpp.obj: \
  C:/projects/LiteEngineV003/include/Scene_test.h \
  C:/projects/LiteEngineV003/include/Kingdom.h \
  C:/projects/LiteEngineV003/include/TKHelpers.h \
+ C:/projects/LiteEngineV003/include/Scene_FS.h \
  C:/projects/LiteEngineV003/include/assetManager.h \
- C:/projects/LiteEngineV003/include/Texture.h \
- C:/projects/LiteEngineV003/include/FTexture.h \
- C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/ft2build.h \
- C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/config/ftheader.h \
- C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/freetype.h \
- C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/config/ftconfig.h \
- C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/config/ftoption.h \
- C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/config/ftstdlib.h \
- C:/mingw64/x86_64-w64-mingw32/include/string.h \
- C:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
- C:/mingw64/x86_64-w64-mingw32/include/setjmp.h \
- C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdarg.h \
- C:/mingw64/x86_64-w64-mingw32/include/stdarg.h \
- C:/mingw64/x86_64-w64-mingw32/include/_mingw_stdarg.h \
- C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/fttypes.h \
- C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/ftsystem.h \
- C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/ftimage.h \
- C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/fterrors.h \
- C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/ftmoderr.h \
- C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/fterrdef.h \
- C:/projects/LiteEngineV003/include/Font.h \
- C:/projects/LiteEngineV003/include/Character.h \
+ C:/projects/LiteEngineV003/include/palette.h \
+ C:/mingw64/include/c++/15.2.0/fstream \
+ C:/mingw64/include/c++/15.2.0/bits/codecvt.h \
+ C:/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/basic_file.h \
+ C:/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++io.h \
+ C:/mingw64/include/c++/15.2.0/bits/fstream.tcc \
  C:/mingw64/include/c++/15.2.0/chrono \
  C:/mingw64/include/c++/15.2.0/bits/chrono.h \
  C:/mingw64/include/c++/15.2.0/ratio C:/mingw64/include/c++/15.2.0/limits \
@@ -279,7 +252,39 @@ CMakeFiles/LiteEngine.dir/src/Renderer.cpp.obj: \
  C:/mingw64/include/c++/15.2.0/numeric \
  C:/mingw64/include/c++/15.2.0/bits/stl_numeric.h \
  C:/mingw64/include/c++/15.2.0/pstl/glue_numeric_defs.h \
- C:/projects/LiteEngineV003/include/InputHandler.h \
+ C:/projects/LiteEngineV003/include/VertexArray.h \
+ C:/projects/LiteEngineV003/include/VertexBuffer.h \
+ C:/projects/LiteEngineV003/include/VertexBufferLayout.h \
+ C:/projects/LiteEngineV003/include/shader.h \
+ C:/mingw64/include/c++/15.2.0/sstream \
+ C:/mingw64/include/c++/15.2.0/bits/sstream.tcc \
+ C:/projects/LiteEngineV003/include/Parser.h \
+ C:/projects/LiteEngineV003/include/IndexBuffer.h \
+ C:/projects/LiteEngineV003/include/Vec2.h \
+ C:/projects/LiteEngineV003/include/Vec3.h \
+ C:/projects/LiteEngineV003/include/Vec4.h \
+ C:/projects/LiteEngineV003/include/Texture.h \
+ C:/projects/LiteEngineV003/include/FTexture.h \
+ C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/ft2build.h \
+ C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/config/ftheader.h \
+ C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/freetype.h \
+ C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/config/ftconfig.h \
+ C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/config/ftoption.h \
+ C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/config/ftstdlib.h \
+ C:/mingw64/x86_64-w64-mingw32/include/string.h \
+ C:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
+ C:/mingw64/x86_64-w64-mingw32/include/setjmp.h \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdarg.h \
+ C:/mingw64/x86_64-w64-mingw32/include/stdarg.h \
+ C:/mingw64/x86_64-w64-mingw32/include/_mingw_stdarg.h \
+ C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/fttypes.h \
+ C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/ftsystem.h \
+ C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/ftimage.h \
+ C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/fterrors.h \
+ C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/ftmoderr.h \
+ C:/projects/LiteEngineV003/ext/ft27/ft.compiled/include/freetype2/freetype/fterrdef.h \
+ C:/projects/LiteEngineV003/include/Font.h \
+ C:/projects/LiteEngineV003/include/Character.h \
  C:/projects/LiteEngineV003/include/Vertex.h \
- C:/projects/LiteEngineV003/include/Quad.h \
+ C:/projects/LiteEngineV003/include/assetManager.h \
  C:/projects/LiteEngineV003/include/grid.h

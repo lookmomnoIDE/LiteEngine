@@ -4,6 +4,7 @@
 #include "Vec2.h"
 #include "Quad.h"
 #include "tQuad.h"
+#include "Tags.h"
 //#include "Scene.h"
 
 

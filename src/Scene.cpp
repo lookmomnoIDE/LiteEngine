@@ -1,6 +1,8 @@
 #include "Scene.h"
 #include "GameEngine.h"
 #include "Renderer.h"
+#include "assetManager.h"
+
 
 
 /*virtual void Scene::init()

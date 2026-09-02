@@ -1,4 +1,5 @@
 #include "FTexture.h"
+#include <glad/glad.h>
 
 
 FTexture::FTexture(FT_FaceRec_* face, unsigned int slot)

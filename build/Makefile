@@ -152,30 +152,6 @@ src/CTransform.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/CTransform.cpp.s
 .PHONY : src/CTransform.cpp.s
 
-src/Cgrain.obj: src/Cgrain.cpp.obj
-.PHONY : src/Cgrain.obj
-
-# target to build an object file
-src/Cgrain.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Cgrain.cpp.obj
-.PHONY : src/Cgrain.cpp.obj
-
-src/Cgrain.i: src/Cgrain.cpp.i
-.PHONY : src/Cgrain.i
-
-# target to preprocess a source file
-src/Cgrain.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Cgrain.cpp.i
-.PHONY : src/Cgrain.cpp.i
-
-src/Cgrain.s: src/Cgrain.cpp.s
-.PHONY : src/Cgrain.s
-
-# target to generate assembly for a file
-src/Cgrain.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Cgrain.cpp.s
-.PHONY : src/Cgrain.cpp.s
-
 src/Cgravity.obj: src/Cgravity.cpp.obj
 .PHONY : src/Cgravity.obj
 
@@ -560,53 +536,29 @@ src/Scene.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Scene.cpp.s
 .PHONY : src/Scene.cpp.s
 
-src/Scene_CGOL.obj: src/Scene_CGOL.cpp.obj
-.PHONY : src/Scene_CGOL.obj
+src/Scene_FS.obj: src/Scene_FS.cpp.obj
+.PHONY : src/Scene_FS.obj
 
 # target to build an object file
-src/Scene_CGOL.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Scene_CGOL.cpp.obj
-.PHONY : src/Scene_CGOL.cpp.obj
+src/Scene_FS.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Scene_FS.cpp.obj
+.PHONY : src/Scene_FS.cpp.obj
 
-src/Scene_CGOL.i: src/Scene_CGOL.cpp.i
-.PHONY : src/Scene_CGOL.i
-
-# target to preprocess a source file
-src/Scene_CGOL.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Scene_CGOL.cpp.i
-.PHONY : src/Scene_CGOL.cpp.i
-
-src/Scene_CGOL.s: src/Scene_CGOL.cpp.s
-.PHONY : src/Scene_CGOL.s
-
-# target to generate assembly for a file
-src/Scene_CGOL.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Scene_CGOL.cpp.s
-.PHONY : src/Scene_CGOL.cpp.s
-
-src/Scene_test.obj: src/Scene_test.cpp.obj
-.PHONY : src/Scene_test.obj
-
-# target to build an object file
-src/Scene_test.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Scene_test.cpp.obj
-.PHONY : src/Scene_test.cpp.obj
-
-src/Scene_test.i: src/Scene_test.cpp.i
-.PHONY : src/Scene_test.i
+src/Scene_FS.i: src/Scene_FS.cpp.i
+.PHONY : src/Scene_FS.i
 
 # target to preprocess a source file
-src/Scene_test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Scene_test.cpp.i
-.PHONY : src/Scene_test.cpp.i
+src/Scene_FS.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Scene_FS.cpp.i
+.PHONY : src/Scene_FS.cpp.i
 
-src/Scene_test.s: src/Scene_test.cpp.s
-.PHONY : src/Scene_test.s
+src/Scene_FS.s: src/Scene_FS.cpp.s
+.PHONY : src/Scene_FS.s
 
 # target to generate assembly for a file
-src/Scene_test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Scene_test.cpp.s
-.PHONY : src/Scene_test.cpp.s
+src/Scene_FS.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\LiteEngine.dir\build.make CMakeFiles/LiteEngine.dir/src/Scene_FS.cpp.s
+.PHONY : src/Scene_FS.cpp.s
 
 src/Shader.obj: src/Shader.cpp.obj
 .PHONY : src/Shader.obj
@@ -1004,9 +956,6 @@ help:
 	@echo ... src/CTransform.obj
 	@echo ... src/CTransform.i
 	@echo ... src/CTransform.s
-	@echo ... src/Cgrain.obj
-	@echo ... src/Cgrain.i
-	@echo ... src/Cgrain.s
 	@echo ... src/Cgravity.obj
 	@echo ... src/Cgravity.i
 	@echo ... src/Cgravity.s
@@ -1055,12 +1004,9 @@ help:
 	@echo ... src/Scene.obj
 	@echo ... src/Scene.i
 	@echo ... src/Scene.s
-	@echo ... src/Scene_CGOL.obj
-	@echo ... src/Scene_CGOL.i
-	@echo ... src/Scene_CGOL.s
-	@echo ... src/Scene_test.obj
-	@echo ... src/Scene_test.i
-	@echo ... src/Scene_test.s
+	@echo ... src/Scene_FS.obj
+	@echo ... src/Scene_FS.i
+	@echo ... src/Scene_FS.s
 	@echo ... src/Shader.obj
 	@echo ... src/Shader.i
 	@echo ... src/Shader.s

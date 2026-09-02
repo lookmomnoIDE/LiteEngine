@@ -1,5 +1,8 @@
 #include "assetManager.h"
 #include "Library.h"
+#include "Texture.h"
+#include "FTexture.h"
+#include "palette.h"
 
 
 assetMan::assetMan()
@@ -18,6 +21,10 @@ assetMan::~assetMan()
 	{
 		delete texture;
 	}
+	for (auto& [name, palette] : m_palettes)
+	{
+		delete palette;
+	}
 
 	delete m_Library;
 }
@@ -26,6 +33,7 @@ assetMan::~assetMan()
 void assetMan::addTexture(std::string name, std::string path)
 {
 	Texture* tex = new Texture(path, texCounter);
+	std::cout << "out of new texture: "<< name << std::endl;
 	m_Textures[name] = tex;
 	texCounter++;
 }
@@ -84,4 +92,24 @@ void assetMan::setFTMap(FTexture* ftexture, std::string name)
 FTexture* assetMan::getFTMapTexture(std::string name)
 {
 	return m_FTextures[name];
+}
+
+
+Palette* assetMan::makeEmptyPalette(std::string name)
+{
+	m_palettes[name] = new Palette();
+	return m_palettes[name];
+}
+
+
+Palette* assetMan::loadPalette(std::string name, const std::string path)
+{
+	m_palettes[name] = new Palette(path);
+	return m_palettes[name];
+}
+
+
+Palette* assetMan::getPalette(std::string name)
+{
+	return m_palettes[name];
 }
